@@ -1,0 +1,36 @@
+# Data files
+*.json
+*.pkl
+
+# Models
+models/*.pkl
+models/*.joblib
+models/*.h5
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.pytest_cache/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Environment
+.env
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.csv
+/.quarto/
+**/*.quarto_ipynb
+.cache
+.ipython
+
+# Ignore raw data and images from data directory
+data/raw_data/*
+data/images/*
