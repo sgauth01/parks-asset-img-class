@@ -34,3 +34,4 @@ env/
 # Ignore raw data and images from data directory
 data/raw_data/*
 data/images/*
+data/processed_data/*
