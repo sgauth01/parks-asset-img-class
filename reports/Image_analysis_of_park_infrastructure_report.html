@@ -6,8 +6,12 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Sarah Gauthier">
+<meta name="author" content="Nour Shawky">
+<meta name="author" content="Ssemakula Peter Wasswa">
+<meta name="author" content="Mehmet Imga">
 
-<title>image_analysis_of_park_infrastructure_report</title>
+<title>Image Analysis of Park Infrastructure</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -37,19 +41,88 @@ ul.task-list li input[type="checkbox"] {
 <link href="Image_analysis_of_park_infrastructure_report_files/libs/bootstrap/bootstrap-d6a003b94517c951b2d65075d42fb01b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 
 
+<link rel="stylesheet" href="report-styles.css">
 </head>
 
-<body class="fullcontent quarto-light">
+<body class="quarto-light">
 
 <div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
-
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary">Summary</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#research-question" id="toc-research-question" class="nav-link" data-scroll-target="#research-question">Research Question</a></li>
+  <li><a href="#dataset" id="toc-dataset" class="nav-link" data-scroll-target="#dataset">Dataset</a></li>
+  <li><a href="#data-challenges" id="toc-data-challenges" class="nav-link" data-scroll-target="#data-challenges">Data Challenges</a></li>
+  <li><a href="#methodology" id="toc-methodology" class="nav-link" data-scroll-target="#methodology">Methodology</a>
+  <ul class="collapse">
+  <li><a href="#baseline-approach-zero-shot-vlm" id="toc-baseline-approach-zero-shot-vlm" class="nav-link" data-scroll-target="#baseline-approach-zero-shot-vlm">Baseline Approach: Zero-shot VLM</a></li>
+  <li><a href="#proposed-attribute-based-pipeline" id="toc-proposed-attribute-based-pipeline" class="nav-link" data-scroll-target="#proposed-attribute-based-pipeline">Proposed Attribute-Based Pipeline</a></li>
+  </ul></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="../Image_analysis_of_park_infrastructure_report.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+</div>
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Image Analysis of Park Infrastructure</h1>
+</div>
 
 
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Authors</div>
+  <div class="quarto-title-meta-heading">Affiliation</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author">Sarah Gauthier </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Master of Data Science, University of British Columbia
+          </p>
+      </div>
+    <div class="quarto-title-meta-contents">
+    <p class="author">Nour Shawky </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Master of Data Science, University of British Columbia
+          </p>
+      </div>
+    <div class="quarto-title-meta-contents">
+    <p class="author">Ssemakula Peter Wasswa </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Master of Data Science, University of British Columbia
+          </p>
+      </div>
+    <div class="quarto-title-meta-contents">
+    <p class="author">Mehmet Imga </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Master of Data Science, University of British Columbia
+          </p>
+      </div>
+  </div>
 
-<p>title: “Image Analysis of Park Infrastructure” author: - name: Sarah Gauthier affiliations: - name: Master of Data Science, University of British Columbia - name: Nour Shawky affiliations: - name: Master of Data Science, University of British Columbia - name: Ssemakula Peter Wasswa affiliations: - name: Master of Data Science, University of British Columbia - name: Mehmet Imga affiliations: - name: Master of Data Science, University of British Columbia</p>
-<p>format: html: toc: true toc-depth: 3 code-fold: true pdf: toc: true toc-depth: 3 execute: echo: false warning: false error: false</p>
+<div class="quarto-title-meta">
+
+      
+  
+    
+  </div>
+  
+
+
+</header>
+
+
 <section id="summary" class="level2">
 <h2 class="anchored" data-anchor-id="summary">Summary</h2>
 <p>This project explores how computer vision can be used to automatically extract infrastructure attributes from park images. The goal is to improve the completeness and reliability of asset management data used by BC Parks.</p>
@@ -115,7 +188,6 @@ ul.task-list li input[type="checkbox"] {
 <p><strong>Limitations:</strong> - Weak on fine-grained details<br>
 - No component localization<br>
 - Not reliable for measurements</p>
-<hr>
 </section>
 <section id="proposed-attribute-based-pipeline" class="level3">
 <h3 class="anchored" data-anchor-id="proposed-attribute-based-pipeline">Proposed Attribute-Based Pipeline</h3>

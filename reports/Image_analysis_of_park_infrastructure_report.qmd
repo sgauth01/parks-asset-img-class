@@ -19,16 +19,21 @@ format:
     toc: true
     toc-depth: 3
     code-fold: true
+    css: report-styles.css
   pdf:
     toc: true
     toc-depth: 3
+    fontsize: 10pt
+    geometry:
+      - margin=0.85in
+    colorlinks: true
+    header-includes:
+      - \linespread{0.98}
 execute:
   echo: false
   warning: false
   error: false
 ---
-
-
 
 ## Summary
 
@@ -36,21 +41,15 @@ This project explores how computer vision can be used to automatically extract i
 
 We aim to predict attributes such as asset type, material, structure position, size ranges, railing presence, and number of steps. Due to weak or incomplete labels, we adopt a staged approach that starts with a zero-shot baseline and progresses toward an attribute-specific modelling pipeline.
 
-
-
 ## Introduction
 
 BC Parks manages a large inventory of infrastructure assets such as bridges, stairs, boardwalks, and viewing platforms. While many of these assets have associated image data, the attribute information is often incomplete or inconsistent.
 
 Manually reviewing thousands of images to extract attributes such as material, size, and structural features is time-consuming and not scalable. Computer vision techniques provide an opportunity to automate this process and improve data quality.
 
-
-
 ## Research Question
 
 Can machine learning models automatically predict infrastructure attributes from images, including asset type, material, size ranges, structure position, railing presence, and number of steps?
-
-
 
 ## Dataset
 
@@ -64,8 +63,6 @@ The dataset consists of:
 
 Some labels may be incomplete or noisy.
 
-
-
 ## Data Challenges
 
 - Weak or incomplete labels  
@@ -73,8 +70,6 @@ Some labels may be incomplete or noisy.
 - Difficulty estimating real-world size from images  
 - Variation in image quality and perspective  
 - Limited component-level annotations  
-
-
 
 ## Methodology
 
@@ -99,7 +94,4 @@ This allows us to predict:
 - No component localization  
 - Not reliable for measurements  
 
-
-
 ### Proposed Attribute-Based Pipeline
-
