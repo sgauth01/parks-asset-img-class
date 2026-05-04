@@ -1,0 +1,105 @@
+---
+title: "Image Analysis of Park Infrastructure"
+author:
+  - name: Sarah Gauthier
+    affiliations:
+      - name: Master of Data Science, University of British Columbia
+  - name: Nour Shawky
+    affiliations:
+      - name: Master of Data Science, University of British Columbia
+  - name: Ssemakula Peter Wasswa
+    affiliations:
+      - name: Master of Data Science, University of British Columbia
+  - name: Mehmet Imga
+    affiliations:
+      - name: Master of Data Science, University of British Columbia
+
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    code-fold: true
+  pdf:
+    toc: true
+    toc-depth: 3
+execute:
+  echo: false
+  warning: false
+  error: false
+---
+
+
+
+## Summary
+
+This project explores how computer vision can be used to automatically extract infrastructure attributes from park images. The goal is to improve the completeness and reliability of asset management data used by BC Parks.
+
+We aim to predict attributes such as asset type, material, structure position, size ranges, railing presence, and number of steps. Due to weak or incomplete labels, we adopt a staged approach that starts with a zero-shot baseline and progresses toward an attribute-specific modelling pipeline.
+
+
+
+## Introduction
+
+BC Parks manages a large inventory of infrastructure assets such as bridges, stairs, boardwalks, and viewing platforms. While many of these assets have associated image data, the attribute information is often incomplete or inconsistent.
+
+Manually reviewing thousands of images to extract attributes such as material, size, and structural features is time-consuming and not scalable. Computer vision techniques provide an opportunity to automate this process and improve data quality.
+
+
+
+## Research Question
+
+Can machine learning models automatically predict infrastructure attributes from images, including asset type, material, size ranges, structure position, railing presence, and number of steps?
+
+
+
+## Dataset
+
+The dataset consists of:
+
+- Images of park infrastructure (bridges, stairs, boardwalks, etc.)
+- Attribute tables containing:
+  - Material information  
+  - Structural characteristics  
+  - Size-related attributes  
+
+Some labels may be incomplete or noisy.
+
+
+
+## Data Challenges
+
+- Weak or incomplete labels  
+- Attribute heterogeneity across asset types  
+- Difficulty estimating real-world size from images  
+- Variation in image quality and perspective  
+- Limited component-level annotations  
+
+
+
+## Methodology
+
+### Baseline Approach: Zero-shot VLM
+
+We begin with a zero-shot baseline using a vision-language model such as CLIP.
+
+This allows us to predict:
+
+- Material type  
+- Structure position  
+- Railing presence  
+- Size ranges (small / medium / large)  
+
+**Why this baseline:**
+- No training required  
+- Works with weak labels  
+- Provides a quick benchmark  
+
+**Limitations:**
+- Weak on fine-grained details  
+- No component localization  
+- Not reliable for measurements  
+
+
+
+### Proposed Attribute-Based Pipeline
+
