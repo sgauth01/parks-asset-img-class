@@ -1,97 +1,147 @@
 ---
-title: "Image Analysis of Park Infrastructure"
-author:
-  - name: Sarah Gauthier
-    affiliations:
-      - name: Master of Data Science, University of British Columbia
-  - name: Nour Shawky
-    affiliations:
-      - name: Master of Data Science, University of British Columbia
-  - name: Ssemakula Peter Wasswa
-    affiliations:
-      - name: Master of Data Science, University of British Columbia
-  - name: Mehmet Imga
-    affiliations:
-      - name: Master of Data Science, University of British Columbia
+title: ""
+
+bibliography: references.bib
 
 format:
   html:
-    toc: true
-    toc-depth: 3
-    code-fold: true
+    toc: false
+    toc-depth: 2
+    number-sections: true
     css: report-styles.css
   pdf:
-    toc: true
-    toc-depth: 3
+    pdf-engine: lualatex
+    toc: false
+    toc-depth: 2
+    number-sections: true
+    colorlinks: true
     fontsize: 10pt
     geometry:
       - margin=0.85in
-    colorlinks: true
     header-includes:
       - \linespread{0.98}
-execute:
-  echo: false
-  warning: false
-  error: false
 ---
 
-## Summary
+```{=html}
+<section class="report-header">
+  <h1>Project Report</h1>
+  <h2>Image Analysis of Park Infrastructure</h2>
 
-This project explores how computer vision can be used to automatically extract infrastructure attributes from park images. The goal is to improve the completeness and reliability of asset management data used by BC Parks.
+  <dl>
+    <dt>Date:</dt>
+    <dd>2026-05-05</dd>
 
-We aim to predict attributes such as asset type, material, structure position, size ranges, railing presence, and number of steps. Due to weak or incomplete labels, we adopt a staged approach that starts with a zero-shot baseline and progresses toward an attribute-specific modelling pipeline.
+    <dt>Prepared for:</dt>
+    <dd>UBC Master of Data Science Capstone</dd>
+
+    <dt>Prepared by:</dt>
+    <dd>
+      Sarah Gauthier<br>
+      Nour Shawky<br>
+      Ssemakula Peter Wasswa<br>
+      Mehmet Imga
+    </dd>
+  </dl>
+</section>
+```
+
+```{=latex}
+\begin{center}
+{\LARGE \textbf{Project Report}\par}
+\vspace{0.35cm}
+{\large \textbf{Image Analysis of Park Infrastructure}\par}
+\end{center}
+
+\vspace{0.45cm}
+
+\begin{center}
+\begin{tabular}{r@{\hspace{0.7cm}}l}
+\textbf{Date:} & 2026-05-05 \\
+\textbf{Prepared for:} & BC parks \\
+\textbf{Prepared by:} & Sarah Gauthier \\
+                     & Nour Shawky \\
+                     & Ssemakula Peter Wasswa \\
+                     & Mehmet Imga \\
+\end{tabular}
+\end{center}
+
+\vspace{0.55cm}
+```
+
+## Table of Contents {.unnumbered}
+
+```{=html}
+<nav class="report-toc">
+  <ol>
+    <li><a href="#executive-summary">Executive Summary</a></li>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#project-details">Project Details</a></li>
+    <li><a href="#findings">Findings</a></li>
+    <li><a href="#conclusions-and-recommendations">Conclusions and Recommendations</a></li>
+    <li><a href="#references">References</a></li>
+    <li><a href="#appendices">Appendices</a></li>
+  </ol>
+</nav>
+```
+
+```{=latex}
+\begingroup
+\renewcommand{\contentsname}{}
+\vspace{-1.2cm}
+\tableofcontents
+\endgroup
+\vspace{0.4cm}
+```
+
+# Executive Summary
+BC Parks manages a large inventory of infrastructure assets such as bridges, stairs, boardwalks, and viewing platforms. While many of these assets have associated photographs, important attributes such as material, size, structure position, railing presence, and number of steps are often missing or incomplete. This limits the organization’s ability to plan maintenance, estimate costs, and make reliable, data-driven decisions.
+
+This project proposes the development of a machine learning pipeline to automatically extract missing infrastructure attributes from images. We begin with a zero-shot vision-language model [@radford2021clip] as a simple baseline to quickly assess feasibility. We then move toward a more structured approach using attribute-specific models to improve prediction accuracy for different tasks such as material classification, structural feature detection, and size estimation.
+
+The final output will be a reproducible workflow that processes images and generates structured attribute data, along with confidence scores to support review. By reducing manual effort and improving data completeness, this solution aims to make the infrastructure dataset more reliable and useful for BC Parks operations.
+
+
+
+\newpage
 
 ## Introduction
 
-BC Parks manages a large inventory of infrastructure assets such as bridges, stairs, boardwalks, and viewing platforms. While many of these assets have associated image data, the attribute information is often incomplete or inconsistent.
+### Problem Description
 
-Manually reviewing thousands of images to extract attributes such as material, size, and structural features is time-consuming and not scalable. Computer vision techniques provide an opportunity to automate this process and improve data quality.
+BC Parks manages a large number of infrastructure assets that support public recreation. These assets require accurate and complete data for effective maintenance and planning. However, many records in the current system are incomplete, even though images of the infrastructure are available. Important details such as material type, dimensions, and structural features are often missing.
 
-## Research Question
+### Importance of the Problem
 
-Can machine learning models automatically predict infrastructure attributes from images, including asset type, material, size ranges, structure position, railing presence, and number of steps?
+Incomplete data creates challenges for staff who rely on this information to make decisions. Manual review of images or field inspections are often required to fill in missing attributes, which is time-consuming and not scalable. Improving data completeness would allow BC Parks to better plan maintenance, reduce costs, and ensure safety across its infrastructure.
 
-## Dataset
+### Background
 
-The dataset consists of:
+The dataset contains thousands of infrastructure images along with partial attribute data. Previous work has not fully utilized image data to extract useful information. Advances in computer vision and machine learning, including vision-language models, provide an opportunity to automate this process and improve data quality [@radford2021clip].
 
-- Images of park infrastructure (bridges, stairs, boardwalks, etc.)
-- Attribute tables containing:
-  - Material information  
-  - Structural characteristics  
-  - Size-related attributes  
+### Objectives
 
-Some labels may be incomplete or noisy.
+The main objective of this project is to develop a system that can automatically predict missing infrastructure attributes from images. Specifically, the project aims to:
 
-## Data Challenges
+- Predict  material and structural features  
+- Estimate size-related attributes such as height or length ranges  
+- Handle challenges such as multiple images per asset and varying image quality  
 
-- Weak or incomplete labels  
-- Attribute heterogeneity across asset types  
-- Difficulty estimating real-world size from images  
-- Variation in image quality and perspective  
-- Limited component-level annotations  
+### Final Data Product
 
-## Methodology
+The final product will be a machine learning pipeline that takes infrastructure images as input and outputs predicted attribute values in a structured format. The pipeline will include confidence scores to help identify uncertain predictions and support review by BC Parks staff. This system is intended to integrate with existing workflows and improve the overall reliability of the asset management database.
 
-### Baseline Approach: Zero-shot VLM
+# Data & Exploratory Data Analysis (EDA)
 
-We begin with a zero-shot baseline using a vision-language model such as CLIP.
+_To be completed by team members._
 
-This allows us to predict:
 
-- Material type  
-- Structure position  
-- Railing presence  
-- Size ranges (small / medium / large)  
+# Data Science Approach
 
-**Why this baseline:**
-- No training required  
-- Works with weak labels  
-- Provides a quick benchmark  
+_To be completed by team members._
 
-**Limitations:**
-- Weak on fine-grained details  
-- No component localization  
-- Not reliable for measurements  
+# Evaluation & Success Criteria
 
-### Proposed Attribute-Based Pipeline
+_To be completed by team members._
+
+
+# References

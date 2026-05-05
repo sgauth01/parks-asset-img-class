@@ -6,12 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Sarah Gauthier">
-<meta name="author" content="Nour Shawky">
-<meta name="author" content="Ssemakula Peter Wasswa">
-<meta name="author" content="Mehmet Imga">
 
-<title>Image Analysis of Park Infrastructure</title>
+<title>image_analysis_of_park_infrastructure_report</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="Image_analysis_of_park_infrastructure_report_files/libs/clipboard/clipboard.min.js"></script>
@@ -48,153 +64,104 @@ ul.task-list li input[type="checkbox"] {
 
 <div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
 <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-  <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary">Summary</a></li>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#research-question" id="toc-research-question" class="nav-link" data-scroll-target="#research-question">Research Question</a></li>
-  <li><a href="#dataset" id="toc-dataset" class="nav-link" data-scroll-target="#dataset">Dataset</a></li>
-  <li><a href="#data-challenges" id="toc-data-challenges" class="nav-link" data-scroll-target="#data-challenges">Data Challenges</a></li>
-  <li><a href="#methodology" id="toc-methodology" class="nav-link" data-scroll-target="#methodology">Methodology</a>
-  <ul class="collapse">
-  <li><a href="#baseline-approach-zero-shot-vlm" id="toc-baseline-approach-zero-shot-vlm" class="nav-link" data-scroll-target="#baseline-approach-zero-shot-vlm">Baseline Approach: Zero-shot VLM</a></li>
-  <li><a href="#proposed-attribute-based-pipeline" id="toc-proposed-attribute-based-pipeline" class="nav-link" data-scroll-target="#proposed-attribute-based-pipeline">Proposed Attribute-Based Pipeline</a></li>
-  </ul></li>
-  </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="../Image_analysis_of_park_infrastructure_report.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
-</div>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="../Image_analysis_of_park_infrastructure_report.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></div>
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Image Analysis of Park Infrastructure</h1>
+
+
+
+<section class="report-header">
+  <h1>Project Report</h1>
+  <h2 class="anchored">Image Analysis of Park Infrastructure</h2>
+
+  <dl>
+    <dt>Date:</dt>
+    <dd>2026-05-05</dd>
+
+    <dt>Prepared for:</dt>
+    <dd>UBC Master of Data Science Capstone</dd>
+
+    <dt>Prepared by:</dt>
+    <dd>
+      Sarah Gauthier<br>
+      Nour Shawky<br>
+      Ssemakula Peter Wasswa<br>
+      Mehmet Imga
+    </dd>
+  </dl>
+</section>
+<section id="table-of-contents" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="table-of-contents">Table of Contents</h2>
+<nav class="report-toc">
+  <ol>
+    <li><a href="#executive-summary">Executive Summary</a></li>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#project-details">Project Details</a></li>
+    <li><a href="#findings">Findings</a></li>
+    <li><a href="#conclusions-and-recommendations">Conclusions and Recommendations</a></li>
+    <li><a href="#references">References</a></li>
+    <li><a href="#appendices">Appendices</a></li>
+  </ol>
+</nav>
+</section>
+<section id="executive-summary" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Executive Summary</h1>
+<p>BC Parks manages a large inventory of infrastructure assets such as bridges, stairs, boardwalks, and viewing platforms. While many of these assets have associated photographs, important attributes such as material, size, structure position, railing presence, and number of steps are often missing or incomplete. This limits the organization’s ability to plan maintenance, estimate costs, and make reliable, data-driven decisions.</p>
+<p>This project proposes the development of a computer vision pipeline to automatically extract missing infrastructure attributes from images. We begin with a zero-shot vision-language model <span class="citation" data-cites="radford2021clip">(<a href="#ref-radford2021clip" role="doc-biblioref">Radford et al. 2021</a>)</span> as a simple baseline to quickly assess feasibility. We then move toward a more structured approach using attribute-specific models to improve prediction accuracy for different tasks such as material classification, structural feature detection, and size estimation.</p>
+<p>The final output will be a reproducible workflow that processes images and generates structured attribute data, along with confidence scores to support review. By reducing manual effort and improving data completeness, this solution aims to make the infrastructure dataset more reliable and useful for BC Parks operations.</p>
+<section id="introduction" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">1.1</span> Introduction</h2>
+<section id="problem-description" class="level3" data-number="1.1.1">
+<h3 data-number="1.1.1" class="anchored" data-anchor-id="problem-description"><span class="header-section-number">1.1.1</span> Problem Description</h3>
+<p>BC Parks manages a large number of infrastructure assets that support public recreation. These assets require accurate and complete data for effective maintenance and planning. However, many records in the current system are incomplete, even though images of the infrastructure are available. Important details such as material type, dimensions, and structural features are often missing.</p>
+</section>
+<section id="importance-of-the-problem" class="level3" data-number="1.1.2">
+<h3 data-number="1.1.2" class="anchored" data-anchor-id="importance-of-the-problem"><span class="header-section-number">1.1.2</span> Importance of the Problem</h3>
+<p>Incomplete data creates challenges for staff who rely on this information to make decisions. Manual review of images or field inspections are often required to fill in missing attributes, which is time-consuming and not scalable. Improving data completeness would allow BC Parks to better plan maintenance, reduce costs, and ensure safety across its infrastructure.</p>
+</section>
+<section id="background" class="level3" data-number="1.1.3">
+<h3 data-number="1.1.3" class="anchored" data-anchor-id="background"><span class="header-section-number">1.1.3</span> Background</h3>
+<p>The dataset contains thousands of infrastructure images along with partial attribute data. Previous work has not fully utilized image data to extract useful information. Advances in computer vision and machine learning, including vision-language models, provide an opportunity to automate this process and improve data quality <span class="citation" data-cites="radford2021clip">(<a href="#ref-radford2021clip" role="doc-biblioref">Radford et al. 2021</a>)</span>.</p>
+</section>
+<section id="objectives" class="level3" data-number="1.1.4">
+<h3 data-number="1.1.4" class="anchored" data-anchor-id="objectives"><span class="header-section-number">1.1.4</span> Objectives</h3>
+<p>The main objective of this project is to develop a system that can automatically predict missing infrastructure attributes from images. Specifically, the project aims to:</p>
+<ul>
+<li>Predict asset type, material, and structural features<br>
+</li>
+<li>Estimate size-related attributes such as height or length ranges<br>
+</li>
+<li>Handle challenges such as multiple images per asset and varying image quality</li>
+</ul>
+</section>
+<section id="final-data-product" class="level3" data-number="1.1.5">
+<h3 data-number="1.1.5" class="anchored" data-anchor-id="final-data-product"><span class="header-section-number">1.1.5</span> Final Data Product</h3>
+<p>The final product will be a machine learning pipeline that takes infrastructure images as input and outputs predicted attribute values in a structured format. The pipeline will include confidence scores to help identify uncertain predictions and support review by BC Parks staff. This system is intended to integrate with existing workflows and improve the overall reliability of the asset management database.</p>
+</section>
+</section>
+</section>
+<section id="data-exploratory-data-analysis-eda" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Data &amp; Exploratory Data Analysis (EDA)</h1>
+<p><em>To be completed by team members.</em></p>
+</section>
+<section id="data-science-approach" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Data Science Approach</h1>
+<p>Write the project background, data sources, workflow, and methodology here.</p>
+</section>
+<section id="evaluation-success-criteria" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Evaluation &amp; Success Criteria</h1>
+<p>Write the main findings here.</p>
+</section>
+<section id="references" class="level1 unnumbered" data-number="5">
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">5 References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-radford2021clip" class="csl-entry" role="listitem">
+Radford, Alec, Jong Wook Kim, Chris Hallacy, Aditya Ramesh, Gabriel Goh, Sandhini Agarwal, Girish Sastry, et al. 2021. <span>“Learning Transferable Visual Models from Natural Language Supervision.”</span> In <em>Proceedings of the 38th International Conference on Machine Learning</em>, 8748–63. <a href="https://arxiv.org/abs/2103.00020">https://arxiv.org/abs/2103.00020</a>.
 </div>
-
-
-<div class="quarto-title-meta-author">
-  <div class="quarto-title-meta-heading">Authors</div>
-  <div class="quarto-title-meta-heading">Affiliation</div>
-  
-    <div class="quarto-title-meta-contents">
-    <p class="author">Sarah Gauthier </p>
-  </div>
-  <div class="quarto-title-meta-contents">
-        <p class="affiliation">
-            Master of Data Science, University of British Columbia
-          </p>
-      </div>
-    <div class="quarto-title-meta-contents">
-    <p class="author">Nour Shawky </p>
-  </div>
-  <div class="quarto-title-meta-contents">
-        <p class="affiliation">
-            Master of Data Science, University of British Columbia
-          </p>
-      </div>
-    <div class="quarto-title-meta-contents">
-    <p class="author">Ssemakula Peter Wasswa </p>
-  </div>
-  <div class="quarto-title-meta-contents">
-        <p class="affiliation">
-            Master of Data Science, University of British Columbia
-          </p>
-      </div>
-    <div class="quarto-title-meta-contents">
-    <p class="author">Mehmet Imga </p>
-  </div>
-  <div class="quarto-title-meta-contents">
-        <p class="affiliation">
-            Master of Data Science, University of British Columbia
-          </p>
-      </div>
-  </div>
-
-<div class="quarto-title-meta">
-
-      
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-<section id="summary" class="level2">
-<h2 class="anchored" data-anchor-id="summary">Summary</h2>
-<p>This project explores how computer vision can be used to automatically extract infrastructure attributes from park images. The goal is to improve the completeness and reliability of asset management data used by BC Parks.</p>
-<p>We aim to predict attributes such as asset type, material, structure position, size ranges, railing presence, and number of steps. Due to weak or incomplete labels, we adopt a staged approach that starts with a zero-shot baseline and progresses toward an attribute-specific modelling pipeline.</p>
-</section>
-<section id="introduction" class="level2">
-<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<p>BC Parks manages a large inventory of infrastructure assets such as bridges, stairs, boardwalks, and viewing platforms. While many of these assets have associated image data, the attribute information is often incomplete or inconsistent.</p>
-<p>Manually reviewing thousands of images to extract attributes such as material, size, and structural features is time-consuming and not scalable. Computer vision techniques provide an opportunity to automate this process and improve data quality.</p>
-</section>
-<section id="research-question" class="level2">
-<h2 class="anchored" data-anchor-id="research-question">Research Question</h2>
-<p>Can machine learning models automatically predict infrastructure attributes from images, including asset type, material, size ranges, structure position, railing presence, and number of steps?</p>
-</section>
-<section id="dataset" class="level2">
-<h2 class="anchored" data-anchor-id="dataset">Dataset</h2>
-<p>The dataset consists of:</p>
-<ul>
-<li>Images of park infrastructure (bridges, stairs, boardwalks, etc.)</li>
-<li>Attribute tables containing:
-<ul>
-<li>Material information<br>
-</li>
-<li>Structural characteristics<br>
-</li>
-<li>Size-related attributes</li>
-</ul></li>
-</ul>
-<p>Some labels may be incomplete or noisy.</p>
-</section>
-<section id="data-challenges" class="level2">
-<h2 class="anchored" data-anchor-id="data-challenges">Data Challenges</h2>
-<ul>
-<li>Weak or incomplete labels<br>
-</li>
-<li>Attribute heterogeneity across asset types<br>
-</li>
-<li>Difficulty estimating real-world size from images<br>
-</li>
-<li>Variation in image quality and perspective<br>
-</li>
-<li>Limited component-level annotations</li>
-</ul>
-</section>
-<section id="methodology" class="level2">
-<h2 class="anchored" data-anchor-id="methodology">Methodology</h2>
-<section id="baseline-approach-zero-shot-vlm" class="level3">
-<h3 class="anchored" data-anchor-id="baseline-approach-zero-shot-vlm">Baseline Approach: Zero-shot VLM</h3>
-<p>We begin with a zero-shot baseline using a vision-language model such as CLIP.</p>
-<p>This allows us to predict:</p>
-<ul>
-<li>Material type<br>
-</li>
-<li>Structure position<br>
-</li>
-<li>Railing presence<br>
-</li>
-<li>Size ranges (small / medium / large)</li>
-</ul>
-<p><strong>Why this baseline:</strong> - No training required<br>
-- Works with weak labels<br>
-- Provides a quick benchmark</p>
-<p><strong>Limitations:</strong> - Weak on fine-grained details<br>
-- No component localization<br>
-- Not reliable for measurements</p>
-</section>
-<section id="proposed-attribute-based-pipeline" class="level3">
-<h3 class="anchored" data-anchor-id="proposed-attribute-based-pipeline">Proposed Attribute-Based Pipeline</h3>
-</section>
-</section>
-
-</main>
+</div></section></div></main>
 <!-- /main column -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
