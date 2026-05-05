@@ -35,3 +35,11 @@ env/
 data/raw_data/*
 data/images/*
 data/processed_data/*
+
+# MLflow file-based tracking store + artifacts
+mlruns/
+mlartifacts/
+
+# OS
+.DS_Store
+Thumbs.db

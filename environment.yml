@@ -17,9 +17,10 @@ dependencies:
   - tqdm
   - pip
   - pip:
-    - ultralytics      
-    - transformers     
+    - ultralytics
+    - transformers
     - torch
-    - torchvision          
-    - python-dotenv  
-    - mlflow 
+    - torchvision
+    - python-dotenv
+    - mlflow>=2.13
+    - pytest>=8.0
