@@ -65,6 +65,68 @@ quarto render reports/Image_analysis_of_park_infrastructure_report.qmd --to html
 quarto render reports/Image_analysis_of_park_infrastructure_report.qmd --to pdf
 ```
 
+## Experiment tracking with MLflow
+
+All model runs are tracked with [MLflow](https://mlflow.org/). The
+default tracking store is a local file directory at `./mlruns` (gitignored),
+so no server is required and nothing leaves the machine.
+
+End-to-end smoke test (synthetic data only, no SharePoint download needed):
+
+```bash
+python scripts/mlflow_smoke_test.py
+```
+
+This fits a `MajorityClassPredictor` on a synthetic 3-class target and a
+`MedianRegressor` on a synthetic numeric target, and writes both runs
+to `./mlruns` under the experiment **`parks-asset-img-class`**.
+
+View the runs in your browser:
+
+```bash
+mlflow ui --backend-store-uri file:./mlruns
+```
+
+Programmatic logging:
+
+```python
+from src.baseline import MajorityClassPredictor
+from src.mlflow_utils import (
+    setup_mlflow, log_classification_run,
+    make_run_name, make_standard_tags,
+)
+
+setup_mlflow()  # uses ./mlruns
+
+clf = MajorityClassPredictor().fit(X_train, y_train)
+y_pred = clf.predict(X_test)
+
+log_classification_run(
+    run_name=make_run_name("T2_decking_material", "majority_class"),
+    tags=make_standard_tags(
+        task="T2_decking_material",
+        model_family="baseline",
+        model_name="majority_class",
+        data_version="2026-05-05",
+        split_seed=42,
+    ),
+    params={"n_train": len(y_train), "majority_class": str(clf.fitted_value_)},
+    y_true=y_test,
+    y_pred=y_pred,
+)
+```
+
+Standard tags every run carries: `task`, `model_family`, `model_name`,
+`data_version`, `split_seed`. Standard metrics: `accuracy`, `macro_f1`,
+`weighted_f1`, `per_class_f1.json`, and `confusion_matrix.json` for
+classification; `mae`, `rmse`, `r2` for regression.
+
+Run the unit tests:
+
+```bash
+pytest -q tests/test_mlflow_utils.py
+```
+
 ## Current status
 
 This project is in an early exploratory stage. The report currently describes the project motivation, research question, dataset assumptions, data challenges, and a proposed modelling approach. The notebook directory is available for exploration work as the project develops.
