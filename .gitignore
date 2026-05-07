@@ -32,7 +32,7 @@ env/
 .ipython
 
 # Ignore raw data and images from data directory
-data/raw_data/*
+data/raw/*
 data/images/*
 data/citywide/*
 
