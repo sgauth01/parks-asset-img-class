@@ -5,11 +5,11 @@ asset_id,filename,file_id,profile_name,image_path,attr_decking_material,attr_fal
 46618,AST_EX_20210725_112331.jpeg,7978,Viewing Platform,data/citywide/images/359/46618/7978__AST_EX_20210725_112331.jpeg,Timber,,No,No railings,,,Elevated,,,,
 46618,AST_EX_20210725_112313.jpeg,7980,Viewing Platform,data/citywide/images/359/46618/7980__AST_EX_20210725_112313.jpeg,Timber,,No,No railings,,,Elevated,,,,
 46618,AST_EX_20210725_112318.jpeg,7979,Viewing Platform,data/citywide/images/359/46618/7979__AST_EX_20210725_112318.jpeg,Timber,,No,No railings,,,Elevated,,,,
-46619,AST_EX_20210725_110941.jpeg,7992,Viewing Platform,data/citywide/images/359/46619/7992__AST_EX_20210725_110941.jpeg,Timber,1.0,Yes,,,Timber,Elevated,4.0,,medium (3-7m),low (<5m)
-46619,AST_EX_20210725_110933.jpeg,7993,Viewing Platform,data/citywide/images/359/46619/7993__AST_EX_20210725_110933.jpeg,Timber,1.0,Yes,,,Timber,Elevated,4.0,,medium (3-7m),low (<5m)
-46619,IMG_20251209_095207690.jpg,91813,Viewing Platform,data/citywide/images/359/46619/91813__IMG_20251209_095207690.jpg,Timber,1.0,Yes,,,Timber,Elevated,4.0,,medium (3-7m),low (<5m)
-46619,IMG_20251209_095230538_HDR.jpg,91814,Viewing Platform,data/citywide/images/359/46619/91814__IMG_20251209_095230538_HDR.jpg,Timber,1.0,Yes,,,Timber,Elevated,4.0,,medium (3-7m),low (<5m)
-46619,IMG_20251209_095236782.jpg,91812,Viewing Platform,data/citywide/images/359/46619/91812__IMG_20251209_095236782.jpg,Timber,1.0,Yes,,,Timber,Elevated,4.0,,medium (3-7m),low (<5m)
+46619,AST_EX_20210725_110941.jpeg,7992,Viewing Platform,data/citywide/images/359/46619/7992__AST_EX_20210725_110941.jpeg,Timber,1.0,Yes,,,Timber,Elevated,4.0,,medium (3-7m),low (<1.2m)
+46619,AST_EX_20210725_110933.jpeg,7993,Viewing Platform,data/citywide/images/359/46619/7993__AST_EX_20210725_110933.jpeg,Timber,1.0,Yes,,,Timber,Elevated,4.0,,medium (3-7m),low (<1.2m)
+46619,IMG_20251209_095207690.jpg,91813,Viewing Platform,data/citywide/images/359/46619/91813__IMG_20251209_095207690.jpg,Timber,1.0,Yes,,,Timber,Elevated,4.0,,medium (3-7m),low (<1.2m)
+46619,IMG_20251209_095230538_HDR.jpg,91814,Viewing Platform,data/citywide/images/359/46619/91814__IMG_20251209_095230538_HDR.jpg,Timber,1.0,Yes,,,Timber,Elevated,4.0,,medium (3-7m),low (<1.2m)
+46619,IMG_20251209_095236782.jpg,91812,Viewing Platform,data/citywide/images/359/46619/91812__IMG_20251209_095236782.jpg,Timber,1.0,Yes,,,Timber,Elevated,4.0,,medium (3-7m),low (<1.2m)
 46730,AST_EX_20220804_114009.jpeg,57878,Viewing Platform,data/citywide/images/359/46730/57878__AST_EX_20220804_114009.jpeg,,,No,1 railing,,,Elevated,,,,
 47055,AST_EX_20241022_112031.jpeg,75501,Viewing Platform,data/citywide/images/359/47055/75501__AST_EX_20241022_112031.jpeg,,,No,No railings,,,At-Grade,,,,
 48252,AST_EX_20240704_173509.jpeg,70537,Viewing Platform,data/citywide/images/359/48252/70537__AST_EX_20240704_173509.jpeg,Timber,,,,,Timber,At-Grade,,,,
@@ -103,7 +103,7 @@ asset_id,filename,file_id,profile_name,image_path,attr_decking_material,attr_fal
 58829,AST_EX_20231214_122401.jpeg,67439,Viewing Platform,data/citywide/images/359/58829/67439__AST_EX_20231214_122401.jpeg,Timber,125.0,Yes,,,Timber,Elevated,3.0,,medium (3-7m),high (>15m)
 58829,AST_EX_20241028_154517.jpeg,76452,Viewing Platform,data/citywide/images/359/58829/76452__AST_EX_20241028_154517.jpeg,Timber,125.0,Yes,,,Timber,Elevated,3.0,,medium (3-7m),high (>15m)
 58829,AST_EX_20250707_091202.jpeg,84491,Viewing Platform,data/citywide/images/359/58829/84491__AST_EX_20250707_091202.jpeg,Timber,125.0,Yes,,,Timber,Elevated,3.0,,medium (3-7m),high (>15m)
-59089,AST_EX_20220214_104436.jpeg,35849,Viewing Platform,data/citywide/images/359/59089/35849__AST_EX_20220214_104436.jpeg,,1.2,No,No railings,,,Elevated,,,,low (<5m)
+59089,AST_EX_20220214_104436.jpeg,35849,Viewing Platform,data/citywide/images/359/59089/35849__AST_EX_20220214_104436.jpeg,,1.2,No,No railings,,,Elevated,,,,medium (1.2-15m)
 60883,AST_EX_20210823_144348.jpeg,18039,Viewing Platform,data/citywide/images/359/60883/18039__AST_EX_20210823_144348.jpeg,Timber,,Yes,No railings,,Timber,Elevated,3.0,,medium (3-7m),
 60962,AST_EX_20211002_121918.jpeg,25118,Viewing Platform,data/citywide/images/359/60962/25118__AST_EX_20211002_121918.jpeg,,,No,No railings,,,Elevated,,,,
 60962,AST_EX_20220407_152337.jpeg,39003,Viewing Platform,data/citywide/images/359/60962/39003__AST_EX_20220407_152337.jpeg,,,No,No railings,,,Elevated,,,,
@@ -151,9 +151,9 @@ asset_id,filename,file_id,profile_name,image_path,attr_decking_material,attr_fal
 74894,AST_EX_20231214_121609.jpeg,67451,Viewing Platform,data/citywide/images/359/74894/67451__AST_EX_20231214_121609.jpeg,Timber,20.0,Yes,,,Timber,Elevated,3.0,,medium (3-7m),high (>15m)
 74894,AST_EX_20241028_153355.jpeg,76451,Viewing Platform,data/citywide/images/359/74894/76451__AST_EX_20241028_153355.jpeg,Timber,20.0,Yes,,,Timber,Elevated,3.0,,medium (3-7m),high (>15m)
 74894,AST_EX_20250707_084834.jpeg,84486,Viewing Platform,data/citywide/images/359/74894/84486__AST_EX_20250707_084834.jpeg,Timber,20.0,Yes,,,Timber,Elevated,3.0,,medium (3-7m),high (>15m)
-74895,AST_EX_20231214_124258.jpeg,67450,Viewing Platform,data/citywide/images/359/74895/67450__AST_EX_20231214_124258.jpeg,Timber,1.0,Yes,2 railings,,Timber,Elevated,3.0,,medium (3-7m),low (<5m)
-74895,AST_EX_20241028_162133.jpeg,76448,Viewing Platform,data/citywide/images/359/74895/76448__AST_EX_20241028_162133.jpeg,Timber,1.0,Yes,2 railings,,Timber,Elevated,3.0,,medium (3-7m),low (<5m)
-74895,AST_EX_20250707_101514.jpeg,84487,Viewing Platform,data/citywide/images/359/74895/84487__AST_EX_20250707_101514.jpeg,Timber,1.0,Yes,2 railings,,Timber,Elevated,3.0,,medium (3-7m),low (<5m)
+74895,AST_EX_20231214_124258.jpeg,67450,Viewing Platform,data/citywide/images/359/74895/67450__AST_EX_20231214_124258.jpeg,Timber,1.0,Yes,2 railings,,Timber,Elevated,3.0,,medium (3-7m),low (<1.2m)
+74895,AST_EX_20241028_162133.jpeg,76448,Viewing Platform,data/citywide/images/359/74895/76448__AST_EX_20241028_162133.jpeg,Timber,1.0,Yes,2 railings,,Timber,Elevated,3.0,,medium (3-7m),low (<1.2m)
+74895,AST_EX_20250707_101514.jpeg,84487,Viewing Platform,data/citywide/images/359/74895/84487__AST_EX_20250707_101514.jpeg,Timber,1.0,Yes,2 railings,,Timber,Elevated,3.0,,medium (3-7m),low (<1.2m)
 74944,AST_EX_20220616_170442.jpeg,47333,Viewing Platform,data/citywide/images/359/74944/47333__AST_EX_20220616_170442.jpeg,Timber,,Yes,,,Concrete,Elevated,4.0,,medium (3-7m),
 80994,AST_IM_20210611_124236.jpeg,833,Viewing Platform,data/citywide/images/359/80994/833__AST_IM_20210611_124236.jpeg,Timber,,Yes,,,Timber,Elevated,1.0,,narrow (<3m),
 81279,MI_20210610_100420.jpg,5186,Viewing Platform,data/citywide/images/359/81279/5186__MI_20210610_100420.jpg,Timber,,No,,,Timber,Elevated,5.0,,medium (3-7m),
@@ -179,19 +179,19 @@ asset_id,filename,file_id,profile_name,image_path,attr_decking_material,attr_fal
 87775,AST_EX_20250810_111901.jpeg,85995,Viewing Platform,data/citywide/images/359/87775/85995__AST_EX_20250810_111901.jpeg,Composite,,No,,24.0,,At-Grade,7.0,large (>20m),wide (>7m),
 87775,AST_EX_20250810_111908.jpeg,85996,Viewing Platform,data/citywide/images/359/87775/85996__AST_EX_20250810_111908.jpeg,Composite,,No,,24.0,,At-Grade,7.0,large (>20m),wide (>7m),
 55472,AST_EX_20250402_105427.jpeg,79560,Viewing Platform,data/citywide/images/359/55472/79560__AST_EX_20250402_105427.jpeg,,,No,No railings,,,Elevated,,,,
-90699,AST_EX_20230729_184611.jpeg,65628,Viewing Platform,data/citywide/images/359/90699/65628__AST_EX_20230729_184611.jpeg,Timber,1.0,Yes,,,Timber,Elevated,3.0,,medium (3-7m),low (<5m)
-90699,AST_EX_20241113_142905.jpeg,77418,Viewing Platform,data/citywide/images/359/90699/77418__AST_EX_20241113_142905.jpeg,Timber,1.0,Yes,,,Timber,Elevated,3.0,,medium (3-7m),low (<5m)
+90699,AST_EX_20230729_184611.jpeg,65628,Viewing Platform,data/citywide/images/359/90699/65628__AST_EX_20230729_184611.jpeg,Timber,1.0,Yes,,,Timber,Elevated,3.0,,medium (3-7m),low (<1.2m)
+90699,AST_EX_20241113_142905.jpeg,77418,Viewing Platform,data/citywide/images/359/90699/77418__AST_EX_20241113_142905.jpeg,Timber,1.0,Yes,,,Timber,Elevated,3.0,,medium (3-7m),low (<1.2m)
 97887,AST_IM_20220413_115758.jpeg,39288,Viewing Platform,data/citywide/images/359/97887/39288__AST_IM_20220413_115758.jpeg,Timber,,No,,2.0,Timber,At-Grade,2.0,small (<10m),narrow (<3m),
 97887,AST_EX_20231025_114253.jpeg,66784,Viewing Platform,data/citywide/images/359/97887/66784__AST_EX_20231025_114253.jpeg,Timber,,No,,2.0,Timber,At-Grade,2.0,small (<10m),narrow (<3m),
-100150,AST_IM_20220529_143250.jpeg,43576,Viewing Platform,data/citywide/images/359/100150/43576__AST_IM_20220529_143250.jpeg,Timber,1.5,No,,,Timber,Elevated,4.0,,medium (3-7m),low (<5m)
-100150,AST_IM_20220529_143232.jpeg,43584,Viewing Platform,data/citywide/images/359/100150/43584__AST_IM_20220529_143232.jpeg,Timber,1.5,No,,,Timber,Elevated,4.0,,medium (3-7m),low (<5m)
-100150,AST_EX_20250107_134049.jpeg,78260,Viewing Platform,data/citywide/images/359/100150/78260__AST_EX_20250107_134049.jpeg,Timber,1.5,No,,,Timber,Elevated,4.0,,medium (3-7m),low (<5m)
-100150,AST_EX_20250107_134124.jpeg,78261,Viewing Platform,data/citywide/images/359/100150/78261__AST_EX_20250107_134124.jpeg,Timber,1.5,No,,,Timber,Elevated,4.0,,medium (3-7m),low (<5m)
-100150,AST_EX_20250107_134151.jpeg,78262,Viewing Platform,data/citywide/images/359/100150/78262__AST_EX_20250107_134151.jpeg,Timber,1.5,No,,,Timber,Elevated,4.0,,medium (3-7m),low (<5m)
-100150,AST_EX_20250107_134311.jpeg,78263,Viewing Platform,data/citywide/images/359/100150/78263__AST_EX_20250107_134311.jpeg,Timber,1.5,No,,,Timber,Elevated,4.0,,medium (3-7m),low (<5m)
-100150,AST_EX_20250107_133932.jpeg,78264,Viewing Platform,data/citywide/images/359/100150/78264__AST_EX_20250107_133932.jpeg,Timber,1.5,No,,,Timber,Elevated,4.0,,medium (3-7m),low (<5m)
-100150,AST_EX_20250107_133914.jpeg,78267,Viewing Platform,data/citywide/images/359/100150/78267__AST_EX_20250107_133914.jpeg,Timber,1.5,No,,,Timber,Elevated,4.0,,medium (3-7m),low (<5m)
-100150,AST_EX_20250107_134031.jpeg,78270,Viewing Platform,data/citywide/images/359/100150/78270__AST_EX_20250107_134031.jpeg,Timber,1.5,No,,,Timber,Elevated,4.0,,medium (3-7m),low (<5m)
+100150,AST_IM_20220529_143250.jpeg,43576,Viewing Platform,data/citywide/images/359/100150/43576__AST_IM_20220529_143250.jpeg,Timber,1.5,No,,,Timber,Elevated,4.0,,medium (3-7m),medium (1.2-15m)
+100150,AST_IM_20220529_143232.jpeg,43584,Viewing Platform,data/citywide/images/359/100150/43584__AST_IM_20220529_143232.jpeg,Timber,1.5,No,,,Timber,Elevated,4.0,,medium (3-7m),medium (1.2-15m)
+100150,AST_EX_20250107_134049.jpeg,78260,Viewing Platform,data/citywide/images/359/100150/78260__AST_EX_20250107_134049.jpeg,Timber,1.5,No,,,Timber,Elevated,4.0,,medium (3-7m),medium (1.2-15m)
+100150,AST_EX_20250107_134124.jpeg,78261,Viewing Platform,data/citywide/images/359/100150/78261__AST_EX_20250107_134124.jpeg,Timber,1.5,No,,,Timber,Elevated,4.0,,medium (3-7m),medium (1.2-15m)
+100150,AST_EX_20250107_134151.jpeg,78262,Viewing Platform,data/citywide/images/359/100150/78262__AST_EX_20250107_134151.jpeg,Timber,1.5,No,,,Timber,Elevated,4.0,,medium (3-7m),medium (1.2-15m)
+100150,AST_EX_20250107_134311.jpeg,78263,Viewing Platform,data/citywide/images/359/100150/78263__AST_EX_20250107_134311.jpeg,Timber,1.5,No,,,Timber,Elevated,4.0,,medium (3-7m),medium (1.2-15m)
+100150,AST_EX_20250107_133932.jpeg,78264,Viewing Platform,data/citywide/images/359/100150/78264__AST_EX_20250107_133932.jpeg,Timber,1.5,No,,,Timber,Elevated,4.0,,medium (3-7m),medium (1.2-15m)
+100150,AST_EX_20250107_133914.jpeg,78267,Viewing Platform,data/citywide/images/359/100150/78267__AST_EX_20250107_133914.jpeg,Timber,1.5,No,,,Timber,Elevated,4.0,,medium (3-7m),medium (1.2-15m)
+100150,AST_EX_20250107_134031.jpeg,78270,Viewing Platform,data/citywide/images/359/100150/78270__AST_EX_20250107_134031.jpeg,Timber,1.5,No,,,Timber,Elevated,4.0,,medium (3-7m),medium (1.2-15m)
 105832,AST_IM_20220705_113910.jpeg,51864,Viewing Platform,data/citywide/images/359/105832/51864__AST_IM_20220705_113910.jpeg,,,No,No railings,,,Elevated,1.0,,narrow (<3m),
 105832,AST_IM_20220705_113923.jpeg,51879,Viewing Platform,data/citywide/images/359/105832/51879__AST_IM_20220705_113923.jpeg,,,No,No railings,,,Elevated,1.0,,narrow (<3m),
 110166,AST_IM_20220806_150404.jpeg,58150,Viewing Platform,data/citywide/images/359/110166/58150__AST_IM_20220806_150404.jpeg,,,No,No railings,,,Elevated,1.0,,narrow (<3m),
@@ -204,11 +204,11 @@ asset_id,filename,file_id,profile_name,image_path,attr_decking_material,attr_fal
 113948,AST_IM_20220901_130755.jpeg,62328,Viewing Platform,data/citywide/images/359/113948/62328__AST_IM_20220901_130755.jpeg,Timber,,No,,,Timber,Elevated,4.0,,medium (3-7m),
 113948,AST_IM_20220901_130622.jpeg,62336,Viewing Platform,data/citywide/images/359/113948/62336__AST_IM_20220901_130622.jpeg,Timber,,No,,,Timber,Elevated,4.0,,medium (3-7m),
 113948,AST_IM_20220901_130558.jpeg,62337,Viewing Platform,data/citywide/images/359/113948/62337__AST_IM_20220901_130558.jpeg,Timber,,No,,,Timber,Elevated,4.0,,medium (3-7m),
-117398,20230722_122912.jpg,67311,Viewing Platform,data/citywide/images/359/117398/67311__20230722_122912.jpg,Timber,0.25,No,,,Timber,At-Grade,5.0,,medium (3-7m),low (<5m)
-117398,20230722_122924.jpg,67312,Viewing Platform,data/citywide/images/359/117398/67312__20230722_122924.jpg,Timber,0.25,No,,,Timber,At-Grade,5.0,,medium (3-7m),low (<5m)
-117398,20230722_123001.jpg,67313,Viewing Platform,data/citywide/images/359/117398/67313__20230722_123001.jpg,Timber,0.25,No,,,Timber,At-Grade,5.0,,medium (3-7m),low (<5m)
-117398,IMG_0342.JPG,67314,Viewing Platform,data/citywide/images/359/117398/67314__IMG_0342.JPG,Timber,0.25,No,,,Timber,At-Grade,5.0,,medium (3-7m),low (<5m)
-117398,IMG_5462.JPG,67315,Viewing Platform,data/citywide/images/359/117398/67315__IMG_5462.JPG,Timber,0.25,No,,,Timber,At-Grade,5.0,,medium (3-7m),low (<5m)
+117398,20230722_122912.jpg,67311,Viewing Platform,data/citywide/images/359/117398/67311__20230722_122912.jpg,Timber,0.25,No,,,Timber,At-Grade,5.0,,medium (3-7m),low (<1.2m)
+117398,20230722_122924.jpg,67312,Viewing Platform,data/citywide/images/359/117398/67312__20230722_122924.jpg,Timber,0.25,No,,,Timber,At-Grade,5.0,,medium (3-7m),low (<1.2m)
+117398,20230722_123001.jpg,67313,Viewing Platform,data/citywide/images/359/117398/67313__20230722_123001.jpg,Timber,0.25,No,,,Timber,At-Grade,5.0,,medium (3-7m),low (<1.2m)
+117398,IMG_0342.JPG,67314,Viewing Platform,data/citywide/images/359/117398/67314__IMG_0342.JPG,Timber,0.25,No,,,Timber,At-Grade,5.0,,medium (3-7m),low (<1.2m)
+117398,IMG_5462.JPG,67315,Viewing Platform,data/citywide/images/359/117398/67315__IMG_5462.JPG,Timber,0.25,No,,,Timber,At-Grade,5.0,,medium (3-7m),low (<1.2m)
 117710,AST_IM_20230902_123408.jpeg,65969,Viewing Platform,data/citywide/images/359/117710/65969__AST_IM_20230902_123408.jpeg,,,,,,,At-Grade,,,,
 121455,AST_IM_20240728_145209.jpeg,71719,Viewing Platform,data/citywide/images/359/121455/71719__AST_IM_20240728_145209.jpeg,Timber,,Yes,,,,Elevated,2.0,,narrow (<3m),
 122778,AST_IM_20241016_132215.jpeg,75743,Viewing Platform,data/citywide/images/359/122778/75743__AST_IM_20241016_132215.jpeg,Timber,,Yes,,,Timber,Elevated,,,,
@@ -217,13 +217,13 @@ asset_id,filename,file_id,profile_name,image_path,attr_decking_material,attr_fal
 123582,AST_EX_20250425_125347.jpeg,80440,Viewing Platform,data/citywide/images/359/123582/80440__AST_EX_20250425_125347.jpeg,Timber,,No,,,Timber,Elevated,4.5,,medium (3-7m),
 123582,AST_EX_20250425_125324.jpeg,80443,Viewing Platform,data/citywide/images/359/123582/80443__AST_EX_20250425_125324.jpeg,Timber,,No,,,Timber,Elevated,4.5,,medium (3-7m),
 123582,AST_EX_20250425_125302.jpeg,80444,Viewing Platform,data/citywide/images/359/123582/80444__AST_EX_20250425_125302.jpeg,Timber,,No,,,Timber,Elevated,4.5,,medium (3-7m),
-123598,1000020657.jpg,77961,Viewing Platform,data/citywide/images/359/123598/77961__1000020657.jpg,,1.0,Yes,,,Stone,Elevated,3.0,,medium (3-7m),low (<5m)
-123598,1000020659.jpg,77962,Viewing Platform,data/citywide/images/359/123598/77962__1000020659.jpg,,1.0,Yes,,,Stone,Elevated,3.0,,medium (3-7m),low (<5m)
-123598,1000020655.jpg,77963,Viewing Platform,data/citywide/images/359/123598/77963__1000020655.jpg,,1.0,Yes,,,Stone,Elevated,3.0,,medium (3-7m),low (<5m)
-123598,1000020661.jpg,77964,Viewing Platform,data/citywide/images/359/123598/77964__1000020661.jpg,,1.0,Yes,,,Stone,Elevated,3.0,,medium (3-7m),low (<5m)
+123598,1000020657.jpg,77961,Viewing Platform,data/citywide/images/359/123598/77961__1000020657.jpg,,1.0,Yes,,,Stone,Elevated,3.0,,medium (3-7m),low (<1.2m)
+123598,1000020659.jpg,77962,Viewing Platform,data/citywide/images/359/123598/77962__1000020659.jpg,,1.0,Yes,,,Stone,Elevated,3.0,,medium (3-7m),low (<1.2m)
+123598,1000020655.jpg,77963,Viewing Platform,data/citywide/images/359/123598/77963__1000020655.jpg,,1.0,Yes,,,Stone,Elevated,3.0,,medium (3-7m),low (<1.2m)
+123598,1000020661.jpg,77964,Viewing Platform,data/citywide/images/359/123598/77964__1000020661.jpg,,1.0,Yes,,,Stone,Elevated,3.0,,medium (3-7m),low (<1.2m)
 126292,LadyFallsViewingPlatform.jpg,83818,Viewing Platform,data/citywide/images/359/126292/83818__LadyFallsViewingPlatform.jpg,Timber,,,,,Aluminum,Elevated,3.0,,medium (3-7m),
 127557,AST_IM_20250918_121449.jpeg,88327,Viewing Platform,data/citywide/images/359/127557/88327__AST_IM_20250918_121449.jpeg,,,,1 railing,,,At-Grade,,,,
 129405,Spahats Falls (17).jpg,92436,Viewing Platform,data/citywide/images/359/129405/92436__Spahats_Falls__17_.jpg,Composite,,,,,Steel,,,,,
 129405,Spahats Falls (16).jpg,92437,Viewing Platform,data/citywide/images/359/129405/92437__Spahats_Falls__16_.jpg,Composite,,,,,Steel,,,,,
-90699,AST_IM_20210926_100429.jpeg,24260,Viewing Platform,data/citywide/images/359/90699/24260__AST_IM_20210926_100429.jpeg,Timber,1.0,Yes,,,Timber,Elevated,3.0,,medium (3-7m),low (<5m)
+90699,AST_IM_20210926_100429.jpeg,24260,Viewing Platform,data/citywide/images/359/90699/24260__AST_IM_20210926_100429.jpeg,Timber,1.0,Yes,,,Timber,Elevated,3.0,,medium (3-7m),low (<1.2m)
 55472,AST_EX_20250402_105417.jpeg,79561,Viewing Platform,data/citywide/images/359/55472/79561__AST_EX_20250402_105417.jpeg,,,No,No railings,,,Elevated,,,,

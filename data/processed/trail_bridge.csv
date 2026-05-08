@@ -3,9 +3,9 @@ asset_id,filename,file_id,profile_name,image_path,attr_abutment_material,attr_br
 46340,AST_EX_20240814_102613.jpeg,72713,Trail Bridge,data/citywide/images/253/46340/72713__AST_EX_20240814_102613.jpeg,Timber,Beam,Timber,,,7.0,Timber,1.0,medium (6-20m),standard (0.9-1.5m),
 46340,AST_EX_20240814_102658.jpeg,72714,Trail Bridge,data/citywide/images/253/46340/72714__AST_EX_20240814_102658.jpeg,Timber,Beam,Timber,,,7.0,Timber,1.0,medium (6-20m),standard (0.9-1.5m),
 46340,AST_EX_20240814_102716.jpeg,72718,Trail Bridge,data/citywide/images/253/46340/72718__AST_EX_20240814_102716.jpeg,Timber,Beam,Timber,,,7.0,Timber,1.0,medium (6-20m),standard (0.9-1.5m),
-46614,AST_EX_20210725_112109.jpeg,7983,Trail Bridge,data/citywide/images/253/46614/7983__AST_EX_20210725_112109.jpeg,Timber,Beam,Timber,2.0,,10.0,Timber,1.0,medium (6-20m),standard (0.9-1.5m),medium (1-5m)
-46614,AST_EX_20210725_112056.jpeg,7984,Trail Bridge,data/citywide/images/253/46614/7984__AST_EX_20210725_112056.jpeg,Timber,Beam,Timber,2.0,,10.0,Timber,1.0,medium (6-20m),standard (0.9-1.5m),medium (1-5m)
-46614,AST_EX_20210725_103818.jpeg,7985,Trail Bridge,data/citywide/images/253/46614/7985__AST_EX_20210725_103818.jpeg,Timber,Beam,Timber,2.0,,10.0,Timber,1.0,medium (6-20m),standard (0.9-1.5m),medium (1-5m)
+46614,AST_EX_20210725_112109.jpeg,7983,Trail Bridge,data/citywide/images/253/46614/7983__AST_EX_20210725_112109.jpeg,Timber,Beam,Timber,2.0,,10.0,Timber,1.0,medium (6-20m),standard (0.9-1.5m),medium (1.2-5m)
+46614,AST_EX_20210725_112056.jpeg,7984,Trail Bridge,data/citywide/images/253/46614/7984__AST_EX_20210725_112056.jpeg,Timber,Beam,Timber,2.0,,10.0,Timber,1.0,medium (6-20m),standard (0.9-1.5m),medium (1.2-5m)
+46614,AST_EX_20210725_103818.jpeg,7985,Trail Bridge,data/citywide/images/253/46614/7985__AST_EX_20210725_103818.jpeg,Timber,Beam,Timber,2.0,,10.0,Timber,1.0,medium (6-20m),standard (0.9-1.5m),medium (1.2-5m)
 46922,IMG_3657.JPG,59881,Trail Bridge,data/citywide/images/253/46922/59881__IMG_3657.JPG,,Beam,Timber,,No railings,10.0,Steel,2.0,medium (6-20m),wide (>1.5m),
 46923,IMG_9175.JPG,55347,Trail Bridge,data/citywide/images/253/46923/55347__IMG_9175.JPG,,Beam,,,No railings,,Timber,1.0,,standard (0.9-1.5m),
 46924,DSC00003.JPG,55365,Trail Bridge,data/citywide/images/253/46924/55365__DSC00003.JPG,,Beam,Timber,,No railings,2.0,Timber,1.0,short (<6m),standard (0.9-1.5m),
@@ -88,9 +88,9 @@ asset_id,filename,file_id,profile_name,image_path,attr_abutment_material,attr_br
 49244,AST_EX_20250726_112606.jpeg,85438,Trail Bridge,data/citywide/images/253/49244/85438__AST_EX_20250726_112606.jpeg,,Beam,Timber,,,10.0,Timber,0.75,medium (6-20m),narrow (<0.9m),
 49430,AST_EX_20211010_122648.jpeg,26265,Trail Bridge,data/citywide/images/253/49430/26265__AST_EX_20211010_122648.jpeg,,,,,No railings,,,1.0,,standard (0.9-1.5m),
 49244,AST_EX_20250726_112652.jpeg,85451,Trail Bridge,data/citywide/images/253/49244/85451__AST_EX_20250726_112652.jpeg,,Beam,Timber,,,10.0,Timber,0.75,medium (6-20m),narrow (<0.9m),
-49497,IMG_4125.JPG,18671,Trail Bridge,data/citywide/images/253/49497/18671__IMG_4125.JPG,Concrete,Beam,Timber,1.5,2 railings,10.5,Timber,1.2,medium (6-20m),standard (0.9-1.5m),medium (1-5m)
+49497,IMG_4125.JPG,18671,Trail Bridge,data/citywide/images/253/49497/18671__IMG_4125.JPG,Concrete,Beam,Timber,1.5,2 railings,10.5,Timber,1.2,medium (6-20m),standard (0.9-1.5m),medium (1.2-5m)
 49430,MI_20220812_125956.jpg,59102,Trail Bridge,data/citywide/images/253/49430/59102__MI_20220812_125956.jpg,,,,,No railings,,,1.0,,standard (0.9-1.5m),
-49497,2025 new foot bridge across outflow creek.jpg,90612,Trail Bridge,data/citywide/images/253/49497/90612__2025_new_foot_bridge_across_outflow_creek.jpg,Concrete,Beam,Timber,1.5,2 railings,10.5,Timber,1.2,medium (6-20m),standard (0.9-1.5m),medium (1-5m)
+49497,2025 new foot bridge across outflow creek.jpg,90612,Trail Bridge,data/citywide/images/253/49497/90612__2025_new_foot_bridge_across_outflow_creek.jpg,Concrete,Beam,Timber,1.5,2 railings,10.5,Timber,1.2,medium (6-20m),standard (0.9-1.5m),medium (1.2-5m)
 49664,AST_EX_20220211_111532.jpeg,35820,Trail Bridge,data/citywide/images/253/49664/35820__AST_EX_20220211_111532.jpeg,Steel,Truss,Steel,,,100.0,Timber,3.0,long (>20m),wide (>1.5m),
 49679,AST_EX_20220804_125957.jpeg,57744,Trail Bridge,data/citywide/images/253/49679/57744__AST_EX_20220804_125957.jpeg,,,,,No railings,,,1.0,,standard (0.9-1.5m),
 49664,AST_EX_20220211_111547.jpeg,35818,Trail Bridge,data/citywide/images/253/49664/35818__AST_EX_20220211_111547.jpeg,Steel,Truss,Steel,,,100.0,Timber,3.0,long (>20m),wide (>1.5m),
@@ -200,7 +200,7 @@ asset_id,filename,file_id,profile_name,image_path,attr_abutment_material,attr_br
 52243,AST_EX_20210622_104319.jpeg,1726,Trail Bridge,data/citywide/images/253/52243/1726__AST_EX_20210622_104319.jpeg,,,,,No railings,,,1.0,,standard (0.9-1.5m),
 52243,AST_EX_20241016_131547.jpeg,75268,Trail Bridge,data/citywide/images/253/52243/75268__AST_EX_20241016_131547.jpeg,,,,,No railings,,,1.0,,standard (0.9-1.5m),
 52242,AST_EX_20241016_124435.jpeg,75272,Trail Bridge,data/citywide/images/253/52242/75272__AST_EX_20241016_124435.jpeg,,,,,No railings,,,1.0,,standard (0.9-1.5m),
-52457,IMG_3182.jpg,77956,Trail Bridge,data/citywide/images/253/52457/77956__IMG_3182.jpg,Concrete,Beam,Aluminum,2.0,1 railing,8.0,,0.75,medium (6-20m),narrow (<0.9m),medium (1-5m)
+52457,IMG_3182.jpg,77956,Trail Bridge,data/citywide/images/253/52457/77956__IMG_3182.jpg,Concrete,Beam,Aluminum,2.0,1 railing,8.0,,0.75,medium (6-20m),narrow (<0.9m),medium (1.2-5m)
 52458,AST_EX_20210924_093207.jpeg,24467,Trail Bridge,data/citywide/images/253/52458/24467__AST_EX_20210924_093207.jpeg,Timber,Beam,Timber,,,5.0,Timber,1.0,short (<6m),standard (0.9-1.5m),
 52551,20220510_131639.jpg,40680,Trail Bridge,data/citywide/images/253/52551/40680__20220510_131639.jpg,Timber,Beam,Timber,,,25.0,Timber,1.0,long (>20m),standard (0.9-1.5m),
 52551,20251112_103203.jpg,90512,Trail Bridge,data/citywide/images/253/52551/90512__20251112_103203.jpg,Timber,Beam,Timber,,,25.0,Timber,1.0,long (>20m),standard (0.9-1.5m),
@@ -278,8 +278,8 @@ asset_id,filename,file_id,profile_name,image_path,attr_abutment_material,attr_br
 55640,AST_EX_20220725_115228.jpeg,56110,Trail Bridge,data/citywide/images/253/55640/56110__AST_EX_20220725_115228.jpeg,Timber,Truss,Timber,,No railings,15.0,Aluminum,1.0,medium (6-20m),standard (0.9-1.5m),
 55641,AST_EX_20220827_134523.jpeg,61614,Trail Bridge,data/citywide/images/253/55641/61614__AST_EX_20220827_134523.jpeg,,,,,No railings,,,1.0,,standard (0.9-1.5m),
 55642,AST_EX_20220729_112832.jpeg,57135,Trail Bridge,data/citywide/images/253/55642/57135__AST_EX_20220729_112832.jpeg,Timber,,Timber,,No railings,3.0,Timber,1.5,short (<6m),wide (>1.5m),
-55798,AST_EX_20210926_104850.jpeg,24268,Trail Bridge,data/citywide/images/253/55798/24268__AST_EX_20210926_104850.jpeg,Timber,Beam,Timber,2.0,,12.0,Timber,2.0,medium (6-20m),wide (>1.5m),medium (1-5m)
-55798,AST_EX_20241113_113351.jpeg,77437,Trail Bridge,data/citywide/images/253/55798/77437__AST_EX_20241113_113351.jpeg,Timber,Beam,Timber,2.0,,12.0,Timber,2.0,medium (6-20m),wide (>1.5m),medium (1-5m)
+55798,AST_EX_20210926_104850.jpeg,24268,Trail Bridge,data/citywide/images/253/55798/24268__AST_EX_20210926_104850.jpeg,Timber,Beam,Timber,2.0,,12.0,Timber,2.0,medium (6-20m),wide (>1.5m),medium (1.2-5m)
+55798,AST_EX_20241113_113351.jpeg,77437,Trail Bridge,data/citywide/images/253/55798/77437__AST_EX_20241113_113351.jpeg,Timber,Beam,Timber,2.0,,12.0,Timber,2.0,medium (6-20m),wide (>1.5m),medium (1.2-5m)
 56204,AST_EX_20210811_130623.jpeg,12668,Trail Bridge,data/citywide/images/253/56204/12668__AST_EX_20210811_130623.jpeg,,,,,No railings,,,1.0,,standard (0.9-1.5m),
 56204,AST_EX_20210811_130615.jpeg,12669,Trail Bridge,data/citywide/images/253/56204/12669__AST_EX_20210811_130615.jpeg,,,,,No railings,,,1.0,,standard (0.9-1.5m),
 56205,AST_EX_20210812_120107.jpeg,13521,Trail Bridge,data/citywide/images/253/56205/13521__AST_EX_20210812_120107.jpeg,,,,,No railings,,,1.0,,standard (0.9-1.5m),
@@ -380,7 +380,7 @@ asset_id,filename,file_id,profile_name,image_path,attr_abutment_material,attr_br
 58677,AST_EX_20220613_115325.jpeg,46038,Trail Bridge,data/citywide/images/253/58677/46038__AST_EX_20220613_115325.jpeg,,,,,No railings,,,1.0,,standard (0.9-1.5m),
 58677,AST_EX_20240914_155936.jpeg,73544,Trail Bridge,data/citywide/images/253/58677/73544__AST_EX_20240914_155936.jpeg,,,,,No railings,,,1.0,,standard (0.9-1.5m),
 58677,AST_EX_20240914_155949.jpeg,73550,Trail Bridge,data/citywide/images/253/58677/73550__AST_EX_20240914_155949.jpeg,,,,,No railings,,,1.0,,standard (0.9-1.5m),
-58881,AST_EX_20241104_163419.jpeg,76888,Trail Bridge,data/citywide/images/253/58881/76888__AST_EX_20241104_163419.jpeg,Timber,Beam,Timber,3.0,2 railings,27.0,Timber,1.0,long (>20m),standard (0.9-1.5m),medium (1-5m)
+58881,AST_EX_20241104_163419.jpeg,76888,Trail Bridge,data/citywide/images/253/58881/76888__AST_EX_20241104_163419.jpeg,Timber,Beam,Timber,3.0,2 railings,27.0,Timber,1.0,long (>20m),standard (0.9-1.5m),medium (1.2-5m)
 58954,AST_EX_20220901_165831.jpeg,62378,Trail Bridge,data/citywide/images/253/58954/62378__AST_EX_20220901_165831.jpeg,Timber,Beam,Timber,,No railings,9.5,Timber,1.2,medium (6-20m),standard (0.9-1.5m),
 58954,AST_EX_20220901_165846.jpeg,62379,Trail Bridge,data/citywide/images/253/58954/62379__AST_EX_20220901_165846.jpeg,Timber,Beam,Timber,,No railings,9.5,Timber,1.2,medium (6-20m),standard (0.9-1.5m),
 58955,AST_EX_20220901_170544.jpeg,62377,Trail Bridge,data/citywide/images/253/58955/62377__AST_EX_20220901_170544.jpeg,Timber,Beam,Timber,,No railings,12.3,Timber,1.2,medium (6-20m),standard (0.9-1.5m),
@@ -389,10 +389,10 @@ asset_id,filename,file_id,profile_name,image_path,attr_abutment_material,attr_br
 58957,AST_EX_20210922_140208.jpeg,23239,Trail Bridge,data/citywide/images/253/58957/23239__AST_EX_20210922_140208.jpeg,,,,,No railings,,,1.0,,standard (0.9-1.5m),
 58958,AST_EX_20210922_125815.jpeg,23183,Trail Bridge,data/citywide/images/253/58958/23183__AST_EX_20210922_125815.jpeg,,,,,No railings,,,1.0,,standard (0.9-1.5m),
 58958,AST_EX_20210922_125715.jpeg,23229,Trail Bridge,data/citywide/images/253/58958/23229__AST_EX_20210922_125715.jpeg,,,,,No railings,,,1.0,,standard (0.9-1.5m),
-59060,AST_EX_20210810_125200.jpeg,12286,Trail Bridge,data/citywide/images/253/59060/12286__AST_EX_20210810_125200.jpeg,Steel,,Timber,1.4,,,Timber,20.0,,wide (>1.5m),medium (1-5m)
-59060,AST_EX_20210928_140314.jpeg,24555,Trail Bridge,data/citywide/images/253/59060/24555__AST_EX_20210928_140314.jpeg,Steel,,Timber,1.4,,,Timber,20.0,,wide (>1.5m),medium (1-5m)
-59060,AST_EX_20250128_141116.jpeg,87425,Trail Bridge,data/citywide/images/253/59060/87425__AST_EX_20250128_141116.jpeg,Steel,,Timber,1.4,,,Timber,20.0,,wide (>1.5m),medium (1-5m)
-59060,AST_EX_20250128_141116.jpeg,87431,Trail Bridge,data/citywide/images/253/59060/87431__AST_EX_20250128_141116.jpeg,Steel,,Timber,1.4,,,Timber,20.0,,wide (>1.5m),medium (1-5m)
+59060,AST_EX_20210810_125200.jpeg,12286,Trail Bridge,data/citywide/images/253/59060/12286__AST_EX_20210810_125200.jpeg,Steel,,Timber,1.4,,,Timber,20.0,,wide (>1.5m),medium (1.2-5m)
+59060,AST_EX_20210928_140314.jpeg,24555,Trail Bridge,data/citywide/images/253/59060/24555__AST_EX_20210928_140314.jpeg,Steel,,Timber,1.4,,,Timber,20.0,,wide (>1.5m),medium (1.2-5m)
+59060,AST_EX_20250128_141116.jpeg,87425,Trail Bridge,data/citywide/images/253/59060/87425__AST_EX_20250128_141116.jpeg,Steel,,Timber,1.4,,,Timber,20.0,,wide (>1.5m),medium (1.2-5m)
+59060,AST_EX_20250128_141116.jpeg,87431,Trail Bridge,data/citywide/images/253/59060/87431__AST_EX_20250128_141116.jpeg,Steel,,Timber,1.4,,,Timber,20.0,,wide (>1.5m),medium (1.2-5m)
 60126,IMG_3243.JPG,53506,Trail Bridge,data/citywide/images/253/60126/53506__IMG_3243.JPG,,,,,2 railings,,,1.0,,standard (0.9-1.5m),
 60528,AST_EX_20220606_132835.jpeg,44990,Trail Bridge,data/citywide/images/253/60528/44990__AST_EX_20220606_132835.jpeg,,,,,No railings,,,1.0,,standard (0.9-1.5m),
 60633,AST_EX_20220615_123155.jpeg,46599,Trail Bridge,data/citywide/images/253/60633/46599__AST_EX_20220615_123155.jpeg,Gabions,Beam,Timber,,No railings,7.0,Timber,1.4,medium (6-20m),standard (0.9-1.5m),
@@ -452,9 +452,9 @@ asset_id,filename,file_id,profile_name,image_path,attr_abutment_material,attr_br
 62927,AST_EX_20220808_114331.jpeg,58379,Trail Bridge,data/citywide/images/253/62927/58379__AST_EX_20220808_114331.jpeg,,Beam,Timber,,No railings,2.5,Timber,1.0,short (<6m),standard (0.9-1.5m),
 63066,image.png,89014,Trail Bridge,data/citywide/images/253/63066/89014__image.png,Concrete,Beam,Timber,5.5,,27.5,Concrete,1.8,long (>20m),wide (>1.5m),high (>5m)
 63066,image.png,89015,Trail Bridge,data/citywide/images/253/63066/89015__image.png,Concrete,Beam,Timber,5.5,,27.5,Concrete,1.8,long (>20m),wide (>1.5m),high (>5m)
-63067,IMG_1309.jpg,87458,Trail Bridge,data/citywide/images/253/63067/87458__IMG_1309.jpg,Concrete,Truss,Timber,2.0,,17.9,Aluminum,1.8,medium (6-20m),wide (>1.5m),medium (1-5m)
-63067,IMG_1306.jpg,87459,Trail Bridge,data/citywide/images/253/63067/87459__IMG_1306.jpg,Concrete,Truss,Timber,2.0,,17.9,Aluminum,1.8,medium (6-20m),wide (>1.5m),medium (1-5m)
-63068,Picture1.jpg,87457,Trail Bridge,data/citywide/images/253/63068/87457__Picture1.jpg,Concrete,Truss,Timber,2.0,,14.2,Aluminum,1.8,medium (6-20m),wide (>1.5m),medium (1-5m)
+63067,IMG_1309.jpg,87458,Trail Bridge,data/citywide/images/253/63067/87458__IMG_1309.jpg,Concrete,Truss,Timber,2.0,,17.9,Aluminum,1.8,medium (6-20m),wide (>1.5m),medium (1.2-5m)
+63067,IMG_1306.jpg,87459,Trail Bridge,data/citywide/images/253/63067/87459__IMG_1306.jpg,Concrete,Truss,Timber,2.0,,17.9,Aluminum,1.8,medium (6-20m),wide (>1.5m),medium (1.2-5m)
+63068,Picture1.jpg,87457,Trail Bridge,data/citywide/images/253/63068/87457__Picture1.jpg,Concrete,Truss,Timber,2.0,,14.2,Aluminum,1.8,medium (6-20m),wide (>1.5m),medium (1.2-5m)
 63069,AST_EX_20220629_111002.jpeg,50968,Trail Bridge,data/citywide/images/253/63069/50968__AST_EX_20220629_111002.jpeg,Timber,Beam,Timber,,No railings,8.0,Timber,1.28,medium (6-20m),standard (0.9-1.5m),
 63069,Eldorado Bridge (1).JPG,69924,Trail Bridge,data/citywide/images/253/63069/69924__Eldorado_Bridge__1_.JPG,Timber,Beam,Timber,,No railings,8.0,Timber,1.28,medium (6-20m),standard (0.9-1.5m),
 63069,Eldorado Bridge (2).JPG,69925,Trail Bridge,data/citywide/images/253/63069/69925__Eldorado_Bridge__2_.JPG,Timber,Beam,Timber,,No railings,8.0,Timber,1.28,medium (6-20m),standard (0.9-1.5m),
@@ -474,14 +474,14 @@ asset_id,filename,file_id,profile_name,image_path,attr_abutment_material,attr_br
 63218,AST_EX_20240725_102559.jpeg,71257,Trail Bridge,data/citywide/images/253/63218/71257__AST_EX_20240725_102559.jpeg,,,,,No railings,,,1.0,,standard (0.9-1.5m),
 63219,AST_EX_20210903_120248.jpeg,19889,Trail Bridge,data/citywide/images/253/63219/19889__AST_EX_20210903_120248.jpeg,,,,,No railings,,,1.0,,standard (0.9-1.5m),
 63219,AST_EX_20240725_100616.jpeg,71289,Trail Bridge,data/citywide/images/253/63219/71289__AST_EX_20240725_100616.jpeg,,,,,No railings,,,1.0,,standard (0.9-1.5m),
-63297,AST_EX_20220617_171150.jpeg,47408,Trail Bridge,data/citywide/images/253/63297/47408__AST_EX_20220617_171150.jpeg,,,,1.0,No railings,,,1.0,,standard (0.9-1.5m),medium (1-5m)
-63297,AST_EX_20220617_171114.jpeg,47433,Trail Bridge,data/citywide/images/253/63297/47433__AST_EX_20220617_171114.jpeg,,,,1.0,No railings,,,1.0,,standard (0.9-1.5m),medium (1-5m)
-63297,AST_EX_20220617_171132.jpeg,47434,Trail Bridge,data/citywide/images/253/63297/47434__AST_EX_20220617_171132.jpeg,,,,1.0,No railings,,,1.0,,standard (0.9-1.5m),medium (1-5m)
-63298,AST_EX_20220618_104829.jpeg,47417,Trail Bridge,data/citywide/images/253/63298/47417__AST_EX_20220618_104829.jpeg,,,,1.2,No railings,,,1.0,,standard (0.9-1.5m),medium (1-5m)
-63389,AST_EX_20220616_180057.jpeg,47462,Trail Bridge,data/citywide/images/253/63389/47462__AST_EX_20220616_180057.jpeg,,,,2.6,No railings,,,1.0,,standard (0.9-1.5m),medium (1-5m)
-63389,AST_EX_20220616_180050.jpeg,47468,Trail Bridge,data/citywide/images/253/63389/47468__AST_EX_20220616_180050.jpeg,,,,2.6,No railings,,,1.0,,standard (0.9-1.5m),medium (1-5m)
-63389,AST_EX_20220616_175954.jpeg,47469,Trail Bridge,data/citywide/images/253/63389/47469__AST_EX_20220616_175954.jpeg,,,,2.6,No railings,,,1.0,,standard (0.9-1.5m),medium (1-5m)
-63389,AST_EX_20220616_180107.jpeg,47471,Trail Bridge,data/citywide/images/253/63389/47471__AST_EX_20220616_180107.jpeg,,,,2.6,No railings,,,1.0,,standard (0.9-1.5m),medium (1-5m)
+63297,AST_EX_20220617_171150.jpeg,47408,Trail Bridge,data/citywide/images/253/63297/47408__AST_EX_20220617_171150.jpeg,,,,1.0,No railings,,,1.0,,standard (0.9-1.5m),low (<1.2m)
+63297,AST_EX_20220617_171114.jpeg,47433,Trail Bridge,data/citywide/images/253/63297/47433__AST_EX_20220617_171114.jpeg,,,,1.0,No railings,,,1.0,,standard (0.9-1.5m),low (<1.2m)
+63297,AST_EX_20220617_171132.jpeg,47434,Trail Bridge,data/citywide/images/253/63297/47434__AST_EX_20220617_171132.jpeg,,,,1.0,No railings,,,1.0,,standard (0.9-1.5m),low (<1.2m)
+63298,AST_EX_20220618_104829.jpeg,47417,Trail Bridge,data/citywide/images/253/63298/47417__AST_EX_20220618_104829.jpeg,,,,1.2,No railings,,,1.0,,standard (0.9-1.5m),medium (1.2-5m)
+63389,AST_EX_20220616_180057.jpeg,47462,Trail Bridge,data/citywide/images/253/63389/47462__AST_EX_20220616_180057.jpeg,,,,2.6,No railings,,,1.0,,standard (0.9-1.5m),medium (1.2-5m)
+63389,AST_EX_20220616_180050.jpeg,47468,Trail Bridge,data/citywide/images/253/63389/47468__AST_EX_20220616_180050.jpeg,,,,2.6,No railings,,,1.0,,standard (0.9-1.5m),medium (1.2-5m)
+63389,AST_EX_20220616_175954.jpeg,47469,Trail Bridge,data/citywide/images/253/63389/47469__AST_EX_20220616_175954.jpeg,,,,2.6,No railings,,,1.0,,standard (0.9-1.5m),medium (1.2-5m)
+63389,AST_EX_20220616_180107.jpeg,47471,Trail Bridge,data/citywide/images/253/63389/47471__AST_EX_20220616_180107.jpeg,,,,2.6,No railings,,,1.0,,standard (0.9-1.5m),medium (1.2-5m)
 63539,IMG_4560.JPG,47102,Trail Bridge,data/citywide/images/253/63539/47102__IMG_4560.JPG,Timber,Beam,Timber,,,19.9,Timber,1.0,medium (6-20m),standard (0.9-1.5m),
 63539,IMG_4565.JPG,47103,Trail Bridge,data/citywide/images/253/63539/47103__IMG_4565.JPG,Timber,Beam,Timber,,,19.9,Timber,1.0,medium (6-20m),standard (0.9-1.5m),
 63539,IMG_0032 1.jpg,47654,Trail Bridge,data/citywide/images/253/63539/47654__IMG_0032_1.jpg,Timber,Beam,Timber,,,19.9,Timber,1.0,medium (6-20m),standard (0.9-1.5m),
@@ -507,7 +507,7 @@ asset_id,filename,file_id,profile_name,image_path,attr_abutment_material,attr_br
 64098,asset64098_upstreamprofile.jpg,84323,Trail Bridge,data/citywide/images/253/64098/84323__asset64098_upstreamprofile.jpg,,Suspension,Steel,,,,Steel,1.0,,standard (0.9-1.5m),
 64099,asset64099-eastapproach.jpg,85018,Trail Bridge,data/citywide/images/253/64099/85018__asset64099-eastapproach.jpg,,,,,2 railings,,,1.0,,standard (0.9-1.5m),
 64100,asset64100.jpg,85278,Trail Bridge,data/citywide/images/253/64100/85278__asset64100.jpg,,,,,No railings,,,1.0,,standard (0.9-1.5m),
-64102,asset64102_approachfromCrestMtn.jpg,84320,Trail Bridge,data/citywide/images/253/64102/84320__asset64102_approachfromCrestMtn.jpg,Concrete,,Timber,2.0,,18.0,Timber,1.0,medium (6-20m),standard (0.9-1.5m),medium (1-5m)
+64102,asset64102_approachfromCrestMtn.jpg,84320,Trail Bridge,data/citywide/images/253/64102/84320__asset64102_approachfromCrestMtn.jpg,Concrete,,Timber,2.0,,18.0,Timber,1.0,medium (6-20m),standard (0.9-1.5m),medium (1.2-5m)
 64104,asset6104_approachfromlake.jpg,84317,Trail Bridge,data/citywide/images/253/64104/84317__asset6104_approachfromlake.jpg,Steel,,Timber,,,,,1.0,,standard (0.9-1.5m),
 64104,asset6104_downstreamprofile.jpg,84318,Trail Bridge,data/citywide/images/253/64104/84318__asset6104_downstreamprofile.jpg,Steel,,Timber,,,,,1.0,,standard (0.9-1.5m),
 64105,asset6105_approachfromlake.jpg,84315,Trail Bridge,data/citywide/images/253/64105/84315__asset6105_approachfromlake.jpg,,,,,No railings,,,1.0,,standard (0.9-1.5m),
@@ -528,14 +528,14 @@ asset_id,filename,file_id,profile_name,image_path,attr_abutment_material,attr_br
 64118,asset64118_fromFalls.jpg,84341,Trail Bridge,data/citywide/images/253/64118/84341__asset64118_fromFalls.jpg,,,,,2 railings,,,1.0,,standard (0.9-1.5m),
 64123,asset64123_approachTrailhead.jpg,84321,Trail Bridge,data/citywide/images/253/64123/84321__asset64123_approachTrailhead.jpg,Steel,Beam,Timber,,,12.0,Timber,1.0,medium (6-20m),standard (0.9-1.5m),
 64123,asset64123_approachLake.jpg,84322,Trail Bridge,data/citywide/images/253/64123/84322__asset64123_approachLake.jpg,Steel,Beam,Timber,,,12.0,Timber,1.0,medium (6-20m),standard (0.9-1.5m),
-64126,asset64126-2.jpg,85871,Trail Bridge,data/citywide/images/253/64126/85871__asset64126-2.jpg,Timber,Fallen Tree,Timber,1.55,,,Timber,1.0,,standard (0.9-1.5m),medium (1-5m)
-64126,asset64126.jpg,85872,Trail Bridge,data/citywide/images/253/64126/85872__asset64126.jpg,Timber,Fallen Tree,Timber,1.55,,,Timber,1.0,,standard (0.9-1.5m),medium (1-5m)
-64128,asset64128.jpg,85873,Trail Bridge,data/citywide/images/253/64128/85873__asset64128.jpg,Timber,Fallen Tree,Timber,1.2,,8.0,Timber,1.0,medium (6-20m),standard (0.9-1.5m),medium (1-5m)
-64129,asset64129-westapproach.jpg,85878,Trail Bridge,data/citywide/images/253/64129/85878__asset64129-westapproach.jpg,Concrete,,Timber,1.2,,7.08,Timber,1.0,medium (6-20m),standard (0.9-1.5m),medium (1-5m)
-64129,asset64129-eastapproach.jpg,85879,Trail Bridge,data/citywide/images/253/64129/85879__asset64129-eastapproach.jpg,Concrete,,Timber,1.2,,7.08,Timber,1.0,medium (6-20m),standard (0.9-1.5m),medium (1-5m)
+64126,asset64126-2.jpg,85871,Trail Bridge,data/citywide/images/253/64126/85871__asset64126-2.jpg,Timber,Fallen Tree,Timber,1.55,,,Timber,1.0,,standard (0.9-1.5m),medium (1.2-5m)
+64126,asset64126.jpg,85872,Trail Bridge,data/citywide/images/253/64126/85872__asset64126.jpg,Timber,Fallen Tree,Timber,1.55,,,Timber,1.0,,standard (0.9-1.5m),medium (1.2-5m)
+64128,asset64128.jpg,85873,Trail Bridge,data/citywide/images/253/64128/85873__asset64128.jpg,Timber,Fallen Tree,Timber,1.2,,8.0,Timber,1.0,medium (6-20m),standard (0.9-1.5m),medium (1.2-5m)
+64129,asset64129-westapproach.jpg,85878,Trail Bridge,data/citywide/images/253/64129/85878__asset64129-westapproach.jpg,Concrete,,Timber,1.2,,7.08,Timber,1.0,medium (6-20m),standard (0.9-1.5m),medium (1.2-5m)
+64129,asset64129-eastapproach.jpg,85879,Trail Bridge,data/citywide/images/253/64129/85879__asset64129-eastapproach.jpg,Concrete,,Timber,1.2,,7.08,Timber,1.0,medium (6-20m),standard (0.9-1.5m),medium (1.2-5m)
 64131,asset64131.jpg,85874,Trail Bridge,data/citywide/images/253/64131/85874__asset64131.jpg,Concrete,Truss,Timber,,,8.0,Timber,1.5,medium (6-20m),wide (>1.5m),
 64137,AST_EX_20220823_100801.jpeg,60974,Trail Bridge,data/citywide/images/253/64137/60974__AST_EX_20220823_100801.jpeg,Timber,Beam,Timber,,No railings,5.0,Timber,1.0,short (<6m),standard (0.9-1.5m),
-64138,asset64138.jpg,85877,Trail Bridge,data/citywide/images/253/64138/85877__asset64138.jpg,Timber,Beam,Timber,1.3,,5.0,Timber,1.0,short (<6m),standard (0.9-1.5m),medium (1-5m)
+64138,asset64138.jpg,85877,Trail Bridge,data/citywide/images/253/64138/85877__asset64138.jpg,Timber,Beam,Timber,1.3,,5.0,Timber,1.0,short (<6m),standard (0.9-1.5m),medium (1.2-5m)
 64142,AST_EX_20220823_111224.jpeg,60966,Trail Bridge,data/citywide/images/253/64142/60966__AST_EX_20220823_111224.jpeg,,,,,2 railings,,,1.0,,standard (0.9-1.5m),
 64643,AST_EX_20220617_123258.jpeg,47085,Trail Bridge,data/citywide/images/253/64643/47085__AST_EX_20220617_123258.jpeg,Timber,Beam,Steel,,,8.0,Aluminum,0.5,medium (6-20m),narrow (<0.9m),
 64694,AST_EX_20220628_150229.jpeg,50696,Trail Bridge,data/citywide/images/253/64694/50696__AST_EX_20220628_150229.jpeg,,,,,No railings,,,1.0,,standard (0.9-1.5m),
@@ -591,8 +591,8 @@ asset_id,filename,file_id,profile_name,image_path,attr_abutment_material,attr_br
 66171,AST_EX_20241023_171227.jpeg,76634,Trail Bridge,data/citywide/images/253/66171/76634__AST_EX_20241023_171227.jpeg,,,,,No railings,,,1.0,,standard (0.9-1.5m),
 66173,AST_EX_20220822_085813.jpeg,60824,Trail Bridge,data/citywide/images/253/66173/60824__AST_EX_20220822_085813.jpeg,,,,,No railings,,,1.0,,standard (0.9-1.5m),
 66174,AST_EX_20220822_090135.jpeg,60856,Trail Bridge,data/citywide/images/253/66174/60856__AST_EX_20220822_090135.jpeg,,,,,No railings,,,1.0,,standard (0.9-1.5m),
-66207,AST_EX_20250827_122114.jpeg,87210,Trail Bridge,data/citywide/images/253/66207/87210__AST_EX_20250827_122114.jpeg,Timber,Fallen Tree,Timber,3.0,No railings,20.0,Timber,1.0,long (>20m),standard (0.9-1.5m),medium (1-5m)
-66207,AST_EX_20250827_122100.jpeg,87211,Trail Bridge,data/citywide/images/253/66207/87211__AST_EX_20250827_122100.jpeg,Timber,Fallen Tree,Timber,3.0,No railings,20.0,Timber,1.0,long (>20m),standard (0.9-1.5m),medium (1-5m)
+66207,AST_EX_20250827_122114.jpeg,87210,Trail Bridge,data/citywide/images/253/66207/87210__AST_EX_20250827_122114.jpeg,Timber,Fallen Tree,Timber,3.0,No railings,20.0,Timber,1.0,long (>20m),standard (0.9-1.5m),medium (1.2-5m)
+66207,AST_EX_20250827_122100.jpeg,87211,Trail Bridge,data/citywide/images/253/66207/87211__AST_EX_20250827_122100.jpeg,Timber,Fallen Tree,Timber,3.0,No railings,20.0,Timber,1.0,long (>20m),standard (0.9-1.5m),medium (1.2-5m)
 66915,AST_EX_20210804_145211.jpeg,11436,Trail Bridge,data/citywide/images/253/66915/11436__AST_EX_20210804_145211.jpeg,Steel,Beam,Steel,,,17.4,Steel,0.9,medium (6-20m),standard (0.9-1.5m),
 66917,AST_EX_20220610_093738.jpeg,45702,Trail Bridge,data/citywide/images/253/66917/45702__AST_EX_20220610_093738.jpeg,Concrete,Beam,Timber,,,12.4,Steel,0.7,medium (6-20m),narrow (<0.9m),
 66917,AST_EX_20220610_093807.jpeg,45704,Trail Bridge,data/citywide/images/253/66917/45704__AST_EX_20220610_093807.jpeg,Concrete,Beam,Timber,,,12.4,Steel,0.7,medium (6-20m),narrow (<0.9m),
@@ -740,8 +740,8 @@ asset_id,filename,file_id,profile_name,image_path,attr_abutment_material,attr_br
 88131,AST_EX_20241206_115639.jpeg,77972,Trail Bridge,data/citywide/images/253/88131/77972__AST_EX_20241206_115639.jpeg,,,,,2 railings,,,,,,
 88132,AST_IM_20210826_124438.jpeg,18907,Trail Bridge,data/citywide/images/253/88132/18907__AST_IM_20210826_124438.jpeg,,,,,2 railings,,,,,,
 88132,AST_EX_20241206_111907.jpeg,77985,Trail Bridge,data/citywide/images/253/88132/77985__AST_EX_20241206_111907.jpeg,,,,,2 railings,,,,,,
-88133,AST_IM_20210826_132843.jpeg,18905,Trail Bridge,data/citywide/images/253/88133/18905__AST_IM_20210826_132843.jpeg,,,,1.85,No railings,4.6,,,short (<6m),,medium (1-5m)
-88133,AST_EX_20241206_114443.jpeg,77975,Trail Bridge,data/citywide/images/253/88133/77975__AST_EX_20241206_114443.jpeg,,,,1.85,No railings,4.6,,,short (<6m),,medium (1-5m)
+88133,AST_IM_20210826_132843.jpeg,18905,Trail Bridge,data/citywide/images/253/88133/18905__AST_IM_20210826_132843.jpeg,,,,1.85,No railings,4.6,,,short (<6m),,medium (1.2-5m)
+88133,AST_EX_20241206_114443.jpeg,77975,Trail Bridge,data/citywide/images/253/88133/77975__AST_EX_20241206_114443.jpeg,,,,1.85,No railings,4.6,,,short (<6m),,medium (1.2-5m)
 88135,AST_IM_20210826_140910.jpeg,18910,Trail Bridge,data/citywide/images/253/88135/18910__AST_IM_20210826_140910.jpeg,,,,,2 railings,,,,,,
 88135,AST_EX_20241206_115518.jpeg,77971,Trail Bridge,data/citywide/images/253/88135/77971__AST_EX_20241206_115518.jpeg,,,,,2 railings,,,,,,
 88136,AST_IM_20210826_131438.jpeg,18909,Trail Bridge,data/citywide/images/253/88136/18909__AST_IM_20210826_131438.jpeg,,,,,No railings,15.0,,,medium (6-20m),,
@@ -1027,29 +1027,29 @@ asset_id,filename,file_id,profile_name,image_path,attr_abutment_material,attr_br
 99880,AST_EX_20240423_102852.jpeg,67956,Trail Bridge,data/citywide/images/253/99880/67956__AST_EX_20240423_102852.jpeg,Timber,Beam,,,No railings,8.0,Timber,0.5,medium (6-20m),narrow (<0.9m),
 99882,AST_EX_20240423_105328.jpeg,67960,Trail Bridge,data/citywide/images/253/99882/67960__AST_EX_20240423_105328.jpeg,,,,,No railings,4.0,Timber,0.5,short (<6m),narrow (<0.9m),
 99884,AST_EX_20240423_115441.jpeg,67955,Trail Bridge,data/citywide/images/253/99884/67955__AST_EX_20240423_115441.jpeg,Timber,,,,No railings,5.0,,0.5,short (<6m),narrow (<0.9m),
-100111,AST_IM_20220529_134628.jpeg,43616,Trail Bridge,data/citywide/images/253/100111/43616__AST_IM_20220529_134628.jpeg,Concrete,Truss,Timber,2.5,,8.0,Aluminum,1.2,medium (6-20m),standard (0.9-1.5m),medium (1-5m)
-100111,AST_IM_20220529_134602.jpeg,43648,Trail Bridge,data/citywide/images/253/100111/43648__AST_IM_20220529_134602.jpeg,Concrete,Truss,Timber,2.5,,8.0,Aluminum,1.2,medium (6-20m),standard (0.9-1.5m),medium (1-5m)
-100111,AST_IM_20220529_134610.jpeg,43649,Trail Bridge,data/citywide/images/253/100111/43649__AST_IM_20220529_134610.jpeg,Concrete,Truss,Timber,2.5,,8.0,Aluminum,1.2,medium (6-20m),standard (0.9-1.5m),medium (1-5m)
-100111,AST_EX_20221027_105528.jpeg,63984,Trail Bridge,data/citywide/images/253/100111/63984__AST_EX_20221027_105528.jpeg,Concrete,Truss,Timber,2.5,,8.0,Aluminum,1.2,medium (6-20m),standard (0.9-1.5m),medium (1-5m)
-100111,AST_EX_20221027_105519.jpeg,63985,Trail Bridge,data/citywide/images/253/100111/63985__AST_EX_20221027_105519.jpeg,Concrete,Truss,Timber,2.5,,8.0,Aluminum,1.2,medium (6-20m),standard (0.9-1.5m),medium (1-5m)
-100111,AST_EX_20241203_154639.jpeg,77909,Trail Bridge,data/citywide/images/253/100111/77909__AST_EX_20241203_154639.jpeg,Concrete,Truss,Timber,2.5,,8.0,Aluminum,1.2,medium (6-20m),standard (0.9-1.5m),medium (1-5m)
-100111,AST_EX_20241203_154604.jpeg,77913,Trail Bridge,data/citywide/images/253/100111/77913__AST_EX_20241203_154604.jpeg,Concrete,Truss,Timber,2.5,,8.0,Aluminum,1.2,medium (6-20m),standard (0.9-1.5m),medium (1-5m)
-100111,AST_EX_20241203_154619.jpeg,77914,Trail Bridge,data/citywide/images/253/100111/77914__AST_EX_20241203_154619.jpeg,Concrete,Truss,Timber,2.5,,8.0,Aluminum,1.2,medium (6-20m),standard (0.9-1.5m),medium (1-5m)
-100111,AST_EX_20241203_154938.jpeg,77915,Trail Bridge,data/citywide/images/253/100111/77915__AST_EX_20241203_154938.jpeg,Concrete,Truss,Timber,2.5,,8.0,Aluminum,1.2,medium (6-20m),standard (0.9-1.5m),medium (1-5m)
-100111,AST_EX_20241203_154648.jpeg,77916,Trail Bridge,data/citywide/images/253/100111/77916__AST_EX_20241203_154648.jpeg,Concrete,Truss,Timber,2.5,,8.0,Aluminum,1.2,medium (6-20m),standard (0.9-1.5m),medium (1-5m)
+100111,AST_IM_20220529_134628.jpeg,43616,Trail Bridge,data/citywide/images/253/100111/43616__AST_IM_20220529_134628.jpeg,Concrete,Truss,Timber,2.5,,8.0,Aluminum,1.2,medium (6-20m),standard (0.9-1.5m),medium (1.2-5m)
+100111,AST_IM_20220529_134602.jpeg,43648,Trail Bridge,data/citywide/images/253/100111/43648__AST_IM_20220529_134602.jpeg,Concrete,Truss,Timber,2.5,,8.0,Aluminum,1.2,medium (6-20m),standard (0.9-1.5m),medium (1.2-5m)
+100111,AST_IM_20220529_134610.jpeg,43649,Trail Bridge,data/citywide/images/253/100111/43649__AST_IM_20220529_134610.jpeg,Concrete,Truss,Timber,2.5,,8.0,Aluminum,1.2,medium (6-20m),standard (0.9-1.5m),medium (1.2-5m)
+100111,AST_EX_20221027_105528.jpeg,63984,Trail Bridge,data/citywide/images/253/100111/63984__AST_EX_20221027_105528.jpeg,Concrete,Truss,Timber,2.5,,8.0,Aluminum,1.2,medium (6-20m),standard (0.9-1.5m),medium (1.2-5m)
+100111,AST_EX_20221027_105519.jpeg,63985,Trail Bridge,data/citywide/images/253/100111/63985__AST_EX_20221027_105519.jpeg,Concrete,Truss,Timber,2.5,,8.0,Aluminum,1.2,medium (6-20m),standard (0.9-1.5m),medium (1.2-5m)
+100111,AST_EX_20241203_154639.jpeg,77909,Trail Bridge,data/citywide/images/253/100111/77909__AST_EX_20241203_154639.jpeg,Concrete,Truss,Timber,2.5,,8.0,Aluminum,1.2,medium (6-20m),standard (0.9-1.5m),medium (1.2-5m)
+100111,AST_EX_20241203_154604.jpeg,77913,Trail Bridge,data/citywide/images/253/100111/77913__AST_EX_20241203_154604.jpeg,Concrete,Truss,Timber,2.5,,8.0,Aluminum,1.2,medium (6-20m),standard (0.9-1.5m),medium (1.2-5m)
+100111,AST_EX_20241203_154619.jpeg,77914,Trail Bridge,data/citywide/images/253/100111/77914__AST_EX_20241203_154619.jpeg,Concrete,Truss,Timber,2.5,,8.0,Aluminum,1.2,medium (6-20m),standard (0.9-1.5m),medium (1.2-5m)
+100111,AST_EX_20241203_154938.jpeg,77915,Trail Bridge,data/citywide/images/253/100111/77915__AST_EX_20241203_154938.jpeg,Concrete,Truss,Timber,2.5,,8.0,Aluminum,1.2,medium (6-20m),standard (0.9-1.5m),medium (1.2-5m)
+100111,AST_EX_20241203_154648.jpeg,77916,Trail Bridge,data/citywide/images/253/100111/77916__AST_EX_20241203_154648.jpeg,Concrete,Truss,Timber,2.5,,8.0,Aluminum,1.2,medium (6-20m),standard (0.9-1.5m),medium (1.2-5m)
 100138,AST_IM_20220529_151732.jpeg,43602,Trail Bridge,data/citywide/images/253/100138/43602__AST_IM_20220529_151732.jpeg,Timber,Beam,Timber,,No railings,2.0,Timber,1.0,short (<6m),standard (0.9-1.5m),
 100138,AST_EX_20250107_143755.jpeg,78265,Trail Bridge,data/citywide/images/253/100138/78265__AST_EX_20250107_143755.jpeg,Timber,Beam,Timber,,No railings,2.0,Timber,1.0,short (<6m),standard (0.9-1.5m),
 100138,AST_EX_20250107_143818.jpeg,78266,Trail Bridge,data/citywide/images/253/100138/78266__AST_EX_20250107_143818.jpeg,Timber,Beam,Timber,,No railings,2.0,Timber,1.0,short (<6m),standard (0.9-1.5m),
 100138,AST_EX_20250107_143800.jpeg,78268,Trail Bridge,data/citywide/images/253/100138/78268__AST_EX_20250107_143800.jpeg,Timber,Beam,Timber,,No railings,2.0,Timber,1.0,short (<6m),standard (0.9-1.5m),
 100138,AST_EX_20250107_143736.jpeg,78269,Trail Bridge,data/citywide/images/253/100138/78269__AST_EX_20250107_143736.jpeg,Timber,Beam,Timber,,No railings,2.0,Timber,1.0,short (<6m),standard (0.9-1.5m),
-100140,AST_EX_20221027_104925.jpeg,63986,Trail Bridge,data/citywide/images/253/100140/63986__AST_EX_20221027_104925.jpeg,Concrete,Beam,Timber,0.9,,6.0,Timber,2.5,medium (6-20m),wide (>1.5m),low (<1m)
-100140,AST_EX_20221027_104858.jpeg,63987,Trail Bridge,data/citywide/images/253/100140/63987__AST_EX_20221027_104858.jpeg,Concrete,Beam,Timber,0.9,,6.0,Timber,2.5,medium (6-20m),wide (>1.5m),low (<1m)
-100140,AST_EX_20241203_155500.jpeg,77910,Trail Bridge,data/citywide/images/253/100140/77910__AST_EX_20241203_155500.jpeg,Concrete,Beam,Timber,0.9,,6.0,Timber,2.5,medium (6-20m),wide (>1.5m),low (<1m)
-100140,AST_EX_20241203_155417.jpeg,77911,Trail Bridge,data/citywide/images/253/100140/77911__AST_EX_20241203_155417.jpeg,Concrete,Beam,Timber,0.9,,6.0,Timber,2.5,medium (6-20m),wide (>1.5m),low (<1m)
-100140,AST_EX_20241203_155411.jpeg,77912,Trail Bridge,data/citywide/images/253/100140/77912__AST_EX_20241203_155411.jpeg,Concrete,Beam,Timber,0.9,,6.0,Timber,2.5,medium (6-20m),wide (>1.5m),low (<1m)
-100140,AST_EX_20241203_155352.jpeg,77918,Trail Bridge,data/citywide/images/253/100140/77918__AST_EX_20241203_155352.jpeg,Concrete,Beam,Timber,0.9,,6.0,Timber,2.5,medium (6-20m),wide (>1.5m),low (<1m)
-100140,AST_EX_20251127_132852.jpeg,91327,Trail Bridge,data/citywide/images/253/100140/91327__AST_EX_20251127_132852.jpeg,Concrete,Beam,Timber,0.9,,6.0,Timber,2.5,medium (6-20m),wide (>1.5m),low (<1m)
-100140,AST_EX_20251127_132943.jpeg,91328,Trail Bridge,data/citywide/images/253/100140/91328__AST_EX_20251127_132943.jpeg,Concrete,Beam,Timber,0.9,,6.0,Timber,2.5,medium (6-20m),wide (>1.5m),low (<1m)
+100140,AST_EX_20221027_104925.jpeg,63986,Trail Bridge,data/citywide/images/253/100140/63986__AST_EX_20221027_104925.jpeg,Concrete,Beam,Timber,0.9,,6.0,Timber,2.5,medium (6-20m),wide (>1.5m),low (<1.2m)
+100140,AST_EX_20221027_104858.jpeg,63987,Trail Bridge,data/citywide/images/253/100140/63987__AST_EX_20221027_104858.jpeg,Concrete,Beam,Timber,0.9,,6.0,Timber,2.5,medium (6-20m),wide (>1.5m),low (<1.2m)
+100140,AST_EX_20241203_155500.jpeg,77910,Trail Bridge,data/citywide/images/253/100140/77910__AST_EX_20241203_155500.jpeg,Concrete,Beam,Timber,0.9,,6.0,Timber,2.5,medium (6-20m),wide (>1.5m),low (<1.2m)
+100140,AST_EX_20241203_155417.jpeg,77911,Trail Bridge,data/citywide/images/253/100140/77911__AST_EX_20241203_155417.jpeg,Concrete,Beam,Timber,0.9,,6.0,Timber,2.5,medium (6-20m),wide (>1.5m),low (<1.2m)
+100140,AST_EX_20241203_155411.jpeg,77912,Trail Bridge,data/citywide/images/253/100140/77912__AST_EX_20241203_155411.jpeg,Concrete,Beam,Timber,0.9,,6.0,Timber,2.5,medium (6-20m),wide (>1.5m),low (<1.2m)
+100140,AST_EX_20241203_155352.jpeg,77918,Trail Bridge,data/citywide/images/253/100140/77918__AST_EX_20241203_155352.jpeg,Concrete,Beam,Timber,0.9,,6.0,Timber,2.5,medium (6-20m),wide (>1.5m),low (<1.2m)
+100140,AST_EX_20251127_132852.jpeg,91327,Trail Bridge,data/citywide/images/253/100140/91327__AST_EX_20251127_132852.jpeg,Concrete,Beam,Timber,0.9,,6.0,Timber,2.5,medium (6-20m),wide (>1.5m),low (<1.2m)
+100140,AST_EX_20251127_132943.jpeg,91328,Trail Bridge,data/citywide/images/253/100140/91328__AST_EX_20251127_132943.jpeg,Concrete,Beam,Timber,0.9,,6.0,Timber,2.5,medium (6-20m),wide (>1.5m),low (<1.2m)
 100148,AST_IM_20220529_152007.jpeg,43607,Trail Bridge,data/citywide/images/253/100148/43607__AST_IM_20220529_152007.jpeg,Timber,Beam,Timber,,No railings,1.5,Timber,1.0,short (<6m),standard (0.9-1.5m),
 100148,AST_EX_20250107_144832.jpeg,78259,Trail Bridge,data/citywide/images/253/100148/78259__AST_EX_20250107_144832.jpeg,Timber,Beam,Timber,,No railings,1.5,Timber,1.0,short (<6m),standard (0.9-1.5m),
 100177,AST_EX_20260218_142604.jpeg,92639,Trail Bridge,data/citywide/images/253/100177/92639__AST_EX_20260218_142604.jpeg,Gabions,Beam,Timber,,,6.0,Timber,1.5,medium (6-20m),wide (>1.5m),
@@ -1201,21 +1201,21 @@ asset_id,filename,file_id,profile_name,image_path,attr_abutment_material,attr_br
 104858,AST_IM_20220628_105214.jpeg,50120,Trail Bridge,data/citywide/images/253/104858/50120__AST_IM_20220628_105214.jpeg,Concrete,Beam,Asphalt,,,7.0,Aluminum,0.5,medium (6-20m),narrow (<0.9m),
 104865,AST_IM_20220628_114549.jpeg,50123,Trail Bridge,data/citywide/images/253/104865/50123__AST_IM_20220628_114549.jpeg,Steel,Beam,Timber,,No railings,6.0,Aluminum,0.5,medium (6-20m),narrow (<0.9m),
 104865,AST_EX_20241122_111245.jpeg,77722,Trail Bridge,data/citywide/images/253/104865/77722__AST_EX_20241122_111245.jpeg,Steel,Beam,Timber,,No railings,6.0,Aluminum,0.5,medium (6-20m),narrow (<0.9m),
-105042,AST_IM_20220628_150802.jpeg,50693,Trail Bridge,data/citywide/images/253/105042/50693__AST_IM_20220628_150802.jpeg,,Beam,Timber,1.0,No railings,,,,,,medium (1-5m)
-105042,AST_EX_20241108_110248.jpeg,77292,Trail Bridge,data/citywide/images/253/105042/77292__AST_EX_20241108_110248.jpeg,,Beam,Timber,1.0,No railings,,,,,,medium (1-5m)
+105042,AST_IM_20220628_150802.jpeg,50693,Trail Bridge,data/citywide/images/253/105042/50693__AST_IM_20220628_150802.jpeg,,Beam,Timber,1.0,No railings,,,,,,low (<1.2m)
+105042,AST_EX_20241108_110248.jpeg,77292,Trail Bridge,data/citywide/images/253/105042/77292__AST_EX_20241108_110248.jpeg,,Beam,Timber,1.0,No railings,,,,,,low (<1.2m)
 105287,AST_IM_20220629_125925.jpeg,51085,Trail Bridge,data/citywide/images/253/105287/51085__AST_IM_20220629_125925.jpeg,Timber,Beam,Timber,,No railings,5.0,Timber,1.0,short (<6m),standard (0.9-1.5m),
 105287,AST_IM_20220629_125947.jpeg,51091,Trail Bridge,data/citywide/images/253/105287/51091__AST_IM_20220629_125947.jpeg,Timber,Beam,Timber,,No railings,5.0,Timber,1.0,short (<6m),standard (0.9-1.5m),
 105288,AST_IM_20220629_130522.jpeg,51082,Trail Bridge,data/citywide/images/253/105288/51082__AST_IM_20220629_130522.jpeg,,,Timber,,,5.0,Timber,1.0,short (<6m),standard (0.9-1.5m),
 105288,AST_IM_20220629_130338.jpeg,51088,Trail Bridge,data/citywide/images/253/105288/51088__AST_IM_20220629_130338.jpeg,,,Timber,,,5.0,Timber,1.0,short (<6m),standard (0.9-1.5m),
-105437,AST_IM_20220626_161546.jpeg,51268,Trail Bridge,data/citywide/images/253/105437/51268__AST_IM_20220626_161546.jpeg,,Beam,Timber,3.2,No railings,,Timber,,,,medium (1-5m)
+105437,AST_IM_20220626_161546.jpeg,51268,Trail Bridge,data/citywide/images/253/105437/51268__AST_IM_20220626_161546.jpeg,,Beam,Timber,3.2,No railings,,Timber,,,,medium (1.2-5m)
 105438,AST_IM_20220626_160239.jpeg,51273,Trail Bridge,data/citywide/images/253/105438/51273__AST_IM_20220626_160239.jpeg,,Beam,Timber,,No railings,,Timber,,,,
 105439,AST_IM_20220626_160849.jpeg,51271,Trail Bridge,data/citywide/images/253/105439/51271__AST_IM_20220626_160849.jpeg,,Beam,Timber,,No railings,,Timber,,,,
-105440,AST_IM_20220626_161100.jpeg,51269,Trail Bridge,data/citywide/images/253/105440/51269__AST_IM_20220626_161100.jpeg,,Beam,Timber,1.0,No railings,,Timber,,,,medium (1-5m)
+105440,AST_IM_20220626_161100.jpeg,51269,Trail Bridge,data/citywide/images/253/105440/51269__AST_IM_20220626_161100.jpeg,,Beam,Timber,1.0,No railings,,Timber,,,,low (<1.2m)
 105442,AST_IM_20220626_151247.jpeg,51274,Trail Bridge,data/citywide/images/253/105442/51274__AST_IM_20220626_151247.jpeg,,Beam,Timber,,No railings,,Timber,,,,
 105443,AST_IM_20220626_163101.jpeg,51267,Trail Bridge,data/citywide/images/253/105443/51267__AST_IM_20220626_163101.jpeg,,Beam,Timber,,No railings,,Timber,,,,
 105444,AST_IM_20220626_150323.jpeg,51276,Trail Bridge,data/citywide/images/253/105444/51276__AST_IM_20220626_150323.jpeg,,Beam,Timber,,No railings,,Timber,,,,
-105445,AST_IM_20220626_152233.jpeg,51272,Trail Bridge,data/citywide/images/253/105445/51272__AST_IM_20220626_152233.jpeg,,,Steel,1.3,No railings,,,,,,medium (1-5m)
-105445,AST_IM_20220626_152228.jpeg,51275,Trail Bridge,data/citywide/images/253/105445/51275__AST_IM_20220626_152228.jpeg,,,Steel,1.3,No railings,,,,,,medium (1-5m)
+105445,AST_IM_20220626_152233.jpeg,51272,Trail Bridge,data/citywide/images/253/105445/51272__AST_IM_20220626_152233.jpeg,,,Steel,1.3,No railings,,,,,,medium (1.2-5m)
+105445,AST_IM_20220626_152228.jpeg,51275,Trail Bridge,data/citywide/images/253/105445/51275__AST_IM_20220626_152228.jpeg,,,Steel,1.3,No railings,,,,,,medium (1.2-5m)
 105449,AST_IM_20220702_130802.jpeg,51292,Trail Bridge,data/citywide/images/253/105449/51292__AST_IM_20220702_130802.jpeg,Timber,Beam,Timber,,No railings,7.0,Timber,1.0,medium (6-20m),standard (0.9-1.5m),
 105449,AST_EX_20241022_160247.jpeg,75971,Trail Bridge,data/citywide/images/253/105449/75971__AST_EX_20241022_160247.jpeg,Timber,Beam,Timber,,No railings,7.0,Timber,1.0,medium (6-20m),standard (0.9-1.5m),
 105457,AST_IM_20220702_104654.jpeg,51319,Trail Bridge,data/citywide/images/253/105457/51319__AST_IM_20220702_104654.jpeg,Timber,Beam,Timber,,No railings,5.0,Timber,1.0,short (<6m),standard (0.9-1.5m),
@@ -1595,9 +1595,9 @@ asset_id,filename,file_id,profile_name,image_path,attr_abutment_material,attr_br
 114701,MI_20220913_122156.jpg,63056,Trail Bridge,data/citywide/images/253/114701/63056__MI_20220913_122156.jpg,Gabions,Beam,Timber,,No railings,5.0,Timber,1.54,short (<6m),wide (>1.5m),
 114702,MI_20220913_123208.jpg,63054,Trail Bridge,data/citywide/images/253/114702/63054__MI_20220913_123208.jpg,,Beam,Timber,,No railings,3.1,Timber,1.54,short (<6m),wide (>1.5m),
 114711,MI_20220913_122628.jpg,63050,Trail Bridge,data/citywide/images/253/114711/63050__MI_20220913_122628.jpg,Gabions,Beam,Timber,,No railings,16.8,Timber,1.54,medium (6-20m),wide (>1.5m),
-114768,IMG_6670.jpg,90073,Trail Bridge,data/citywide/images/253/114768/90073__IMG_6670.jpg,Concrete,Beam,Timber,2.0,No railings,12.2,Steel,2.0,medium (6-20m),wide (>1.5m),medium (1-5m)
-114768,IMG_6664.jpg,90074,Trail Bridge,data/citywide/images/253/114768/90074__IMG_6664.jpg,Concrete,Beam,Timber,2.0,No railings,12.2,Steel,2.0,medium (6-20m),wide (>1.5m),medium (1-5m)
-114768,IMG_6665.jpg,90075,Trail Bridge,data/citywide/images/253/114768/90075__IMG_6665.jpg,Concrete,Beam,Timber,2.0,No railings,12.2,Steel,2.0,medium (6-20m),wide (>1.5m),medium (1-5m)
+114768,IMG_6670.jpg,90073,Trail Bridge,data/citywide/images/253/114768/90073__IMG_6670.jpg,Concrete,Beam,Timber,2.0,No railings,12.2,Steel,2.0,medium (6-20m),wide (>1.5m),medium (1.2-5m)
+114768,IMG_6664.jpg,90074,Trail Bridge,data/citywide/images/253/114768/90074__IMG_6664.jpg,Concrete,Beam,Timber,2.0,No railings,12.2,Steel,2.0,medium (6-20m),wide (>1.5m),medium (1.2-5m)
+114768,IMG_6665.jpg,90075,Trail Bridge,data/citywide/images/253/114768/90075__IMG_6665.jpg,Concrete,Beam,Timber,2.0,No railings,12.2,Steel,2.0,medium (6-20m),wide (>1.5m),medium (1.2-5m)
 114815,AST_IM_20220902_111956.jpeg,63081,Trail Bridge,data/citywide/images/253/114815/63081__AST_IM_20220902_111956.jpeg,Timber,Beam,Timber,,,11.0,Timber,0.75,medium (6-20m),narrow (<0.9m),
 114815,AST_EX_20240606_090250.jpeg,69758,Trail Bridge,data/citywide/images/253/114815/69758__AST_EX_20240606_090250.jpeg,Timber,Beam,Timber,,,11.0,Timber,0.75,medium (6-20m),narrow (<0.9m),
 114923,AST_IM_20220916_144900.jpeg,63201,Trail Bridge,data/citywide/images/253/114923/63201__AST_IM_20220916_144900.jpeg,Timber,Beam,Timber,,No railings,9.0,Timber,3.0,medium (6-20m),wide (>1.5m),
@@ -1778,7 +1778,7 @@ asset_id,filename,file_id,profile_name,image_path,attr_abutment_material,attr_br
 119973,MI_20240430_114030.jpg,68241,Trail Bridge,data/citywide/images/253/119973/68241__MI_20240430_114030.jpg,Gabions,Beam,Timber,,,3.5,Timber,1.5,short (<6m),wide (>1.5m),
 119977,AST_IM_20240424_134648.jpeg,68245,Trail Bridge,data/citywide/images/253/119977/68245__AST_IM_20240424_134648.jpeg,Timber,Beam,Timber,,,15.0,Timber,1.0,medium (6-20m),standard (0.9-1.5m),
 120294,AST_IM_20240524_110504.jpeg,68575,Trail Bridge,data/citywide/images/253/120294/68575__AST_IM_20240524_110504.jpeg,Timber,Beam,Timber,,No railings,6.0,Timber,1.0,medium (6-20m),standard (0.9-1.5m),
-120299,AST_IM_20240524_113323.jpeg,68571,Trail Bridge,data/citywide/images/253/120299/68571__AST_IM_20240524_113323.jpeg,Timber,Beam,Timber,0.2,,15.0,Timber,1.0,medium (6-20m),standard (0.9-1.5m),low (<1m)
+120299,AST_IM_20240524_113323.jpeg,68571,Trail Bridge,data/citywide/images/253/120299/68571__AST_IM_20240524_113323.jpeg,Timber,Beam,Timber,0.2,,15.0,Timber,1.0,medium (6-20m),standard (0.9-1.5m),low (<1.2m)
 120544,AST_IM_20240607_110209.jpeg,69390,Trail Bridge,data/citywide/images/253/120544/69390__AST_IM_20240607_110209.jpeg,,,,,,,,,,,
 120544,AST_IM_20240607_110145.jpeg,69407,Trail Bridge,data/citywide/images/253/120544/69407__AST_IM_20240607_110145.jpeg,,,,,,,,,,,
 120548,AST_IM_20240607_110522.jpeg,69388,Trail Bridge,data/citywide/images/253/120548/69388__AST_IM_20240607_110522.jpeg,,,,,No railings,,,,,,
@@ -1788,18 +1788,18 @@ asset_id,filename,file_id,profile_name,image_path,attr_abutment_material,attr_br
 120999,AST_IM_20240629_143609.jpeg,70234,Trail Bridge,data/citywide/images/253/120999/70234__AST_IM_20240629_143609.jpeg,,,Timber,,,11.0,Timber,0.9,medium (6-20m),standard (0.9-1.5m),
 121354,AST_IM_20240725_131243.jpeg,71294,Trail Bridge,data/citywide/images/253/121354/71294__AST_IM_20240725_131243.jpeg,,,,,2 railings,,,,,,
 121497,AST_IM_20240731_200314.jpeg,71855,Trail Bridge,data/citywide/images/253/121497/71855__AST_IM_20240731_200314.jpeg,Timber,Beam,Timber,,No railings,4.0,Timber,1.0,short (<6m),standard (0.9-1.5m),
-121500,AST_IM_20240801_155319.jpeg,71873,Trail Bridge,data/citywide/images/253/121500/71873__AST_IM_20240801_155319.jpeg,Timber,Beam,Timber,2.0,,7.0,Timber,2.0,medium (6-20m),wide (>1.5m),medium (1-5m)
-121500,AST_EX_20250707_111945.jpeg,84482,Trail Bridge,data/citywide/images/253/121500/84482__AST_EX_20250707_111945.jpeg,Timber,Beam,Timber,2.0,,7.0,Timber,2.0,medium (6-20m),wide (>1.5m),medium (1-5m)
-121504,AST_IM_20240801_152050.jpeg,71880,Trail Bridge,data/citywide/images/253/121504/71880__AST_IM_20240801_152050.jpeg,Timber,Beam,Timber,4.0,,12.0,Timber,1.0,medium (6-20m),standard (0.9-1.5m),medium (1-5m)
-121504,AST_EX_20241028_161021.jpeg,76449,Trail Bridge,data/citywide/images/253/121504/76449__AST_EX_20241028_161021.jpeg,Timber,Beam,Timber,4.0,,12.0,Timber,1.0,medium (6-20m),standard (0.9-1.5m),medium (1-5m)
-121504,AST_EX_20250707_094322.jpeg,84484,Trail Bridge,data/citywide/images/253/121504/84484__AST_EX_20250707_094322.jpeg,Timber,Beam,Timber,4.0,,12.0,Timber,1.0,medium (6-20m),standard (0.9-1.5m),medium (1-5m)
+121500,AST_IM_20240801_155319.jpeg,71873,Trail Bridge,data/citywide/images/253/121500/71873__AST_IM_20240801_155319.jpeg,Timber,Beam,Timber,2.0,,7.0,Timber,2.0,medium (6-20m),wide (>1.5m),medium (1.2-5m)
+121500,AST_EX_20250707_111945.jpeg,84482,Trail Bridge,data/citywide/images/253/121500/84482__AST_EX_20250707_111945.jpeg,Timber,Beam,Timber,2.0,,7.0,Timber,2.0,medium (6-20m),wide (>1.5m),medium (1.2-5m)
+121504,AST_IM_20240801_152050.jpeg,71880,Trail Bridge,data/citywide/images/253/121504/71880__AST_IM_20240801_152050.jpeg,Timber,Beam,Timber,4.0,,12.0,Timber,1.0,medium (6-20m),standard (0.9-1.5m),medium (1.2-5m)
+121504,AST_EX_20241028_161021.jpeg,76449,Trail Bridge,data/citywide/images/253/121504/76449__AST_EX_20241028_161021.jpeg,Timber,Beam,Timber,4.0,,12.0,Timber,1.0,medium (6-20m),standard (0.9-1.5m),medium (1.2-5m)
+121504,AST_EX_20250707_094322.jpeg,84484,Trail Bridge,data/citywide/images/253/121504/84484__AST_EX_20250707_094322.jpeg,Timber,Beam,Timber,4.0,,12.0,Timber,1.0,medium (6-20m),standard (0.9-1.5m),medium (1.2-5m)
 121520,AST_IM_20240803_131307.jpeg,71917,Trail Bridge,data/citywide/images/253/121520/71917__AST_IM_20240803_131307.jpeg,,Truss,Timber,,No railings,,Timber,,,,
 121520,AST_IM_20240803_131252.jpeg,71918,Trail Bridge,data/citywide/images/253/121520/71918__AST_IM_20240803_131252.jpeg,,Truss,Timber,,No railings,,Timber,,,,
 121595,AST_IM_20240803_091351.jpeg,71986,Trail Bridge,data/citywide/images/253/121595/71986__AST_IM_20240803_091351.jpeg,Timber,,Timber,,No railings,6.0,Timber,0.75,medium (6-20m),narrow (<0.9m),
-121618,AST_IM_20240803_115637.jpeg,72114,Trail Bridge,data/citywide/images/253/121618/72114__AST_IM_20240803_115637.jpeg,Gabions,Truss,Aluminum,1.0,,6.0,Aluminum,1.0,medium (6-20m),standard (0.9-1.5m),medium (1-5m)
-121618,AST_IM_20240803_115627.jpeg,72119,Trail Bridge,data/citywide/images/253/121618/72119__AST_IM_20240803_115627.jpeg,Gabions,Truss,Aluminum,1.0,,6.0,Aluminum,1.0,medium (6-20m),standard (0.9-1.5m),medium (1-5m)
-121618,Channel view lower water.jpeg,89897,Trail Bridge,data/citywide/images/253/121618/89897__Channel_view_lower_water.jpeg,Gabions,Truss,Aluminum,1.0,,6.0,Aluminum,1.0,medium (6-20m),standard (0.9-1.5m),medium (1-5m)
-121618,Bridge elfin side - high water.jpeg,89898,Trail Bridge,data/citywide/images/253/121618/89898__Bridge_elfin_side_-_high_water.jpeg,Gabions,Truss,Aluminum,1.0,,6.0,Aluminum,1.0,medium (6-20m),standard (0.9-1.5m),medium (1-5m)
+121618,AST_IM_20240803_115637.jpeg,72114,Trail Bridge,data/citywide/images/253/121618/72114__AST_IM_20240803_115637.jpeg,Gabions,Truss,Aluminum,1.0,,6.0,Aluminum,1.0,medium (6-20m),standard (0.9-1.5m),low (<1.2m)
+121618,AST_IM_20240803_115627.jpeg,72119,Trail Bridge,data/citywide/images/253/121618/72119__AST_IM_20240803_115627.jpeg,Gabions,Truss,Aluminum,1.0,,6.0,Aluminum,1.0,medium (6-20m),standard (0.9-1.5m),low (<1.2m)
+121618,Channel view lower water.jpeg,89897,Trail Bridge,data/citywide/images/253/121618/89897__Channel_view_lower_water.jpeg,Gabions,Truss,Aluminum,1.0,,6.0,Aluminum,1.0,medium (6-20m),standard (0.9-1.5m),low (<1.2m)
+121618,Bridge elfin side - high water.jpeg,89898,Trail Bridge,data/citywide/images/253/121618/89898__Bridge_elfin_side_-_high_water.jpeg,Gabions,Truss,Aluminum,1.0,,6.0,Aluminum,1.0,medium (6-20m),standard (0.9-1.5m),low (<1.2m)
 121649,AST_IM_20240802_130705.jpeg,72284,Trail Bridge,data/citywide/images/253/121649/72284__AST_IM_20240802_130705.jpeg,Timber,Beam,Timber,,No railings,6.0,Timber,2.0,medium (6-20m),wide (>1.5m),
 121665,AST_IM_20240803_080826.jpeg,72280,Trail Bridge,data/citywide/images/253/121665/72280__AST_IM_20240803_080826.jpeg,,,,,,,,,,,
 121665,AST_EX_20250808_082958.jpeg,86283,Trail Bridge,data/citywide/images/253/121665/86283__AST_EX_20250808_082958.jpeg,,,,,,,,,,,
@@ -1835,14 +1835,14 @@ asset_id,filename,file_id,profile_name,image_path,attr_abutment_material,attr_br
 122463,AST_IM_20240929_110840.jpeg,74739,Trail Bridge,data/citywide/images/253/122463/74739__AST_IM_20240929_110840.jpeg,,,Timber,,,,,,,,
 122725,AST_IM_20241022_110845.jpeg,75430,Trail Bridge,data/citywide/images/253/122725/75430__AST_IM_20241022_110845.jpeg,Timber,,Timber,,No railings,5.0,Timber,3.0,short (<6m),wide (>1.5m),
 122725,AST_IM_20241022_110852.jpeg,75429,Trail Bridge,data/citywide/images/253/122725/75429__AST_IM_20241022_110852.jpeg,Timber,,Timber,,No railings,5.0,Timber,3.0,short (<6m),wide (>1.5m),
-122828,AST_IM_20241023_134618.jpeg,75902,Trail Bridge,data/citywide/images/253/122828/75902__AST_IM_20241023_134618.jpeg,Timber,Beam,Timber,0.5,No railings,9.0,Timber,0.5,medium (6-20m),narrow (<0.9m),low (<1m)
-122828,AST_IM_20241023_134601.jpeg,75923,Trail Bridge,data/citywide/images/253/122828/75923__AST_IM_20241023_134601.jpeg,Timber,Beam,Timber,0.5,No railings,9.0,Timber,0.5,medium (6-20m),narrow (<0.9m),low (<1m)
+122828,AST_IM_20241023_134618.jpeg,75902,Trail Bridge,data/citywide/images/253/122828/75902__AST_IM_20241023_134618.jpeg,Timber,Beam,Timber,0.5,No railings,9.0,Timber,0.5,medium (6-20m),narrow (<0.9m),low (<1.2m)
+122828,AST_IM_20241023_134601.jpeg,75923,Trail Bridge,data/citywide/images/253/122828/75923__AST_IM_20241023_134601.jpeg,Timber,Beam,Timber,0.5,No railings,9.0,Timber,0.5,medium (6-20m),narrow (<0.9m),low (<1.2m)
 122825,AST_IM_20241022_154942.jpeg,75972,Trail Bridge,data/citywide/images/253/122825/75972__AST_IM_20241022_154942.jpeg,Timber,,,,No railings,4.0,Timber,,short (<6m),,
 122980,IMG_3042.JPG,77761,Trail Bridge,data/citywide/images/253/122980/77761__IMG_3042.JPG,Concrete,Beam,Timber,,,7.3,Timber,1.2,medium (6-20m),standard (0.9-1.5m),
 122981,IMG_3038.JPG,77760,Trail Bridge,data/citywide/images/253/122981/77760__IMG_3038.JPG,Concrete,Beam,Timber,,,7.3,Timber,1.2,medium (6-20m),standard (0.9-1.5m),
-122999,AST_IM_20241031_162559.jpeg,76745,Trail Bridge,data/citywide/images/253/122999/76745__AST_IM_20241031_162559.jpeg,,Fallen Tree,,2.0,,15.0,Timber,1.0,medium (6-20m),standard (0.9-1.5m),medium (1-5m)
-123000,AST_IM_20241031_154033.jpeg,76747,Trail Bridge,data/citywide/images/253/123000/76747__AST_IM_20241031_154033.jpeg,,Beam,Timber,2.0,No railings,7.0,Timber,2.0,medium (6-20m),wide (>1.5m),medium (1-5m)
-122830,AST_IM_20241024_101300.jpeg,75911,Trail Bridge,data/citywide/images/253/122830/75911__AST_IM_20241024_101300.jpeg,Timber,Beam,Timber,0.5,No railings,2.0,Timber,0.3,short (<6m),narrow (<0.9m),low (<1m)
+122999,AST_IM_20241031_162559.jpeg,76745,Trail Bridge,data/citywide/images/253/122999/76745__AST_IM_20241031_162559.jpeg,,Fallen Tree,,2.0,,15.0,Timber,1.0,medium (6-20m),standard (0.9-1.5m),medium (1.2-5m)
+123000,AST_IM_20241031_154033.jpeg,76747,Trail Bridge,data/citywide/images/253/123000/76747__AST_IM_20241031_154033.jpeg,,Beam,Timber,2.0,No railings,7.0,Timber,2.0,medium (6-20m),wide (>1.5m),medium (1.2-5m)
+122830,AST_IM_20241024_101300.jpeg,75911,Trail Bridge,data/citywide/images/253/122830/75911__AST_IM_20241024_101300.jpeg,Timber,Beam,Timber,0.5,No railings,2.0,Timber,0.3,short (<6m),narrow (<0.9m),low (<1.2m)
 123139,AST_IM_20241106_135933.jpeg,77012,Trail Bridge,data/citywide/images/253/123139/77012__AST_IM_20241106_135933.jpeg,,Beam,Timber,,,3.0,Timber,1.06,short (<6m),standard (0.9-1.5m),
 123159,AST_IM_20241106_142126.jpeg,77035,Trail Bridge,data/citywide/images/253/123159/77035__AST_IM_20241106_142126.jpeg,Timber,Beam,Timber,,No railings,16.0,Steel,3.0,medium (6-20m),wide (>1.5m),
 123159,AST_IM_20241106_142139.jpeg,77033,Trail Bridge,data/citywide/images/253/123159/77033__AST_IM_20241106_142139.jpeg,Timber,Beam,Timber,,No railings,16.0,Steel,3.0,medium (6-20m),wide (>1.5m),
@@ -1855,17 +1855,17 @@ asset_id,filename,file_id,profile_name,image_path,attr_abutment_material,attr_br
 123164,AST_IM_20241106_140459.jpeg,77043,Trail Bridge,data/citywide/images/253/123164/77043__AST_IM_20241106_140459.jpeg,Concrete,Beam,Timber,,No railings,12.0,Steel,3.0,medium (6-20m),wide (>1.5m),
 123167,AST_IM_20241106_145057.jpeg,77031,Trail Bridge,data/citywide/images/253/123167/77031__AST_IM_20241106_145057.jpeg,Timber,Beam,Timber,,No railings,12.0,Timber,3.0,medium (6-20m),wide (>1.5m),
 123182,IMG_20240822_164713.jpg,77073,Trail Bridge,data/citywide/images/253/123182/77073__IMG_20240822_164713.jpg,Timber,,Timber,,,12.0,Timber,2.0,medium (6-20m),wide (>1.5m),
-123218,Bridge 1 300 from East (1).JPG,77390,Trail Bridge,data/citywide/images/253/123218/77390__Bridge_1_300_from_East__1_.JPG,Timber,Beam,Timber,2.0,,5.0,Timber,1.0,short (<6m),standard (0.9-1.5m),medium (1-5m)
-123218,Bridge 1 300 from East (2).JPG,77391,Trail Bridge,data/citywide/images/253/123218/77391__Bridge_1_300_from_East__2_.JPG,Timber,Beam,Timber,2.0,,5.0,Timber,1.0,short (<6m),standard (0.9-1.5m),medium (1-5m)
+123218,Bridge 1 300 from East (1).JPG,77390,Trail Bridge,data/citywide/images/253/123218/77390__Bridge_1_300_from_East__1_.JPG,Timber,Beam,Timber,2.0,,5.0,Timber,1.0,short (<6m),standard (0.9-1.5m),medium (1.2-5m)
+123218,Bridge 1 300 from East (2).JPG,77391,Trail Bridge,data/citywide/images/253/123218/77391__Bridge_1_300_from_East__2_.JPG,Timber,Beam,Timber,2.0,,5.0,Timber,1.0,short (<6m),standard (0.9-1.5m),medium (1.2-5m)
 123167,AST_IM_20241106_145142.jpeg,77032,Trail Bridge,data/citywide/images/253/123167/77032__AST_IM_20241106_145142.jpeg,Timber,Beam,Timber,,No railings,12.0,Timber,3.0,medium (6-20m),wide (>1.5m),
 123249,MI_20241108_130117.jpg,77312,Trail Bridge,data/citywide/images/253/123249/77312__MI_20241108_130117.jpg,,,,,,,,,,,
-123219,AST_IM_20241107_133720.jpeg,77190,Trail Bridge,data/citywide/images/253/123219/77190__AST_IM_20241107_133720.jpeg,,Beam,Timber,1.0,No railings,12.0,Timber,2.0,medium (6-20m),wide (>1.5m),medium (1-5m)
+123219,AST_IM_20241107_133720.jpeg,77190,Trail Bridge,data/citywide/images/253/123219/77190__AST_IM_20241107_133720.jpeg,,Beam,Timber,1.0,No railings,12.0,Timber,2.0,medium (6-20m),wide (>1.5m),low (<1.2m)
 123249,MI_20241108_130547.jpg,77315,Trail Bridge,data/citywide/images/253/123249/77315__MI_20241108_130547.jpg,,,,,,,,,,,
 123309,old bridge on old gray bay road.jpg,77555,Trail Bridge,data/citywide/images/253/123309/77555__old_bridge_on_old_gray_bay_road.jpg,Timber,Beam,Timber,,,,Timber,2.0,,wide (>1.5m),
-123352,Bridge 3 400 from East (1).JPG,77558,Trail Bridge,data/citywide/images/253/123352/77558__Bridge_3_400_from_East__1_.JPG,Timber,Beam,Timber,1.0,No railings,10.0,Timber,3.0,medium (6-20m),wide (>1.5m),medium (1-5m)
-123352,Bridge 3 400 from East (2).JPG,77559,Trail Bridge,data/citywide/images/253/123352/77559__Bridge_3_400_from_East__2_.JPG,Timber,Beam,Timber,1.0,No railings,10.0,Timber,3.0,medium (6-20m),wide (>1.5m),medium (1-5m)
-123310,AST_IM_20241113_143720.jpeg,77432,Trail Bridge,data/citywide/images/253/123310/77432__AST_IM_20241113_143720.jpeg,Timber,Fallen Tree,Timber,2.0,,25.0,Timber,1.0,long (>20m),standard (0.9-1.5m),medium (1-5m)
-123354,Bridge at Property.jpg,77561,Trail Bridge,data/citywide/images/253/123354/77561__Bridge_at_Property.jpg,Timber,Beam,Timber,1.0,No railings,8.0,Timber,2.0,medium (6-20m),wide (>1.5m),medium (1-5m)
+123352,Bridge 3 400 from East (1).JPG,77558,Trail Bridge,data/citywide/images/253/123352/77558__Bridge_3_400_from_East__1_.JPG,Timber,Beam,Timber,1.0,No railings,10.0,Timber,3.0,medium (6-20m),wide (>1.5m),low (<1.2m)
+123352,Bridge 3 400 from East (2).JPG,77559,Trail Bridge,data/citywide/images/253/123352/77559__Bridge_3_400_from_East__2_.JPG,Timber,Beam,Timber,1.0,No railings,10.0,Timber,3.0,medium (6-20m),wide (>1.5m),low (<1.2m)
+123310,AST_IM_20241113_143720.jpeg,77432,Trail Bridge,data/citywide/images/253/123310/77432__AST_IM_20241113_143720.jpeg,Timber,Fallen Tree,Timber,2.0,,25.0,Timber,1.0,long (>20m),standard (0.9-1.5m),medium (1.2-5m)
+123354,Bridge at Property.jpg,77561,Trail Bridge,data/citywide/images/253/123354/77561__Bridge_at_Property.jpg,Timber,Beam,Timber,1.0,No railings,8.0,Timber,2.0,medium (6-20m),wide (>1.5m),low (<1.2m)
 123357,MI_20241117_122249.jpg,77551,Trail Bridge,data/citywide/images/253/123357/77551__MI_20241117_122249.jpg,Concrete,Beam,Timber,,,6.5,Steel,1.3,medium (6-20m),standard (0.9-1.5m),
 123364,Footbridge.jpg,77573,Trail Bridge,data/citywide/images/253/123364/77573__Footbridge.jpg,,Beam,Timber,,,8.0,Timber,1.5,medium (6-20m),wide (>1.5m),
 123357,MI_20241117_122320.jpg,77550,Trail Bridge,data/citywide/images/253/123357/77550__MI_20241117_122320.jpg,Concrete,Beam,Timber,,,6.5,Steel,1.3,medium (6-20m),standard (0.9-1.5m),
@@ -1888,70 +1888,70 @@ asset_id,filename,file_id,profile_name,image_path,attr_abutment_material,attr_br
 124929,image2.jpeg,79623,Trail Bridge,data/citywide/images/253/124929/79623__image2.jpeg,,,,,No railings,,,,,,
 124929,BCPN-24-01A 1.jpg,79622,Trail Bridge,data/citywide/images/253/124929/79622__BCPN-24-01A_1.jpg,,,,,No railings,,,,,,
 126075,AST_IM_20250531_120938.jpeg,82940,Trail Bridge,data/citywide/images/253/126075/82940__AST_IM_20250531_120938.jpeg,,,,,,,,,,,
-126178,AST_IM_20250611_112515.jpeg,83472,Trail Bridge,data/citywide/images/253/126178/83472__AST_IM_20250611_112515.jpeg,Timber,,,1.5,No railings,,,0.5,,narrow (<0.9m),medium (1-5m)
+126178,AST_IM_20250611_112515.jpeg,83472,Trail Bridge,data/citywide/images/253/126178/83472__AST_IM_20250611_112515.jpeg,Timber,,,1.5,No railings,,,0.5,,narrow (<0.9m),medium (1.2-5m)
 126075,AST_IM_20250531_120958.jpeg,82937,Trail Bridge,data/citywide/images/253/126075/82937__AST_IM_20250531_120958.jpeg,,,,,,,,,,,
 126199,bridge inland lake.jpg,83496,Trail Bridge,data/citywide/images/253/126199/83496__bridge_inland_lake.jpg,,Truss,Timber,,2 railings,,,,,,
-126334,AST_IM_20250616_105600.jpeg,84032,Trail Bridge,data/citywide/images/253/126334/84032__AST_IM_20250616_105600.jpeg,Gabions,Beam,Timber,1.5,2 railings,,Steel,1.5,,wide (>1.5m),medium (1-5m)
-126334,AST_IM_20250616_105533.jpeg,84056,Trail Bridge,data/citywide/images/253/126334/84056__AST_IM_20250616_105533.jpeg,Gabions,Beam,Timber,1.5,2 railings,,Steel,1.5,,wide (>1.5m),medium (1-5m)
-126334,AST_IM_20250616_105616.jpeg,84057,Trail Bridge,data/citywide/images/253/126334/84057__AST_IM_20250616_105616.jpeg,Gabions,Beam,Timber,1.5,2 railings,,Steel,1.5,,wide (>1.5m),medium (1-5m)
-126340,AST_IM_20250616_143933.jpeg,84040,Trail Bridge,data/citywide/images/253/126340/84040__AST_IM_20250616_143933.jpeg,Concrete,Beam,Steel,4.0,2 railings,,Steel,1.5,,wide (>1.5m),medium (1-5m)
-126340,AST_IM_20250616_144043.jpeg,84046,Trail Bridge,data/citywide/images/253/126340/84046__AST_IM_20250616_144043.jpeg,Concrete,Beam,Steel,4.0,2 railings,,Steel,1.5,,wide (>1.5m),medium (1-5m)
+126334,AST_IM_20250616_105600.jpeg,84032,Trail Bridge,data/citywide/images/253/126334/84032__AST_IM_20250616_105600.jpeg,Gabions,Beam,Timber,1.5,2 railings,,Steel,1.5,,wide (>1.5m),medium (1.2-5m)
+126334,AST_IM_20250616_105533.jpeg,84056,Trail Bridge,data/citywide/images/253/126334/84056__AST_IM_20250616_105533.jpeg,Gabions,Beam,Timber,1.5,2 railings,,Steel,1.5,,wide (>1.5m),medium (1.2-5m)
+126334,AST_IM_20250616_105616.jpeg,84057,Trail Bridge,data/citywide/images/253/126334/84057__AST_IM_20250616_105616.jpeg,Gabions,Beam,Timber,1.5,2 railings,,Steel,1.5,,wide (>1.5m),medium (1.2-5m)
+126340,AST_IM_20250616_143933.jpeg,84040,Trail Bridge,data/citywide/images/253/126340/84040__AST_IM_20250616_143933.jpeg,Concrete,Beam,Steel,4.0,2 railings,,Steel,1.5,,wide (>1.5m),medium (1.2-5m)
+126340,AST_IM_20250616_144043.jpeg,84046,Trail Bridge,data/citywide/images/253/126340/84046__AST_IM_20250616_144043.jpeg,Concrete,Beam,Steel,4.0,2 railings,,Steel,1.5,,wide (>1.5m),medium (1.2-5m)
 126356,AST_IM_20250618_180850.jpeg,84051,Trail Bridge,data/citywide/images/253/126356/84051__AST_IM_20250618_180850.jpeg,Gabions,Suspension,Steel,9.0,2 railings,,Steel,1.0,,standard (0.9-1.5m),high (>5m)
 126409,AST_IM_20250628_121356.jpeg,84148,Trail Bridge,data/citywide/images/253/126409/84148__AST_IM_20250628_121356.jpeg,,,,,,,,,,,
 126356,AST_IM_20250618_180914.jpeg,84029,Trail Bridge,data/citywide/images/253/126356/84029__AST_IM_20250618_180914.jpeg,Gabions,Suspension,Steel,9.0,2 railings,,Steel,1.0,,standard (0.9-1.5m),high (>5m)
 126411,AST_IM_20250630_112507.jpeg,84139,Trail Bridge,data/citywide/images/253/126411/84139__AST_IM_20250630_112507.jpeg,,,,,,,,,,,
-126564,asset126564-2.jpg,85021,Trail Bridge,data/citywide/images/253/126564/85021__asset126564-2.jpg,Concrete,Beam,Timber,1.1,,14.8,Concrete,,medium (6-20m),,medium (1-5m)
-126564,asset126564.jpg,85020,Trail Bridge,data/citywide/images/253/126564/85020__asset126564.jpg,Concrete,Beam,Timber,1.1,,14.8,Concrete,,medium (6-20m),,medium (1-5m)
-126683,IMG_2174.jpg,85305,Trail Bridge,data/citywide/images/253/126683/85305__IMG_2174.jpg,,Beam,Timber,2.0,,,Timber,1.0,,standard (0.9-1.5m),medium (1-5m)
-126721,AST_IM_20250716_120422.jpeg,85400,Trail Bridge,data/citywide/images/253/126721/85400__AST_IM_20250716_120422.jpeg,Gabions,Truss,Timber,2.0,2 railings,24.0,Steel,2.0,long (>20m),wide (>1.5m),medium (1-5m)
+126564,asset126564-2.jpg,85021,Trail Bridge,data/citywide/images/253/126564/85021__asset126564-2.jpg,Concrete,Beam,Timber,1.1,,14.8,Concrete,,medium (6-20m),,low (<1.2m)
+126564,asset126564.jpg,85020,Trail Bridge,data/citywide/images/253/126564/85020__asset126564.jpg,Concrete,Beam,Timber,1.1,,14.8,Concrete,,medium (6-20m),,low (<1.2m)
+126683,IMG_2174.jpg,85305,Trail Bridge,data/citywide/images/253/126683/85305__IMG_2174.jpg,,Beam,Timber,2.0,,,Timber,1.0,,standard (0.9-1.5m),medium (1.2-5m)
+126721,AST_IM_20250716_120422.jpeg,85400,Trail Bridge,data/citywide/images/253/126721/85400__AST_IM_20250716_120422.jpeg,Gabions,Truss,Timber,2.0,2 railings,24.0,Steel,2.0,long (>20m),wide (>1.5m),medium (1.2-5m)
 126709,AST_IM_20250723_164003.jpeg,85374,Trail Bridge,data/citywide/images/253/126709/85374__AST_IM_20250723_164003.jpeg,Timber,Other,Timber,,No railings,2.0,Timber,0.75,short (<6m),narrow (<0.9m),
-126721,AST_IM_20250716_120324.jpeg,85403,Trail Bridge,data/citywide/images/253/126721/85403__AST_IM_20250716_120324.jpeg,Gabions,Truss,Timber,2.0,2 railings,24.0,Steel,2.0,long (>20m),wide (>1.5m),medium (1-5m)
-126721,AST_IM_20250716_120341.jpeg,85406,Trail Bridge,data/citywide/images/253/126721/85406__AST_IM_20250716_120341.jpeg,Gabions,Truss,Timber,2.0,2 railings,24.0,Steel,2.0,long (>20m),wide (>1.5m),medium (1-5m)
-126721,AST_IM_20250716_120405.jpeg,85407,Trail Bridge,data/citywide/images/253/126721/85407__AST_IM_20250716_120405.jpeg,Gabions,Truss,Timber,2.0,2 railings,24.0,Steel,2.0,long (>20m),wide (>1.5m),medium (1-5m)
-126737,Parnasus bridge.jpeg,85429,Trail Bridge,data/citywide/images/253/126737/85429__Parnasus_bridge.jpeg,Gabions,Beam,Timber,1.0,No railings,15.0,Timber,0.75,medium (6-20m),narrow (<0.9m),medium (1-5m)
+126721,AST_IM_20250716_120324.jpeg,85403,Trail Bridge,data/citywide/images/253/126721/85403__AST_IM_20250716_120324.jpeg,Gabions,Truss,Timber,2.0,2 railings,24.0,Steel,2.0,long (>20m),wide (>1.5m),medium (1.2-5m)
+126721,AST_IM_20250716_120341.jpeg,85406,Trail Bridge,data/citywide/images/253/126721/85406__AST_IM_20250716_120341.jpeg,Gabions,Truss,Timber,2.0,2 railings,24.0,Steel,2.0,long (>20m),wide (>1.5m),medium (1.2-5m)
+126721,AST_IM_20250716_120405.jpeg,85407,Trail Bridge,data/citywide/images/253/126721/85407__AST_IM_20250716_120405.jpeg,Gabions,Truss,Timber,2.0,2 railings,24.0,Steel,2.0,long (>20m),wide (>1.5m),medium (1.2-5m)
+126737,Parnasus bridge.jpeg,85429,Trail Bridge,data/citywide/images/253/126737/85429__Parnasus_bridge.jpeg,Gabions,Beam,Timber,1.0,No railings,15.0,Timber,0.75,medium (6-20m),narrow (<0.9m),low (<1.2m)
 126736,AST_IM_20250724_125754.jpeg,85426,Trail Bridge,data/citywide/images/253/126736/85426__AST_IM_20250724_125754.jpeg,Timber,Other,Steel,,,,Aluminum,,,,
-126740,Bridge4.jpg,87075,Trail Bridge,data/citywide/images/253/126740/87075__Bridge4.jpg,Timber,Beam,Timber,2.0,No railings,4.0,Timber,1.0,short (<6m),standard (0.9-1.5m),medium (1-5m)
-126740,Bridge 4 Deer Pt trail.jpeg,87076,Trail Bridge,data/citywide/images/253/126740/87076__Bridge_4_Deer_Pt_trail.jpeg,Timber,Beam,Timber,2.0,No railings,4.0,Timber,1.0,short (<6m),standard (0.9-1.5m),medium (1-5m)
-126779,AST_IM_20250730_115639.jpeg,85619,Trail Bridge,data/citywide/images/253/126779/85619__AST_IM_20250730_115639.jpeg,,Truss,Steel,2.0,,5.0,Steel,1.0,short (<6m),standard (0.9-1.5m),medium (1-5m)
+126740,Bridge4.jpg,87075,Trail Bridge,data/citywide/images/253/126740/87075__Bridge4.jpg,Timber,Beam,Timber,2.0,No railings,4.0,Timber,1.0,short (<6m),standard (0.9-1.5m),medium (1.2-5m)
+126740,Bridge 4 Deer Pt trail.jpeg,87076,Trail Bridge,data/citywide/images/253/126740/87076__Bridge_4_Deer_Pt_trail.jpeg,Timber,Beam,Timber,2.0,No railings,4.0,Timber,1.0,short (<6m),standard (0.9-1.5m),medium (1.2-5m)
+126779,AST_IM_20250730_115639.jpeg,85619,Trail Bridge,data/citywide/images/253/126779/85619__AST_IM_20250730_115639.jpeg,,Truss,Steel,2.0,,5.0,Steel,1.0,short (<6m),standard (0.9-1.5m),medium (1.2-5m)
 126774,AST_IM_20250730_124302.jpeg,85613,Trail Bridge,data/citywide/images/253/126774/85613__AST_IM_20250730_124302.jpeg,Gabions,Truss,Steel,6.0,,15.0,Steel,1.0,medium (6-20m),standard (0.9-1.5m),high (>5m)
-126779,AST_IM_20250730_115624.jpeg,85621,Trail Bridge,data/citywide/images/253/126779/85621__AST_IM_20250730_115624.jpeg,,Truss,Steel,2.0,,5.0,Steel,1.0,short (<6m),standard (0.9-1.5m),medium (1-5m)
-126793,AST_IM_20250730_120723.jpeg,85668,Trail Bridge,data/citywide/images/253/126793/85668__AST_IM_20250730_120723.jpeg,Aluminum Sill Fill,Truss,Steel,2.65,,9.6,,1.0,medium (6-20m),standard (0.9-1.5m),medium (1-5m)
-126799,AST_IM_20250730_142934.jpeg,85661,Trail Bridge,data/citywide/images/253/126799/85661__AST_IM_20250730_142934.jpeg,Aluminum Sill Fill,Truss,,1.7,,15.4,Aluminum,1.0,medium (6-20m),standard (0.9-1.5m),medium (1-5m)
-126801,AST_IM_20250730_143332.jpeg,85645,Trail Bridge,data/citywide/images/253/126801/85645__AST_IM_20250730_143332.jpeg,Gabions,Truss,Aluminum,3.9,,13.7,Aluminum,1.0,medium (6-20m),standard (0.9-1.5m),medium (1-5m)
-126798,AST_IM_20250730_134656.jpeg,85648,Trail Bridge,data/citywide/images/253/126798/85648__AST_IM_20250730_134656.jpeg,Timber,Truss,Steel,1.2,,5.5,Steel,1.0,short (<6m),standard (0.9-1.5m),medium (1-5m)
-126801,AST_IM_20250730_143348.jpeg,85662,Trail Bridge,data/citywide/images/253/126801/85662__AST_IM_20250730_143348.jpeg,Gabions,Truss,Aluminum,3.9,,13.7,Aluminum,1.0,medium (6-20m),standard (0.9-1.5m),medium (1-5m)
-126803,AST_IM_20250730_145101.jpeg,85659,Trail Bridge,data/citywide/images/253/126803/85659__AST_IM_20250730_145101.jpeg,Timber,Truss,Aluminum,0.55,,8.5,Aluminum,1.0,medium (6-20m),standard (0.9-1.5m),low (<1m)
-126804,AST_IM_20250730_133249.jpeg,85647,Trail Bridge,data/citywide/images/253/126804/85647__AST_IM_20250730_133249.jpeg,Timber,,Aluminum,1.0,,5.18,Aluminum,1.0,short (<6m),standard (0.9-1.5m),medium (1-5m)
-126806,AST_IM_20250730_144421.jpeg,85660,Trail Bridge,data/citywide/images/253/126806/85660__AST_IM_20250730_144421.jpeg,Timber,Truss,Steel,1.0,,8.3,Steel,1.0,medium (6-20m),standard (0.9-1.5m),medium (1-5m)
-126801,AST_IM_20250730_143340.jpeg,85646,Trail Bridge,data/citywide/images/253/126801/85646__AST_IM_20250730_143340.jpeg,Gabions,Truss,Aluminum,3.9,,13.7,Aluminum,1.0,medium (6-20m),standard (0.9-1.5m),medium (1-5m)
-126809,AST_IM_20250730_152958.jpeg,85638,Trail Bridge,data/citywide/images/253/126809/85638__AST_IM_20250730_152958.jpeg,Timber,Truss,Aluminum,1.0,,7.7,Aluminum,1.0,medium (6-20m),standard (0.9-1.5m),medium (1-5m)
-126809,AST_IM_20250730_151727.jpeg,85640,Trail Bridge,data/citywide/images/253/126809/85640__AST_IM_20250730_151727.jpeg,Timber,Truss,Aluminum,1.0,,7.7,Aluminum,1.0,medium (6-20m),standard (0.9-1.5m),medium (1-5m)
+126779,AST_IM_20250730_115624.jpeg,85621,Trail Bridge,data/citywide/images/253/126779/85621__AST_IM_20250730_115624.jpeg,,Truss,Steel,2.0,,5.0,Steel,1.0,short (<6m),standard (0.9-1.5m),medium (1.2-5m)
+126793,AST_IM_20250730_120723.jpeg,85668,Trail Bridge,data/citywide/images/253/126793/85668__AST_IM_20250730_120723.jpeg,Aluminum Sill Fill,Truss,Steel,2.65,,9.6,,1.0,medium (6-20m),standard (0.9-1.5m),medium (1.2-5m)
+126799,AST_IM_20250730_142934.jpeg,85661,Trail Bridge,data/citywide/images/253/126799/85661__AST_IM_20250730_142934.jpeg,Aluminum Sill Fill,Truss,,1.7,,15.4,Aluminum,1.0,medium (6-20m),standard (0.9-1.5m),medium (1.2-5m)
+126801,AST_IM_20250730_143332.jpeg,85645,Trail Bridge,data/citywide/images/253/126801/85645__AST_IM_20250730_143332.jpeg,Gabions,Truss,Aluminum,3.9,,13.7,Aluminum,1.0,medium (6-20m),standard (0.9-1.5m),medium (1.2-5m)
+126798,AST_IM_20250730_134656.jpeg,85648,Trail Bridge,data/citywide/images/253/126798/85648__AST_IM_20250730_134656.jpeg,Timber,Truss,Steel,1.2,,5.5,Steel,1.0,short (<6m),standard (0.9-1.5m),medium (1.2-5m)
+126801,AST_IM_20250730_143348.jpeg,85662,Trail Bridge,data/citywide/images/253/126801/85662__AST_IM_20250730_143348.jpeg,Gabions,Truss,Aluminum,3.9,,13.7,Aluminum,1.0,medium (6-20m),standard (0.9-1.5m),medium (1.2-5m)
+126803,AST_IM_20250730_145101.jpeg,85659,Trail Bridge,data/citywide/images/253/126803/85659__AST_IM_20250730_145101.jpeg,Timber,Truss,Aluminum,0.55,,8.5,Aluminum,1.0,medium (6-20m),standard (0.9-1.5m),low (<1.2m)
+126804,AST_IM_20250730_133249.jpeg,85647,Trail Bridge,data/citywide/images/253/126804/85647__AST_IM_20250730_133249.jpeg,Timber,,Aluminum,1.0,,5.18,Aluminum,1.0,short (<6m),standard (0.9-1.5m),low (<1.2m)
+126806,AST_IM_20250730_144421.jpeg,85660,Trail Bridge,data/citywide/images/253/126806/85660__AST_IM_20250730_144421.jpeg,Timber,Truss,Steel,1.0,,8.3,Steel,1.0,medium (6-20m),standard (0.9-1.5m),low (<1.2m)
+126801,AST_IM_20250730_143340.jpeg,85646,Trail Bridge,data/citywide/images/253/126801/85646__AST_IM_20250730_143340.jpeg,Gabions,Truss,Aluminum,3.9,,13.7,Aluminum,1.0,medium (6-20m),standard (0.9-1.5m),medium (1.2-5m)
+126809,AST_IM_20250730_152958.jpeg,85638,Trail Bridge,data/citywide/images/253/126809/85638__AST_IM_20250730_152958.jpeg,Timber,Truss,Aluminum,1.0,,7.7,Aluminum,1.0,medium (6-20m),standard (0.9-1.5m),low (<1.2m)
+126809,AST_IM_20250730_151727.jpeg,85640,Trail Bridge,data/citywide/images/253/126809/85640__AST_IM_20250730_151727.jpeg,Timber,Truss,Aluminum,1.0,,7.7,Aluminum,1.0,medium (6-20m),standard (0.9-1.5m),low (<1.2m)
 126914,AST_IM_20250730_162741.jpeg,85837,Trail Bridge,data/citywide/images/253/126914/85837__AST_IM_20250730_162741.jpeg,Timber,Other,Timber,,No railings,3.0,Timber,,short (<6m),,
-126915,AST_IM_20250730_161027.jpeg,85843,Trail Bridge,data/citywide/images/253/126915/85843__AST_IM_20250730_161027.jpeg,Gabions,Beam,Timber,3.0,,3.0,Aluminum,,short (<6m),,medium (1-5m)
-126915,AST_IM_20250730_161039.jpeg,85844,Trail Bridge,data/citywide/images/253/126915/85844__AST_IM_20250730_161039.jpeg,Gabions,Beam,Timber,3.0,,3.0,Aluminum,,short (<6m),,medium (1-5m)
-126915,AST_IM_20250730_160958.jpeg,85845,Trail Bridge,data/citywide/images/253/126915/85845__AST_IM_20250730_160958.jpeg,Gabions,Beam,Timber,3.0,,3.0,Aluminum,,short (<6m),,medium (1-5m)
+126915,AST_IM_20250730_161027.jpeg,85843,Trail Bridge,data/citywide/images/253/126915/85843__AST_IM_20250730_161027.jpeg,Gabions,Beam,Timber,3.0,,3.0,Aluminum,,short (<6m),,medium (1.2-5m)
+126915,AST_IM_20250730_161039.jpeg,85844,Trail Bridge,data/citywide/images/253/126915/85844__AST_IM_20250730_161039.jpeg,Gabions,Beam,Timber,3.0,,3.0,Aluminum,,short (<6m),,medium (1.2-5m)
+126915,AST_IM_20250730_160958.jpeg,85845,Trail Bridge,data/citywide/images/253/126915/85845__AST_IM_20250730_160958.jpeg,Gabions,Beam,Timber,3.0,,3.0,Aluminum,,short (<6m),,medium (1.2-5m)
 126913,AST_IM_20250730_162633.jpeg,85842,Trail Bridge,data/citywide/images/253/126913/85842__AST_IM_20250730_162633.jpeg,Timber,Other,Timber,,No railings,3.0,Timber,,short (<6m),,
-127136,Footpath bridge 1.jpg,90541,Trail Bridge,data/citywide/images/253/127136/90541__Footpath_bridge_1.jpg,Aluminum Sill Fill,Other,Aluminum,3.0,2 railings,15.0,Aluminum,1.5,medium (6-20m),wide (>1.5m),medium (1-5m)
-127136,Footpath bridge 2.jpg,90542,Trail Bridge,data/citywide/images/253/127136/90542__Footpath_bridge_2.jpg,Aluminum Sill Fill,Other,Aluminum,3.0,2 railings,15.0,Aluminum,1.5,medium (6-20m),wide (>1.5m),medium (1-5m)
-126916,AST_IM_20250730_162835.jpeg,85841,Trail Bridge,data/citywide/images/253/126916/85841__AST_IM_20250730_162835.jpeg,Timber,Other,Timber,0.2,No railings,3.0,Timber,,short (<6m),,low (<1m)
-127147,AST_IM_20250819_133749.jpeg,87009,Trail Bridge,data/citywide/images/253/127147/87009__AST_IM_20250819_133749.jpeg,Timber,Other,Timber,2.0,1 railing,7.0,Timber,1.2,medium (6-20m),standard (0.9-1.5m),medium (1-5m)
-127145,AST_IM_20250819_135439.jpeg,87017,Trail Bridge,data/citywide/images/253/127145/87017__AST_IM_20250819_135439.jpeg,,Beam,Timber,2.0,2 railings,7.0,Timber,1.3,medium (6-20m),standard (0.9-1.5m),medium (1-5m)
+127136,Footpath bridge 1.jpg,90541,Trail Bridge,data/citywide/images/253/127136/90541__Footpath_bridge_1.jpg,Aluminum Sill Fill,Other,Aluminum,3.0,2 railings,15.0,Aluminum,1.5,medium (6-20m),wide (>1.5m),medium (1.2-5m)
+127136,Footpath bridge 2.jpg,90542,Trail Bridge,data/citywide/images/253/127136/90542__Footpath_bridge_2.jpg,Aluminum Sill Fill,Other,Aluminum,3.0,2 railings,15.0,Aluminum,1.5,medium (6-20m),wide (>1.5m),medium (1.2-5m)
+126916,AST_IM_20250730_162835.jpeg,85841,Trail Bridge,data/citywide/images/253/126916/85841__AST_IM_20250730_162835.jpeg,Timber,Other,Timber,0.2,No railings,3.0,Timber,,short (<6m),,low (<1.2m)
+127147,AST_IM_20250819_133749.jpeg,87009,Trail Bridge,data/citywide/images/253/127147/87009__AST_IM_20250819_133749.jpeg,Timber,Other,Timber,2.0,1 railing,7.0,Timber,1.2,medium (6-20m),standard (0.9-1.5m),medium (1.2-5m)
+127145,AST_IM_20250819_135439.jpeg,87017,Trail Bridge,data/citywide/images/253/127145/87017__AST_IM_20250819_135439.jpeg,,Beam,Timber,2.0,2 railings,7.0,Timber,1.3,medium (6-20m),standard (0.9-1.5m),medium (1.2-5m)
 127159,AST_IM_20250819_091637.jpeg,87061,Trail Bridge,data/citywide/images/253/127159/87061__AST_IM_20250819_091637.jpeg,,,Timber,,,,,,,,
 127203,Bridge 7 Deer Pt trail.jpeg,87162,Trail Bridge,data/citywide/images/253/127203/87162__Bridge_7_Deer_Pt_trail.jpeg,,Beam,Timber,,2 railings,,Timber,1.2,,standard (0.9-1.5m),
-127184,AST_IM_20250820_173654.jpeg,87113,Trail Bridge,data/citywide/images/253/127184/87113__AST_IM_20250820_173654.jpeg,Composite,Fallen Tree,Timber,2.0,1 railing,10.0,Timber,1.0,medium (6-20m),standard (0.9-1.5m),medium (1-5m)
+127184,AST_IM_20250820_173654.jpeg,87113,Trail Bridge,data/citywide/images/253/127184/87113__AST_IM_20250820_173654.jpeg,Composite,Fallen Tree,Timber,2.0,1 railing,10.0,Timber,1.0,medium (6-20m),standard (0.9-1.5m),medium (1.2-5m)
 127204,Bridge6.jpg,87160,Trail Bridge,data/citywide/images/253/127204/87160__Bridge6.jpg,,Beam,Timber,,No railings,,Timber,1.2,,standard (0.9-1.5m),
 127205,Bridge5.jpg,87161,Trail Bridge,data/citywide/images/253/127205/87161__Bridge5.jpg,,Beam,Timber,,No railings,6.0,Timber,1.2,medium (6-20m),standard (0.9-1.5m),
-127221,AST_IM_20250823_132951.jpeg,87181,Trail Bridge,data/citywide/images/253/127221/87181__AST_IM_20250823_132951.jpeg,Timber,Beam,Timber,2.4,No railings,18.15,Steel,1.8,medium (6-20m),wide (>1.5m),medium (1-5m)
-127221,AST_IM_20250823_133059.jpeg,87183,Trail Bridge,data/citywide/images/253/127221/87183__AST_IM_20250823_133059.jpeg,Timber,Beam,Timber,2.4,No railings,18.15,Steel,1.8,medium (6-20m),wide (>1.5m),medium (1-5m)
-127221,AST_IM_20250823_133051.jpeg,87178,Trail Bridge,data/citywide/images/253/127221/87178__AST_IM_20250823_133051.jpeg,Timber,Beam,Timber,2.4,No railings,18.15,Steel,1.8,medium (6-20m),wide (>1.5m),medium (1-5m)
-127221,AST_IM_20250823_133023.jpeg,87185,Trail Bridge,data/citywide/images/253/127221/87185__AST_IM_20250823_133023.jpeg,Timber,Beam,Timber,2.4,No railings,18.15,Steel,1.8,medium (6-20m),wide (>1.5m),medium (1-5m)
-127221,AST_IM_20250823_132856.jpeg,87184,Trail Bridge,data/citywide/images/253/127221/87184__AST_IM_20250823_132856.jpeg,Timber,Beam,Timber,2.4,No railings,18.15,Steel,1.8,medium (6-20m),wide (>1.5m),medium (1-5m)
-127221,AST_IM_20250823_133011.jpeg,87186,Trail Bridge,data/citywide/images/253/127221/87186__AST_IM_20250823_133011.jpeg,Timber,Beam,Timber,2.4,No railings,18.15,Steel,1.8,medium (6-20m),wide (>1.5m),medium (1-5m)
-127221,AST_IM_20250823_132943.jpeg,87188,Trail Bridge,data/citywide/images/253/127221/87188__AST_IM_20250823_132943.jpeg,Timber,Beam,Timber,2.4,No railings,18.15,Steel,1.8,medium (6-20m),wide (>1.5m),medium (1-5m)
-127221,AST_IM_20250823_132936.jpeg,87187,Trail Bridge,data/citywide/images/253/127221/87187__AST_IM_20250823_132936.jpeg,Timber,Beam,Timber,2.4,No railings,18.15,Steel,1.8,medium (6-20m),wide (>1.5m),medium (1-5m)
-127221,AST_IM_20250823_132919.jpeg,87189,Trail Bridge,data/citywide/images/253/127221/87189__AST_IM_20250823_132919.jpeg,Timber,Beam,Timber,2.4,No railings,18.15,Steel,1.8,medium (6-20m),wide (>1.5m),medium (1-5m)
+127221,AST_IM_20250823_132951.jpeg,87181,Trail Bridge,data/citywide/images/253/127221/87181__AST_IM_20250823_132951.jpeg,Timber,Beam,Timber,2.4,No railings,18.15,Steel,1.8,medium (6-20m),wide (>1.5m),medium (1.2-5m)
+127221,AST_IM_20250823_133059.jpeg,87183,Trail Bridge,data/citywide/images/253/127221/87183__AST_IM_20250823_133059.jpeg,Timber,Beam,Timber,2.4,No railings,18.15,Steel,1.8,medium (6-20m),wide (>1.5m),medium (1.2-5m)
+127221,AST_IM_20250823_133051.jpeg,87178,Trail Bridge,data/citywide/images/253/127221/87178__AST_IM_20250823_133051.jpeg,Timber,Beam,Timber,2.4,No railings,18.15,Steel,1.8,medium (6-20m),wide (>1.5m),medium (1.2-5m)
+127221,AST_IM_20250823_133023.jpeg,87185,Trail Bridge,data/citywide/images/253/127221/87185__AST_IM_20250823_133023.jpeg,Timber,Beam,Timber,2.4,No railings,18.15,Steel,1.8,medium (6-20m),wide (>1.5m),medium (1.2-5m)
+127221,AST_IM_20250823_132856.jpeg,87184,Trail Bridge,data/citywide/images/253/127221/87184__AST_IM_20250823_132856.jpeg,Timber,Beam,Timber,2.4,No railings,18.15,Steel,1.8,medium (6-20m),wide (>1.5m),medium (1.2-5m)
+127221,AST_IM_20250823_133011.jpeg,87186,Trail Bridge,data/citywide/images/253/127221/87186__AST_IM_20250823_133011.jpeg,Timber,Beam,Timber,2.4,No railings,18.15,Steel,1.8,medium (6-20m),wide (>1.5m),medium (1.2-5m)
+127221,AST_IM_20250823_132943.jpeg,87188,Trail Bridge,data/citywide/images/253/127221/87188__AST_IM_20250823_132943.jpeg,Timber,Beam,Timber,2.4,No railings,18.15,Steel,1.8,medium (6-20m),wide (>1.5m),medium (1.2-5m)
+127221,AST_IM_20250823_132936.jpeg,87187,Trail Bridge,data/citywide/images/253/127221/87187__AST_IM_20250823_132936.jpeg,Timber,Beam,Timber,2.4,No railings,18.15,Steel,1.8,medium (6-20m),wide (>1.5m),medium (1.2-5m)
+127221,AST_IM_20250823_132919.jpeg,87189,Trail Bridge,data/citywide/images/253/127221/87189__AST_IM_20250823_132919.jpeg,Timber,Beam,Timber,2.4,No railings,18.15,Steel,1.8,medium (6-20m),wide (>1.5m),medium (1.2-5m)
 127230,AST_IM_20250826_110032.jpeg,87198,Trail Bridge,data/citywide/images/253/127230/87198__AST_IM_20250826_110032.jpeg,,,,,,,,,,,
-127221,AST_IM_20250823_132909.jpeg,87192,Trail Bridge,data/citywide/images/253/127221/87192__AST_IM_20250823_132909.jpeg,Timber,Beam,Timber,2.4,No railings,18.15,Steel,1.8,medium (6-20m),wide (>1.5m),medium (1-5m)
+127221,AST_IM_20250823_132909.jpeg,87192,Trail Bridge,data/citywide/images/253/127221/87192__AST_IM_20250823_132909.jpeg,Timber,Beam,Timber,2.4,No railings,18.15,Steel,1.8,medium (6-20m),wide (>1.5m),medium (1.2-5m)
 127455,AST_IM_20250825_154359.jpeg,87642,Trail Bridge,data/citywide/images/253/127455/87642__AST_IM_20250825_154359.jpeg,,,Timber,,No railings,100.0,,,long (>20m),,
 127455,AST_IM_20250825_154433.jpeg,87645,Trail Bridge,data/citywide/images/253/127455/87645__AST_IM_20250825_154433.jpeg,,,Timber,,No railings,100.0,,,long (>20m),,
 127388,AST_IM_20250906_111632.jpeg,87490,Trail Bridge,data/citywide/images/253/127388/87490__AST_IM_20250906_111632.jpeg,,Beam,Concrete,,2 railings,17.5,Timber,,medium (6-20m),,
@@ -1971,17 +1971,17 @@ asset_id,filename,file_id,profile_name,image_path,attr_abutment_material,attr_br
 127914,AST_IM_20251002_145026.jpeg,89516,Trail Bridge,data/citywide/images/253/127914/89516__AST_IM_20251002_145026.jpeg,,,,,,,,,,,
 127907,AST_IM_20251010_135220.jpeg,89194,Trail Bridge,data/citywide/images/253/127907/89194__AST_IM_20251010_135220.jpeg,,,,,,,,,,,
 127962,AST_IM_20251019_143716.jpeg,89924,Trail Bridge,data/citywide/images/253/127962/89924__AST_IM_20251019_143716.jpeg,,,,,,,,,,,
-128033,20251012_184031828_iOS.jpg,90229,Trail Bridge,data/citywide/images/253/128033/90229__20251012_184031828_iOS.jpg,Timber,Beam,Timber,0.5,No railings,6.0,,,medium (6-20m),,low (<1m)
+128033,20251012_184031828_iOS.jpg,90229,Trail Bridge,data/citywide/images/253/128033/90229__20251012_184031828_iOS.jpg,Timber,Beam,Timber,0.5,No railings,6.0,,,medium (6-20m),,low (<1.2m)
 127962,AST_IM_20251019_143557.jpeg,89922,Trail Bridge,data/citywide/images/253/127962/89922__AST_IM_20251019_143557.jpeg,,,,,,,,,,,
-128041,AST_IM_20251101_134010.jpeg,90236,Trail Bridge,data/citywide/images/253/128041/90236__AST_IM_20251101_134010.jpeg,Timber,Beam,Timber,1.5,No railings,20.0,Timber,4.0,long (>20m),wide (>1.5m),medium (1-5m)
+128041,AST_IM_20251101_134010.jpeg,90236,Trail Bridge,data/citywide/images/253/128041/90236__AST_IM_20251101_134010.jpeg,Timber,Beam,Timber,1.5,No railings,20.0,Timber,4.0,long (>20m),wide (>1.5m),medium (1.2-5m)
 128034,20251012_192000704_iOS.jpg,90230,Trail Bridge,data/citywide/images/253/128034/90230__20251012_192000704_iOS.jpg,Timber,Beam,Timber,,,,,,,,
-128041,AST_IM_20251101_133946.jpeg,90238,Trail Bridge,data/citywide/images/253/128041/90238__AST_IM_20251101_133946.jpeg,Timber,Beam,Timber,1.5,No railings,20.0,Timber,4.0,long (>20m),wide (>1.5m),medium (1-5m)
-128041,AST_IM_20251101_133921.jpeg,90239,Trail Bridge,data/citywide/images/253/128041/90239__AST_IM_20251101_133921.jpeg,Timber,Beam,Timber,1.5,No railings,20.0,Timber,4.0,long (>20m),wide (>1.5m),medium (1-5m)
-128041,AST_IM_20251101_133934.jpeg,90237,Trail Bridge,data/citywide/images/253/128041/90237__AST_IM_20251101_133934.jpeg,Timber,Beam,Timber,1.5,No railings,20.0,Timber,4.0,long (>20m),wide (>1.5m),medium (1-5m)
+128041,AST_IM_20251101_133946.jpeg,90238,Trail Bridge,data/citywide/images/253/128041/90238__AST_IM_20251101_133946.jpeg,Timber,Beam,Timber,1.5,No railings,20.0,Timber,4.0,long (>20m),wide (>1.5m),medium (1.2-5m)
+128041,AST_IM_20251101_133921.jpeg,90239,Trail Bridge,data/citywide/images/253/128041/90239__AST_IM_20251101_133921.jpeg,Timber,Beam,Timber,1.5,No railings,20.0,Timber,4.0,long (>20m),wide (>1.5m),medium (1.2-5m)
+128041,AST_IM_20251101_133934.jpeg,90237,Trail Bridge,data/citywide/images/253/128041/90237__AST_IM_20251101_133934.jpeg,Timber,Beam,Timber,1.5,No railings,20.0,Timber,4.0,long (>20m),wide (>1.5m),medium (1.2-5m)
 128273,AST_EX_20220617_171132.jpeg,90332,Trail Bridge,data/citywide/images/253/128273/90332__AST_EX_20220617_171132.jpeg,Concrete,Other,Timber,,2 railings,7.6,Aluminum,1.4,medium (6-20m),standard (0.9-1.5m),
 128273,AST_EX_20220617_171114.jpeg,90331,Trail Bridge,data/citywide/images/253/128273/90331__AST_EX_20220617_171114.jpeg,Concrete,Other,Timber,,2 railings,7.6,Aluminum,1.4,medium (6-20m),standard (0.9-1.5m),
 128273,AST_EX_20220617_171150.jpeg,90333,Trail Bridge,data/citywide/images/253/128273/90333__AST_EX_20220617_171150.jpeg,Concrete,Other,Timber,,2 railings,7.6,Aluminum,1.4,medium (6-20m),standard (0.9-1.5m),
-128643,2025 new foot bridge across outflow creek.jpg,90606,Trail Bridge,data/citywide/images/253/128643/90606__2025_new_foot_bridge_across_outflow_creek.jpg,Concrete,Beam,Timber,2.0,2 railings,,Timber,1.2,,standard (0.9-1.5m),medium (1-5m)
+128643,2025 new foot bridge across outflow creek.jpg,90606,Trail Bridge,data/citywide/images/253/128643/90606__2025_new_foot_bridge_across_outflow_creek.jpg,Concrete,Beam,Timber,2.0,2 railings,,Timber,1.2,,standard (0.9-1.5m),medium (1.2-5m)
 128828,GetAttachmentThumbnail.jpg,90637,Trail Bridge,data/citywide/images/253/128828/90637__GetAttachmentThumbnail.jpg,Timber,Beam,Timber,,,,,,,,
 128830,GetAttachmentThumbnail.jpg,90639,Trail Bridge,data/citywide/images/253/128830/90639__GetAttachmentThumbnail.jpg,Timber,Beam,Timber,,,,,,,,
 129304,AST_IM_20251211_110345.jpeg,92214,Trail Bridge,data/citywide/images/253/129304/92214__AST_IM_20251211_110345.jpeg,,Fallen Tree,,,,4.0,Timber,,short (<6m),,
@@ -1989,8 +1989,8 @@ asset_id,filename,file_id,profile_name,image_path,attr_abutment_material,attr_br
 129305,AST_IM_20251211_095354.jpeg,92215,Trail Bridge,data/citywide/images/253/129305/92215__AST_IM_20251211_095354.jpeg,,Beam,Timber,,,5.0,Timber,1.0,short (<6m),standard (0.9-1.5m),
 129364,IMG_3883.jpg,92355,Trail Bridge,data/citywide/images/253/129364/92355__IMG_3883.jpg,Timber,Beam,,,No railings,4.0,Timber,1.0,short (<6m),standard (0.9-1.5m),
 129406,AST_IM_20260120_114940.jpeg,92443,Trail Bridge,data/citywide/images/253/129406/92443__AST_IM_20260120_114940.jpeg,,,,,,,,,,,
-129739,MI_20260325_161546.jpg,92806,Trail Bridge,data/citywide/images/253/129739/92806__MI_20260325_161546.jpg,Timber,Beam,Timber,0.3,No railings,,Timber,1.25,,standard (0.9-1.5m),low (<1m)
-129739,MI_20260325_161554.jpg,92807,Trail Bridge,data/citywide/images/253/129739/92807__MI_20260325_161554.jpg,Timber,Beam,Timber,0.3,No railings,,Timber,1.25,,standard (0.9-1.5m),low (<1m)
+129739,MI_20260325_161546.jpg,92806,Trail Bridge,data/citywide/images/253/129739/92806__MI_20260325_161546.jpg,Timber,Beam,Timber,0.3,No railings,,Timber,1.25,,standard (0.9-1.5m),low (<1.2m)
+129739,MI_20260325_161554.jpg,92807,Trail Bridge,data/citywide/images/253/129739/92807__MI_20260325_161554.jpg,Timber,Beam,Timber,0.3,No railings,,Timber,1.25,,standard (0.9-1.5m),low (<1.2m)
 129491,AST_IM_20260217_160121.jpeg,92633,Trail Bridge,data/citywide/images/253/129491/92633__AST_IM_20260217_160121.jpeg,Timber,Beam,Timber,,1 railing,,,,,,
-129739,MI_20260325_161551.jpg,92808,Trail Bridge,data/citywide/images/253/129739/92808__MI_20260325_161551.jpg,Timber,Beam,Timber,0.3,No railings,,Timber,1.25,,standard (0.9-1.5m),low (<1m)
+129739,MI_20260325_161551.jpg,92808,Trail Bridge,data/citywide/images/253/129739/92808__MI_20260325_161551.jpg,Timber,Beam,Timber,0.3,No railings,,Timber,1.25,,standard (0.9-1.5m),low (<1.2m)
 102358,AST_IM_20220615_151413.jpeg,46440,Trail Bridge,data/citywide/images/253/102358/46440__AST_IM_20220615_151413.jpeg,Timber,Beam,Timber,,No railings,,,,,,
