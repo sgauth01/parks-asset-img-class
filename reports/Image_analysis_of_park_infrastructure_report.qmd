@@ -260,7 +260,7 @@ This allows us to predict:
 - No component localization  
 - Not reliable for measurements  
 
-### Proposed Attribute-Based Pipeline
+### Proposed Data Science Approach
 
 Our approach is motivated directly by the findings from our exploratory data analysis above. Given the  high degree of class imbalance seen in @fig-cat-distributions, where Timber dominates a lot of our categorical variables like decking material, structure material and abutment material, accuracy alone will be a misleading metric when evaluating our model. 
 
