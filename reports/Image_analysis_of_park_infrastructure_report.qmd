@@ -107,8 +107,7 @@ format:
 \vspace{0.4cm}
 ```
 
-
-
+\newpage
 
 # Executive Summary
 BC Parks manages over 100,000 infrastructure assets, including stairs, trail bridges, boardwalks, and viewing platforms. Although many assets have associated photographs, important infrastructure attributes such as material,structural position and dimensions are often missing or incomplete. This limits the ability of staff to efficiently plan maintenance, prioritize inspections, and make reliable data-driven decisions.
