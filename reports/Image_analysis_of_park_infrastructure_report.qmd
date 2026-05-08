@@ -113,8 +113,6 @@ BC Parks manages over 100,000 infrastructure assets, including stairs, trail bri
 We propose a staged modelling pipeline beginning with a zero-shot vision-language model baseline [@radford2021clip], followed by more targeted attribute-specific models for tasks such as material classification, structural feature detection, and size estimation. The final outcome will be a reproducible pipeline capable of generating structured attribute predictions with confidence scores to support BC Parks staff in reviewing and updating infrastructure records.
 
 
-
-
 \newpage
 
 ## Introduction
@@ -320,6 +318,11 @@ flowchart TD
 
 ## Evaluation & Success Criteria
 
+For our evaluation plan, we will start comparing our approaches against our majority class predictor using an F1 score as the minimum benchmark. For attribute-specific evaluation, we will use macro-F1 for categorical fields, and both mean absolute error (MAE) and root mean squared error (RMSE) for numeric fields. MAE shows the average error size, while RMSE penalizes larger errors more heavily, together providing a more complete view of model performance. Our best models will then be evaluated on a held-out test set.
+
+For BC Parks, success means the workflow can classify infrastructure photos into the correct asset type and fill key missing attributes, including material, length, structure position and number of steps, reducing manual effort required by field staff. The results should be exported as a simple CSV file containing attribute values and confidence scores, making it easy for staff to review. The pipeline is designed to support staff decision-making, not replace it.
+
+The primary stakeholders are BC Parks staff, the UBC MDS capstone team, and future maintainers. They all require accurate data, reproducible methods, and clear documentation for future updates as more data becomes available.
 
 ## Timeline 
 
