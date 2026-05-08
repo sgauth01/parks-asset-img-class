@@ -55,10 +55,8 @@ Can machine learning models automatically predict infrastructure attributes from
 
 The data for this project was exported from the CityWide asset management system using an API key provided by the project partner. It includes two primary components:
 
-1. All image files attached to assets of type `Trail Bridge`, `Stairs`, `Boardwalk` or `Viewing Platform`
-2. A CSV file with attribute data for each image file
-
-### Attribute Data
+1. All image files attached to assets of type `Trail Bridge`, `Stairs`, `Boardwalk` or `Viewing Platform`.
+2. A CSV file with attribute data for each image file.
 
 The CSV file with attribute data contains 5,562 rows, where each row corresponds to a single image (attachment) linked to an asset through its Asset ID. As such, the observational unit of the dataset is an individual image–asset pair. Each record also includes metadata such as image path, asset category (`profile_id`), and a series of asset-level attributes (e.g., decking material, fall height, length).
 
@@ -71,7 +69,7 @@ A summary of non-null values, data types, and number of unique values for releva
 
 import pandas as pd
 
-attributes_df = pd.read_csv("../data/citywide/image_attributes_manifest.csv")
+attributes_df = pd.read_csv("../data/raw/citywide/image_attributes_manifest.csv")
 
 attributes_df = attributes_df[[
     "image_path",
@@ -107,11 +105,8 @@ summary.index.name = "Column"
 summary
 ```
 
-The columns `image_path` and `file_id` contain unique values for all rows since each image has a unique path and ID, while `asset_id` only has 3584 unique values which confirms that many assets have more than one attachment. Most of the `attr_` features represent categorical attributes while the attributes fall height and number of steps contain only numerical values. Many attributes have substantial missing data.
 
-### Image Data
-
-In addition to the attribute table, the dataset includes 5,562 image files corresponding to the attachment records. These images were collected by field inspectors and serves as the input for the project's image-analysis workflow. Examples of these images are shown in @fig-examples.
+In addition to the attribute table, the dataset includes 5,310 image files that were collected by field inspectors corresponding to the attachment records. Examples of these images are shown in @fig-examples.
 
 ```{python}
 #| echo: false
@@ -122,9 +117,9 @@ from PIL import Image, ImageOps
 import matplotlib.pyplot as plt
 
 img_paths = [
-    "../data/citywide/images/253/54322/18912__AST_EX_20210826_112735.jpeg",
-    "../data/citywide/images/356/49702/36091__AST_EX_20220216_112215.jpeg",
-    "../data/citywide/images/573/128878/91012__AST_IM_20251122_103756.jpeg"
+    "../data/raw/citywide/images/253/54322/18912__AST_EX_20210826_112735.jpeg",
+    "../data/raw/citywide/images/356/49702/36091__AST_EX_20220216_112215.jpeg",
+    "../data/raw/citywide/images/573/128878/91012__AST_IM_20251122_103756.jpeg"
 ]
 
 fig, axes = plt.subplots(1, 3, figsize=(8, 3))
@@ -145,14 +140,6 @@ plt.tight_layout()
 
 
 ## Data Exploration
-
-Exploratory data analysis (EDA) was conducted on the dataset to answer the following questions about our dataset:
-1. How complete is the attribute data across different asset categories?
-2. How balanced are categorical attributes across classes?
-3. What is the distribution and quality of numerical attributes?
-4. What is the variability in image quality across assets?
-
-To answer these questions, the following analyses were performed.
 
 ### Unique values and label consistency
 
@@ -182,35 +169,25 @@ pd.set_option("display.max_colwidth", None)
 unique_table
 ```
 
-@tbl-unique-vals reveals some data quality issues such as the presence of placeholder values like `TBD` to denote missing values. There are also some redundant category labels (e.g., `No` and `No railings`) that should be combined into one category. 
-
-Additionally, it was found that numerical fields contained invalid placeholders such as `-1` or `0`, which also artificially reduce the null counts in @tbl-data-summary.
+@tbl-unique-vals reveals some data quality issues such as the presence of placeholder values like `TBD` to denote missing values. There are also some redundant category labels (e.g., `No` and `No railings`) that should be combined into one category. Additionally, through discussions with the partner, it was found that numerical fields also contained invalid placeholders such as `-1` or `0`, artificially reducing the null counts in @tbl-data-summary.
 
 ### Attribute completeness by asset category
 
-To assess data coverage, attribute fill rates were computed for each asset category. This is necessary because not all attributes are relevant to all asset types (e.g., `Number of Steps` is only applicable to stairs). Invalid placeholder values were removed before computing completeness.
+To assess data coverage, attribute fill rates were computed for each asset category. It was necessary to do this by asset category because not all attributes are relevant to all asset types (e.g., `Number of Steps` is only applicable to stairs). Invalid placeholder values were removed before computing fill rates.
 
 ![Attribute fill rate per asset category](report_images/attribute_fill_rate.png){#fig-attribute-fill-rate}
 
-@fig-attribute-fill-rate shows variation in completeness across both attributes and asset types. Numerical attributes such as `Fall Height` and `Number of Steps` are particularly sparse while some categorical attributes like `Decking Material` are more consistently filled. This indicates that attribute collection is inconsistent and may require imputation or alternative learning strategies, including leveraging image-based inference or pre-trained models.
+As shown in @fig-attribute-fill-rate, there is a lot of variation in completeness across attribute types. Numerical attributes such as `Fall Height` and `Number of Steps` are particularly sparse while some categorical or binary attributes like `Decking Material` or `Has Edge Guard` are more consistently filled. This indicates that attribute collection is inconsistent and may require imputation or alternative learning strategies, including image-based inference using computer vision or pre-trained machine learning models.
 
 ### Categorical attribute distributions
 
 ![Class distributions for categorical attributes](report_images/categorical_distributions.png){#fig-cat-distributions}
 
-@fig-cat-distributions shows strong class imbalance across several categorical attributes. For example, for `Decking Material` and `Structure Material`, dominant classes such as `Timber` appear far more frequently than alternatives. This imbalance introduces bias risks for supervised learning, as models may over-predict majority classes and underperform on rare categories. As a result, evaluation metrics such as precision and recall will be more appropriate than overall accuracy. This also motivates the use of a majority-class baseline model for benchmarking.
-
-### Numerical attribute distributions
-
-![Numerical attribute distributions](report_images/numerical_distributions.png){#fig-num-distributions}
-
-Numerical attributes were analysed using histograms with mean and median values. These distributions are highly skewed, with clear differences between mean and median, indicating outliers and possibly inconsistent measurement practices.
+@fig-cat-distributions shows strong class imbalance across several categorical attributes. For example, for `Decking Material` and `Structure Material`, dominant classes such as `Timber` appear far more frequently than alternatives. This imbalance introduces bias risks if employing supervised learning, as models may over-predict majority classes and underperform on rare categories. As a result, evaluation metrics such as precision and recall will be more appropriate than overall accuracy. This also motivates the use of a majority-class baseline model for benchmarking.
 
 ### Image quality
 
-While having multiple images per asset improves coverage, image quality is highly variable. Some images are close-ups or poorly framed, and may not capture relevant structural information.
-
-As shown in @fig-same-asset, even images from the same asset can vary significantly in usefulness. This suggests that image filtering or weighting may be required during model training to reduce noise from low-quality samples.
+While having multiple images per asset improves coverage and may give us more opportunities to correctly predict attribute values, the quality among these images varies significantly. Some images are close-ups or poorly framed, and may not capture relevant structural information, as shown in @fig-same-asset. This suggests that image filtering or weighting may be required during model training to reduce noise from low-quality samples.
 
 ```{python}
 #| echo: false
@@ -218,8 +195,8 @@ As shown in @fig-same-asset, even images from the same asset can vary significan
 #| fig-cap: "Two sample images of the same boardwalk"
 
 img_paths = [
-    "../data/citywide/images/573/92846/29443__AST_IM_20211022_155226.jpeg",
-    "../data/citywide/images/573/92846/64069__AST_EX_20221114_140509.jpeg"
+    "../data/raw/citywide/images/573/92846/29443__AST_IM_20211022_155226.jpeg",
+    "../data/raw/citywide/images/573/92846/64069__AST_EX_20221114_140509.jpeg"
 ]
 
 fig, axes = plt.subplots(1, 2, figsize=(8, 3))

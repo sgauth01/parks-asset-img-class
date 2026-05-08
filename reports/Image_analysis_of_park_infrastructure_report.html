@@ -57,17 +57,12 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary">Summary</a></li>
   <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
   <li><a href="#research-question" id="toc-research-question" class="nav-link" data-scroll-target="#research-question">Research Question</a></li>
-  <li><a href="#data-sources" id="toc-data-sources" class="nav-link" data-scroll-target="#data-sources">Data Sources</a>
-  <ul class="collapse">
-  <li><a href="#attribute-data" id="toc-attribute-data" class="nav-link" data-scroll-target="#attribute-data">Attribute Data</a></li>
-  <li><a href="#image-data" id="toc-image-data" class="nav-link" data-scroll-target="#image-data">Image Data</a></li>
-  </ul></li>
+  <li><a href="#data-sources" id="toc-data-sources" class="nav-link" data-scroll-target="#data-sources">Data Sources</a></li>
   <li><a href="#data-exploration" id="toc-data-exploration" class="nav-link" data-scroll-target="#data-exploration">Data Exploration</a>
   <ul class="collapse">
   <li><a href="#unique-values-and-label-consistency" id="toc-unique-values-and-label-consistency" class="nav-link" data-scroll-target="#unique-values-and-label-consistency">Unique values and label consistency</a></li>
   <li><a href="#attribute-completeness-by-asset-category" id="toc-attribute-completeness-by-asset-category" class="nav-link" data-scroll-target="#attribute-completeness-by-asset-category">Attribute completeness by asset category</a></li>
   <li><a href="#categorical-attribute-distributions" id="toc-categorical-attribute-distributions" class="nav-link" data-scroll-target="#categorical-attribute-distributions">Categorical attribute distributions</a></li>
-  <li><a href="#numerical-attribute-distributions" id="toc-numerical-attribute-distributions" class="nav-link" data-scroll-target="#numerical-attribute-distributions">Numerical attribute distributions</a></li>
   <li><a href="#image-quality" id="toc-image-quality" class="nav-link" data-scroll-target="#image-quality">Image quality</a></li>
   </ul></li>
   <li><a href="#methodology" id="toc-methodology" class="nav-link" data-scroll-target="#methodology">Methodology</a>
@@ -154,11 +149,9 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="data-sources">Data Sources</h2>
 <p>The data for this project was exported from the CityWide asset management system using an API key provided by the project partner. It includes two primary components:</p>
 <ol type="1">
-<li>All image files attached to assets of type <code>Trail Bridge</code>, <code>Stairs</code>, <code>Boardwalk</code> or <code>Viewing Platform</code></li>
-<li>A CSV file with attribute data for each image file</li>
+<li>All image files attached to assets of type <code>Trail Bridge</code>, <code>Stairs</code>, <code>Boardwalk</code> or <code>Viewing Platform</code>.</li>
+<li>A CSV file with attribute data for each image file.</li>
 </ol>
-<section id="attribute-data" class="level3">
-<h3 class="anchored" data-anchor-id="attribute-data">Attribute Data</h3>
 <p>The CSV file with attribute data contains 5,562 rows, where each row corresponds to a single image (attachment) linked to an asset through its Asset ID. As such, the observational unit of the dataset is an individual image–asset pair. Each record also includes metadata such as image path, asset category (<code>profile_id</code>), and a series of asset-level attributes (e.g., decking material, fall height, length).</p>
 <p>A summary of non-null values, data types, and number of unique values for relevant columns is shown in <a href="#tbl-data-summary" class="quarto-xref">Table&nbsp;1</a>.</p>
 <div class="cell" data-execution_count="1">
@@ -168,7 +161,7 @@ ul.task-list li input[type="checkbox"] {
 Table&nbsp;1: Summary of non-null counts, data types, and unique values for the attribute dataset.
 </figcaption>
 <div aria-describedby="tbl-data-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output cell-output-display" data-execution_count="5">
+<div class="cell-output cell-output-display" data-execution_count="1">
 <div>
 
 
@@ -339,11 +332,7 @@ Table&nbsp;1: Summary of non-null counts, data types, and unique values for the 
 </figure>
 </div>
 </div>
-<p>The columns <code>image_path</code> and <code>file_id</code> contain unique values for all rows since each image has a unique path and ID, while <code>asset_id</code> only has 3584 unique values which confirms that many assets have more than one attachment. Most of the <code>attr_</code> features represent categorical attributes while the attributes fall height and number of steps contain only numerical values. Many attributes have substantial missing data.</p>
-</section>
-<section id="image-data" class="level3">
-<h3 class="anchored" data-anchor-id="image-data">Image Data</h3>
-<p>In addition to the attribute table, the dataset includes 5,562 image files corresponding to the attachment records. These images were collected by field inspectors and serves as the input for the project’s image-analysis workflow. Examples of these images are shown in <a href="#fig-examples" class="quarto-xref">Figure&nbsp;1</a>.</p>
+<p>In addition to the attribute table, the dataset includes 5,310 image files that were collected by field inspectors corresponding to the attachment records. Examples of these images are shown in <a href="#fig-examples" class="quarto-xref">Figure&nbsp;1</a>.</p>
 <div id="cell-fig-examples" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display">
 <div id="fig-examples" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -359,11 +348,8 @@ Figure&nbsp;1: Sample images from the dataset
 </div>
 </div>
 </section>
-</section>
 <section id="data-exploration" class="level2">
 <h2 class="anchored" data-anchor-id="data-exploration">Data Exploration</h2>
-<p>Exploratory data analysis (EDA) was conducted on the dataset to answer the following questions about our dataset: 1. How complete is the attribute data across different asset categories? 2. How balanced are categorical attributes across classes? 3. What is the distribution and quality of numerical attributes? 4. What is the variability in image quality across assets?</p>
-<p>To answer these questions, the following analyses were performed.</p>
 <section id="unique-values-and-label-consistency" class="level3">
 <h3 class="anchored" data-anchor-id="unique-values-and-label-consistency">Unique values and label consistency</h3>
 <p>To better understand the possible values of categorical attributes, unique values were extracted.</p>
@@ -374,7 +360,7 @@ Figure&nbsp;1: Sample images from the dataset
 Table&nbsp;2: Unique values for categorical attributes
 </figcaption>
 <div aria-describedby="tbl-unique-vals-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output cell-output-display" data-execution_count="7">
+<div class="cell-output cell-output-display" data-execution_count="3">
 <div>
 
 
@@ -436,12 +422,11 @@ Table&nbsp;2: Unique values for categorical attributes
 </figure>
 </div>
 </div>
-<p><a href="#tbl-unique-vals" class="quarto-xref">Table&nbsp;2</a> reveals some data quality issues such as the presence of placeholder values like <code>TBD</code> to denote missing values. There are also some redundant category labels (e.g., <code>No</code> and <code>No railings</code>) that should be combined into one category.</p>
-<p>Additionally, it was found that numerical fields contained invalid placeholders such as <code>-1</code> or <code>0</code>, which also artificially reduce the null counts in <a href="#tbl-data-summary" class="quarto-xref">Table&nbsp;1</a>.</p>
+<p><a href="#tbl-unique-vals" class="quarto-xref">Table&nbsp;2</a> reveals some data quality issues such as the presence of placeholder values like <code>TBD</code> to denote missing values. There are also some redundant category labels (e.g., <code>No</code> and <code>No railings</code>) that should be combined into one category. Additionally, through discussions with the partner, it was found that numerical fields also contained invalid placeholders such as <code>-1</code> or <code>0</code>, artificially reducing the null counts in <a href="#tbl-data-summary" class="quarto-xref">Table&nbsp;1</a>.</p>
 </section>
 <section id="attribute-completeness-by-asset-category" class="level3">
 <h3 class="anchored" data-anchor-id="attribute-completeness-by-asset-category">Attribute completeness by asset category</h3>
-<p>To assess data coverage, attribute fill rates were computed for each asset category. This is necessary because not all attributes are relevant to all asset types (e.g., <code>Number of Steps</code> is only applicable to stairs). Invalid placeholder values were removed before computing completeness.</p>
+<p>To assess data coverage, attribute fill rates were computed for each asset category. It was necessary to do this by asset category because not all attributes are relevant to all asset types (e.g., <code>Number of Steps</code> is only applicable to stairs). Invalid placeholder values were removed before computing fill rates.</p>
 <div id="fig-attribute-fill-rate" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-attribute-fill-rate-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -452,7 +437,7 @@ Figure&nbsp;2: Attribute fill rate per asset category
 </figcaption>
 </figure>
 </div>
-<p><a href="#fig-attribute-fill-rate" class="quarto-xref">Figure&nbsp;2</a> shows variation in completeness across both attributes and asset types. Numerical attributes such as <code>Fall Height</code> and <code>Number of Steps</code> are particularly sparse while some categorical attributes like <code>Decking Material</code> are more consistently filled. This indicates that attribute collection is inconsistent and may require imputation or alternative learning strategies, including leveraging image-based inference or pre-trained models.</p>
+<p>As shown in <a href="#fig-attribute-fill-rate" class="quarto-xref">Figure&nbsp;2</a>, there is a lot of variation in completeness across attribute types. Numerical attributes such as <code>Fall Height</code> and <code>Number of Steps</code> are particularly sparse while some categorical or binary attributes like <code>Decking Material</code> or <code>Has Edge Guard</code> are more consistently filled. This indicates that attribute collection is inconsistent and may require imputation or alternative learning strategies, including image-based inference using computer vision or pre-trained machine learning models.</p>
 </section>
 <section id="categorical-attribute-distributions" class="level3">
 <h3 class="anchored" data-anchor-id="categorical-attribute-distributions">Categorical attribute distributions</h3>
@@ -466,26 +451,11 @@ Figure&nbsp;3: Class distributions for categorical attributes
 </figcaption>
 </figure>
 </div>
-<p><a href="#fig-cat-distributions" class="quarto-xref">Figure&nbsp;3</a> shows strong class imbalance across several categorical attributes. For example, for <code>Decking Material</code> and <code>Structure Material</code>, dominant classes such as <code>Timber</code> appear far more frequently than alternatives. This imbalance introduces bias risks for supervised learning, as models may over-predict majority classes and underperform on rare categories. As a result, evaluation metrics such as precision and recall will be more appropriate than overall accuracy. This also motivates the use of a majority-class baseline model for benchmarking.</p>
-</section>
-<section id="numerical-attribute-distributions" class="level3">
-<h3 class="anchored" data-anchor-id="numerical-attribute-distributions">Numerical attribute distributions</h3>
-<div id="fig-num-distributions" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-num-distributions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="report_images/numerical_distributions.png" class="img-fluid figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-num-distributions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4: Numerical attribute distributions
-</figcaption>
-</figure>
-</div>
-<p>Numerical attributes were analysed using histograms with mean and median values. These distributions are highly skewed, with clear differences between mean and median, indicating outliers and possibly inconsistent measurement practices.</p>
+<p><a href="#fig-cat-distributions" class="quarto-xref">Figure&nbsp;3</a> shows strong class imbalance across several categorical attributes. For example, for <code>Decking Material</code> and <code>Structure Material</code>, dominant classes such as <code>Timber</code> appear far more frequently than alternatives. This imbalance introduces bias risks if employing supervised learning, as models may over-predict majority classes and underperform on rare categories. As a result, evaluation metrics such as precision and recall will be more appropriate than overall accuracy. This also motivates the use of a majority-class baseline model for benchmarking.</p>
 </section>
 <section id="image-quality" class="level3">
 <h3 class="anchored" data-anchor-id="image-quality">Image quality</h3>
-<p>While having multiple images per asset improves coverage, image quality is highly variable. Some images are close-ups or poorly framed, and may not capture relevant structural information.</p>
-<p>As shown in <a href="#fig-same-asset" class="quarto-xref">Figure&nbsp;5</a>, even images from the same asset can vary significantly in usefulness. This suggests that image filtering or weighting may be required during model training to reduce noise from low-quality samples.</p>
+<p>While having multiple images per asset improves coverage and may give us more opportunities to correctly predict attribute values, the quality among these images varies significantly. Some images are close-ups or poorly framed, and may not capture relevant structural information, as shown in <a href="#fig-same-asset" class="quarto-xref">Figure&nbsp;4</a>. This suggests that image filtering or weighting may be required during model training to reduce noise from low-quality samples.</p>
 <div id="cell-fig-same-asset" class="cell" data-execution_count="4">
 <div class="cell-output cell-output-display">
 <div id="fig-same-asset" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -494,7 +464,7 @@ Figure&nbsp;4: Numerical attribute distributions
 <img src="Image_analysis_of_park_infrastructure_report_files/figure-html/fig-same-asset-output-1.png" width="623" height="307" class="figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-same-asset-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5: Two sample images of the same boardwalk
+Figure&nbsp;4: Two sample images of the same boardwalk
 </figcaption>
 </figure>
 </div>
