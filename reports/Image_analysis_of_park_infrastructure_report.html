@@ -57,7 +57,7 @@ div.csl-indent {
 <link href="Image_analysis_of_park_infrastructure_report_files/libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="Image_analysis_of_park_infrastructure_report_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="Image_analysis_of_park_infrastructure_report_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="Image_analysis_of_park_infrastructure_report_files/libs/bootstrap/bootstrap-bb462d781dde1847d9e3ccf7736099dd.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="Image_analysis_of_park_infrastructure_report_files/libs/bootstrap/bootstrap-81267100e462c21b3d6c0d5bf76a3417.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="Image_analysis_of_park_infrastructure_report_files/libs/quarto-diagram/mermaid.min.js"></script>
 <script src="Image_analysis_of_park_infrastructure_report_files/libs/quarto-diagram/mermaid-init.js"></script>
 <link href="Image_analysis_of_park_infrastructure_report_files/libs/quarto-diagram/mermaid.css" rel="stylesheet">
@@ -73,7 +73,7 @@ div.csl-indent {
 
 <div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
 <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="..\Image_analysis_of_park_infrastructure_report.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></div>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="../Image_analysis_of_park_infrastructure_report.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></div>
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
@@ -538,6 +538,9 @@ Figure&nbsp;5: High-level overview of the proposed attribute prediction pipeline
 </section>
 <section id="evaluation-success-criteria" class="level2" data-number="2.4">
 <h2 data-number="2.4" class="anchored" data-anchor-id="evaluation-success-criteria"><span class="header-section-number">2.4</span> Evaluation &amp; Success Criteria</h2>
+<p>For our evaluation plan, we will start comparing our approaches against our majority class predictor using an F1 score as the minimum benchmark. For attribute-specific evaluation, we will use macro-F1 for categorical fields, and both mean absolute error (MAE) and root mean squared error (RMSE) for numeric fields. MAE shows the average error size, while RMSE penalizes larger errors more heavily, together providing a more complete view of model performance. Our best models will then be evaluated on a held-out test set.</p>
+<p>For BC Parks, success means the workflow can classify infrastructure photos into the correct asset type and fill key missing attributes, including material, length, structure position and number of steps, reducing manual effort required by field staff. The results should be exported as a simple CSV file containing attribute values and confidence scores, making it easy for staff to review. The pipeline is designed to support staff decision-making, not replace it.</p>
+<p>The primary stakeholders are BC Parks staff, the UBC MDS capstone team, and future maintainers. They all require accurate data, reproducible methods, and clear documentation for future updates as more data becomes available.</p>
 </section>
 <section id="timeline" class="level2" data-number="2.5">
 <h2 data-number="2.5" class="anchored" data-anchor-id="timeline"><span class="header-section-number">2.5</span> Timeline</h2>
