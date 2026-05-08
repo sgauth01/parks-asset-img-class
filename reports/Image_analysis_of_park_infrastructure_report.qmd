@@ -259,5 +259,14 @@ All approaches will produce a CSV file with all attribute predictions alongside 
 
 ## Timeline 
 
+| Week | Focus | Key Deliverables |
+|------|-------|-----------------|
+| 1 | Data understanding & preliminary EDA | Completeness analysis, class distribution plots, preliminary EDA noteboo, proposal presentation |
+| 2 | Data cleaning & preprocessing | Cleaned dataset per asset type, train/val/test splits, proposal report submitted |
+| 3 | Baseline & zero shot models | Train/val split, Majority class predictor, zero-shot VLM and CLIP evaluation, prompt refinement, few-shot VLM |
+| 4-5 | Experimenting with Complex Approaches | Embedding (DINOv2) + classifier approach , asset-specific models, RAG pipeline implementation|
+| 6–8 | Model evaluation & Fine Tuning, Finalization of data product | Best model fine-tuning, Model evaluation and comparison, final evaluation on held-out test set, final report + data product, partner documentation and demo |
+
+*Note: Data cleaning, preprocessing and transformations will be refined continuously throughout the project as new challenges or changes to modelling approaches emerge.*
 
 
