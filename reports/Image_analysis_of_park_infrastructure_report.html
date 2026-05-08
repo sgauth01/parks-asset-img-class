@@ -168,13 +168,12 @@ div.csl-indent {
 </section>
 <section id="executive-summary" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> Executive Summary</h1>
-<p>BC Parks manages thousands of infrastructure assets, including stairs, trail bridges, boardwalks, and viewing platforms. Although many assets have associated photographs, important infrastructure attributes such as material type, structural position, dimensions, and number of steps are often missing or incomplete. This limits the ability of staff to efficiently plan maintenance, prioritize inspections, and make reliable data-driven decisions.</p>
-<p>This project explores whether machine learning models can automatically extract missing infrastructure attributes from images. Our dataset currently contains 3,532 unique assets and 5,562 images across five infrastructure categories. However, the data presents several challenges, including missing labels, inconsistent attribute formats, multiple images per asset, and images that may not clearly show the full structure.</p>
-<p>To address these challenges, we propose a staged modelling pipeline beginning with a zero-shot vision-language model baseline <span class="citation" data-cites="radford2021clip">(<a href="#ref-radford2021clip" role="doc-biblioref">Radford et al. 2021</a>)</span>, followed by more targeted attribute-specific models for tasks such as material classification, structural feature detection, and size estimation. The final outcome will be a reproducible pipeline capable of generating structured attribute predictions with confidence scores to support BC Parks staff in reviewing and updating infrastructure records.</p>
+<p>BC Parks manages over 100,000 infrastructure assets, including stairs, trail bridges, boardwalks, and viewing platforms. Although many assets have associated photographs, important infrastructure attributes such as material,structural position and dimensions are often missing or incomplete. This limits the ability of staff to efficiently plan maintenance, prioritize inspections, and make reliable data-driven decisions.</p>
+<p>We propose a staged modelling pipeline beginning with a zero-shot vision-language model baseline <span class="citation" data-cites="radford2021clip">(<a href="#ref-radford2021clip" role="doc-biblioref">Radford et al. 2021</a>)</span>, followed by more targeted attribute-specific models for tasks such as material classification, structural feature detection, and size estimation. The final outcome will be a reproducible pipeline capable of generating structured attribute predictions with confidence scores to support BC Parks staff in reviewing and updating infrastructure records.</p>
 <section id="introduction" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">1.1</span> Introduction</h2>
-<p>BC Parks relies on infrastructure data to support maintenance planning, safety inspections, and long-term asset management. However, many infrastructure records currently contain incomplete attribute information, even when photographs of the assets are available. For example, an image may clearly show the material, railings, or approximate dimensions of a structure, while the corresponding database fields remain empty.</p>
-<p>Our dataset includes 5,562 images associated with 3,532 unique assets, including stairs, trail bridges, boardwalks, and viewing platforms. Initial exploration showed substantial missingness across several important attributes, particularly number of steps, bridge type, and structure position. Additional challenges include inconsistent formatting, multiple images linked to a single asset, and close-up photographs that may not provide useful contextual information.</p>
+<p>BC Parks relies on infrastructure data to support maintenance planning, safety inspections, and long-term asset management. However, many infrastructure records currently contain incomplete attribute information, which makes it difficult for staff to prioritize maintenance inspections.</p>
+<p>Our dataset includes 5,562 images associated with 3,584 unique assets, including stairs, trail bridges, boardwalks, and viewing platforms. As well as missing labels, initial exploration also showed many other data challenges including inconsistent formatting, multiple images linked to a single asset, and close-up photographs that may not provide useful contextual information.</p>
 <p>Recent advances in computer vision and vision-language models, such as CLIP <span class="citation" data-cites="radford2021clip">(<a href="#ref-radford2021clip" role="doc-biblioref">Radford et al. 2021</a>)</span>, have demonstrated strong performance in image understanding tasks. Building on these developments, this project aims to predict missing infrastructure attributes such as material type, structural features, and approximate dimensions from images. The final data product will be a reproducible machine learning pipeline that generates structured attribute predictions and confidence scores that can be integrated into BC Parks’ existing asset management workflows.</p>
 </section>
 </section>
@@ -198,7 +197,7 @@ div.csl-indent {
 Table&nbsp;1: Summary of non-null counts, data types, and unique values for the attribute dataset.
 </figcaption>
 <div aria-describedby="tbl-data-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output cell-output-display" data-execution_count="17">
+<div class="cell-output cell-output-display" data-execution_count="1">
 <div>
 
 
@@ -404,7 +403,7 @@ Figure&nbsp;1: Sample images from the dataset
 Table&nbsp;2: Unique values for categorical attributes
 </figcaption>
 <div aria-describedby="tbl-unique-vals-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output cell-output-display" data-execution_count="19">
+<div class="cell-output cell-output-display" data-execution_count="3">
 <div>
 
 
