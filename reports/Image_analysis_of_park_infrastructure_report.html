@@ -166,7 +166,7 @@ ul.task-list li input[type="checkbox"] {
 Table&nbsp;1: Summary of non-null counts, data types, and unique values for the attribute dataset.
 </figcaption>
 <div aria-describedby="tbl-data-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output cell-output-display" data-execution_count="4">
+<div class="cell-output cell-output-display" data-execution_count="1">
 <div>
 
 
@@ -372,7 +372,7 @@ Figure&nbsp;1: Sample images from the dataset
 Table&nbsp;2: Unique values for categorical attributes
 </figcaption>
 <div aria-describedby="tbl-unique-vals-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output cell-output-display" data-execution_count="6">
+<div class="cell-output cell-output-display" data-execution_count="3">
 <div>
 
 
@@ -502,8 +502,7 @@ Figure&nbsp;5: Two sample images of the same boardwalk
 </section>
 <section id="proposed-data-science-approach" class="level2">
 <h2 class="anchored" data-anchor-id="proposed-data-science-approach">Proposed Data Science Approach</h2>
-<p>Our approach is motivated directly by the findings from our exploratory data analysis above. Given the high degree of class imbalance seen in <a href="#fig-cat-distributions" class="quarto-xref">Figure&nbsp;3</a>, where Timber dominates a lot of our categorical variables like decking material, structure material and abutment material, accuracy alone will be a misleading metric when evaluating our model.</p>
-<p>We will start by defining a majority class predictor as our simplest benchmark, which always predicts the most frequent class per attribute. This sets a minimum performance floor: any model that cannot outperform this baseline provides no added value in our pipeline. We’ll be relying on F1 score to get a true picture of our baseline performance.</p>
+<p>Our approach is motivated directly by the findings from our exploratory data analysis above. Given the high degree of class imbalance seen in <a href="#fig-cat-distributions" class="quarto-xref">Figure&nbsp;3</a>, we will start by defining a majority class predictor as our simplest benchmark, which always predicts the most frequent class per attribute. This sets a minimum performance floor: any model that cannot outperform this baseline provides no added value in our pipeline. We’ll be relying on F1 score to get a true picture of our baseline performance.</p>
 <p>As we have seen above in <a href="#tbl-unique-vals" class="quarto-xref">Table&nbsp;2</a>, not all attributes are the same. They vary in type, difficulty and which asset types they apply to. Categorical attributes will require a classification approach while numerical attributes like length and fall height are better treated as ordered categories due to the difficulty in estimating exact measurements from images without a size reference to work with. Our pipeline therefore routes each image to the relevant set of attribute predictions based on the asset type, which is provided by BCParks via an organized folder structure.</p>
 <p>Given that a large proportion of our attribute labels are missing or incomplete, our next step is to explore zero-shot approaches that require no labelled training data. We will first evaluate a zero-shot Vision Language Model (VLM), building directly on the partner’s existing work with VLMs for attribute labelling. Through careful prompt configuration and providing the model with all possible attribute labels, we can establish a strong benchmark without any fine-tuning. Other zero-shot models like CLIP will be used for performance comparison.</p>
 <p>To improve VLM performance, we will also implement a few-shot approach where we provide a small subset of labelled images alongside the prompt, which can improve prediction quality without full training. A key advantage of this approach is its flexibility: the model can also be prompted to return “Cannot Determine” or “Requires Manual Review” when an image does not contain sufficient information, such as close-up or low-quality photos. However, the main challenge with these approaches is that performance depends heavily on prompt and description quality, and they may struggle with fine-grained visual details and recognizing rare attribute values.</p>
