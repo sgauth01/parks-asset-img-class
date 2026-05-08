@@ -38,6 +38,9 @@ ul.task-list li input[type="checkbox"] {
 <script src="Image_analysis_of_park_infrastructure_report_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="Image_analysis_of_park_infrastructure_report_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="Image_analysis_of_park_infrastructure_report_files/libs/bootstrap/bootstrap-81267100e462c21b3d6c0d5bf76a3417.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="Image_analysis_of_park_infrastructure_report_files/libs/quarto-diagram/mermaid.min.js"></script>
+<script src="Image_analysis_of_park_infrastructure_report_files/libs/quarto-diagram/mermaid-init.js"></script>
+<link href="Image_analysis_of_park_infrastructure_report_files/libs/quarto-diagram/mermaid.css" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
 
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
@@ -166,7 +169,7 @@ ul.task-list li input[type="checkbox"] {
 Table&nbsp;1: Summary of non-null counts, data types, and unique values for the attribute dataset.
 </figcaption>
 <div aria-describedby="tbl-data-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output cell-output-display" data-execution_count="1">
+<div class="cell-output cell-output-display" data-execution_count="17">
 <div>
 
 
@@ -372,7 +375,7 @@ Figure&nbsp;1: Sample images from the dataset
 Table&nbsp;2: Unique values for categorical attributes
 </figcaption>
 <div aria-describedby="tbl-unique-vals-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output cell-output-display" data-execution_count="3">
+<div class="cell-output cell-output-display" data-execution_count="19">
 <div>
 
 
@@ -503,11 +506,33 @@ Figure&nbsp;5: Two sample images of the same boardwalk
 <section id="proposed-data-science-approach" class="level2">
 <h2 class="anchored" data-anchor-id="proposed-data-science-approach">Proposed Data Science Approach</h2>
 <p>Our approach is motivated directly by the findings from our exploratory data analysis above. Given the high degree of class imbalance seen in <a href="#fig-cat-distributions" class="quarto-xref">Figure&nbsp;3</a>, we will start by defining a majority class predictor as our simplest benchmark, which always predicts the most frequent class per attribute. This sets a minimum performance floor: any model that cannot outperform this baseline provides no added value in our pipeline. We’ll be relying on F1 score to get a true picture of our baseline performance.</p>
-<p>As we have seen above in <a href="#tbl-unique-vals" class="quarto-xref">Table&nbsp;2</a>, not all attributes are the same. They vary in type, difficulty and which asset types they apply to. Categorical attributes will require a classification approach while numerical attributes like length and fall height are better treated as ordered categories due to the difficulty in estimating exact measurements from images without a size reference to work with. Our pipeline therefore routes each image to the relevant set of attribute predictions based on the asset type, which is provided by BCParks via an organized folder structure.</p>
+<p>As we have seen above in <a href="#tbl-unique-vals" class="quarto-xref">Table&nbsp;2</a>, not all attributes are the same. They vary in type, difficulty and which asset types they apply to. Categorical attributes will require a classification approach while numerical attributes like length and fall height are better treated as ordered categories due to the difficulty in estimating exact measurements from images without a size reference to work with. Our pipeline therefore routes each image to the relevant set of attribute predictions based on the asset type, which is provided by BCParks via an organized folder structure. See <a href="#fig-pipeline" class="quarto-xref">Figure&nbsp;6</a>.</p>
 <p>Given that a large proportion of our attribute labels are missing or incomplete, our next step is to explore zero-shot approaches that require no labelled training data. We will first evaluate a zero-shot Vision Language Model (VLM), building directly on the partner’s existing work with VLMs for attribute labelling. Through careful prompt configuration and providing the model with all possible attribute labels, we can establish a strong benchmark without any fine-tuning. Other zero-shot models like CLIP will be used for performance comparison.</p>
 <p>To improve VLM performance, we will also implement a few-shot approach where we provide a small subset of labelled images alongside the prompt, which can improve prediction quality without full training. A key advantage of this approach is its flexibility: the model can also be prompted to return “Cannot Determine” or “Requires Manual Review” when an image does not contain sufficient information, such as close-up or low-quality photos. However, the main challenge with these approaches is that performance depends heavily on prompt and description quality, and they may struggle with fine-grained visual details and recognizing rare attribute values.</p>
 <p>Lastly, we will also explore more advanced methods that make use of our available labelled data as well as some external data that may help support training. This includes training lightweight classifiers on top of rich pre-trained embeddings, which work well even with small datasets and are particularly effective for material-based attributes. As a stretch goal, we will also explore combining visual similarity search with a language model (RAG), where similar labelled images are retrieved and used as context to inform predictions made by a VLM.</p>
 <p>All approaches will produce a CSV file with all attribute predictions alongside a confidence score, with low confidence predictions being flagged for manual review by BCParks.</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div id="fig-pipeline" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-pipeline-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div>
+<pre class="mermaid mermaid-js" data-label="fig-pipeline">flowchart TD
+    A["Image Folder per Asset Type"] --&gt; B["Image FilteringYOLO or Model Prompt"]
+    B --&gt; C["Attribute Prediction Zero-shot VLM / CLIP"]
+    C --&gt; D["CSV OutputPredictions + Confidence Scores"]
+    C --&gt; E["Advanced Approaches DINOv2 / RAG"]
+    E --&gt; D
+</pre>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pipeline-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6: High-level overview of the proposed attribute prediction pipeline
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
 </section>
 <section id="evaluation-success-criteria" class="level2">
 <h2 class="anchored" data-anchor-id="evaluation-success-criteria">Evaluation &amp; Success Criteria</h2>
@@ -536,12 +561,12 @@ Figure&nbsp;5: Two sample images of the same boardwalk
 <tr class="even">
 <td>2</td>
 <td>Data cleaning &amp; preprocessing</td>
-<td>Cleaned dataset per asset type, train/val/test splits, proposal report submitted</td>
+<td>More EDA, extract data quality isssues, prepare cleaned master dataset + asset specific datasets, proposal report submitted</td>
 </tr>
 <tr class="odd">
 <td>3</td>
 <td>Baseline &amp; zero shot models</td>
-<td>Train/val split, Majority class predictor, zero-shot VLM and CLIP evaluation, prompt refinement, few-shot VLM</td>
+<td>Train/val/test splits, Majority class predictor, zero-shot VLM and CLIP evaluation, prompt refinement, few-shot VLM</td>
 </tr>
 <tr class="even">
 <td>4-5</td>
