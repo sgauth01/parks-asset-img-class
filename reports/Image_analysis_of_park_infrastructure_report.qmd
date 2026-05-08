@@ -297,7 +297,7 @@ Given that a large proportion of our attribute labels are missing or incomplete,
 
 To improve VLM performance, we will also implement a few-shot approach where we provide a small subset of labelled images alongside the prompt, which can improve prediction quality without full training. A key advantage of this approach is its flexibility: the model can also be prompted to return "Cannot Determine" or “Requires Manual Review” when an image does not contain sufficient information, such as close-up or low-quality photos. However, the main challenge with these approaches is that performance depends heavily on prompt and description quality, and they may struggle with fine-grained visual details and recognizing rare attribute values. 
 
-Lastly, we will also explore more advanced methods that make use of our available labelled data as well as some external data that may help support training. This includes training lightweight classifiers on top of rich pre-trained embeddings, which work well even with small datasets and are particularly effective for material-based attributes. As a stretch goal, we will also explore combining visual similarity search with a language model (RAG), where similar labelled images are retrieved and used as context to inform predictions made by a VLM.
+Lastly, we will also explore more advanced methods that make use of our available labelled data as well as some external data that may help support training. This includes training lightweight classifiers on top of rich pre-trained embeddings, which work well even with small datasets and are particularly effective for material-based attributes.
 
 All approaches will produce a CSV file with all attribute predictions alongside a confidence score, with low confidence predictions being flagged for manual review by BCParks.
 
@@ -306,9 +306,9 @@ All approaches will produce a CSV file with all attribute predictions alongside 
 %%| fig-cap: "High-level overview of the proposed attribute prediction pipeline"
 
 flowchart TD
-    A["Image Folder per Asset Type"] --> B["Image FilteringYOLO or Model Prompt"]
+    A["Image Folder per Asset Type"] --> B["Image Filtering YOLO or Model Prompt"]
     B --> C["Attribute Prediction Zero-shot VLM / CLIP"]
-    C --> D["CSV OutputPredictions + Confidence Scores"]
+    C --> D["CSV Output Predictions + Confidence Scores"]
     C --> E["Advanced Approaches DINOv2 / RAG"]
     E --> D
 ```
