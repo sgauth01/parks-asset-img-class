@@ -260,7 +260,7 @@ All approaches will produce a CSV file with all attribute predictions alongside 
 
 | Week | Focus | Key Deliverables |
 |------|-------|-----------------|
-| 1 | Data understanding & preliminary EDA | Completeness analysis, class distribution plots, preliminary EDA noteboo, proposal presentation |
+| 1 | Data understanding & preliminary EDA | Completeness analysis, class distribution plots, preliminary EDA notebook, proposal presentation |
 | 2 | Data cleaning & preprocessing | Cleaned dataset per asset type, train/val/test splits, proposal report submitted |
 | 3 | Baseline & zero shot models | Train/val split, Majority class predictor, zero-shot VLM and CLIP evaluation, prompt refinement, few-shot VLM |
 | 4-5 | Experimenting with Complex Approaches | Embedding (DINOv2) + classifier approach , asset-specific models, RAG pipeline implementation|
