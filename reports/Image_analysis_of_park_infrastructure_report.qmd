@@ -1,5 +1,8 @@
 ---
-title: "Image Analysis of Park Infrastructure"
+title: ""
+
+bibliography: references.bib
+jupyter: bcparks_capstone
 author:
   - name: Sarah Gauthier
     affiliations:
@@ -16,41 +19,115 @@ author:
 
 format:
   html:
-    toc: true
-    toc-depth: 3
-    code-fold: true
+    toc: false
+    toc-depth: 2
+    number-sections: true
     css: report-styles.css
   pdf:
-    toc: true
-    toc-depth: 3
+    pdf-engine: lualatex
+    toc: false
+    toc-depth: 2
+    number-sections: true
+    colorlinks: true
     fontsize: 10pt
     geometry:
       - margin=0.85in
-    colorlinks: true
     header-includes:
       - \linespread{0.98}
-execute:
-  echo: false
-  warning: false
-  error: false
 ---
 
-## Summary
+```{=html}
+<section class="report-header">
+  <h1>Project Report</h1>
+  <h2>Image Analysis of Park Infrastructure</h2>
 
-This project explores how computer vision can be used to automatically extract infrastructure attributes from park images. The goal is to improve the completeness and reliability of asset management data used by BC Parks.
+  <dl>
+    <dt>Date:</dt>
+    <dd>2026-05-05</dd>
 
-We aim to predict attributes such as asset type, material, structure position, size ranges, railing presence, and number of steps. Due to weak or incomplete labels, we adopt a staged approach that starts with a zero-shot baseline and progresses toward an attribute-specific modelling pipeline.
+    <dt>Prepared for:</dt>
+    <dd>UBC Master of Data Science Capstone</dd>
+
+    <dt>Prepared by:</dt>
+    <dd>
+      Sarah Gauthier<br>
+      Nour Shawky<br>
+      Ssemakula Peter Wasswa<br>
+      Mehmet Imga
+    </dd>
+  </dl>
+</section>
+```
+
+```{=latex}
+\begin{center}
+{\LARGE \textbf{Project Report}\par}
+\vspace{0.35cm}
+{\large \textbf{Image Analysis of Park Infrastructure}\par}
+\end{center}
+
+\vspace{0.45cm}
+
+\begin{center}
+\begin{tabular}{r@{\hspace{0.7cm}}l}
+\textbf{Date:} & 2026-05-05 \\
+\textbf{Prepared for:} & BC parks \\
+\textbf{Prepared by:} & Sarah Gauthier \\
+                     & Nour Shawky \\
+                     & Ssemakula Peter Wasswa \\
+                     & Mehmet Imga \\
+\end{tabular}
+\end{center}
+
+\vspace{0.55cm}
+```
+
+## Table of Contents {.unnumbered}
+
+```{=html}
+<nav class="report-toc">
+  <ol>
+    <li><a href="#executive-summary">Executive Summary</a></li>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#project-details">Project Details</a></li>
+    <li><a href="#findings">Findings</a></li>
+    <li><a href="#conclusions-and-recommendations">Conclusions and Recommendations</a></li>
+    <li><a href="#references">References</a></li>
+    <li><a href="#appendices">Appendices</a></li>
+  </ol>
+</nav>
+```
+
+```{=latex}
+\begingroup
+\renewcommand{\contentsname}{}
+\vspace{-1.2cm}
+\tableofcontents
+\endgroup
+\vspace{0.4cm}
+```
+
+# Executive Summary
+BC Parks manages over 100,000 infrastructure assets, including stairs, trail bridges, boardwalks, and viewing platforms. Although many assets have associated photographs, important infrastructure attributes such as material,structural position and dimensions are often missing or incomplete. This limits the ability of staff to efficiently plan maintenance, prioritize inspections, and make reliable data-driven decisions.
+
+We propose a staged modelling pipeline beginning with a zero-shot vision-language model baseline [@radford2021clip], followed by more targeted attribute-specific models for tasks such as material classification, structural feature detection, and size estimation. The final outcome will be a reproducible pipeline capable of generating structured attribute predictions with confidence scores to support BC Parks staff in reviewing and updating infrastructure records.
+
+
+
+
+\newpage
 
 ## Introduction
 
-BC Parks manages a large inventory of infrastructure assets such as bridges, stairs, boardwalks, and viewing platforms. While many of these assets have associated image data, the attribute information is often incomplete or inconsistent.
+BC Parks relies on infrastructure data to support maintenance planning, safety inspections, and long-term asset management. However, many infrastructure records currently contain incomplete attribute information, which makes it difficult for staff to prioritize maintenance inspections.
 
-Manually reviewing thousands of images to extract attributes such as material, size, and structural features is time-consuming and not scalable. Computer vision techniques provide an opportunity to automate this process and improve data quality.
+Our dataset includes 5,562 images associated with 3,584 unique assets, including stairs, trail bridges, boardwalks, and viewing platforms. As well as missing labels, initial exploration also showed many other data challenges including inconsistent formatting, multiple images linked to a single asset, and close-up photographs that may not provide useful contextual information.
 
-## Research Question
+Recent advances in computer vision and vision-language models, such as CLIP [@radford2021clip], have demonstrated strong performance in image understanding tasks. Building on these developments, this project aims to predict missing infrastructure attributes such as material type, structural features, and approximate dimensions from images. The final data product will be a reproducible machine learning pipeline that generates structured attribute predictions and confidence scores that can be integrated into BC Parks’ existing asset management workflows.
 
-Can machine learning models automatically predict infrastructure attributes from images, including asset type, material, size ranges, structure position, railing presence, and number of steps?
 
+
+# Data & Exploratory Data Analysis (EDA)
 ## Data Sources
 
 The data for this project was exported from the CityWide asset management system using an API key provided by the project partner. It includes two primary components:
@@ -213,28 +290,48 @@ plt.subplots_adjust(wspace=0.02, left=0, right=1, top=1, bottom=0)
 
 plt.show()
 ```
+ 
 
-## Methodology
+## Proposed Data Science Approach
 
-### Baseline Approach: Zero-shot VLM
+Our approach is motivated directly by the findings from our exploratory data analysis above. Given the  high degree of class imbalance seen in @fig-cat-distributions, we will start by defining a majority class predictor as our simplest benchmark, which always predicts the most frequent class per attribute. This sets a minimum performance floor: any model that cannot outperform this baseline provides no added value in our pipeline. We’ll be relying on F1 score to get a true picture of our baseline performance. 
 
-We begin with a zero-shot baseline using a vision-language model such as CLIP.
+As we have seen above in @tbl-unique-vals, not all attributes are the same. They vary in type, difficulty and which asset types they apply to. Categorical attributes will require a classification approach while numerical attributes like length and fall height are better treated as ordered categories due to the difficulty in estimating exact measurements from images without a size reference to work with. Our pipeline therefore routes each image to the relevant set of attribute predictions based on the asset type, which is provided by BCParks via an organized folder structure. See @fig-pipeline.
 
-This allows us to predict:
+Given that a large proportion of our attribute labels are missing or incomplete, our next step is to explore zero-shot approaches that require no labelled training data. We will first evaluate a zero-shot Vision Language Model (VLM), building directly on the partner's existing work with VLMs for attribute labelling. Through careful prompt configuration and providing the model with all possible attribute labels, we can establish a strong benchmark without any fine-tuning. Other zero-shot models like CLIP will be used for performance comparison. 
 
-- Material type  
-- Structure position  
-- Railing presence  
-- Size ranges (small / medium / large)  
+To improve VLM performance, we will also implement a few-shot approach where we provide a small subset of labelled images alongside the prompt, which can improve prediction quality without full training. A key advantage of this approach is its flexibility: the model can also be prompted to return "Cannot Determine" or “Requires Manual Review” when an image does not contain sufficient information, such as close-up or low-quality photos. However, the main challenge with these approaches is that performance depends heavily on prompt and description quality, and they may struggle with fine-grained visual details and recognizing rare attribute values. 
 
-**Why this baseline:**
-- No training required  
-- Works with weak labels  
-- Provides a quick benchmark  
+Lastly, we will also explore more advanced methods that make use of our available labelled data as well as some external data that may help support training. This includes training lightweight classifiers on top of rich pre-trained embeddings, which work well even with small datasets and are particularly effective for material-based attributes. As a stretch goal, we will also explore combining visual similarity search with a language model (RAG), where similar labelled images are retrieved and used as context to inform predictions made by a VLM.
 
-**Limitations:**
-- Weak on fine-grained details  
-- No component localization  
-- Not reliable for measurements  
+All approaches will produce a CSV file with all attribute predictions alongside a confidence score, with low confidence predictions being flagged for manual review by BCParks.
 
-### Proposed Attribute-Based Pipeline
+```{mermaid}
+%%| label: fig-pipeline
+%%| fig-cap: "High-level overview of the proposed attribute prediction pipeline"
+
+flowchart TD
+    A["Image Folder per Asset Type"] --> B["Image FilteringYOLO or Model Prompt"]
+    B --> C["Attribute Prediction Zero-shot VLM / CLIP"]
+    C --> D["CSV OutputPredictions + Confidence Scores"]
+    C --> E["Advanced Approaches DINOv2 / RAG"]
+    E --> D
+```
+
+## Evaluation & Success Criteria
+
+
+## Timeline 
+
+| Week | Focus | Key Deliverables |
+|------|-------|-----------------|
+| 1 | Data understanding & preliminary EDA | Completeness analysis, class distribution plots, preliminary EDA notebook, proposal presentation |
+| 2 | Data cleaning & preprocessing | More EDA, extract data quality isssues, prepare cleaned master dataset + asset specific datasets, proposal report submitted |
+| 3 | Baseline & zero shot models | Train/val/test splits, Majority class predictor, zero-shot VLM and CLIP evaluation, prompt refinement, few-shot VLM |
+| 4-5 | Experimenting with Complex Approaches | Embedding (DINOv2) + classifier approach , asset-specific models, RAG pipeline implementation|
+| 6–8 | Model evaluation & Fine Tuning, Finalization of data product | Best model fine-tuning, Model evaluation and comparison, final evaluation on held-out test set, final report + data product, partner documentation and demo |
+
+*Note: Data cleaning, preprocessing and transformations will be refined continuously throughout the project as new challenges or changes to modelling approaches emerge.*
+
+# References
+
