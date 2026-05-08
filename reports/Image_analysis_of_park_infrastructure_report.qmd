@@ -1,5 +1,6 @@
 ---
 title: "Image Analysis of Park Infrastructure"
+jupyter: bcparks_capstone
 author:
   - name: Sarah Gauthier
     affiliations:
@@ -71,7 +72,7 @@ A summary of non-null values, data types, and number of unique values for releva
 
 import pandas as pd
 
-attributes_df = pd.read_csv("../data/citywide/image_attributes_manifest.csv")
+attributes_df = pd.read_csv("../data/raw/citywide/image_attributes_manifest.csv")
 
 attributes_df = attributes_df[[
     "image_path",
@@ -122,9 +123,9 @@ from PIL import Image, ImageOps
 import matplotlib.pyplot as plt
 
 img_paths = [
-    "../data/citywide/images/253/54322/18912__AST_EX_20210826_112735.jpeg",
-    "../data/citywide/images/356/49702/36091__AST_EX_20220216_112215.jpeg",
-    "../data/citywide/images/573/128878/91012__AST_IM_20251122_103756.jpeg"
+    "../data/raw/citywide/images/253/54322/18912__AST_EX_20210826_112735.jpeg",
+    "../data/raw/citywide/images/356/49702/36091__AST_EX_20220216_112215.jpeg",
+    "../data/raw/citywide/images/573/128878/91012__AST_IM_20251122_103756.jpeg"
 ]
 
 fig, axes = plt.subplots(1, 3, figsize=(8, 3))
@@ -218,8 +219,8 @@ As shown in @fig-same-asset, even images from the same asset can vary significan
 #| fig-cap: "Two sample images of the same boardwalk"
 
 img_paths = [
-    "../data/citywide/images/573/92846/29443__AST_IM_20211022_155226.jpeg",
-    "../data/citywide/images/573/92846/64069__AST_EX_20221114_140509.jpeg"
+    "../data/raw/citywide/images/573/92846/29443__AST_IM_20211022_155226.jpeg",
+    "../data/raw/citywide/images/573/92846/64069__AST_EX_20221114_140509.jpeg"
 ]
 
 fig, axes = plt.subplots(1, 2, figsize=(8, 3))
