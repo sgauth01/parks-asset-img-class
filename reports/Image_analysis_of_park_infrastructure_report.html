@@ -11,7 +11,7 @@
 <meta name="author" content="Ssemakula Peter Wasswa">
 <meta name="author" content="Mehmet Imga">
 
-<title>Image Analysis of Park Infrastructure</title>
+<title>image_analysis_of_park_infrastructure_report</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,7 +24,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="Image_analysis_of_park_infrastructure_report_files/libs/clipboard/clipboard.min.js"></script>
@@ -37,7 +57,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="Image_analysis_of_park_infrastructure_report_files/libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="Image_analysis_of_park_infrastructure_report_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="Image_analysis_of_park_infrastructure_report_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="Image_analysis_of_park_infrastructure_report_files/libs/bootstrap/bootstrap-81267100e462c21b3d6c0d5bf76a3417.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="Image_analysis_of_park_infrastructure_report_files/libs/bootstrap/bootstrap-bb462d781dde1847d9e3ccf7736099dd.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="Image_analysis_of_park_infrastructure_report_files/libs/quarto-diagram/mermaid.min.js"></script>
 <script src="Image_analysis_of_park_infrastructure_report_files/libs/quarto-diagram/mermaid-init.js"></script>
 <link href="Image_analysis_of_park_infrastructure_report_files/libs/quarto-diagram/mermaid.css" rel="stylesheet">
@@ -53,37 +73,11 @@ ul.task-list li input[type="checkbox"] {
 
 <div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
 <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-  <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary">Summary</a></li>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#research-question" id="toc-research-question" class="nav-link" data-scroll-target="#research-question">Research Question</a></li>
-  <li><a href="#data-sources" id="toc-data-sources" class="nav-link" data-scroll-target="#data-sources">Data Sources</a>
-  <ul class="collapse">
-  <li><a href="#attribute-data" id="toc-attribute-data" class="nav-link" data-scroll-target="#attribute-data">Attribute Data</a></li>
-  <li><a href="#image-data" id="toc-image-data" class="nav-link" data-scroll-target="#image-data">Image Data</a></li>
-  </ul></li>
-  <li><a href="#data-exploration" id="toc-data-exploration" class="nav-link" data-scroll-target="#data-exploration">Data Exploration</a>
-  <ul class="collapse">
-  <li><a href="#unique-values-and-label-consistency" id="toc-unique-values-and-label-consistency" class="nav-link" data-scroll-target="#unique-values-and-label-consistency">Unique values and label consistency</a></li>
-  <li><a href="#attribute-completeness-by-asset-category" id="toc-attribute-completeness-by-asset-category" class="nav-link" data-scroll-target="#attribute-completeness-by-asset-category">Attribute completeness by asset category</a></li>
-  <li><a href="#categorical-attribute-distributions" id="toc-categorical-attribute-distributions" class="nav-link" data-scroll-target="#categorical-attribute-distributions">Categorical attribute distributions</a></li>
-  <li><a href="#numerical-attribute-distributions" id="toc-numerical-attribute-distributions" class="nav-link" data-scroll-target="#numerical-attribute-distributions">Numerical attribute distributions</a></li>
-  <li><a href="#image-quality" id="toc-image-quality" class="nav-link" data-scroll-target="#image-quality">Image quality</a></li>
-  </ul></li>
-  <li><a href="#proposed-data-science-approach" id="toc-proposed-data-science-approach" class="nav-link" data-scroll-target="#proposed-data-science-approach">Proposed Data Science Approach</a></li>
-  <li><a href="#evaluation-success-criteria" id="toc-evaluation-success-criteria" class="nav-link" data-scroll-target="#evaluation-success-criteria">Evaluation &amp; Success Criteria</a></li>
-  <li><a href="#timeline" id="toc-timeline" class="nav-link" data-scroll-target="#timeline">Timeline</a></li>
-  </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="../Image_analysis_of_park_infrastructure_report.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
-</div>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="..\Image_analysis_of_park_infrastructure_report.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></div>
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Image Analysis of Park Infrastructure</h1>
 </div>
 
 
@@ -137,29 +131,60 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="summary" class="level2">
-<h2 class="anchored" data-anchor-id="summary">Summary</h2>
-<p>This project explores how computer vision can be used to automatically extract infrastructure attributes from park images. The goal is to improve the completeness and reliability of asset management data used by BC Parks.</p>
-<p>We aim to predict attributes such as asset type, material, structure position, size ranges, railing presence, and number of steps. Due to weak or incomplete labels, we adopt a staged approach that starts with a zero-shot baseline and progresses toward an attribute-specific modelling pipeline.</p>
+<section class="report-header">
+  <h1>Project Report</h1>
+  <h2 class="anchored">Image Analysis of Park Infrastructure</h2>
+
+  <dl>
+    <dt>Date:</dt>
+    <dd>2026-05-05</dd>
+
+    <dt>Prepared for:</dt>
+    <dd>UBC Master of Data Science Capstone</dd>
+
+    <dt>Prepared by:</dt>
+    <dd>
+      Sarah Gauthier<br>
+      Nour Shawky<br>
+      Ssemakula Peter Wasswa<br>
+      Mehmet Imga
+    </dd>
+  </dl>
 </section>
-<section id="introduction" class="level2">
-<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<p>BC Parks manages a large inventory of infrastructure assets such as bridges, stairs, boardwalks, and viewing platforms. While many of these assets have associated image data, the attribute information is often incomplete or inconsistent.</p>
-<p>Manually reviewing thousands of images to extract attributes such as material, size, and structural features is time-consuming and not scalable. Computer vision techniques provide an opportunity to automate this process and improve data quality.</p>
+<section id="table-of-contents" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="table-of-contents">Table of Contents</h2>
+<nav class="report-toc">
+  <ol>
+    <li><a href="#executive-summary">Executive Summary</a></li>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#project-details">Project Details</a></li>
+    <li><a href="#findings">Findings</a></li>
+    <li><a href="#conclusions-and-recommendations">Conclusions and Recommendations</a></li>
+    <li><a href="#references">References</a></li>
+    <li><a href="#appendices">Appendices</a></li>
+  </ol>
+</nav>
 </section>
-<section id="research-question" class="level2">
-<h2 class="anchored" data-anchor-id="research-question">Research Question</h2>
-<p>Can machine learning models automatically predict infrastructure attributes from images, including asset type, material, size ranges, structure position, railing presence, and number of steps?</p>
+<section id="executive-summary" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Executive Summary</h1>
+<p>BC Parks manages over 100,000 infrastructure assets, including stairs, trail bridges, boardwalks, and viewing platforms. Although many assets have associated photographs, important infrastructure attributes such as material,structural position and dimensions are often missing or incomplete. This limits the ability of staff to efficiently plan maintenance, prioritize inspections, and make reliable data-driven decisions.</p>
+<p>We propose a staged modelling pipeline beginning with a zero-shot vision-language model baseline <span class="citation" data-cites="radford2021clip">(<a href="#ref-radford2021clip" role="doc-biblioref">Radford et al. 2021</a>)</span>, followed by more targeted attribute-specific models for tasks such as material classification, structural feature detection, and size estimation. The final outcome will be a reproducible pipeline capable of generating structured attribute predictions with confidence scores to support BC Parks staff in reviewing and updating infrastructure records.</p>
+<section id="introduction" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">1.1</span> Introduction</h2>
+<p>BC Parks relies on infrastructure data to support maintenance planning, safety inspections, and long-term asset management. However, many infrastructure records currently contain incomplete attribute information, which makes it difficult for staff to prioritize maintenance inspections.</p>
+<p>Our dataset includes 5,562 images associated with 3,584 unique assets, including stairs, trail bridges, boardwalks, and viewing platforms. As well as missing labels, initial exploration also showed many other data challenges including inconsistent formatting, multiple images linked to a single asset, and close-up photographs that may not provide useful contextual information.</p>
+<p>Recent advances in computer vision and vision-language models, such as CLIP <span class="citation" data-cites="radford2021clip">(<a href="#ref-radford2021clip" role="doc-biblioref">Radford et al. 2021</a>)</span>, have demonstrated strong performance in image understanding tasks. Building on these developments, this project aims to predict missing infrastructure attributes such as material type, structural features, and approximate dimensions from images. The final data product will be a reproducible machine learning pipeline that generates structured attribute predictions and confidence scores that can be integrated into BC Parks’ existing asset management workflows.</p>
 </section>
-<section id="data-sources" class="level2">
-<h2 class="anchored" data-anchor-id="data-sources">Data Sources</h2>
+</section>
+<section id="data-exploratory-data-analysis-eda" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Data &amp; Exploratory Data Analysis (EDA)</h1>
+<section id="data-sources" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="data-sources"><span class="header-section-number">2.1</span> Data Sources</h2>
 <p>The data for this project was exported from the CityWide asset management system using an API key provided by the project partner. It includes two primary components:</p>
 <ol type="1">
-<li>All image files attached to assets of type <code>Trail Bridge</code>, <code>Stairs</code>, <code>Boardwalk</code> or <code>Viewing Platform</code></li>
-<li>A CSV file with attribute data for each image file</li>
+<li>All image files attached to assets of type <code>Trail Bridge</code>, <code>Stairs</code>, <code>Boardwalk</code> or <code>Viewing Platform</code>.</li>
+<li>A CSV file with attribute data for each image file.</li>
 </ol>
-<section id="attribute-data" class="level3">
-<h3 class="anchored" data-anchor-id="attribute-data">Attribute Data</h3>
 <p>The CSV file with attribute data contains 5,562 rows, where each row corresponds to a single image (attachment) linked to an asset through its Asset ID. As such, the observational unit of the dataset is an individual image–asset pair. Each record also includes metadata such as image path, asset category (<code>profile_id</code>), and a series of asset-level attributes (e.g., decking material, fall height, length).</p>
 <p>A summary of non-null values, data types, and number of unique values for relevant columns is shown in <a href="#tbl-data-summary" class="quarto-xref">Table&nbsp;1</a>.</p>
 <div class="cell" data-execution_count="1">
@@ -169,7 +194,7 @@ ul.task-list li input[type="checkbox"] {
 Table&nbsp;1: Summary of non-null counts, data types, and unique values for the attribute dataset.
 </figcaption>
 <div aria-describedby="tbl-data-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output cell-output-display" data-execution_count="17">
+<div class="cell-output cell-output-display" data-execution_count="1">
 <div>
 
 
@@ -340,11 +365,7 @@ Table&nbsp;1: Summary of non-null counts, data types, and unique values for the 
 </figure>
 </div>
 </div>
-<p>The columns <code>image_path</code> and <code>file_id</code> contain unique values for all rows since each image has a unique path and ID, while <code>asset_id</code> only has 3584 unique values which confirms that many assets have more than one attachment. Most of the <code>attr_</code> features represent categorical attributes while the attributes fall height and number of steps contain only numerical values. Many attributes have substantial missing data.</p>
-</section>
-<section id="image-data" class="level3">
-<h3 class="anchored" data-anchor-id="image-data">Image Data</h3>
-<p>In addition to the attribute table, the dataset includes 5,562 image files corresponding to the attachment records. These images were collected by field inspectors and serves as the input for the project’s image-analysis workflow. Examples of these images are shown in <a href="#fig-examples" class="quarto-xref">Figure&nbsp;1</a>.</p>
+<p>In addition to the attribute table, the dataset includes 5,310 image files that were collected by field inspectors corresponding to the attachment records. Examples of these images are shown in <a href="#fig-examples" class="quarto-xref">Figure&nbsp;1</a>.</p>
 <div id="cell-fig-examples" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display">
 <div id="fig-examples" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -360,13 +381,10 @@ Figure&nbsp;1: Sample images from the dataset
 </div>
 </div>
 </section>
-</section>
-<section id="data-exploration" class="level2">
-<h2 class="anchored" data-anchor-id="data-exploration">Data Exploration</h2>
-<p>Exploratory data analysis (EDA) was conducted on the dataset to answer the following questions about our dataset: 1. How complete is the attribute data across different asset categories? 2. How balanced are categorical attributes across classes? 3. What is the distribution and quality of numerical attributes? 4. What is the variability in image quality across assets?</p>
-<p>To answer these questions, the following analyses were performed.</p>
-<section id="unique-values-and-label-consistency" class="level3">
-<h3 class="anchored" data-anchor-id="unique-values-and-label-consistency">Unique values and label consistency</h3>
+<section id="data-exploration" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="data-exploration"><span class="header-section-number">2.2</span> Data Exploration</h2>
+<section id="unique-values-and-label-consistency" class="level3" data-number="2.2.1">
+<h3 data-number="2.2.1" class="anchored" data-anchor-id="unique-values-and-label-consistency"><span class="header-section-number">2.2.1</span> Unique values and label consistency</h3>
 <p>To better understand the possible values of categorical attributes, unique values were extracted.</p>
 <div class="cell" data-execution_count="3">
 <div id="tbl-unique-vals" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="3">
@@ -375,7 +393,7 @@ Figure&nbsp;1: Sample images from the dataset
 Table&nbsp;2: Unique values for categorical attributes
 </figcaption>
 <div aria-describedby="tbl-unique-vals-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output cell-output-display" data-execution_count="19">
+<div class="cell-output cell-output-display" data-execution_count="3">
 <div>
 
 
@@ -437,12 +455,11 @@ Table&nbsp;2: Unique values for categorical attributes
 </figure>
 </div>
 </div>
-<p><a href="#tbl-unique-vals" class="quarto-xref">Table&nbsp;2</a> reveals some data quality issues such as the presence of placeholder values like <code>TBD</code> to denote missing values. There are also some redundant category labels (e.g., <code>No</code> and <code>No railings</code>) that should be combined into one category.</p>
-<p>Additionally, it was found that numerical fields contained invalid placeholders such as <code>-1</code> or <code>0</code>, which also artificially reduce the null counts in <a href="#tbl-data-summary" class="quarto-xref">Table&nbsp;1</a>.</p>
+<p><a href="#tbl-unique-vals" class="quarto-xref">Table&nbsp;2</a> reveals some data quality issues such as the presence of placeholder values like <code>TBD</code> to denote missing values, artificially reducing the null counts in <a href="#tbl-data-summary" class="quarto-xref">Table&nbsp;1</a>.</p>
 </section>
-<section id="attribute-completeness-by-asset-category" class="level3">
-<h3 class="anchored" data-anchor-id="attribute-completeness-by-asset-category">Attribute completeness by asset category</h3>
-<p>To assess data coverage, attribute fill rates were computed for each asset category. This is necessary because not all attributes are relevant to all asset types (e.g., <code>Number of Steps</code> is only applicable to stairs). Invalid placeholder values were removed before computing completeness.</p>
+<section id="attribute-completeness-by-asset-category" class="level3" data-number="2.2.2">
+<h3 data-number="2.2.2" class="anchored" data-anchor-id="attribute-completeness-by-asset-category"><span class="header-section-number">2.2.2</span> Attribute completeness by asset category</h3>
+<p>To assess data coverage, attribute fill rates were computed for each asset category. Invalid values were removed before computing fill rates.</p>
 <div id="fig-attribute-fill-rate" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-attribute-fill-rate-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -453,10 +470,10 @@ Figure&nbsp;2: Attribute fill rate per asset category
 </figcaption>
 </figure>
 </div>
-<p><a href="#fig-attribute-fill-rate" class="quarto-xref">Figure&nbsp;2</a> shows variation in completeness across both attributes and asset types. Numerical attributes such as <code>Fall Height</code> and <code>Number of Steps</code> are particularly sparse while some categorical attributes like <code>Decking Material</code> are more consistently filled. This indicates that attribute collection is inconsistent and may require imputation or alternative learning strategies, including leveraging image-based inference or pre-trained models.</p>
+<p>As shown in <a href="#fig-attribute-fill-rate" class="quarto-xref">Figure&nbsp;2</a>, there is a lot of variation in completeness across attribute types. Numerical attributes such as <code>Fall Height</code> and <code>Number of Steps</code> are particularly sparse while some categorical or binary attributes like <code>Decking Material</code> or <code>Has Edge Guard</code> are more consistently filled.</p>
 </section>
-<section id="categorical-attribute-distributions" class="level3">
-<h3 class="anchored" data-anchor-id="categorical-attribute-distributions">Categorical attribute distributions</h3>
+<section id="categorical-attribute-distributions" class="level3" data-number="2.2.3">
+<h3 data-number="2.2.3" class="anchored" data-anchor-id="categorical-attribute-distributions"><span class="header-section-number">2.2.3</span> Categorical attribute distributions</h3>
 <div id="fig-cat-distributions" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-cat-distributions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -467,26 +484,11 @@ Figure&nbsp;3: Class distributions for categorical attributes
 </figcaption>
 </figure>
 </div>
-<p><a href="#fig-cat-distributions" class="quarto-xref">Figure&nbsp;3</a> shows strong class imbalance across several categorical attributes. For example, for <code>Decking Material</code> and <code>Structure Material</code>, dominant classes such as <code>Timber</code> appear far more frequently than alternatives. This imbalance introduces bias risks for supervised learning, as models may over-predict majority classes and underperform on rare categories. As a result, evaluation metrics such as precision and recall will be more appropriate than overall accuracy. This also motivates the use of a majority-class baseline model for benchmarking.</p>
+<p><a href="#fig-cat-distributions" class="quarto-xref">Figure&nbsp;3</a> shows strong class imbalance across several categorical attributes. For example, for <code>Decking Material</code> and <code>Structure Material</code>, dominant classes such as <code>Timber</code> appear far more frequently than alternatives. This imbalance introduces bias risks if employing supervised learning, as models may over-predict majority classes and underperform on rare categories. As a result, evaluation metrics such as precision and recall will be more appropriate than overall accuracy.</p>
 </section>
-<section id="numerical-attribute-distributions" class="level3">
-<h3 class="anchored" data-anchor-id="numerical-attribute-distributions">Numerical attribute distributions</h3>
-<div id="fig-num-distributions" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-num-distributions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="report_images/numerical_distributions.png" class="img-fluid figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-num-distributions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4: Numerical attribute distributions
-</figcaption>
-</figure>
-</div>
-<p>Numerical attributes were analysed using histograms with mean and median values. These distributions are highly skewed, with clear differences between mean and median, indicating outliers and possibly inconsistent measurement practices.</p>
-</section>
-<section id="image-quality" class="level3">
-<h3 class="anchored" data-anchor-id="image-quality">Image quality</h3>
-<p>While having multiple images per asset improves coverage, image quality is highly variable. Some images are close-ups or poorly framed, and may not capture relevant structural information.</p>
-<p>As shown in <a href="#fig-same-asset" class="quarto-xref">Figure&nbsp;5</a>, even images from the same asset can vary significantly in usefulness. This suggests that image filtering or weighting may be required during model training to reduce noise from low-quality samples.</p>
+<section id="image-quality" class="level3" data-number="2.2.4">
+<h3 data-number="2.2.4" class="anchored" data-anchor-id="image-quality"><span class="header-section-number">2.2.4</span> Image quality</h3>
+<p>While having multiple images per asset improves coverage and may give us more opportunities to correctly predict attribute values, the quality among these images varies significantly. Some images are close-ups or poorly framed, and may not capture relevant structural information, as shown in <a href="#fig-same-asset" class="quarto-xref">Figure&nbsp;4</a>. This suggests that image filtering or weighting may be required during model training to reduce noise from low-quality samples.</p>
 <div id="cell-fig-same-asset" class="cell" data-execution_count="4">
 <div class="cell-output cell-output-display">
 <div id="fig-same-asset" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -495,7 +497,7 @@ Figure&nbsp;4: Numerical attribute distributions
 <img src="Image_analysis_of_park_infrastructure_report_files/figure-html/fig-same-asset-output-1.png" width="623" height="307" class="figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-same-asset-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5: Two sample images of the same boardwalk
+Figure&nbsp;4: Two sample images of the same boardwalk
 </figcaption>
 </figure>
 </div>
@@ -503,10 +505,10 @@ Figure&nbsp;5: Two sample images of the same boardwalk
 </div>
 </section>
 </section>
-<section id="proposed-data-science-approach" class="level2">
-<h2 class="anchored" data-anchor-id="proposed-data-science-approach">Proposed Data Science Approach</h2>
+<section id="proposed-data-science-approach" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="proposed-data-science-approach"><span class="header-section-number">2.3</span> Proposed Data Science Approach</h2>
 <p>Our approach is motivated directly by the findings from our exploratory data analysis above. Given the high degree of class imbalance seen in <a href="#fig-cat-distributions" class="quarto-xref">Figure&nbsp;3</a>, we will start by defining a majority class predictor as our simplest benchmark, which always predicts the most frequent class per attribute. This sets a minimum performance floor: any model that cannot outperform this baseline provides no added value in our pipeline. We’ll be relying on F1 score to get a true picture of our baseline performance.</p>
-<p>As we have seen above in <a href="#tbl-unique-vals" class="quarto-xref">Table&nbsp;2</a>, not all attributes are the same. They vary in type, difficulty and which asset types they apply to. Categorical attributes will require a classification approach while numerical attributes like length and fall height are better treated as ordered categories due to the difficulty in estimating exact measurements from images without a size reference to work with. Our pipeline therefore routes each image to the relevant set of attribute predictions based on the asset type, which is provided by BCParks via an organized folder structure. See <a href="#fig-pipeline" class="quarto-xref">Figure&nbsp;6</a>.</p>
+<p>As we have seen above in <a href="#tbl-unique-vals" class="quarto-xref">Table&nbsp;2</a>, not all attributes are the same. They vary in type, difficulty and which asset types they apply to. Categorical attributes will require a classification approach while numerical attributes like length and fall height are better treated as ordered categories due to the difficulty in estimating exact measurements from images without a size reference to work with. Our pipeline therefore routes each image to the relevant set of attribute predictions based on the asset type, which is provided by BCParks via an organized folder structure. See <a href="#fig-pipeline" class="quarto-xref">Figure&nbsp;5</a>.</p>
 <p>Given that a large proportion of our attribute labels are missing or incomplete, our next step is to explore zero-shot approaches that require no labelled training data. We will first evaluate a zero-shot Vision Language Model (VLM), building directly on the partner’s existing work with VLMs for attribute labelling. Through careful prompt configuration and providing the model with all possible attribute labels, we can establish a strong benchmark without any fine-tuning. Other zero-shot models like CLIP will be used for performance comparison.</p>
 <p>To improve VLM performance, we will also implement a few-shot approach where we provide a small subset of labelled images alongside the prompt, which can improve prediction quality without full training. A key advantage of this approach is its flexibility: the model can also be prompted to return “Cannot Determine” or “Requires Manual Review” when an image does not contain sufficient information, such as close-up or low-quality photos. However, the main challenge with these approaches is that performance depends heavily on prompt and description quality, and they may struggle with fine-grained visual details and recognizing rare attribute values.</p>
 <p>Lastly, we will also explore more advanced methods that make use of our available labelled data as well as some external data that may help support training. This includes training lightweight classifiers on top of rich pre-trained embeddings, which work well even with small datasets and are particularly effective for material-based attributes. As a stretch goal, we will also explore combining visual similarity search with a language model (RAG), where similar labelled images are retrieved and used as context to inform predictions made by a VLM.</p>
@@ -527,18 +529,18 @@ Figure&nbsp;5: Two sample images of the same boardwalk
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pipeline-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;6: High-level overview of the proposed attribute prediction pipeline
+Figure&nbsp;5: High-level overview of the proposed attribute prediction pipeline
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
 </section>
-<section id="evaluation-success-criteria" class="level2">
-<h2 class="anchored" data-anchor-id="evaluation-success-criteria">Evaluation &amp; Success Criteria</h2>
+<section id="evaluation-success-criteria" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="evaluation-success-criteria"><span class="header-section-number">2.4</span> Evaluation &amp; Success Criteria</h2>
 </section>
-<section id="timeline" class="level2">
-<h2 class="anchored" data-anchor-id="timeline">Timeline</h2>
+<section id="timeline" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="timeline"><span class="header-section-number">2.5</span> Timeline</h2>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 20%">
@@ -582,8 +584,17 @@ Figure&nbsp;6: High-level overview of the proposed attribute prediction pipeline
 </table>
 <p><em>Note: Data cleaning, preprocessing and transformations will be refined continuously throughout the project as new challenges or changes to modelling approaches emerge.</em></p>
 </section>
+</section>
+<section id="references" class="level1 unnumbered" data-number="3">
 
-</main>
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">3 References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-radford2021clip" class="csl-entry" role="listitem">
+Radford, Alec, Jong Wook Kim, Chris Hallacy, Aditya Ramesh, Gabriel Goh, Sandhini Agarwal, Girish Sastry, et al. 2021. <span>“Learning Transferable Visual Models from Natural Language Supervision.”</span> In <em>Proceedings of the 38th International Conference on Machine Learning</em>, 8748–63. <a href="https://arxiv.org/abs/2103.00020">https://arxiv.org/abs/2103.00020</a>.
+</div>
+</div></section></div></main>
 <!-- /main column -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
