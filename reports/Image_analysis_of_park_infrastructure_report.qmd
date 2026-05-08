@@ -1,0 +1,263 @@
+---
+title: "Image Analysis of Park Infrastructure"
+author:
+  - name: Sarah Gauthier
+    affiliations:
+      - name: Master of Data Science, University of British Columbia
+  - name: Nour Shawky
+    affiliations:
+      - name: Master of Data Science, University of British Columbia
+  - name: Ssemakula Peter Wasswa
+    affiliations:
+      - name: Master of Data Science, University of British Columbia
+  - name: Mehmet Imga
+    affiliations:
+      - name: Master of Data Science, University of British Columbia
+
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    code-fold: true
+    css: report-styles.css
+  pdf:
+    toc: true
+    toc-depth: 3
+    fontsize: 10pt
+    geometry:
+      - margin=0.85in
+    colorlinks: true
+    header-includes:
+      - \linespread{0.98}
+execute:
+  echo: false
+  warning: false
+  error: false
+---
+
+## Summary
+
+This project explores how computer vision can be used to automatically extract infrastructure attributes from park images. The goal is to improve the completeness and reliability of asset management data used by BC Parks.
+
+We aim to predict attributes such as asset type, material, structure position, size ranges, railing presence, and number of steps. Due to weak or incomplete labels, we adopt a staged approach that starts with a zero-shot baseline and progresses toward an attribute-specific modelling pipeline.
+
+## Introduction
+
+BC Parks manages a large inventory of infrastructure assets such as bridges, stairs, boardwalks, and viewing platforms. While many of these assets have associated image data, the attribute information is often incomplete or inconsistent.
+
+Manually reviewing thousands of images to extract attributes such as material, size, and structural features is time-consuming and not scalable. Computer vision techniques provide an opportunity to automate this process and improve data quality.
+
+## Research Question
+
+Can machine learning models automatically predict infrastructure attributes from images, including asset type, material, size ranges, structure position, railing presence, and number of steps?
+
+## Data Sources
+
+The data for this project was exported from the CityWide asset management system using an API key provided by the project partner. It includes two primary components:
+
+1. All image files attached to assets of type `Trail Bridge`, `Stairs`, `Boardwalk` or `Viewing Platform`
+2. A CSV file with attribute data for each image file
+
+### Attribute Data
+
+The CSV file with attribute data contains 5,562 rows, where each row corresponds to a single image (attachment) linked to an asset through its Asset ID. As such, the observational unit of the dataset is an individual image–asset pair. Each record also includes metadata such as image path, asset category (`profile_id`), and a series of asset-level attributes (e.g., decking material, fall height, length).
+
+A summary of non-null values, data types, and number of unique values for relevant columns is shown in @tbl-data-summary.
+
+```{python}
+#| echo: false
+#| label: tbl-data-summary
+#| tbl-cap: Summary of non-null counts, data types, and unique values for the attribute dataset.
+
+import pandas as pd
+
+attributes_df = pd.read_csv("../data/citywide/image_attributes_manifest.csv")
+
+attributes_df = attributes_df[[
+    "image_path",
+    "file_exists", 
+    "asset_id", 
+    "profile_id",
+    "profile_name",
+    "description",
+    "file_id",
+    "filename",
+    "attr_Abutment Material",
+    "attr_Bridge Type",
+    "attr_Decking Material",
+    "attr_Fall Height",
+    "attr_Has Edge Guard",
+    "attr_Has Pedestrian Railing",
+    "attr_Length",
+    "attr_Material (Frame, Tank, Body)",
+    "attr_Number of Steps",
+    "attr_Structure Material",
+    "attr_Structure Position",
+    "attr_Width"
+]]
+
+summary = pd.DataFrame({
+    "Non-Null Count": attributes_df.notnull().sum(),
+    "Null Count": attributes_df.isnull().sum(),
+    "Data Type": attributes_df.dtypes,
+    "Unique Values Count": attributes_df.nunique()
+})
+summary.index.name = "Column"
+
+summary
+```
+
+The columns `image_path` and `file_id` contain unique values for all rows since each image has a unique path and ID, while `asset_id` only has 3584 unique values which confirms that many assets have more than one attachment. Most of the `attr_` features represent categorical attributes while the attributes fall height and number of steps contain only numerical values. Many attributes have substantial missing data.
+
+### Image Data
+
+In addition to the attribute table, the dataset includes 5,562 image files corresponding to the attachment records. These images were collected by field inspectors and serves as the input for the project's image-analysis workflow. Examples of these images are shown in @fig-examples.
+
+```{python}
+#| echo: false
+#| label: fig-examples
+#| fig-cap: "Sample images from the dataset"
+
+from PIL import Image, ImageOps
+import matplotlib.pyplot as plt
+
+img_paths = [
+    "../data/citywide/images/253/54322/18912__AST_EX_20210826_112735.jpeg",
+    "../data/citywide/images/356/49702/36091__AST_EX_20220216_112215.jpeg",
+    "../data/citywide/images/573/128878/91012__AST_IM_20251122_103756.jpeg"
+]
+
+fig, axes = plt.subplots(1, 3, figsize=(8, 3))
+
+for ax, img_path in zip(axes, img_paths):
+    # Open and auto-orient based on EXIF
+    img = Image.open(img_path)
+    img = ImageOps.exif_transpose(img)
+
+    ax.imshow(img)
+    ax.axis("off")
+
+# Bring images closer together
+plt.subplots_adjust(wspace=0.01)
+
+plt.tight_layout()
+```
+
+
+## Data Exploration
+
+Exploratory data analysis (EDA) was conducted on the dataset to answer the following questions about our dataset:
+1. How complete is the attribute data across different asset categories?
+2. How balanced are categorical attributes across classes?
+3. What is the distribution and quality of numerical attributes?
+4. What is the variability in image quality across assets?
+
+To answer these questions, the following analyses were performed.
+
+### Unique values and label consistency
+
+To better understand the possible values of categorical attributes, unique values were extracted.
+
+```{python}
+#| echo: false
+#| label: tbl-unique-vals
+#| tbl-cap: "Unique values for categorical attributes"
+
+import pandas as pd
+
+attr_cols = [c for c in attributes_df.columns if c.startswith("attr_")]
+num_attrs = ["attr_Fall Height", "attr_Number of Steps", "attr_Length", "attr_Width"]
+cat_attrs = [col for col in attr_cols if col not in num_attrs]
+
+unique_table = pd.DataFrame({
+    "Column": cat_attrs,
+    "Unique Values": [
+        ", ".join(map(str, sorted(attributes_df[col].dropna().unique().tolist())))
+        for col in cat_attrs
+    ]
+})
+
+pd.set_option("display.max_colwidth", None)
+
+unique_table
+```
+
+@tbl-unique-vals reveals some data quality issues such as the presence of placeholder values like `TBD` to denote missing values. There are also some redundant category labels (e.g., `No` and `No railings`) that should be combined into one category. 
+
+Additionally, it was found that numerical fields contained invalid placeholders such as `-1` or `0`, which also artificially reduce the null counts in @tbl-data-summary.
+
+### Attribute completeness by asset category
+
+To assess data coverage, attribute fill rates were computed for each asset category. This is necessary because not all attributes are relevant to all asset types (e.g., `Number of Steps` is only applicable to stairs). Invalid placeholder values were removed before computing completeness.
+
+![Attribute fill rate per asset category](report_images/attribute_fill_rate.png){#fig-attribute-fill-rate}
+
+@fig-attribute-fill-rate shows variation in completeness across both attributes and asset types. Numerical attributes such as `Fall Height` and `Number of Steps` are particularly sparse while some categorical attributes like `Decking Material` are more consistently filled. This indicates that attribute collection is inconsistent and may require imputation or alternative learning strategies, including leveraging image-based inference or pre-trained models.
+
+### Categorical attribute distributions
+
+![Class distributions for categorical attributes](report_images/categorical_distributions.png){#fig-cat-distributions}
+
+@fig-cat-distributions shows strong class imbalance across several categorical attributes. For example, for `Decking Material` and `Structure Material`, dominant classes such as `Timber` appear far more frequently than alternatives. This imbalance introduces bias risks for supervised learning, as models may over-predict majority classes and underperform on rare categories. As a result, evaluation metrics such as precision and recall will be more appropriate than overall accuracy. This also motivates the use of a majority-class baseline model for benchmarking.
+
+### Numerical attribute distributions
+
+![Numerical attribute distributions](report_images/numerical_distributions.png){#fig-num-distributions}
+
+Numerical attributes were analysed using histograms with mean and median values. These distributions are highly skewed, with clear differences between mean and median, indicating outliers and possibly inconsistent measurement practices.
+
+### Image quality
+
+While having multiple images per asset improves coverage, image quality is highly variable. Some images are close-ups or poorly framed, and may not capture relevant structural information.
+
+As shown in @fig-same-asset, even images from the same asset can vary significantly in usefulness. This suggests that image filtering or weighting may be required during model training to reduce noise from low-quality samples.
+
+```{python}
+#| echo: false
+#| label: fig-same-asset
+#| fig-cap: "Two sample images of the same boardwalk"
+
+img_paths = [
+    "../data/citywide/images/573/92846/29443__AST_IM_20211022_155226.jpeg",
+    "../data/citywide/images/573/92846/64069__AST_EX_20221114_140509.jpeg"
+]
+
+fig, axes = plt.subplots(1, 2, figsize=(8, 3))
+
+for ax, img_path in zip(axes, img_paths):
+    img = Image.open(img_path)
+    img = ImageOps.exif_transpose(img)
+
+    ax.imshow(img)
+    ax.axis("off")
+
+# Remove extra whitespace and push images together
+plt.subplots_adjust(wspace=0.02, left=0, right=1, top=1, bottom=0)
+
+plt.show()
+```
+
+## Methodology
+
+### Baseline Approach: Zero-shot VLM
+
+We begin with a zero-shot baseline using a vision-language model such as CLIP.
+
+This allows us to predict:
+
+- Material type  
+- Structure position  
+- Railing presence  
+- Size ranges (small / medium / large)  
+
+**Why this baseline:**
+- No training required  
+- Works with weak labels  
+- Provides a quick benchmark  
+
+**Limitations:**
+- Weak on fine-grained details  
+- No component localization  
+- Not reliable for measurements  
+
+### Proposed Attribute-Based Pipeline

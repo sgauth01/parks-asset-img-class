@@ -1,0 +1,25 @@
+name: bcparks_capstone
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - jupyter
+  - notebook
+  - ipykernel
+  - pandas
+  - numpy
+  - matplotlib
+  - seaborn
+  - scikit-learn
+  - pillow
+  - requests
+  - tqdm
+  - pip
+  - pip:
+    - ultralytics      
+    - transformers     
+    - torch
+    - torchvision          
+    - python-dotenv  
+    - mlflow 

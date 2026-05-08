@@ -2,9 +2,72 @@
 
 # parks-asset-img-class
 
-## Usage
+## Project overview
 
-This repository is a collaboration space for a 2026 UBC MDS capstone project. This README will be completed by the Capstone team. (please replace when ready)
+This repository contains early work for a 2026 UBC MDS capstone project on using image analysis to classify BC Parks infrastructure assets and predict attributes such as asset type, material, railing presence, size ranges, structure position, and number of steps.
+
+At the moment, the main runnable artifact is a Quarto report:
+
+- `reports/Image_analysis_of_park_infrastructure_report.qmd`
+
+Rendering this file creates both:
+
+- `reports/Image_analysis_of_park_infrastructure_report.html`
+- `reports/Image_analysis_of_park_infrastructure_report.pdf`
+
+## Repository structure
+
+```text
+.
+├── environment.yml
+├── notebooks/
+│   └── data_exploration.ipynb
+└── reports/
+    ├── Image_analysis_of_park_infrastructure_report.qmd
+    └── references.bib
+```
+
+## Setup
+
+Create and activate the Conda environment:
+
+```bash
+conda env create -f environment.yml
+conda activate bcparks_capstone
+```
+
+The report is built with [Quarto](https://quarto.org/). Install Quarto if it is not already available:
+
+```bash
+quarto --version
+```
+
+PDF rendering also requires a LaTeX installation. If PDF rendering fails because LaTeX is missing, install TinyTeX with:
+
+```bash
+quarto install tinytex
+```
+
+## Render the report
+
+From the repository root, run:
+
+```bash
+quarto render reports/Image_analysis_of_park_infrastructure_report.qmd
+```
+
+This command renders all formats listed in the report YAML, currently HTML and PDF.
+
+To render only one format:
+
+```bash
+quarto render reports/Image_analysis_of_park_infrastructure_report.qmd --to html
+quarto render reports/Image_analysis_of_park_infrastructure_report.qmd --to pdf
+```
+
+## Current status
+
+This project is in an early exploratory stage. The report currently describes the project motivation, research question, dataset assumptions, data challenges, and a proposed modelling approach. The notebook directory is available for exploration work as the project develops.
 
 ## Getting Help or Reporting an Issue
 
