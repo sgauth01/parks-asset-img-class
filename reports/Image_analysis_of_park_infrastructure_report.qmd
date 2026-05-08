@@ -173,7 +173,7 @@ unique_table
 
 ### Attribute completeness by asset category
 
-To assess data coverage, attribute fill rates were computed for each asset category. It was necessary to do this by asset category because not all attributes are relevant to all asset types (e.g., `Number of Steps` is only applicable to stairs). Invalid placeholder values were removed before computing fill rates.
+To assess data coverage, attribute fill rates were computed for each asset category. Invalid placeholder values were removed before computing fill rates.
 
 ![Attribute fill rate per asset category](report_images/attribute_fill_rate.png){#fig-attribute-fill-rate}
 
