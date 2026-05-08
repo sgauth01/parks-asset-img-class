@@ -236,31 +236,9 @@ plt.subplots_adjust(wspace=0.02, left=0, right=1, top=1, bottom=0)
 
 plt.show()
 ```
+ 
 
-## Methodology
-
-### Baseline Approach: Zero-shot VLM
-
-We begin with a zero-shot baseline using a vision-language model such as CLIP.
-
-This allows us to predict:
-
-- Material type  
-- Structure position  
-- Railing presence  
-- Size ranges (small / medium / large)  
-
-**Why this baseline:**
-- No training required  
-- Works with weak labels  
-- Provides a quick benchmark  
-
-**Limitations:**
-- Weak on fine-grained details  
-- No component localization  
-- Not reliable for measurements  
-
-### Proposed Data Science Approach
+## Proposed Data Science Approach
 
 Our approach is motivated directly by the findings from our exploratory data analysis above. Given the  high degree of class imbalance seen in @fig-cat-distributions, where Timber dominates a lot of our categorical variables like decking material, structure material and abutment material, accuracy alone will be a misleading metric when evaluating our model. 
 
@@ -275,3 +253,11 @@ To improve VLM performance, we will also implement a few-shot approach where we 
 Lastly, we will also explore more advanced methods that make use of our available labelled data as well as some external data that may help support training. This includes training lightweight classifiers on top of rich pre-trained embeddings, which work well even with small datasets and are particularly effective for material-based attributes. As a stretch goal, we will also explore combining visual similarity search with a language model (RAG), where similar labelled images are retrieved and used as context to inform predictions made by a VLM.
 
 All approaches will produce a CSV file with all attribute predictions alongside a confidence score, with low confidence predictions being flagged for manual review by BCParks.
+
+## Evaluation & Success Criteria
+
+
+## Timeline 
+
+
+
