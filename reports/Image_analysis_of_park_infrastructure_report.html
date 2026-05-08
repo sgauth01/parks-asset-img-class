@@ -422,11 +422,11 @@ Table&nbsp;2: Unique values for categorical attributes
 </figure>
 </div>
 </div>
-<p><a href="#tbl-unique-vals" class="quarto-xref">Table&nbsp;2</a> reveals some data quality issues such as the presence of placeholder values like <code>TBD</code> to denote missing values. There are also some redundant category labels (e.g., <code>No</code> and <code>No railings</code>) that should be combined into one category. Additionally, through discussions with the partner, it was found that numerical fields also contained invalid placeholders such as <code>-1</code> or <code>0</code>, artificially reducing the null counts in <a href="#tbl-data-summary" class="quarto-xref">Table&nbsp;1</a>.</p>
+<p><a href="#tbl-unique-vals" class="quarto-xref">Table&nbsp;2</a> reveals some data quality issues such as the presence of placeholder values like <code>TBD</code> to denote missing values, artificially reducing the null counts in <a href="#tbl-data-summary" class="quarto-xref">Table&nbsp;1</a>.</p>
 </section>
 <section id="attribute-completeness-by-asset-category" class="level3">
 <h3 class="anchored" data-anchor-id="attribute-completeness-by-asset-category">Attribute completeness by asset category</h3>
-<p>To assess data coverage, attribute fill rates were computed for each asset category. It was necessary to do this by asset category because not all attributes are relevant to all asset types (e.g., <code>Number of Steps</code> is only applicable to stairs). Invalid placeholder values were removed before computing fill rates.</p>
+<p>To assess data coverage, attribute fill rates were computed for each asset category. Invalid values were removed before computing fill rates.</p>
 <div id="fig-attribute-fill-rate" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-attribute-fill-rate-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -437,7 +437,7 @@ Figure&nbsp;2: Attribute fill rate per asset category
 </figcaption>
 </figure>
 </div>
-<p>As shown in <a href="#fig-attribute-fill-rate" class="quarto-xref">Figure&nbsp;2</a>, there is a lot of variation in completeness across attribute types. Numerical attributes such as <code>Fall Height</code> and <code>Number of Steps</code> are particularly sparse while some categorical or binary attributes like <code>Decking Material</code> or <code>Has Edge Guard</code> are more consistently filled. This indicates that attribute collection is inconsistent and may require imputation or alternative learning strategies, including image-based inference using computer vision or pre-trained machine learning models.</p>
+<p>As shown in <a href="#fig-attribute-fill-rate" class="quarto-xref">Figure&nbsp;2</a>, there is a lot of variation in completeness across attribute types. Numerical attributes such as <code>Fall Height</code> and <code>Number of Steps</code> are particularly sparse while some categorical or binary attributes like <code>Decking Material</code> or <code>Has Edge Guard</code> are more consistently filled.</p>
 </section>
 <section id="categorical-attribute-distributions" class="level3">
 <h3 class="anchored" data-anchor-id="categorical-attribute-distributions">Categorical attribute distributions</h3>
@@ -451,7 +451,7 @@ Figure&nbsp;3: Class distributions for categorical attributes
 </figcaption>
 </figure>
 </div>
-<p><a href="#fig-cat-distributions" class="quarto-xref">Figure&nbsp;3</a> shows strong class imbalance across several categorical attributes. For example, for <code>Decking Material</code> and <code>Structure Material</code>, dominant classes such as <code>Timber</code> appear far more frequently than alternatives. This imbalance introduces bias risks if employing supervised learning, as models may over-predict majority classes and underperform on rare categories. As a result, evaluation metrics such as precision and recall will be more appropriate than overall accuracy. This also motivates the use of a majority-class baseline model for benchmarking.</p>
+<p><a href="#fig-cat-distributions" class="quarto-xref">Figure&nbsp;3</a> shows strong class imbalance across several categorical attributes. For example, for <code>Decking Material</code> and <code>Structure Material</code>, dominant classes such as <code>Timber</code> appear far more frequently than alternatives. This imbalance introduces bias risks if employing supervised learning, as models may over-predict majority classes and underperform on rare categories. As a result, evaluation metrics such as precision and recall will be more appropriate than overall accuracy.</p>
 </section>
 <section id="image-quality" class="level3">
 <h3 class="anchored" data-anchor-id="image-quality">Image quality</h3>
