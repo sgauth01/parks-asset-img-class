@@ -267,6 +267,11 @@ flowchart TD
 
 ## Evaluation & Success Criteria
 
+The evaluation plan has two main tasks. First, we will evaluate the relevance filter with F1 score. This shows how well the workflow finds images that are useful for infrastructure review. Second, we will evaluate attribute extraction. We will use macro-F1 for categorical fields, and both mean absolute error (MAE) and root mean squared error (RMSE) for numeric fields. MAE shows the average error size, while RMSE gives more weight to large errors. Using both metrics gives a more complete view of model performance. Final results will be measured on a held-out test set.
+
+For BC Parks, success means the workflow can classify infrastructure photos into the correct asset type and fill key missing attributes, including material, length, width, fall height, railings, and number of steps. The results should be exported as a simple CSV file for staff review. The workflow should support staff decisions, not replace them. It can reduce manual review time, fill missing asset data, and flag uncertain predictions for review.
+
+The main stakeholders are BC Parks staff, the UBC MDS capstone team, and future maintainers. They need accurate data, reproducible methods, and clear documentation for future updates as more data becomes available.
 
 ## Timeline 
 
