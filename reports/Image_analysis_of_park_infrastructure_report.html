@@ -521,9 +521,9 @@ Figure&nbsp;4: Two sample images of the same boardwalk
 <div aria-describedby="fig-pipeline-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div>
 <pre class="mermaid mermaid-js" data-label="fig-pipeline">flowchart TD
-    A["Image Folder per Asset Type"] --&gt; B["Image FilteringYOLO or Model Prompt"]
+    A["Image Folder per Asset Type"] --&gt; B["Image Filtering YOLO or Model Prompt"]
     B --&gt; C["Attribute Prediction Zero-shot VLM / CLIP"]
-    C --&gt; D["CSV OutputPredictions + Confidence Scores"]
+    C --&gt; D["CSV Output Predictions + Confidence Scores"]
     C --&gt; E["Advanced Approaches DINOv2 / RAG"]
     E --&gt; D
 </pre>

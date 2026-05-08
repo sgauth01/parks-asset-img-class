@@ -306,9 +306,9 @@ All approaches will produce a CSV file with all attribute predictions alongside 
 %%| fig-cap: "High-level overview of the proposed attribute prediction pipeline"
 
 flowchart TD
-    A["Image Folder per Asset Type"] --> B["Image FilteringYOLO or Model Prompt"]
+    A["Image Folder per Asset Type"] --> B["Image Filtering YOLO or Model Prompt"]
     B --> C["Attribute Prediction Zero-shot VLM / CLIP"]
-    C --> D["CSV OutputPredictions + Confidence Scores"]
+    C --> D["CSV Output Predictions + Confidence Scores"]
     C --> E["Advanced Approaches DINOv2 / RAG"]
     E --> D
 ```
