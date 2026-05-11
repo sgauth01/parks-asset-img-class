@@ -57,7 +57,7 @@ div.csl-indent {
 <link href="Image_analysis_of_park_infrastructure_report_files/libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="Image_analysis_of_park_infrastructure_report_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="Image_analysis_of_park_infrastructure_report_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="Image_analysis_of_park_infrastructure_report_files/libs/bootstrap/bootstrap-81267100e462c21b3d6c0d5bf76a3417.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="Image_analysis_of_park_infrastructure_report_files/libs/bootstrap/bootstrap-bb462d781dde1847d9e3ccf7736099dd.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="Image_analysis_of_park_infrastructure_report_files/libs/quarto-diagram/mermaid.min.js"></script>
 <script src="Image_analysis_of_park_infrastructure_report_files/libs/quarto-diagram/mermaid-init.js"></script>
 <link href="Image_analysis_of_park_infrastructure_report_files/libs/quarto-diagram/mermaid.css" rel="stylesheet">
@@ -73,7 +73,7 @@ div.csl-indent {
 
 <div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
 <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="../Image_analysis_of_park_infrastructure_report.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></div>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="..\Image_analysis_of_park_infrastructure_report.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></div>
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
@@ -137,7 +137,7 @@ div.csl-indent {
 
   <dl>
     <dt>Date:</dt>
-    <dd>2026-05-08</dd>
+    <dd>2026-05-11</dd>
 
     <dt>Prepared for:</dt>
     <dd>UBC Master of Data Science Capstone</dd>
@@ -153,13 +153,13 @@ div.csl-indent {
 </section>
 <section id="executive-summary" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> Executive Summary</h1>
-<p>BC Parks manages over 100,000 infrastructure assets, including stairs, trail bridges, boardwalks, and viewing platforms. Although many assets have associated photographs, important infrastructure attributes such as material,structural position and dimensions are often missing or incomplete. This limits the ability of staff to efficiently plan maintenance, prioritize inspections, and make reliable data-driven decisions.</p>
-<p>We propose a staged modelling pipeline beginning with a zero-shot vision-language model baseline <span class="citation" data-cites="radford2021clip">(<a href="#ref-radford2021clip" role="doc-biblioref">Radford et al. 2021</a>)</span>, followed by more targeted attribute-specific models for tasks such as material classification, structural feature detection, and size estimation. The final outcome will be a reproducible pipeline capable of generating structured attribute predictions with confidence scores to support BC Parks staff in reviewing and updating infrastructure records.Success will be measured by the pipeline’s ability to outperform a majority class baseline on F1 score for categorical attributes, and reduce prediction error for binned numerical attributes, on a held-out test set.</p>
+<p>BC Parks manages over 100,000 infrastructure assets, including stairs, trail bridges, boardwalks, and viewing platforms. Although many assets have associated photographs, important infrastructure attributes such as material, structural position and dimensions are often missing or incomplete. This limits the ability of staff to efficiently plan maintenance, prioritize inspections, and make reliable data-driven decisions.</p>
+<p>We propose a staged modelling pipeline beginning with a zero-shot vision-language model baseline <span class="citation" data-cites="radford2021clip">(<a href="#ref-radford2021clip" role="doc-biblioref">Radford et al. 2021</a>)</span>, followed by more targeted attribute-specific models for tasks such as material classification, structural feature detection, and size estimation. The final outcome will be a reproducible analysis pipeline capable of generating structured attribute predictions with confidence scores to support BC Parks staff in reviewing and updating infrastructure records. Success will be measured by the pipeline’s ability to outperform a majority class baseline on F1 score for categorical attributes, and reduce prediction error for binned numerical attributes, on a held-out test set.</p>
 </section>
 <section id="introduction" class="level1" data-number="2">
 <h1 data-number="2"><span class="header-section-number">2</span> Introduction</h1>
 <p>BC Parks relies on infrastructure data to support maintenance planning, safety inspections, and long-term asset management. However, many infrastructure records currently contain incomplete attribute information, which makes it difficult for staff to prioritize maintenance inspections.</p>
-<p>Our dataset includes 5,562 images associated with 3,584 unique assets, including stairs, trail bridges, boardwalks, and viewing platforms. As well as missing labels, initial exploration also showed many other data challenges including inconsistent formatting, multiple images linked to a single asset, and close-up photographs that may not provide useful contextual information.</p>
+<p>Our dataset includes 5,562 images associated with 3,584 unique assets, including stairs, trail bridges, boardwalks, and viewing platforms. In addition to missing labels, initial exploration showed many other data challenges including inconsistent formatting, multiple images linked to a single asset, and close-up photographs that may not provide useful contextual information.</p>
 <p>Recent advances in computer vision and vision-language models, such as CLIP <span class="citation" data-cites="radford2021clip">(<a href="#ref-radford2021clip" role="doc-biblioref">Radford et al. 2021</a>)</span>, have demonstrated strong performance in image understanding tasks. Building on these developments, this project aims to predict missing infrastructure attributes such as material type, structural features, and approximate dimensions from images. The final data product will be a reproducible machine learning pipeline that generates structured attribute predictions and confidence scores that can be integrated into BC Parks’ existing asset management workflows. Model performance will be evaluated using macro-F1 for categorical attributes and MAE for binned numerical attributes, with all final results measured on a test set that is withheld from training and model selection.</p>
 </section>
 <section id="data-exploratory-data-analysis-eda" class="level1" data-number="3">
@@ -179,7 +179,7 @@ div.csl-indent {
 Table&nbsp;1: Summary of non-null counts, data types, and unique values for the attribute dataset.
 </figcaption>
 <div aria-describedby="tbl-data-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output cell-output-display" data-execution_count="52">
+<div class="cell-output cell-output-display" data-execution_count="25">
 <div>
 
 
@@ -378,7 +378,7 @@ Figure&nbsp;1: Sample images from the dataset
 Table&nbsp;2: Unique values for categorical attributes
 </figcaption>
 <div aria-describedby="tbl-unique-vals-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="54">
+<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="27">
 <table class="do-not-create-environment cell caption-top table table-sm table-striped small">
 <colgroup>
 <col style="width: 22%">
@@ -489,17 +489,17 @@ Figure&nbsp;4: Two sample images of the same boardwalk
 <p>To improve VLM performance, we will also implement a few-shot approach where we provide a small subset of labelled images alongside the prompt, which can improve prediction quality without full training. A key advantage of this approach is its flexibility: the model can also be prompted to return “Cannot Determine” or “Requires Manual Review” when an image does not contain sufficient information, such as close-up or low-quality photos. However, the main challenge with these approaches is that performance depends heavily on prompt and description quality, and they may struggle with fine-grained visual details and recognizing rare attribute values.</p>
 <p>Lastly, we will also explore more advanced methods that make use of our available labelled data as well as some external data that may help support training. This includes training lightweight classifiers on top of rich pre-trained embeddings, which work well even with small datasets and are particularly effective for material-based attributes.</p>
 <p>All approaches will produce a CSV file with all attribute predictions alongside a confidence score, with low confidence predictions being flagged for manual review by BCParks.</p>
-<div class="cell" data-fig-width="3" data-fig-height="5" data-layout-align="default">
+<div class="cell" data-fig-width="2.5" data-fig-height="4" data-layout-align="default">
 <div class="cell-output-display">
 <div id="fig-pipeline" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-pipeline-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div>
 <pre class="mermaid mermaid-js" data-label="fig-pipeline">flowchart TD
-    A["Image Folder per Asset Type"] --&gt; B["Image Filtering YOLO or Model Prompt"]
-    B --&gt; C["Attribute Prediction Zero-shot VLM / CLIP"]
-    C --&gt; D["CSV Output Predictions + Confidence Scores"]
-    C --&gt; E["Advanced Approaches DINOv2 / RAG"]
+    A["Image Folder per Asset Type"] --&gt; B["Image Filtering: YOLO or Model Prompt"]
+    B --&gt; C["Attribute Prediction: Zero-shot VLM / CLIP"]
+    C --&gt; D["CSV Output: Predictions + Confidence Scores"]
+    C --&gt; E["Advanced Approaches: DINOv2 / RAG"]
     E --&gt; D
 </pre>
 </div>
@@ -515,7 +515,7 @@ Figure&nbsp;5: High-level overview of the proposed attribute prediction pipeline
 <section id="evaluation-success-criteria" class="level1" data-number="5">
 <h1 data-number="5"><span class="header-section-number">5</span> Evaluation &amp; Success Criteria</h1>
 <p>For our evaluation plan, we will start comparing our approaches against our majority class predictor using an F1 score as the minimum benchmark. For attribute-specific evaluation, we will use macro-F1 for categorical fields, and both mean absolute error (MAE) and root mean squared error (RMSE) for numeric fields. MAE shows the average error size, while RMSE penalizes larger errors more heavily, together providing a more complete view of model performance. Our best models will then be evaluated on a held-out test set.</p>
-<p>For BC Parks, success means the workflow can classify infrastructure photos into the correct asset type and fill key missing attributes, including material, length, structure position and number of steps, reducing manual effort required by field staff. The results should be exported as a simple CSV file containing attribute values and confidence scores, making it easy for staff to review. The pipeline is designed to support staff decision-making, not replace it.</p>
+<p>For BC Parks, success means the workflow can classify infrastructure photos into the correct asset type and fill key missing attributes, including material, length, structure position and number of steps, reducing manual effort required by field staff. The results should be exported as a simple CSV file containing predicted attribute values with associated confidence scores, making it easy for staff to review. The pipeline is designed to support staff decision-making, not replace it.</p>
 <p>The primary stakeholders are BC Parks staff, the UBC MDS capstone team, and future maintainers. They all require accurate data, reproducible methods, and clear documentation for future updates as more data becomes available.</p>
 </section>
 <section id="timeline" class="level1" data-number="6">
