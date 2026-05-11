@@ -25,3 +25,4 @@ dependencies:
     - mlflow>=2.13
     - pytest>=8.0
     - openpyxl
+    - tabulate
