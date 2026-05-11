@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.26">
+<meta name="generator" content="quarto-1.7.33">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -47,22 +47,21 @@ div.csl-indent {
 }</style>
 
 
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="Image_analysis_of_park_infrastructure_report_files/libs/clipboard/clipboard.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="Image_analysis_of_park_infrastructure_report_files/libs/clipboard/clipboard.min.js"></script>
 <script src="Image_analysis_of_park_infrastructure_report_files/libs/quarto-html/quarto.js" type="module"></script>
 <script src="Image_analysis_of_park_infrastructure_report_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="Image_analysis_of_park_infrastructure_report_files/libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="Image_analysis_of_park_infrastructure_report_files/libs/quarto-html/popper.min.js"></script>
 <script src="Image_analysis_of_park_infrastructure_report_files/libs/quarto-html/tippy.umd.min.js"></script>
 <script src="Image_analysis_of_park_infrastructure_report_files/libs/quarto-html/anchor.min.js"></script>
 <link href="Image_analysis_of_park_infrastructure_report_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="Image_analysis_of_park_infrastructure_report_files/libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="Image_analysis_of_park_infrastructure_report_files/libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="Image_analysis_of_park_infrastructure_report_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="Image_analysis_of_park_infrastructure_report_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="Image_analysis_of_park_infrastructure_report_files/libs/bootstrap/bootstrap-1e118674f8eeaf0dc11d6faf9a2d8791.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="Image_analysis_of_park_infrastructure_report_files/libs/bootstrap/bootstrap-81267100e462c21b3d6c0d5bf76a3417.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="Image_analysis_of_park_infrastructure_report_files/libs/quarto-diagram/mermaid.min.js"></script>
 <script src="Image_analysis_of_park_infrastructure_report_files/libs/quarto-diagram/mermaid-init.js"></script>
 <link href="Image_analysis_of_park_infrastructure_report_files/libs/quarto-diagram/mermaid.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
 
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
@@ -138,7 +137,7 @@ div.csl-indent {
 
   <dl>
     <dt>Date:</dt>
-    <dd>2026-05-05</dd>
+    <dd>2026-05-08</dd>
 
     <dt>Prepared for:</dt>
     <dd>UBC Master of Data Science Capstone</dd>
@@ -152,30 +151,16 @@ div.csl-indent {
     </dd>
   </dl>
 </section>
-<section id="table-of-contents" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="table-of-contents">Table of Contents</h2>
-<nav class="report-toc">
-  <ol>
-    <li><a href="#executive-summary">Executive Summary</a></li>
-    <li><a href="#introduction">Introduction</a></li>
-    <li><a href="#project-details">Project Details</a></li>
-    <li><a href="#findings">Findings</a></li>
-    <li><a href="#conclusions-and-recommendations">Conclusions and Recommendations</a></li>
-    <li><a href="#references">References</a></li>
-    <li><a href="#appendices">Appendices</a></li>
-  </ol>
-</nav>
-</section>
 <section id="executive-summary" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> Executive Summary</h1>
 <p>BC Parks manages over 100,000 infrastructure assets, including stairs, trail bridges, boardwalks, and viewing platforms. Although many assets have associated photographs, important infrastructure attributes such as material,structural position and dimensions are often missing or incomplete. This limits the ability of staff to efficiently plan maintenance, prioritize inspections, and make reliable data-driven decisions.</p>
-<p>We propose a staged modelling pipeline beginning with a zero-shot vision-language model baseline <span class="citation" data-cites="radford2021clip">(<a href="#ref-radford2021clip" role="doc-biblioref">Radford et al. 2021</a>)</span>, followed by more targeted attribute-specific models for tasks such as material classification, structural feature detection, and size estimation. The final outcome will be a reproducible pipeline capable of generating structured attribute predictions with confidence scores to support BC Parks staff in reviewing and updating infrastructure records.</p>
+<p>We propose a staged modelling pipeline beginning with a zero-shot vision-language model baseline <span class="citation" data-cites="radford2021clip">(<a href="#ref-radford2021clip" role="doc-biblioref">Radford et al. 2021</a>)</span>, followed by more targeted attribute-specific models for tasks such as material classification, structural feature detection, and size estimation. The final outcome will be a reproducible pipeline capable of generating structured attribute predictions with confidence scores to support BC Parks staff in reviewing and updating infrastructure records.Success will be measured by the pipeline’s ability to outperform a majority class baseline on F1 score for categorical attributes, and reduce prediction error for binned numerical attributes, on a held-out test set.</p>
 </section>
 <section id="introduction" class="level1" data-number="2">
 <h1 data-number="2"><span class="header-section-number">2</span> Introduction</h1>
 <p>BC Parks relies on infrastructure data to support maintenance planning, safety inspections, and long-term asset management. However, many infrastructure records currently contain incomplete attribute information, which makes it difficult for staff to prioritize maintenance inspections.</p>
 <p>Our dataset includes 5,562 images associated with 3,584 unique assets, including stairs, trail bridges, boardwalks, and viewing platforms. As well as missing labels, initial exploration also showed many other data challenges including inconsistent formatting, multiple images linked to a single asset, and close-up photographs that may not provide useful contextual information.</p>
-<p>Recent advances in computer vision and vision-language models, such as CLIP <span class="citation" data-cites="radford2021clip">(<a href="#ref-radford2021clip" role="doc-biblioref">Radford et al. 2021</a>)</span>, have demonstrated strong performance in image understanding tasks. Building on these developments, this project aims to predict missing infrastructure attributes such as material type, structural features, and approximate dimensions from images. The final data product will be a reproducible machine learning pipeline that generates structured attribute predictions and confidence scores that can be integrated into BC Parks’ existing asset management workflows.</p>
+<p>Recent advances in computer vision and vision-language models, such as CLIP <span class="citation" data-cites="radford2021clip">(<a href="#ref-radford2021clip" role="doc-biblioref">Radford et al. 2021</a>)</span>, have demonstrated strong performance in image understanding tasks. Building on these developments, this project aims to predict missing infrastructure attributes such as material type, structural features, and approximate dimensions from images. The final data product will be a reproducible machine learning pipeline that generates structured attribute predictions and confidence scores that can be integrated into BC Parks’ existing asset management workflows. Model performance will be evaluated using macro-F1 for categorical attributes and MAE for binned numerical attributes, with all final results measured on a test set that is withheld from training and model selection.</p>
 </section>
 <section id="data-exploratory-data-analysis-eda" class="level1" data-number="3">
 <h1 data-number="3"><span class="header-section-number">3</span> Data &amp; Exploratory Data Analysis (EDA)</h1>
@@ -194,11 +179,11 @@ div.csl-indent {
 Table&nbsp;1: Summary of non-null counts, data types, and unique values for the attribute dataset.
 </figcaption>
 <div aria-describedby="tbl-data-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output cell-output-display" data-execution_count="1">
+<div class="cell-output cell-output-display" data-execution_count="52">
 <div>
 
 
-<table class="dataframe do-not-create-environment cell caption-top table table-sm table-striped small" data-border="1">
+<table class="dataframe do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -217,140 +202,140 @@ Table&nbsp;1: Summary of non-null counts, data types, and unique values for the 
 </thead>
 <tbody>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">image_path</th>
+<td data-quarto-table-cell-role="th">image_path</td>
 <td>5562</td>
 <td>0</td>
 <td>object</td>
 <td>5562</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">file_exists</th>
+<td data-quarto-table-cell-role="th">file_exists</td>
 <td>5562</td>
 <td>0</td>
 <td>bool</td>
 <td>2</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">asset_id</th>
+<td data-quarto-table-cell-role="th">asset_id</td>
 <td>5562</td>
 <td>0</td>
 <td>int64</td>
 <td>3584</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">profile_id</th>
+<td data-quarto-table-cell-role="th">profile_id</td>
 <td>5562</td>
 <td>0</td>
 <td>int64</td>
 <td>5</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">profile_name</th>
+<td data-quarto-table-cell-role="th">profile_name</td>
 <td>5562</td>
 <td>0</td>
 <td>object</td>
 <td>5</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">description</th>
+<td data-quarto-table-cell-role="th">description</td>
 <td>5138</td>
 <td>424</td>
 <td>object</td>
 <td>2709</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">file_id</th>
+<td data-quarto-table-cell-role="th">file_id</td>
 <td>5562</td>
 <td>0</td>
 <td>int64</td>
 <td>5562</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">filename</th>
+<td data-quarto-table-cell-role="th">filename</td>
 <td>5562</td>
 <td>0</td>
 <td>object</td>
 <td>5495</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">attr_Abutment Material</th>
+<td data-quarto-table-cell-role="th">attr_Abutment Material</td>
 <td>2094</td>
 <td>3468</td>
 <td>object</td>
 <td>7</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">attr_Bridge Type</th>
+<td data-quarto-table-cell-role="th">attr_Bridge Type</td>
 <td>2054</td>
 <td>3508</td>
 <td>object</td>
 <td>7</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">attr_Decking Material</th>
+<td data-quarto-table-cell-role="th">attr_Decking Material</td>
 <td>4359</td>
 <td>1203</td>
 <td>object</td>
 <td>7</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">attr_Fall Height</th>
+<td data-quarto-table-cell-role="th">attr_Fall Height</td>
 <td>5499</td>
 <td>63</td>
 <td>float64</td>
 <td>36</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">attr_Has Edge Guard</th>
+<td data-quarto-table-cell-role="th">attr_Has Edge Guard</td>
 <td>3144</td>
 <td>2418</td>
 <td>object</td>
 <td>3</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">attr_Has Pedestrian Railing</th>
+<td data-quarto-table-cell-role="th">attr_Has Pedestrian Railing</td>
 <td>5439</td>
 <td>123</td>
 <td>object</td>
 <td>7</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">attr_Length</th>
+<td data-quarto-table-cell-role="th">attr_Length</td>
 <td>5278</td>
 <td>284</td>
 <td>object</td>
 <td>318</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">attr_Material (Frame, Tank, Body)</th>
+<td data-quarto-table-cell-role="th">attr_Material (Frame, Tank, Body)</td>
 <td>1958</td>
 <td>3604</td>
 <td>object</td>
 <td>12</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">attr_Number of Steps</th>
+<td data-quarto-table-cell-role="th">attr_Number of Steps</td>
 <td>1090</td>
 <td>4472</td>
 <td>float64</td>
 <td>19</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">attr_Structure Material</th>
+<td data-quarto-table-cell-role="th">attr_Structure Material</td>
 <td>4355</td>
 <td>1207</td>
 <td>object</td>
 <td>6</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">attr_Structure Position</th>
+<td data-quarto-table-cell-role="th">attr_Structure Position</td>
 <td>1321</td>
 <td>4241</td>
 <td>object</td>
 <td>4</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">attr_Width</th>
+<td data-quarto-table-cell-role="th">attr_Width</td>
 <td>4156</td>
 <td>1406</td>
 <td>object</td>
@@ -393,63 +378,53 @@ Figure&nbsp;1: Sample images from the dataset
 Table&nbsp;2: Unique values for categorical attributes
 </figcaption>
 <div aria-describedby="tbl-unique-vals-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output cell-output-display" data-execution_count="3">
-<div>
-
-
-<table class="dataframe do-not-create-environment cell caption-top table table-sm table-striped small" data-border="1">
+<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="54">
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 22%">
+<col style="width: 77%">
+</colgroup>
 <thead>
 <tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">Column</th>
-<th data-quarto-table-cell-role="th">Unique Values</th>
+<th style="text-align: left;">Column</th>
+<th style="text-align: left;">Unique Values</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">0</th>
-<td>attr_Abutment Material</td>
-<td>Aluminum Sill Fill, Composite, Concrete, Gabions, Steel, TBD, Timber</td>
+<td style="text-align: left;">attr_Abutment Material</td>
+<td style="text-align: left;">Aluminum Sill Fill, Composite, Concrete, Gabions, Steel, TBD, Timber</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">1</th>
-<td>attr_Bridge Type</td>
-<td>Beam, Fallen Tree, Other, Suspension, TBD, TBD | Beam, Truss</td>
+<td style="text-align: left;">attr_Bridge Type</td>
+<td style="text-align: left;">Beam, Fallen Tree, Other, Suspension, TBD, TBD</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">2</th>
-<td>attr_Decking Material</td>
-<td>Aluminum, Asphalt, Composite, Concrete, Steel, TBD, Timber</td>
+<td style="text-align: left;">attr_Decking Material</td>
+<td style="text-align: left;">Aluminum, Asphalt, Composite, Concrete, Steel, TBD, Timber</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">3</th>
-<td>attr_Has Edge Guard</td>
-<td>No, TBD, Yes</td>
+<td style="text-align: left;">attr_Has Edge Guard</td>
+<td style="text-align: left;">No, TBD, Yes</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">4</th>
-<td>attr_Has Pedestrian Railing</td>
-<td>1 railing, 2 railings, No, No railings, TBD, TBD | No railings, TBD | Yes</td>
+<td style="text-align: left;">attr_Has Pedestrian Railing</td>
+<td style="text-align: left;">1 railing, 2 railings, No, No railings, TBD, TBD</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">5</th>
-<td>attr_Material (Frame, Tank, Body)</td>
-<td>Aluminum, Box Step, Concrete, Earth-Filled, Gravel, Metal, Natural Surface, PVC, Rock/Stone, Steel, TBD, Timber/Wood</td>
+<td style="text-align: left;">attr_Material (Frame, Tank, Body)</td>
+<td style="text-align: left;">Aluminum, Box Step, Concrete, Earth-Filled, Gravel, Metal, Natural Surface, PVC, Rock/Stone, Steel, TBD, Timber/Wood</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">6</th>
-<td>attr_Structure Material</td>
-<td>Aluminum, Concrete, Steel, Stone, TBD, Timber</td>
+<td style="text-align: left;">attr_Structure Material</td>
+<td style="text-align: left;">Aluminum, Concrete, Steel, Stone, TBD, Timber</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">7</th>
-<td>attr_Structure Position</td>
-<td>At-Grade, Elevated, Other, TBD</td>
+<td style="text-align: left;">attr_Structure Position</td>
+<td style="text-align: left;">At-Grade, Elevated, Other, TBD</td>
 </tr>
 </tbody>
 </table>
-
-</div>
 </div>
 </div>
 </figure>
@@ -460,10 +435,10 @@ Table&nbsp;2: Unique values for categorical attributes
 <section id="attribute-completeness-by-asset-category" class="level3" data-number="3.2.2">
 <h3 data-number="3.2.2" class="anchored" data-anchor-id="attribute-completeness-by-asset-category"><span class="header-section-number">3.2.2</span> Attribute completeness by asset category</h3>
 <p>To assess data coverage, attribute fill rates were computed for each asset category. Invalid values were removed before computing fill rates.</p>
-<div id="fig-attribute-fill-rate" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="fig-attribute-fill-rate" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-pos="H">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-attribute-fill-rate-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="report_images/attribute_fill_rate.png" class="img-fluid figure-img">
+<img src="report_images/attribute_fill_rate.png" class="img-fluid figure-img" data-fig-pos="H">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-attribute-fill-rate-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;2: Attribute fill rate per asset category
@@ -474,10 +449,10 @@ Figure&nbsp;2: Attribute fill rate per asset category
 </section>
 <section id="categorical-attribute-distributions" class="level3" data-number="3.2.3">
 <h3 data-number="3.2.3" class="anchored" data-anchor-id="categorical-attribute-distributions"><span class="header-section-number">3.2.3</span> Categorical attribute distributions</h3>
-<div id="fig-cat-distributions" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="fig-cat-distributions" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-pos="H">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-cat-distributions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="report_images/categorical_distributions.png" class="img-fluid figure-img">
+<img src="report_images/categorical_distributions.png" class="img-fluid figure-img" style="width:85.0%" data-fig-pos="H">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cat-distributions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;3: Class distributions for categorical attributes
@@ -491,10 +466,10 @@ Figure&nbsp;3: Class distributions for categorical attributes
 <p>While having multiple images per asset improves coverage and may give us more opportunities to correctly predict attribute values, the quality among these images varies significantly. Some images are close-ups or poorly framed, and may not capture relevant structural information, as shown in <a href="#fig-same-asset" class="quarto-xref">Figure&nbsp;4</a>. This suggests that image filtering or weighting may be required during model training to reduce noise from low-quality samples.</p>
 <div id="cell-fig-same-asset" class="cell" data-execution_count="4">
 <div class="cell-output cell-output-display">
-<div id="fig-same-asset" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="fig-same-asset" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-pos="H">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-same-asset-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="Image_analysis_of_park_infrastructure_report_files/figure-html/fig-same-asset-output-1.png" width="623" height="307" class="figure-img">
+<img src="Image_analysis_of_park_infrastructure_report_files/figure-html/fig-same-asset-output-1.png" data-fig-pos="H" width="623" height="307" class="figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-same-asset-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;4: Two sample images of the same boardwalk
@@ -508,13 +483,13 @@ Figure&nbsp;4: Two sample images of the same boardwalk
 </section>
 <section id="proposed-data-science-approach" class="level1" data-number="4">
 <h1 data-number="4"><span class="header-section-number">4</span> Proposed Data Science Approach</h1>
-<p>Our approach is motivated directly by the findings from our exploratory data analysis above. Given the high degree of class imbalance seen in <a href="#fig-cat-distributions" class="quarto-xref">Figure&nbsp;3</a>, we will start by defining a majority class predictor as our simplest benchmark, which always predicts the most frequent class per attribute. This sets a minimum performance floor: any model that cannot outperform this baseline provides no added value in our pipeline. We’ll be relying on F1 score to get a true picture of our baseline performance.</p>
-<p>As we have seen above in <a href="#tbl-unique-vals" class="quarto-xref">Table&nbsp;2</a>, attributes vary in data type. Categorical attributes will require a classification approach while numerical attributes like length and fall height are better treated as ordered categories due to the difficulty in estimating exact measurements from images without a size reference to work with. Our pipeline therefore routes each image to the relevant set of attribute predictions based on the asset type, which is provided by BCParks via an organized folder structure. See <a href="#fig-pipeline" class="quarto-xref">Figure&nbsp;5</a>.</p>
+<p>Our approach is motivated directly by the findings from our exploratory data analysis above. Given the high degree of class imbalance seen in <a href="#fig-cat-distributions" class="quarto-xref">Figure&nbsp;3</a>, we will start by defining a majority class predictor as our simplest benchmark, which always predicts the most frequent class per attribute. This sets a minimum performance floor: any model that cannot outperform this baseline provides no added value in our pipeline. We’ll be relying on F1 score to get a true picture of our baseline performance. We rely on F1 rather than accuracy as our primary metric, since accuracy can be misleadingly high when one class dominates. In this case, a model that always predicts Timber would appear highly accurate despite being uninformative.</p>
+<p>As we have seen above in <a href="#tbl-unique-vals" class="quarto-xref">Table&nbsp;2</a>, attributes vary in data type. Categorical attributes will require a classification approach while numerical attributes like length and fall height are better treated as ordered categories due to the difficulty in estimating exact measurements from images without a size reference to work with. Our pipeline therefore routes each image to the relevant set of attribute predictions based on the asset type, which is provided by BCParks via an organized folder structure (see <a href="#fig-pipeline" class="quarto-xref">Figure&nbsp;5</a>).</p>
 <p>Given that a large proportion of our attribute labels are missing or incomplete, our next step is to explore zero-shot approaches that require no labelled training data. We will first evaluate a zero-shot Vision Language Model (VLM), building directly on the partner’s existing work with VLMs for attribute labelling. Through careful prompt configuration and providing the model with all possible attribute labels, we can establish a strong benchmark without any fine-tuning. Other zero-shot models like CLIP will be used for performance comparison.</p>
 <p>To improve VLM performance, we will also implement a few-shot approach where we provide a small subset of labelled images alongside the prompt, which can improve prediction quality without full training. A key advantage of this approach is its flexibility: the model can also be prompted to return “Cannot Determine” or “Requires Manual Review” when an image does not contain sufficient information, such as close-up or low-quality photos. However, the main challenge with these approaches is that performance depends heavily on prompt and description quality, and they may struggle with fine-grained visual details and recognizing rare attribute values.</p>
 <p>Lastly, we will also explore more advanced methods that make use of our available labelled data as well as some external data that may help support training. This includes training lightweight classifiers on top of rich pre-trained embeddings, which work well even with small datasets and are particularly effective for material-based attributes.</p>
 <p>All approaches will produce a CSV file with all attribute predictions alongside a confidence score, with low confidence predictions being flagged for manual review by BCParks.</p>
-<div class="cell" data-layout-align="default">
+<div class="cell" data-fig-width="3" data-fig-height="5" data-layout-align="default">
 <div class="cell-output-display">
 <div id="fig-pipeline" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -586,6 +561,7 @@ Figure&nbsp;5: High-level overview of the proposed attribute prediction pipeline
 </tr>
 </tbody>
 </table>
+<p>The final deliverable will be a reproducible end-to-end pipeline that takes a folder of infrastructure images as input and produces a structured CSV file containing predicted attribute values and confidence scores for each asset. Alongside the pipeline, we will provide BCParks with a report documenting our results with clear documentation and a walkthrough tutorial to support further fine tuning and future maintenance of our pipeline as new data becomes available.</p>
 </section>
 <section id="references" class="level1 unnumbered" data-number="7">
 
@@ -649,14 +625,13 @@ Radford, Alec, Jong Wook Kim, Chris Hallacy, Aditya Ramesh, Gabriel Goh, Sandhin
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-      const outerScaffold = trigger.parentElement.cloneNode(true);
-      const codeEl = outerScaffold.querySelector('code');
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
         }
-      }
-      return codeEl.innerText;
+        return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
