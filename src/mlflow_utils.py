@@ -29,6 +29,7 @@ from collections.abc import Mapping
 from typing import Any
 
 import mlflow
+from sklearn.metrics import accuracy_score, classification_report, confusion_matrix, f1_score
 
 logger = logging.getLogger(__name__)
 
@@ -81,9 +82,57 @@ def make_standard_tags(
     return tags
 
 
+def classification_metrics(y_true: Any, y_pred: Any) -> dict[str, float]:
+    """Return standard classification metrics used across project runs."""
+    return {
+        "accuracy": float(accuracy_score(y_true, y_pred)),
+        "macro_f1": float(f1_score(y_true, y_pred, average="macro", zero_division=0)),
+        "weighted_f1": float(
+            f1_score(y_true, y_pred, average="weighted", zero_division=0)
+        ),
+    }
+
+
+def log_classification_run(
+    *,
+    run_name: str,
+    tags: Mapping[str, Any],
+    params: Mapping[str, Any] | None,
+    y_true: Any,
+    y_pred: Any,
+) -> str:
+    """Log a classification run with standard metrics and artifacts.
+
+    Returns the MLflow run id so scripts can print or store it.
+    """
+    metrics = classification_metrics(y_true, y_pred)
+    labels = sorted(set(y_true) | set(y_pred), key=str)
+    report = classification_report(
+        y_true,
+        y_pred,
+        labels=labels,
+        zero_division=0,
+        output_dict=True,
+    )
+    matrix = confusion_matrix(y_true, y_pred, labels=labels).tolist()
+
+    with mlflow.start_run(run_name=run_name, tags={str(k): str(v) for k, v in tags.items()}) as run:
+        if params:
+            mlflow.log_params({str(k): v for k, v in params.items()})
+        mlflow.log_metrics(metrics)
+        mlflow.log_dict(report, "classification_report.json")
+        mlflow.log_dict(
+            {"labels": [str(label) for label in labels], "matrix": matrix},
+            "confusion_matrix.json",
+        )
+        return run.info.run_id
+
+
 __all__ = [
     "DEFAULT_EXPERIMENT_NAME",
     "DEFAULT_TRACKING_URI",
+    "classification_metrics",
+    "log_classification_run",
     "make_run_name",
     "make_standard_tags",
     "setup_mlflow",
