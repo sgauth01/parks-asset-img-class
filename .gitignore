@@ -34,7 +34,7 @@ env/
 data/raw/*
 
 #ignore test files for now
-data/raw/processed/test/*
+data/processed/test/*
 
 # MLflow file-based tracking store + artifacts
 mlruns/
