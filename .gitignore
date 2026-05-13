@@ -34,6 +34,9 @@ env/
 # Ignore raw data and images from data directory
 data/raw/*
 
+#ignore test files for now
+data/raw/processed/test/*
+
 # MLflow file-based tracking store + artifacts
 mlruns/
 mlartifacts/
@@ -41,6 +44,3 @@ mlartifacts/
 # OS
 .DS_Store
 Thumbs.db
-
-# Include processed data and results
-!data/processed/*
