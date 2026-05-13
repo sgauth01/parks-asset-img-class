@@ -27,3 +27,4 @@ dependencies:
     - openpyxl
     - tabulate
     - google-genai
+    - openai
