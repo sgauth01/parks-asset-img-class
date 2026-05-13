@@ -33,9 +33,6 @@ env/
 
 # Ignore raw data and images from data directory
 data/raw/*
-data/images/*
-<<<<<<< 10-setup-mlflow
-data/processed_data/*
 
 # MLflow file-based tracking store + artifacts
 mlruns/
@@ -44,9 +41,6 @@ mlartifacts/
 # OS
 .DS_Store
 Thumbs.db
-=======
-data/citywide/*
 
 # Include processed data and results
 !data/processed/*
->>>>>>> main
