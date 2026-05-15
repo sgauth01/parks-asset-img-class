@@ -7,7 +7,7 @@ Usage:
         --input data/processed/train/attr_number_of_steps_train.csv \
         --output results/vlm_predictions_stairs_gemma.csv \
         --model gemini-3-flash-preview \
-        --limit 5
+        --limit 1
 """
 
 import argparse
@@ -112,15 +112,18 @@ def run_batch(input_path, output_path, model_name, limit=None):
         if result is not None:
             parsed = result.get("response")
 
-            if isinstance(parsed, dict) and "predictions" in parsed:
-                preds = parsed["predictions"]
-
-                for attr, val in preds.items():
+            if isinstance(parsed, str):
+                try:
+                    parsed = json.loads(parsed)
+                except json.JSONDecodeError:
+                    out["parse_error"] = True
+                    results.append(out)
+                    continue
+                    
+            if isinstance(parsed, dict):
+                for attr, val in parsed.items():
                     out[f"{attr}_value"] = val.get("value")
                     out[f"{attr}_confidence"] = val.get("confidence")
-
-        else:
-            out["parse_error"] = True
             
         results.append(out)
     
