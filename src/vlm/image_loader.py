@@ -14,7 +14,7 @@ def load_asset_images_base64(asset_id, df):
 
     images = []
     for p in paths:
-        fixed = p.replace("data/", "../data/raw/", 1)
+        fixed = p.replace("data/", "data/raw/", 1)
         if not os.path.exists(fixed):
             print(f"⚠️ Image not found: {fixed}")
             continue
