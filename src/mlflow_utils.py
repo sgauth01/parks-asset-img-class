@@ -28,8 +28,19 @@ import os
 from collections.abc import Mapping
 from typing import Any
 
+import math
+
 import mlflow
-from sklearn.metrics import accuracy_score, classification_report, confusion_matrix, f1_score
+import numpy as np
+from sklearn.metrics import (
+    accuracy_score,
+    classification_report,
+    confusion_matrix,
+    f1_score,
+    mean_absolute_error,
+    mean_squared_error,
+    r2_score,
+)
 
 logger = logging.getLogger(__name__)
 
@@ -128,12 +139,60 @@ def log_classification_run(
         return run.info.run_id
 
 
+def numeric_metrics(y_true: Any, y_pred: Any) -> dict[str, float]:
+    """Return standard regression metrics used for numeric / count attributes."""
+    y_t = np.asarray(y_true, dtype=float)
+    y_p = np.asarray(y_pred, dtype=float)
+    mask = ~(np.isnan(y_t) | np.isnan(y_p))
+    if mask.sum() < 2:
+        return {"mae": float("nan"), "rmse": float("nan"), "r2": float("nan")}
+    yt, yp = y_t[mask], y_p[mask]
+    return {
+        "mae": float(mean_absolute_error(yt, yp)),
+        "rmse": float(math.sqrt(mean_squared_error(yt, yp))),
+        "r2": float(r2_score(yt, yp)),
+    }
+
+
+def log_numeric_run(
+    *,
+    run_name: str,
+    tags: Mapping[str, Any],
+    params: Mapping[str, Any] | None,
+    y_true: Any,
+    y_pred: Any,
+) -> str:
+    """Log a regression run with MAE / RMSE / R^2 artifacts.
+
+    Mirror of :func:`log_classification_run` for numeric attributes
+    (fall height, length, width, number of steps).
+    """
+    metrics = numeric_metrics(y_true, y_pred)
+
+    with mlflow.start_run(
+        run_name=run_name, tags={str(k): str(v) for k, v in tags.items()}
+    ) as run:
+        if params:
+            mlflow.log_params({str(k): v for k, v in params.items()})
+        mlflow.log_metrics(metrics)
+        mlflow.log_dict(
+            {
+                "y_true_preview": [float(v) for v in list(y_true)[:50]],
+                "y_pred_preview": [float(v) for v in list(y_pred)[:50]],
+            },
+            "numeric_preview.json",
+        )
+        return run.info.run_id
+
+
 __all__ = [
     "DEFAULT_EXPERIMENT_NAME",
     "DEFAULT_TRACKING_URI",
     "classification_metrics",
     "log_classification_run",
+    "log_numeric_run",
     "make_run_name",
     "make_standard_tags",
+    "numeric_metrics",
     "setup_mlflow",
 ]

@@ -1,10 +1,24 @@
-"""Run majority-class classification baselines on the processed dataset.
+"""Run dummy baselines on the new per-attribute splits.
 
-This script addresses issue #11 by fitting a simple benchmark for each
-categorical target and logging every run to MLflow.
+Originally written for issue #11 (majority-class classification baseline);
+this version is upgraded to:
+
+1. Use the locked attribute list from ``configs/schema.yaml`` instead of
+   a hand-maintained ``DEFAULT_TARGETS`` constant.
+2. Read the new partner-supplied per-attribute splits in
+   ``data/processed/train/attr_X_train.csv`` and generate validation
+   subsplits via ``GroupShuffleSplit(test_size=0.15, random_state=48)``
+   keyed by ``asset_id`` (the new split contract).
+3. Predict the **majority class** for categorical / boolean / ordinal-bin
+   attributes and the **median** for numeric / count attributes.  Each
+   attribute gets its own (train_85, val_15) sub-split.
+4. Log per-attribute runs to MLflow (one run per attribute) and write a
+   tidy summary CSV.
 
 Usage:
     python scripts/run_baseline_classification.py
+    python scripts/run_baseline_classification.py --no-mlflow
+    python scripts/run_baseline_classification.py --attributes attr_decking_material attr_length
 """
 
 from __future__ import annotations
@@ -14,41 +28,44 @@ import sys
 from pathlib import Path
 
 import pandas as pd
-from sklearn.model_selection import train_test_split
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from src.baseline import MajorityClassPredictor  # noqa: E402
+from src.baseline import MajorityClassPredictor, MedianRegressor  # noqa: E402
+from src.data.per_attribute_splits import (  # noqa: E402
+    ATTRIBUTE_COLUMNS,
+    DEFAULT_SPLIT_SEED,
+    DEFAULT_TEST_SIZE,
+    load_per_attribute_train_val,
+)
+from src.data.schema import AttributeKind, load_schema  # noqa: E402
 from src.mlflow_utils import (  # noqa: E402
     classification_metrics,
     log_classification_run,
+    log_numeric_run,
     make_run_name,
     make_standard_tags,
+    numeric_metrics,
     setup_mlflow,
 )
 
-
-DEFAULT_TARGETS = [
-    "profile_name",
-    "attr_decking_material",
-    "attr_has_edge_guard",
-    "attr_has_pedestrian_railing",
-    "attr_material_frame,_tank,_body",
-    "attr_structure_material",
-    "attr_structure_position",
-    "length_bin",
-    "width_bin",
-    "fall_height_bin",
-    "steps_bin",
-]
-
 MISSING_LABELS = {"", "nan", "none", "null", "tbd", "unknown"}
+
+CLS_KINDS = {
+    AttributeKind.CATEGORICAL,
+    AttributeKind.BOOLEAN,
+    AttributeKind.ORDINAL_BIN,
+}
 
 
 def clean_target_frame(df: pd.DataFrame, target: str) -> pd.DataFrame:
-    """Return rows with usable labels for one target."""
+    """Return rows with usable labels for one target.
+
+    Used for classification targets only; numeric targets are coerced
+    with ``pd.to_numeric`` instead.
+    """
     required = ["asset_id", target]
     missing = [col for col in required if col not in df.columns]
     if missing:
@@ -60,92 +77,156 @@ def clean_target_frame(df: pd.DataFrame, target: str) -> pd.DataFrame:
     return out.loc[mask].reset_index(drop=True)
 
 
-def split_by_asset(
-    df: pd.DataFrame,
-    *,
-    test_size: float,
-    split_seed: int,
-) -> tuple[pd.DataFrame, pd.DataFrame]:
-    """Split rows by asset id to avoid leakage across images of the same asset."""
-    asset_ids = pd.Series(df["asset_id"].dropna().unique())
-    if len(asset_ids) < 2:
-        raise ValueError("Need at least two assets to create a train/test split.")
-
-    train_assets, test_assets = train_test_split(
-        asset_ids,
-        test_size=test_size,
-        random_state=split_seed,
-    )
-    train = df[df["asset_id"].isin(train_assets)].copy()
-    test = df[df["asset_id"].isin(test_assets)].copy()
-    return train, test
-
-
 def run_target_baseline(
-    df: pd.DataFrame,
-    target: str,
+    attribute_column: str,
     *,
     test_size: float,
     split_seed: int,
     data_version: str,
+    train_dir: Path | None = None,
     log_to_mlflow: bool = True,
 ) -> dict[str, object]:
-    """Fit and evaluate one majority-class baseline."""
-    target_df = clean_target_frame(df, target)
-    train, test = split_by_asset(target_df, test_size=test_size, split_seed=split_seed)
+    """Fit and evaluate the dummy baseline for one attribute on the new split.
 
-    if train.empty or test.empty:
-        raise ValueError(f"{target} produced an empty train or test split.")
+    The training rows come from the partner's per-attribute file
+    (``data/processed/train/attr_X_train.csv``); the validation rows
+    come from an in-process ``GroupShuffleSplit`` on ``asset_id``.
+    """
+    schema = load_schema()
+    if attribute_column not in schema.attributes:
+        raise ValueError(f"Unknown attribute column: {attribute_column}")
+    kind = schema.kind_of(attribute_column)
 
-    model = MajorityClassPredictor().fit(train[["asset_id"]], train[target])
-    y_pred = model.predict(test[["asset_id"]])
-    metrics = classification_metrics(test[target], y_pred)
+    train_df, val_df = load_per_attribute_train_val(
+        attribute_column,
+        train_dir=train_dir,
+        test_size=test_size,
+        random_state=split_seed,
+    )
+    if train_df.empty or val_df.empty:
+        raise ValueError(
+            f"{attribute_column} produced an empty train or val split "
+            f"({len(train_df)} / {len(val_df)})."
+        )
 
-    result: dict[str, object] = {
-        "target": target,
-        "majority_class": str(model.fitted_value_),
-        "n_classes": int(train[target].nunique()),
-        "n_train": int(len(train)),
-        "n_test": int(len(test)),
+    if kind in CLS_KINDS:
+        y_train_series = clean_target_frame(train_df, attribute_column)
+        if y_train_series.empty:
+            raise ValueError(f"{attribute_column}: no usable training labels.")
+        y_train = y_train_series[attribute_column]
+        model = MajorityClassPredictor().fit(None, y_train)
+
+        y_val_series = clean_target_frame(val_df, attribute_column)
+        if y_val_series.empty:
+            raise ValueError(f"{attribute_column}: no usable validation labels.")
+        y_pred = model.predict(y_val_series)
+        metrics = classification_metrics(y_val_series[attribute_column], y_pred)
+        result: dict[str, object] = {
+            "attribute": attribute_column,
+            "kind": kind.value,
+            "predictor": "majority_class",
+            "fitted_value": str(model.fitted_value_),
+            "n_classes": int(y_train.nunique()),
+            "n_train_rows": int(len(y_train_series)),
+            "n_val_rows": int(len(y_val_series)),
+            "n_train_assets": int(train_df["asset_id"].nunique()),
+            "n_val_assets": int(val_df["asset_id"].nunique()),
+            **metrics,
+        }
+        if log_to_mlflow:
+            task = f"T3_{attribute_column}"
+            run_id = log_classification_run(
+                run_name=make_run_name(task, "majority_class"),
+                tags=make_standard_tags(
+                    task=task,
+                    model_family="baseline",
+                    model_name="majority_class",
+                    data_version=data_version,
+                    split_seed=split_seed,
+                    extra={"attribute_kind": kind.value, "split": "per_attribute_85_15"},
+                ),
+                params={
+                    "attribute": attribute_column,
+                    "fitted_value": result["fitted_value"],
+                    "n_classes": result["n_classes"],
+                    "n_train_rows": result["n_train_rows"],
+                    "n_val_rows": result["n_val_rows"],
+                    "test_size": test_size,
+                    "split_random_state": split_seed,
+                },
+                y_true=y_val_series[attribute_column],
+                y_pred=y_pred,
+            )
+            result["mlflow_run_id"] = run_id
+        return result
+
+    # numeric / count
+    y_train_num = pd.to_numeric(train_df[attribute_column], errors="coerce").dropna()
+    if y_train_num.empty:
+        raise ValueError(f"{attribute_column}: no usable numeric training values.")
+    model = MedianRegressor().fit(None, y_train_num)
+
+    val_keep = val_df.copy()
+    val_keep[attribute_column] = pd.to_numeric(
+        val_keep[attribute_column], errors="coerce"
+    )
+    val_keep = val_keep[val_keep[attribute_column].notna()].reset_index(drop=True)
+    if val_keep.empty:
+        raise ValueError(f"{attribute_column}: no usable numeric validation values.")
+
+    y_pred = model.predict(val_keep)
+    metrics = numeric_metrics(val_keep[attribute_column], y_pred)
+    result = {
+        "attribute": attribute_column,
+        "kind": kind.value,
+        "predictor": "median",
+        "fitted_value": float(model.fitted_value_),  # type: ignore[arg-type]
+        "n_classes": "",
+        "n_train_rows": int(len(y_train_num)),
+        "n_val_rows": int(len(val_keep)),
+        "n_train_assets": int(train_df["asset_id"].nunique()),
+        "n_val_assets": int(val_df["asset_id"].nunique()),
         **metrics,
     }
-
     if log_to_mlflow:
-        task = f"T2_{target}"
-        run_id = log_classification_run(
-            run_name=make_run_name(task, "majority_class"),
+        task = f"T3_{attribute_column}"
+        run_id = log_numeric_run(
+            run_name=make_run_name(task, "median_regressor"),
             tags=make_standard_tags(
                 task=task,
                 model_family="baseline",
-                model_name="majority_class",
+                model_name="median_regressor",
                 data_version=data_version,
                 split_seed=split_seed,
+                extra={"attribute_kind": kind.value, "split": "per_attribute_85_15"},
             ),
             params={
-                "target": target,
-                "majority_class": result["majority_class"],
-                "n_classes": result["n_classes"],
-                "n_train": result["n_train"],
-                "n_test": result["n_test"],
+                "attribute": attribute_column,
+                "fitted_value": result["fitted_value"],
+                "n_train_rows": result["n_train_rows"],
+                "n_val_rows": result["n_val_rows"],
                 "test_size": test_size,
+                "split_random_state": split_seed,
             },
-            y_true=test[target],
+            y_true=val_keep[attribute_column],
             y_pred=y_pred,
         )
         result["mlflow_run_id"] = run_id
-
     return result
 
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Run majority-class baselines for categorical attributes."
+        description=(
+            "Run majority-class / median baselines on the new per-attribute "
+            "85/15 splits (issue #11, refreshed for the new split contract)."
+        )
     )
     parser.add_argument(
-        "--data",
+        "--train-dir",
         type=Path,
-        default=Path("data/processed/master_dataset.csv"),
-        help="Processed modeling dataset.",
+        default=Path("data/processed/train"),
+        help="Directory containing the per-attribute train CSV files.",
     )
     parser.add_argument(
         "--output",
@@ -154,45 +235,52 @@ def parse_args() -> argparse.Namespace:
         help="Where to write the baseline summary CSV.",
     )
     parser.add_argument(
-        "--targets",
+        "--attributes",
         nargs="*",
-        default=DEFAULT_TARGETS,
-        help="Target columns to evaluate.",
+        default=ATTRIBUTE_COLUMNS,
+        help="Attribute columns to evaluate.  Defaults to all 12 schema attributes.",
     )
-    parser.add_argument("--test-size", type=float, default=0.2)
-    parser.add_argument("--split-seed", type=int, default=42)
-    parser.add_argument("--data-version", default="processed-main")
+    parser.add_argument("--test-size", type=float, default=DEFAULT_TEST_SIZE)
+    parser.add_argument("--split-seed", type=int, default=DEFAULT_SPLIT_SEED)
+    parser.add_argument("--data-version", default="per-attribute-85-15")
     parser.add_argument("--no-mlflow", action="store_true")
     return parser.parse_args()
 
 
 def main() -> int:
     args = parse_args()
-    df = pd.read_csv(args.data)
 
     if not args.no_mlflow:
         setup_mlflow()
 
     rows: list[dict[str, object]] = []
-    for target in args.targets:
+    for attr in args.attributes:
         try:
             result = run_target_baseline(
-                df,
-                target,
+                attr,
                 test_size=args.test_size,
                 split_seed=args.split_seed,
                 data_version=args.data_version,
+                train_dir=args.train_dir,
                 log_to_mlflow=not args.no_mlflow,
             )
-        except ValueError as exc:
-            print(f"Skipping {target}: {exc}")
+        except (FileNotFoundError, ValueError) as exc:
+            print(f"Skipping {attr}: {exc}")
             continue
 
         rows.append(result)
-        print(
-            f"{target}: majority={result['majority_class']!r} "
-            f"accuracy={result['accuracy']:.3f} macro_f1={result['macro_f1']:.3f}"
-        )
+        if result["predictor"] == "majority_class":
+            print(
+                f"{attr}: majority={result['fitted_value']!r} "
+                f"accuracy={result['accuracy']:.3f} macro_f1={result['macro_f1']:.3f} "
+                f"(train_assets={result['n_train_assets']}, val_assets={result['n_val_assets']})"
+            )
+        else:
+            print(
+                f"{attr}: median={result['fitted_value']:.2f} "
+                f"RMSE={result['rmse']:.3f} MAE={result['mae']:.3f} "
+                f"(train_assets={result['n_train_assets']}, val_assets={result['n_val_assets']})"
+            )
 
     if not rows:
         raise SystemExit("No baseline runs completed.")
