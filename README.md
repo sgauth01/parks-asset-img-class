@@ -77,9 +77,9 @@ End-to-end smoke test (synthetic data only, no SharePoint download needed):
 python scripts/mlflow_smoke_test.py
 ```
 
-This fits a `MajorityClassPredictor` on a synthetic 3-class target and a
-`MedianRegressor` on a synthetic numeric target, and writes both runs
-to `./mlruns` under the experiment **`parks-asset-img-class`**.
+This fits a scikit-learn dummy classifier and regressor on synthetic data,
+and writes both runs to `./mlruns` under the experiment
+**`parks-asset-img-class`**.
 
 View the runs in your browser:
 
@@ -87,44 +87,24 @@ View the runs in your browser:
 mlflow ui --backend-store-uri file:./mlruns
 ```
 
-Programmatic logging:
+Run the real baseline models with cross-validation on the processed training
+data:
 
-```python
-from src.baseline import MajorityClassPredictor
-from src.mlflow_utils import (
-    setup_mlflow, log_classification_run,
-    make_run_name, make_standard_tags,
-)
-
-setup_mlflow()  # uses ./mlruns
-
-clf = MajorityClassPredictor().fit(X_train, y_train)
-y_pred = clf.predict(X_test)
-
-log_classification_run(
-    run_name=make_run_name("T2_decking_material", "majority_class"),
-    tags=make_standard_tags(
-        task="T2_decking_material",
-        model_family="baseline",
-        model_name="majority_class",
-        data_version="2026-05-05",
-        split_seed=42,
-    ),
-    params={"n_train": len(y_train), "majority_class": str(clf.fitted_value_)},
-    y_true=y_test,
-    y_pred=y_pred,
-)
+```bash
+python scripts/run_baseline.py
 ```
 
-Standard tags every run carries: `task`, `model_family`, `model_name`,
-`data_version`, `split_seed`. Standard metrics: `accuracy`, `macro_f1`,
-`weighted_f1`, `per_class_f1.json`, and `confusion_matrix.json` for
-classification; `mae`, `rmse`, `r2` for regression.
+This writes `results/baseline_classification_results.csv` and
+`results/baseline_classification_cv_folds.csv`, and logs one MLflow run per
+attribute when `mlflow` is installed. Categorical attributes and binned
+continuous attributes such as `length_bin`, `width_bin`, `fall_height_bin`, and
+`steps_bin` use a majority-class predictor with cross-validated `accuracy`,
+`macro_f1`, and `weighted_f1`.
 
 Run the unit tests:
 
 ```bash
-pytest -q tests/test_mlflow_utils.py
+pytest -q tests/test_baseline.py tests/test_mlflow_utils.py
 ```
 
 ## Current status
