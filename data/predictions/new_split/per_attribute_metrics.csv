@@ -1,109 +1,45 @@
 pipeline_id,pipeline_display,attribute,attribute_display,kind,n_val,accuracy,macro_f1,weighted_f1,mae,rmse,r2
-baseline,Baseline (majority / median),attr_abutment_material,Abutment Material,categorical,172,0.5581395348837209,0.14328358208955222,0.39986115931968064,,,
-dinov2L_mlp,DINOv2-L + MLP,attr_abutment_material,Abutment Material,categorical,172,0.6511627906976745,0.32763413057530705,0.6451233445077494,,,
-dinov2L_catboost,DINOv2-L + CatBoost,attr_abutment_material,Abutment Material,categorical,172,0.7034883720930233,0.3531499702058378,0.6958656548981635,,,
-knn_k5_dinov2L,DINOv2-L + k-NN k=5,attr_abutment_material,Abutment Material,categorical,172,0.5872093023255814,0.25239457766860823,0.5824250285292564,,,
-knn_k10_dinov2L,DINOv2-L + k-NN k=10,attr_abutment_material,Abutment Material,categorical,172,0.6162790697674418,0.2677472781494973,0.6072903969236583,,,
-knn_k5_dinov2regL,DINOv2-reg-L + k-NN k=5,attr_abutment_material,Abutment Material,categorical,172,0.622093023255814,0.28449540637841103,0.6117740744061241,,,
-knn_k10_dinov2regL,DINOv2-reg-L + k-NN k=10,attr_abutment_material,Abutment Material,categorical,172,0.7034883720930233,0.3971710815246285,0.6934965844383917,,,
-dinov2regL_logistic,DINOv2-reg-L + logistic / ridge,attr_abutment_material,Abutment Material,categorical,172,0.5465116279069767,0.2659388920258486,0.5865735208505684,,,
-dinov2G_logistic,DINOv2-G + logistic / ridge,attr_abutment_material,Abutment Material,categorical,172,0.6046511627906976,0.3877277384221829,0.6355527038666573,,,
-baseline,Baseline (majority / median),attr_bridge_type,Bridge Type,categorical,172,0.8023255813953488,0.22258064516129034,0.7143285821455364,,,
-dinov2L_mlp,DINOv2-L + MLP,attr_bridge_type,Bridge Type,categorical,172,0.8488372093023255,0.3396800825593395,0.8439934480524155,,,
-dinov2L_catboost,DINOv2-L + CatBoost,attr_bridge_type,Bridge Type,categorical,172,0.8546511627906976,0.40619918699186996,0.8448785214596332,,,
-knn_k5_dinov2L,DINOv2-L + k-NN k=5,attr_bridge_type,Bridge Type,categorical,172,0.872093023255814,0.4302035330261137,0.8622791858678955,,,
-knn_k10_dinov2L,DINOv2-L + k-NN k=10,attr_bridge_type,Bridge Type,categorical,172,0.8546511627906976,0.4082397539517918,0.8435983718767831,,,
-knn_k5_dinov2regL,DINOv2-reg-L + k-NN k=5,attr_bridge_type,Bridge Type,categorical,172,0.8662790697674418,0.4306884057971015,0.8588599595551062,,,
-knn_k10_dinov2regL,DINOv2-reg-L + k-NN k=10,attr_bridge_type,Bridge Type,categorical,172,0.8837209302325582,0.4524475524475525,0.8774190925353716,,,
-dinov2regL_logistic,DINOv2-reg-L + logistic / ridge,attr_bridge_type,Bridge Type,categorical,172,0.7325581395348837,0.32277012870398086,0.7712646088415249,,,
-dinov2G_logistic,DINOv2-G + logistic / ridge,attr_bridge_type,Bridge Type,categorical,172,0.7383720930232558,0.30873559774806825,0.7774045943796926,,,
-baseline,Baseline (majority / median),attr_decking_material,Decking Material,categorical,448,0.9196428571428571,0.23953488372093024,0.8811461794019934,,,
-dinov2L_mlp,DINOv2-L + MLP,attr_decking_material,Decking Material,categorical,448,0.8839285714285714,0.34996638691909004,0.8995012446133875,,,
-dinov2L_catboost,DINOv2-L + CatBoost,attr_decking_material,Decking Material,categorical,448,0.8794642857142857,0.2963885429638854,0.8965430973136452,,,
-knn_k5_dinov2L,DINOv2-L + k-NN k=5,attr_decking_material,Decking Material,categorical,448,0.8839285714285714,0.2803125882685246,0.8943631720177008,,,
-knn_k10_dinov2L,DINOv2-L + k-NN k=10,attr_decking_material,Decking Material,categorical,448,0.8883928571428571,0.23873481016338158,0.8985727990830031,,,
-knn_k5_dinov2regL,DINOv2-reg-L + k-NN k=5,attr_decking_material,Decking Material,categorical,448,0.8861607142857143,0.284034188034188,0.8956929181929183,,,
-knn_k10_dinov2regL,DINOv2-reg-L + k-NN k=10,attr_decking_material,Decking Material,categorical,448,0.8816964285714286,0.2709094600081202,0.8894869515254336,,,
-dinov2regL_logistic,DINOv2-reg-L + logistic / ridge,attr_decking_material,Decking Material,categorical,448,0.8370535714285714,0.2962418300653595,0.8776698179271707,,,
-dinov2G_logistic,DINOv2-G + logistic / ridge,attr_decking_material,Decking Material,categorical,448,0.8415178571428571,0.31395254219492347,0.8845711452251582,,,
-baseline,Baseline (majority / median),attr_fall_height,Fall Height (m),numeric,31,,,,0.8258064516129031,1.0323790251709415,-0.006643865235680835
-dinov2L_mlp,DINOv2-L + MLP,attr_fall_height,Fall Height (m),numeric,31,,,,0.7815507140371106,0.9691579585028086,0.11287128028394855
-dinov2L_catboost,DINOv2-L + CatBoost,attr_fall_height,Fall Height (m),numeric,31,,,,0.823908873967996,1.0570232347318118,-0.055277245873284864
-knn_k5_dinov2L,DINOv2-L + k-NN k=5,attr_fall_height,Fall Height (m),numeric,31,,,,0.9761290322580646,1.7346116047561884,-1.841855564728546
-knn_k10_dinov2L,DINOv2-L + k-NN k=10,attr_fall_height,Fall Height (m),numeric,31,,,,0.9267741935483871,1.3409216859093358,-0.6982606046310498
-knn_k5_dinov2regL,DINOv2-reg-L + k-NN k=5,attr_fall_height,Fall Height (m),numeric,31,,,,1.1312903225806452,2.1205210862944406,-3.2470042654401086
-knn_k10_dinov2regL,DINOv2-reg-L + k-NN k=10,attr_fall_height,Fall Height (m),numeric,31,,,,0.9987096774193551,1.6347491669090024,-1.5240604729331295
-dinov2regL_logistic,DINOv2-reg-L + logistic / ridge,attr_fall_height,Fall Height (m),numeric,31,,,,0.8149183850134571,0.994569525190176,0.06573989920198031
-dinov2G_logistic,DINOv2-G + logistic / ridge,attr_fall_height,Fall Height (m),numeric,31,,,,0.8595823257200179,1.0227723562259041,0.012003357072224996
+baseline,Baseline (majority / median),attr_abutment_material,Abutment Material,categorical,172,0.5581395348837209,0.1432835820895522,0.3998611593196806,,,
+baseline,Baseline (majority / median),attr_bridge_type,Bridge Type,categorical,172,0.8023255813953488,0.2225806451612903,0.7143285821455364,,,
+baseline,Baseline (majority / median),attr_decking_material,Decking Material,categorical,448,0.9196428571428572,0.2395348837209302,0.8811461794019934,,,
+baseline,Baseline (majority / median),attr_fall_height,Fall Height (m),numeric,31,,,,0.8258064516129031,1.0323790251709417,-0.0066438652356808
 baseline,Baseline (majority / median),attr_has_edge_guard,Has Edge Guard,boolean,397,0.8942065491183879,0.4720744680851064,0.8442641620665631,,,
-dinov2L_mlp,DINOv2-L + MLP,attr_has_edge_guard,Has Edge Guard,boolean,397,0.8438287153652393,0.45722779635823113,0.8626853014105232,,,
-dinov2L_catboost,DINOv2-L + CatBoost,attr_has_edge_guard,Has Edge Guard,boolean,397,0.8312342569269522,0.42033886725421876,0.8460331973300471,,,
-knn_k5_dinov2L,DINOv2-L + k-NN k=5,attr_has_edge_guard,Has Edge Guard,boolean,397,0.8614609571788413,0.4350713637488656,0.8656789214214271,,,
-knn_k10_dinov2L,DINOv2-L + k-NN k=10,attr_has_edge_guard,Has Edge Guard,boolean,397,0.8564231738035264,0.3958699337340114,0.8517249691689055,,,
-knn_k5_dinov2regL,DINOv2-reg-L + k-NN k=5,attr_has_edge_guard,Has Edge Guard,boolean,397,0.8513853904282116,0.41359348788603806,0.8544391907211022,,,
-knn_k10_dinov2regL,DINOv2-reg-L + k-NN k=10,attr_has_edge_guard,Has Edge Guard,boolean,397,0.8639798488664987,0.402038706342283,0.8572079927751243,,,
-dinov2regL_logistic,DINOv2-reg-L + logistic / ridge,attr_has_edge_guard,Has Edge Guard,boolean,397,0.7858942065491183,0.44868934117700093,0.8265957082609394,,,
-dinov2G_logistic,DINOv2-G + logistic / ridge,attr_has_edge_guard,Has Edge Guard,boolean,397,0.801007556675063,0.45942475603492555,0.8382553279022561,,,
 baseline,Baseline (majority / median),attr_has_pedestrian_railing,Has Pedestrian Railing,categorical,558,0.8673835125448028,0.309660908509277,0.8057842995617747,,,
-dinov2L_mlp,DINOv2-L + MLP,attr_has_pedestrian_railing,Has Pedestrian Railing,categorical,558,0.8637992831541219,0.5148456638902499,0.8874325432574868,,,
-dinov2L_catboost,DINOv2-L + CatBoost,attr_has_pedestrian_railing,Has Pedestrian Railing,categorical,558,0.8440860215053764,0.48661040433303937,0.8705378059676357,,,
-knn_k5_dinov2L,DINOv2-L + k-NN k=5,attr_has_pedestrian_railing,Has Pedestrian Railing,categorical,558,0.8655913978494624,0.5258036035256367,0.888936336131778,,,
-knn_k10_dinov2L,DINOv2-L + k-NN k=10,attr_has_pedestrian_railing,Has Pedestrian Railing,categorical,558,0.8745519713261649,0.5465388591513703,0.8960873379762234,,,
-knn_k5_dinov2regL,DINOv2-reg-L + k-NN k=5,attr_has_pedestrian_railing,Has Pedestrian Railing,categorical,558,0.8709677419354839,0.5329502969418491,0.8936322790940088,,,
-knn_k10_dinov2regL,DINOv2-reg-L + k-NN k=10,attr_has_pedestrian_railing,Has Pedestrian Railing,categorical,558,0.8817204301075269,0.5596311186764831,0.9020491533153941,,,
-dinov2regL_logistic,DINOv2-reg-L + logistic / ridge,attr_has_pedestrian_railing,Has Pedestrian Railing,categorical,558,0.7831541218637993,0.4494260150580932,0.8281534023043042,,,
-dinov2G_logistic,DINOv2-G + logistic / ridge,attr_has_pedestrian_railing,Has Pedestrian Railing,categorical,558,0.7974910394265233,0.44741131508762744,0.8383383795553674,,,
-baseline,Baseline (majority / median),attr_length,Length (m),numeric,401,,,,38.11826583541147,218.9893652396589,-0.02446974699831861
-dinov2L_mlp,DINOv2-L + MLP,attr_length,Length (m),numeric,383,,,,49.194055911670716,218.5503610633659,0.023765827780671378
-dinov2L_catboost,DINOv2-L + CatBoost,attr_length,Length (m),numeric,383,,,,50.78000900622468,209.90189672054345,0.09950008737911853
-knn_k5_dinov2L,DINOv2-L + k-NN k=5,attr_length,Length (m),numeric,383,,,,46.26889054830288,224.06481375745665,-0.02612028496475638
-knn_k10_dinov2L,DINOv2-L + k-NN k=10,attr_length,Length (m),numeric,383,,,,43.767935456919055,219.50027806764896,0.015261089972317343
-knn_k5_dinov2regL,DINOv2-reg-L + k-NN k=5,attr_length,Length (m),numeric,383,,,,43.741103394255866,221.6921326191573,-0.004503632193061158
-knn_k10_dinov2regL,DINOv2-reg-L + k-NN k=10,attr_length,Length (m),numeric,383,,,,44.594410234986945,221.51078628329583,-0.0028609167270168268
-dinov2regL_logistic,DINOv2-reg-L + logistic / ridge,attr_length,Length (m),numeric,383,,,,52.538547570792815,219.01689843507793,0.01959346361932557
-dinov2G_logistic,DINOv2-G + logistic / ridge,attr_length,Length (m),numeric,383,,,,49.794465877238146,218.97428385160734,0.01997494607025818
-baseline,Baseline (majority / median),"attr_material_frame,_tank,_body","Material (Frame, Tank, Body)",categorical,212,0.589622641509434,0.09272997032640949,0.4374055204075919,,,
-dinov2L_mlp,DINOv2-L + MLP,"attr_material_frame,_tank,_body","Material (Frame, Tank, Body)",categorical,212,0.7452830188679245,0.41267211052538977,0.7495812622874508,,,
-dinov2L_catboost,DINOv2-L + CatBoost,"attr_material_frame,_tank,_body","Material (Frame, Tank, Body)",categorical,212,0.7311320754716981,0.421555694019353,0.7339539571843698,,,
-knn_k5_dinov2L,DINOv2-L + k-NN k=5,"attr_material_frame,_tank,_body","Material (Frame, Tank, Body)",categorical,212,0.7547169811320755,0.450190114068441,0.744326470095894,,,
-knn_k10_dinov2L,DINOv2-L + k-NN k=10,"attr_material_frame,_tank,_body","Material (Frame, Tank, Body)",categorical,212,0.7594339622641509,0.4455009322502366,0.7435207636267018,,,
-knn_k5_dinov2regL,DINOv2-reg-L + k-NN k=5,"attr_material_frame,_tank,_body","Material (Frame, Tank, Body)",categorical,212,0.7311320754716981,0.40817886873542486,0.7202587091581127,,,
-knn_k10_dinov2regL,DINOv2-reg-L + k-NN k=10,"attr_material_frame,_tank,_body","Material (Frame, Tank, Body)",categorical,212,0.7075471698113207,0.3751772474432142,0.6816054188658556,,,
-dinov2regL_logistic,DINOv2-reg-L + logistic / ridge,"attr_material_frame,_tank,_body","Material (Frame, Tank, Body)",categorical,212,0.6415094339622641,0.32220977255302197,0.683513623099565,,,
-dinov2G_logistic,DINOv2-G + logistic / ridge,"attr_material_frame,_tank,_body","Material (Frame, Tank, Body)",categorical,212,0.5707547169811321,0.297444767114653,0.6252487477238583,,,
-baseline,Baseline (majority / median),attr_number_of_steps,Number of Steps,count,17,,,,7.647058823529412,9.946917938265512,-0.04213135068153662
-dinov2L_mlp,DINOv2-L + MLP,attr_number_of_steps,Number of Steps,count,17,,,,10.316516034743366,14.215574728686066,-1.1285028517574873
-dinov2L_catboost,DINOv2-L + CatBoost,attr_number_of_steps,Number of Steps,count,17,,,,9.991503659961632,10.802029439164766,-0.22901194552533966
-knn_k5_dinov2L,DINOv2-L + k-NN k=5,attr_number_of_steps,Number of Steps,count,17,,,,9.823529411764707,10.566873876857422,-0.17608426270136324
-knn_k10_dinov2L,DINOv2-L + k-NN k=10,attr_number_of_steps,Number of Steps,count,17,,,,9.770588235294117,10.6879536367434,-0.2031908302354397
-knn_k5_dinov2regL,DINOv2-reg-L + k-NN k=5,attr_number_of_steps,Number of Steps,count,17,,,,10.376470588235293,12.348088682773826,-0.605997521685254
-knn_k10_dinov2regL,DINOv2-reg-L + k-NN k=10,attr_number_of_steps,Number of Steps,count,17,,,,11.294117647058824,12.886107430325202,-0.7489962825278811
-dinov2regL_logistic,DINOv2-reg-L + logistic / ridge,attr_number_of_steps,Number of Steps,count,17,,,,9.087914635153378,9.814110594497805,-0.014488869230222301
-dinov2G_logistic,DINOv2-G + logistic / ridge,attr_number_of_steps,Number of Steps,count,17,,,,9.936555974623737,10.553109380158972,-0.17302230422750187
+baseline,Baseline (majority / median),attr_length,Length (m),numeric,401,,,,38.11826583541147,218.9893652396589,-0.0244697469983186
+baseline,Baseline (majority / median),"attr_material_frame,_tank,_body","Material (Frame, Tank, Body)",categorical,212,0.589622641509434,0.0927299703264094,0.4374055204075919,,,
+baseline,Baseline (majority / median),attr_number_of_steps,Number of Steps,count,17,,,,7.647058823529412,9.946917938265512,-0.0421313506815366
 baseline,Baseline (majority / median),attr_structure_material,Structure Material,categorical,396,0.8939393939393939,0.236,0.8438787878787879,,,
-dinov2L_mlp,DINOv2-L + MLP,attr_structure_material,Structure Material,categorical,396,0.9040404040404041,0.5172515454113171,0.9138095169478909,,,
-dinov2L_catboost,DINOv2-L + CatBoost,attr_structure_material,Structure Material,categorical,396,0.8863636363636364,0.44372667433402224,0.8995831395167646,,,
-knn_k5_dinov2L,DINOv2-L + k-NN k=5,attr_structure_material,Structure Material,categorical,396,0.8838383838383839,0.35163377132699253,0.8902901131830704,,,
-knn_k10_dinov2L,DINOv2-L + k-NN k=10,attr_structure_material,Structure Material,categorical,396,0.898989898989899,0.3617214690145966,0.8991772170827804,,,
-knn_k5_dinov2regL,DINOv2-reg-L + k-NN k=5,attr_structure_material,Structure Material,categorical,396,0.8838383838383839,0.34391732609554393,0.8875085191916876,,,
-knn_k10_dinov2regL,DINOv2-reg-L + k-NN k=10,attr_structure_material,Structure Material,categorical,396,0.8914141414141414,0.42156862745098034,0.8896151053013798,,,
-dinov2regL_logistic,DINOv2-reg-L + logistic / ridge,attr_structure_material,Structure Material,categorical,396,0.8005050505050505,0.403327922077922,0.847986630372994,,,
-dinov2G_logistic,DINOv2-G + logistic / ridge,attr_structure_material,Structure Material,categorical,396,0.803030303030303,0.3712736298109615,0.8471493803807144,,,
-baseline,Baseline (majority / median),attr_structure_position,Structure Position,categorical,150,0.4866666666666667,0.21823617339312407,0.31862481315396113,,,
-dinov2L_mlp,DINOv2-L + MLP,attr_structure_position,Structure Position,categorical,150,0.8666666666666667,0.6021987179487179,0.873300170940171,,,
-dinov2L_catboost,DINOv2-L + CatBoost,attr_structure_position,Structure Position,categorical,150,0.8866666666666667,0.5344572685588583,0.8830378866875217,,,
-knn_k5_dinov2L,DINOv2-L + k-NN k=5,attr_structure_position,Structure Position,categorical,150,0.86,0.5766439909297052,0.8629780801209374,,,
-knn_k10_dinov2L,DINOv2-L + k-NN k=10,attr_structure_position,Structure Position,categorical,150,0.8866666666666667,0.5909783776524308,0.8893790849673202,,,
-knn_k5_dinov2regL,DINOv2-reg-L + k-NN k=5,attr_structure_position,Structure Position,categorical,150,0.8666666666666667,0.6014408396946564,0.8722743002544529,,,
-knn_k10_dinov2regL,DINOv2-reg-L + k-NN k=10,attr_structure_position,Structure Position,categorical,150,0.8666666666666667,0.6012113585519626,0.8721005355569115,,,
-dinov2regL_logistic,DINOv2-reg-L + logistic / ridge,attr_structure_position,Structure Position,categorical,150,0.92,0.6773551308207166,0.9303756994404477,,,
-dinov2G_logistic,DINOv2-G + logistic / ridge,attr_structure_position,Structure Position,categorical,150,0.9266666666666666,0.6883478724266963,0.9362479485011024,,,
-baseline,Baseline (majority / median),attr_width,Width (m),numeric,432,,,,0.7243518518518519,2.8311825987398636,-0.0371971952128054
-dinov2L_mlp,DINOv2-L + MLP,attr_width,Width (m),numeric,409,,,,0.6675476990352341,1.864349622777079,0.15965343292538126
-dinov2L_catboost,DINOv2-L + CatBoost,attr_width,Width (m),numeric,409,,,,0.6215149111322823,1.8620029681340429,0.16176758798545032
-knn_k5_dinov2L,DINOv2-L + k-NN k=5,attr_width,Width (m),numeric,409,,,,0.5807282151589243,1.799393159011751,0.2171909426792541
-knn_k10_dinov2L,DINOv2-L + k-NN k=10,attr_width,Width (m),numeric,409,,,,0.575276283618582,1.8025608657546413,0.2144323546574164
-knn_k5_dinov2regL,DINOv2-reg-L + k-NN k=5,attr_width,Width (m),numeric,409,,,,0.5782135941320293,1.772382513052164,0.24051600738657875
-knn_k10_dinov2regL,DINOv2-reg-L + k-NN k=10,attr_width,Width (m),numeric,409,,,,0.5693787775061124,1.7879555635945634,0.22711095103756596
-dinov2regL_logistic,DINOv2-reg-L + logistic / ridge,attr_width,Width (m),numeric,409,,,,0.6967293059155527,1.8660441570191824,0.1581251324810916
-dinov2G_logistic,DINOv2-G + logistic / ridge,attr_width,Width (m),numeric,409,,,,0.6791997087963636,1.861648159106402,0.16208701184869423
+baseline,Baseline (majority / median),attr_structure_position,Structure Position,categorical,150,0.4866666666666667,0.218236173393124,0.3186248131539611,,,
+baseline,Baseline (majority / median),attr_width,Width (m),numeric,432,,,,0.7243518518518519,2.831182598739864,-0.0371971952128054
+vlm_qwen2_5_vl_32b_instruct_awq,VLM Qwen2.5-VL-32B-Instruct-AWQ,attr_abutment_material,Abutment Material,categorical,153,0.4967320261437908,0.2649813047603103,0.4704292044775199,,,
+vlm_qwen2_5_vl_32b_instruct_awq,VLM Qwen2.5-VL-32B-Instruct-AWQ,attr_bridge_type,Bridge Type,categorical,157,0.8853503184713376,0.4734558823529411,0.8348763581865867,,,
+vlm_qwen2_5_vl_32b_instruct_awq,VLM Qwen2.5-VL-32B-Instruct-AWQ,attr_decking_material,Decking Material,categorical,427,0.9086651053864168,0.2718101733447002,0.9136091595107988,,,
+vlm_qwen2_5_vl_32b_instruct_awq,VLM Qwen2.5-VL-32B-Instruct-AWQ,attr_has_edge_guard,Has Edge Guard,boolean,239,0.8535564853556485,0.5870563262082243,0.8993612002091121,,,
+vlm_qwen2_5_vl_32b_instruct_awq,VLM Qwen2.5-VL-32B-Instruct-AWQ,attr_has_pedestrian_railing,Has Pedestrian Railing,categorical,521,0.7907869481765835,0.5819397293121233,0.8257468565652278,,,
+vlm_qwen2_5_vl_32b_instruct_awq,VLM Qwen2.5-VL-32B-Instruct-AWQ,attr_length,Length (m),numeric,5,,,,3.3199999999999994,4.040297018784633,-1.0934646557915255
+vlm_qwen2_5_vl_32b_instruct_awq,VLM Qwen2.5-VL-32B-Instruct-AWQ,"attr_material_frame,_tank,_body","Material (Frame, Tank, Body)",categorical,129,0.7209302325581395,0.3970294784580498,0.6460538944259875,,,
+vlm_qwen2_5_vl_32b_instruct_awq,VLM Qwen2.5-VL-32B-Instruct-AWQ,attr_number_of_steps,Number of Steps,count,12,,,,6.166666666666667,10.931605554537724,-0.0551876379690949
+vlm_qwen2_5_vl_32b_instruct_awq,VLM Qwen2.5-VL-32B-Instruct-AWQ,attr_structure_material,Structure Material,categorical,173,0.815028901734104,0.3739682539682539,0.7969171483622352,,,
+vlm_qwen2_5_vl_32b_instruct_awq,VLM Qwen2.5-VL-32B-Instruct-AWQ,attr_structure_position,Structure Position,categorical,124,0.5403225806451613,0.364602644914102,0.4885177078474291,,,
+vlm_qwen2_5_vl_32b_instruct_awq,VLM Qwen2.5-VL-32B-Instruct-AWQ,attr_width,Width (m),numeric,3,,,,0.5,0.5,0.0
+vlm_qwen2_5_vl_72b_instruct_awq,VLM Qwen2.5-VL-72B-Instruct-AWQ,attr_abutment_material,Abutment Material,categorical,162,0.5925925925925926,0.2502234598459846,0.5641915464694618,,,
+vlm_qwen2_5_vl_72b_instruct_awq,VLM Qwen2.5-VL-72B-Instruct-AWQ,attr_bridge_type,Bridge Type,categorical,160,0.9,0.4434790626200538,0.8746336918939684,,,
+vlm_qwen2_5_vl_72b_instruct_awq,VLM Qwen2.5-VL-72B-Instruct-AWQ,attr_decking_material,Decking Material,categorical,428,0.9042056074766356,0.3964570640626978,0.9135535058596792,,,
+vlm_qwen2_5_vl_72b_instruct_awq,VLM Qwen2.5-VL-72B-Instruct-AWQ,attr_fall_height,Fall Height (m),numeric,9,,,,0.6888888888888889,0.7817359599705717,0.5215542238546298
+vlm_qwen2_5_vl_72b_instruct_awq,VLM Qwen2.5-VL-72B-Instruct-AWQ,attr_has_edge_guard,Has Edge Guard,boolean,243,0.925925925925926,0.6589207735495946,0.9433123079411287,,,
+vlm_qwen2_5_vl_72b_instruct_awq,VLM Qwen2.5-VL-72B-Instruct-AWQ,attr_has_pedestrian_railing,Has Pedestrian Railing,categorical,527,0.855787476280835,0.6457335009480186,0.8779462773472588,,,
+vlm_qwen2_5_vl_72b_instruct_awq,VLM Qwen2.5-VL-72B-Instruct-AWQ,attr_length,Length (m),numeric,69,,,,3.894202898550725,6.599571791115462,0.0604711385266267
+vlm_qwen2_5_vl_72b_instruct_awq,VLM Qwen2.5-VL-72B-Instruct-AWQ,"attr_material_frame,_tank,_body","Material (Frame, Tank, Body)",categorical,129,0.7054263565891473,0.591971696895765,0.6032865512633062,,,
+vlm_qwen2_5_vl_72b_instruct_awq,VLM Qwen2.5-VL-72B-Instruct-AWQ,attr_number_of_steps,Number of Steps,count,12,,,,5.833333333333333,10.74709263010234,-0.0198675496688742
+vlm_qwen2_5_vl_72b_instruct_awq,VLM Qwen2.5-VL-72B-Instruct-AWQ,attr_structure_material,Structure Material,categorical,173,0.8092485549132948,0.3741541085241497,0.8121913436383749,,,
+vlm_qwen2_5_vl_72b_instruct_awq,VLM Qwen2.5-VL-72B-Instruct-AWQ,attr_structure_position,Structure Position,categorical,124,0.5967741935483871,0.411764705882353,0.5621442125237192,,,
+vlm_qwen2_5_vl_72b_instruct_awq,VLM Qwen2.5-VL-72B-Instruct-AWQ,attr_width,Width (m),numeric,110,,,,0.3498181818181818,0.4309735279784384,-0.1069405375416634
+vlm_qwen2_5_vl_7b_instruct,VLM Qwen2.5-VL-7B-Instruct,attr_abutment_material,Abutment Material,categorical,139,0.5107913669064749,0.2720225510923185,0.4777505691007447,,,
+vlm_qwen2_5_vl_7b_instruct,VLM Qwen2.5-VL-7B-Instruct,attr_bridge_type,Bridge Type,categorical,160,0.75,0.3976550264550264,0.7944417989417989,,,
+vlm_qwen2_5_vl_7b_instruct,VLM Qwen2.5-VL-7B-Instruct,attr_decking_material,Decking Material,categorical,425,0.8941176470588236,0.2011125374411639,0.8995544816129276,,,
+vlm_qwen2_5_vl_7b_instruct,VLM Qwen2.5-VL-7B-Instruct,attr_has_edge_guard,Has Edge Guard,boolean,96,0.65625,0.5210884353741496,0.7437074829931972,,,
+vlm_qwen2_5_vl_7b_instruct,VLM Qwen2.5-VL-7B-Instruct,attr_has_pedestrian_railing,Has Pedestrian Railing,categorical,518,0.8416988416988417,0.6089676248686849,0.8628053370914607,,,
+vlm_qwen2_5_vl_7b_instruct,VLM Qwen2.5-VL-7B-Instruct,"attr_material_frame,_tank,_body","Material (Frame, Tank, Body)",categorical,128,0.65625,0.3697041316526611,0.5979961320465687,,,
+vlm_qwen2_5_vl_7b_instruct,VLM Qwen2.5-VL-7B-Instruct,attr_number_of_steps,Number of Steps,count,2,,,,0.0,0.0,1.0
+vlm_qwen2_5_vl_7b_instruct,VLM Qwen2.5-VL-7B-Instruct,attr_structure_material,Structure Material,categorical,173,0.8265895953757225,0.5887605042016807,0.8179555059017827,,,
+vlm_qwen2_5_vl_7b_instruct,VLM Qwen2.5-VL-7B-Instruct,attr_structure_position,Structure Position,categorical,124,0.5161290322580645,0.3496732026143791,0.4641840607210626,,,
