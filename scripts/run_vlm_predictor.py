@@ -7,7 +7,7 @@ Usage:
         --input data/processed/train/attr_number_of_steps_train.csv \
         --output results/vlm_predictions_stairs_gemma.csv \
         --model gemini-3-flash-preview \
-        --limit 1
+        --limit 10
 """
 
 import argparse
@@ -40,8 +40,9 @@ PROMPT_TEMPLATE = """
     Attributes to predict:
     - fall_height: low (<0.5m) | medium (0.5m-1.2m) | high (>1.2m)
     - has_pedestrian_railing: 2 railings | 1 railing | no railings
-    - material: PVC | Gravel | Natural Surface | Earth-filled | Aluminum | 
-                Metal | Steel | Rock/Stone | Concrete | Box Step | Timber/Wood
+    - material_frame_tank_body: PVC | Gravel | Natural Surface | Earth-filled |
+                                Aluminum | Metal | Steel | Rock/Stone | Concrete |
+                                Box Step | Timber/Wood
     - number_of_steps: <integer>
     - structure_position: Elevated | At-Grade | Other
 
@@ -133,7 +134,6 @@ def run_batch(input_path, output_path, model_name, limit=None):
     df_out.to_csv(output_path, index=False)
 
     print("✅ Done! Processed", len(unique_asset_ids), "assets.")
-
 
 # ---------------------------------------------------------------------
 # CLI
