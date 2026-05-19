@@ -28,5 +28,5 @@ MODEL_FAMILIES = {
     "phi": ["Phi-4-multimodal-instruct"],
     "llama": ["Llama-3.2-11B-Vision-Instruct"],
     "gpt": ["gpt-4o"],
-    "gemini": ["gemini-3-flash-preview", "gemma-4-26b-a4b-it"],
+    "gemini": ["gemini-3-flash-preview", "gemma-4-26b-a4b-it", "gemini-3.1-flash-lite"],
 }
