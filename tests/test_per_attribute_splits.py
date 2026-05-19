@@ -14,11 +14,15 @@ if str(REPO_ROOT) not in sys.path:
 
 from src.data.per_attribute_splits import (  # noqa: E402
     ATTRIBUTE_COLUMNS,
+    DEFAULT_CV_FOLDS,
     DEFAULT_SPLIT_SEED,
     DEFAULT_TEST_SIZE,
     _filename_for,
+    iter_attribute_kfold,
     iter_attribute_splits,
+    kfold_train_val,
     load_per_attribute_file,
+    load_per_attribute_kfold,
     load_per_attribute_train_val,
     split_train_val,
 )
@@ -103,3 +107,68 @@ def test_attribute_columns_match_schema() -> None:
     schema = load_schema()
     expected = set(schema.attribute_columns())
     assert set(ATTRIBUTE_COLUMNS) == expected
+
+
+# ---------------------------------------------------------------------------
+# Asset-grouped K-fold CV
+# ---------------------------------------------------------------------------
+
+
+def test_kfold_yields_n_splits_folds() -> None:
+    df = _toy(list(range(30)))
+    folds = list(kfold_train_val(df, n_splits=5))
+    assert len(folds) == 5
+    assert [f[0] for f in folds] == [0, 1, 2, 3, 4]
+
+
+def test_kfold_no_asset_leakage() -> None:
+    df = _toy(list(range(30)))
+    for _, train, val in kfold_train_val(df, n_splits=5):
+        train_assets = set(train["asset_id"])
+        val_assets = set(val["asset_id"])
+        assert not (train_assets & val_assets), "asset leakage in K-fold"
+        assert len(train) + len(val) == len(df)
+
+
+def test_kfold_val_partitions_full_dataset() -> None:
+    df = _toy(list(range(30)))
+    val_asset_union: set[int] = set()
+    for _, _, val in kfold_train_val(df, n_splits=5):
+        val_asset_union |= set(val["asset_id"])
+    assert val_asset_union == set(df["asset_id"]), "K-fold val sets must cover every asset"
+
+
+def test_kfold_falls_back_when_too_few_groups() -> None:
+    # 3 assets but asking for 5 folds — should yield a single holdout fold.
+    df = _toy([1, 2, 3])
+    folds = list(kfold_train_val(df, n_splits=5))
+    assert len(folds) == 1
+    fold_idx, train, val = folds[0]
+    assert fold_idx == 0
+    assert not (set(train["asset_id"]) & set(val["asset_id"]))
+
+
+def test_kfold_default_n_splits_is_five() -> None:
+    assert DEFAULT_CV_FOLDS == 5
+
+
+def test_load_per_attribute_kfold_loads_and_splits(tmp_path: Path) -> None:
+    train_dir = tmp_path / "train"
+    train_dir.mkdir()
+    df = _toy(list(range(20)))
+    df.to_csv(train_dir / "attr_decking_material_train.csv", index=False)
+    folds = list(load_per_attribute_kfold("attr_decking_material", train_dir=train_dir, n_splits=4))
+    assert len(folds) == 4
+    for _, train, val in folds:
+        assert not (set(train["asset_id"]) & set(val["asset_id"]))
+
+
+def test_iter_attribute_kfold_skips_missing(tmp_path: Path) -> None:
+    train_dir = tmp_path / "train"
+    train_dir.mkdir()
+    df = _toy(list(range(25)))
+    df.to_csv(train_dir / "attr_decking_material_train.csv", index=False)
+    out = list(iter_attribute_kfold(train_dir=train_dir, n_splits=5))
+    # One CSV present × 5 folds = 5 rows, all for the same attribute.
+    assert [r[0] for r in out] == ["attr_decking_material"] * 5
+    assert [r[1] for r in out] == [0, 1, 2, 3, 4]

@@ -19,11 +19,13 @@ Usage:
     python scripts/run_baseline_classification.py
     python scripts/run_baseline_classification.py --no-mlflow
     python scripts/run_baseline_classification.py --attributes attr_decking_material attr_length
+    python scripts/run_baseline_classification.py --cv 5    # asset-grouped K-fold CV
 """
 
 from __future__ import annotations
 
 import argparse
+import statistics
 import sys
 from pathlib import Path
 
@@ -36,8 +38,10 @@ if str(REPO_ROOT) not in sys.path:
 from src.baseline import MajorityClassPredictor, MedianRegressor  # noqa: E402
 from src.data.per_attribute_splits import (  # noqa: E402
     ATTRIBUTE_COLUMNS,
+    DEFAULT_CV_FOLDS,
     DEFAULT_SPLIT_SEED,
     DEFAULT_TEST_SIZE,
+    load_per_attribute_kfold,
     load_per_attribute_train_val,
 )
 from src.data.schema import AttributeKind, load_schema  # noqa: E402
@@ -215,6 +219,107 @@ def run_target_baseline(
     return result
 
 
+def _score_fold(
+    attribute_column: str,
+    kind: AttributeKind,
+    train_df: pd.DataFrame,
+    val_df: pd.DataFrame,
+) -> dict[str, object] | None:
+    """Fit baseline on train_df, evaluate on val_df.  Returns metrics dict or None if unusable."""
+    if train_df.empty or val_df.empty:
+        return None
+
+    if kind in CLS_KINDS:
+        y_train_series = clean_target_frame(train_df, attribute_column)
+        y_val_series = clean_target_frame(val_df, attribute_column)
+        if y_train_series.empty or y_val_series.empty:
+            return None
+        model = MajorityClassPredictor().fit(None, y_train_series[attribute_column])
+        y_pred = model.predict(y_val_series)
+        metrics = classification_metrics(y_val_series[attribute_column], y_pred)
+        return {
+            "predictor": "majority_class",
+            "fitted_value": str(model.fitted_value_),
+            "n_train_rows": int(len(y_train_series)),
+            "n_val_rows": int(len(y_val_series)),
+            "n_train_assets": int(train_df["asset_id"].nunique()),
+            "n_val_assets": int(val_df["asset_id"].nunique()),
+            **metrics,
+        }
+
+    y_train_num = pd.to_numeric(train_df[attribute_column], errors="coerce").dropna()
+    if y_train_num.empty:
+        return None
+    model = MedianRegressor().fit(None, y_train_num)
+    val_keep = val_df.copy()
+    val_keep[attribute_column] = pd.to_numeric(val_keep[attribute_column], errors="coerce")
+    val_keep = val_keep[val_keep[attribute_column].notna()].reset_index(drop=True)
+    if val_keep.empty:
+        return None
+    y_pred = model.predict(val_keep)
+    metrics = numeric_metrics(val_keep[attribute_column], y_pred)
+    return {
+        "predictor": "median",
+        "fitted_value": float(model.fitted_value_),  # type: ignore[arg-type]
+        "n_train_rows": int(len(y_train_num)),
+        "n_val_rows": int(len(val_keep)),
+        "n_train_assets": int(train_df["asset_id"].nunique()),
+        "n_val_assets": int(val_df["asset_id"].nunique()),
+        **metrics,
+    }
+
+
+def run_target_baseline_cv(
+    attribute_column: str,
+    *,
+    n_splits: int,
+    train_dir: Path | None = None,
+) -> dict[str, object]:
+    """Run asset-grouped K-fold CV for one attribute.  Returns per-fold rows + mean/std summary."""
+    schema = load_schema()
+    if attribute_column not in schema.attributes:
+        raise ValueError(f"Unknown attribute column: {attribute_column}")
+    kind = schema.kind_of(attribute_column)
+
+    fold_rows: list[dict[str, object]] = []
+    for fold_idx, train_df, val_df in load_per_attribute_kfold(
+        attribute_column, train_dir=train_dir, n_splits=n_splits
+    ):
+        scored = _score_fold(attribute_column, kind, train_df, val_df)
+        if scored is None:
+            continue
+        scored = {
+            "attribute": attribute_column,
+            "kind": kind.value,
+            "fold": fold_idx,
+            **scored,
+        }
+        fold_rows.append(scored)
+
+    if not fold_rows:
+        raise ValueError(f"{attribute_column}: no usable CV folds.")
+
+    metric_keys = (
+        ["accuracy", "macro_f1", "weighted_f1"]
+        if kind in CLS_KINDS
+        else ["mae", "rmse", "r2"]
+    )
+    aggregated: dict[str, object] = {
+        "attribute": attribute_column,
+        "kind": kind.value,
+        "n_folds": len(fold_rows),
+    }
+    for k in metric_keys:
+        values = [float(r[k]) for r in fold_rows if r.get(k) is not None]
+        if values:
+            aggregated[f"{k}_mean"] = statistics.fmean(values)
+            aggregated[f"{k}_std"] = statistics.pstdev(values) if len(values) > 1 else 0.0
+        else:
+            aggregated[f"{k}_mean"] = None
+            aggregated[f"{k}_std"] = None
+    return {"folds": fold_rows, "summary": aggregated}
+
+
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description=(
@@ -244,12 +349,25 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--split-seed", type=int, default=DEFAULT_SPLIT_SEED)
     parser.add_argument("--data-version", default="per-attribute-85-15")
     parser.add_argument("--no-mlflow", action="store_true")
+    parser.add_argument(
+        "--cv",
+        type=int,
+        default=0,
+        help=(
+            f"If set to N>=2, run asset-grouped K-fold CV with N folds instead "
+            f"of the single 85/15 holdout. Suggested: {DEFAULT_CV_FOLDS}."
+        ),
+    )
+    parser.add_argument(
+        "--cv-folds-output",
+        type=Path,
+        default=Path("results/baselines/classification_baselines_cv_folds.csv"),
+        help="Per-fold CV rows (only written when --cv is set).",
+    )
     return parser.parse_args()
 
 
-def main() -> int:
-    args = parse_args()
-
+def _run_holdout(args: argparse.Namespace) -> int:
     if not args.no_mlflow:
         setup_mlflow()
 
@@ -289,6 +407,55 @@ def main() -> int:
     pd.DataFrame(rows).to_csv(args.output, index=False)
     print(f"\nWrote {len(rows)} baseline rows to {args.output}")
     return 0
+
+
+def _run_cv(args: argparse.Namespace) -> int:
+    if args.cv < 2:
+        raise SystemExit(f"--cv must be >= 2 (got {args.cv}).")
+
+    fold_rows: list[dict[str, object]] = []
+    summary_rows: list[dict[str, object]] = []
+    for attr in args.attributes:
+        try:
+            out = run_target_baseline_cv(attr, n_splits=args.cv, train_dir=args.train_dir)
+        except (FileNotFoundError, ValueError) as exc:
+            print(f"Skipping {attr}: {exc}")
+            continue
+        fold_rows.extend(out["folds"])  # type: ignore[arg-type]
+        s = out["summary"]
+        summary_rows.append(s)  # type: ignore[arg-type]
+        if "macro_f1_mean" in s and s["macro_f1_mean"] is not None:
+            print(
+                f"{attr} [cv={s['n_folds']}]: "  # type: ignore[index]
+                f"macro_f1={s['macro_f1_mean']:.3f} ± {s['macro_f1_std']:.3f}, "  # type: ignore[index]
+                f"acc={s['accuracy_mean']:.3f} ± {s['accuracy_std']:.3f}"  # type: ignore[index]
+            )
+        else:
+            print(
+                f"{attr} [cv={s['n_folds']}]: "  # type: ignore[index]
+                f"RMSE={s['rmse_mean']:.3f} ± {s['rmse_std']:.3f}, "  # type: ignore[index]
+                f"MAE={s['mae_mean']:.3f} ± {s['mae_std']:.3f}"  # type: ignore[index]
+            )
+
+    if not summary_rows:
+        raise SystemExit("No CV runs completed.")
+
+    args.output.parent.mkdir(parents=True, exist_ok=True)
+    pd.DataFrame(summary_rows).to_csv(args.output, index=False)
+    args.cv_folds_output.parent.mkdir(parents=True, exist_ok=True)
+    pd.DataFrame(fold_rows).to_csv(args.cv_folds_output, index=False)
+    print(
+        f"\nWrote CV summary ({len(summary_rows)} attrs) to {args.output}; "
+        f"per-fold rows ({len(fold_rows)}) to {args.cv_folds_output}"
+    )
+    return 0
+
+
+def main() -> int:
+    args = parse_args()
+    if args.cv:
+        return _run_cv(args)
+    return _run_holdout(args)
 
 
 if __name__ == "__main__":

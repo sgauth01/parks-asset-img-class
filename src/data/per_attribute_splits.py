@@ -26,6 +26,11 @@ loop is:
 
 >>> for attr, train_df, val_df in iter_attribute_splits():
 ...     ...
+
+For asset-grouped K-fold cross-validation (one set of folds per attribute):
+
+>>> for attr, fold_idx, train_df, val_df in iter_attribute_kfold(n_splits=5):
+...     ...
 """
 
 from __future__ import annotations
@@ -34,11 +39,12 @@ from collections.abc import Iterator
 from pathlib import Path
 
 import pandas as pd
-from sklearn.model_selection import GroupShuffleSplit
+from sklearn.model_selection import GroupKFold, GroupShuffleSplit
 
 DEFAULT_TRAIN_DIR = Path(__file__).resolve().parents[2] / "data" / "processed" / "train"
 DEFAULT_TEST_SIZE = 0.15
 DEFAULT_SPLIT_SEED = 48
+DEFAULT_CV_FOLDS = 5
 
 # Filename convention used by the new split: 12 attribute files + 4 bin
 # files.  The 4 bin files are intentionally omitted from training by
@@ -142,13 +148,78 @@ def iter_attribute_splits(
         yield col, train_df, val_df
 
 
+def kfold_train_val(
+    df: pd.DataFrame,
+    *,
+    n_splits: int = DEFAULT_CV_FOLDS,
+    group_col: str = "asset_id",
+) -> Iterator[tuple[int, pd.DataFrame, pd.DataFrame]]:
+    """Asset-grouped K-fold CV via :class:`GroupKFold`.
+
+    Yields ``(fold_idx, train_df, val_df)``.  Folds are deterministic from
+    group order — no random_state needed.  An asset's images never span
+    train + val within the same fold.
+
+    Falls back to a single GroupShuffleSplit fold when there aren't enough
+    distinct asset groups for ``n_splits`` folds.
+    """
+    if df.empty:
+        return
+    n_groups = df[group_col].nunique()
+    if n_groups < n_splits:
+        # Degenerate — yield a single holdout fold instead of erroring.
+        train_df, val_df = split_train_val(df, group_col=group_col)
+        yield 0, train_df, val_df
+        return
+    kf = GroupKFold(n_splits=n_splits)
+    for fold_idx, (train_idx, val_idx) in enumerate(
+        kf.split(df, groups=df[group_col].values)
+    ):
+        train_df = df.iloc[train_idx].reset_index(drop=True)
+        val_df = df.iloc[val_idx].reset_index(drop=True)
+        yield fold_idx, train_df, val_df
+
+
+def load_per_attribute_kfold(
+    attribute_column: str,
+    *,
+    train_dir: str | Path | None = None,
+    n_splits: int = DEFAULT_CV_FOLDS,
+) -> Iterator[tuple[int, pd.DataFrame, pd.DataFrame]]:
+    """Yield ``(fold_idx, train_df, val_df)`` for one attribute via asset-grouped K-fold."""
+    df = load_per_attribute_file(attribute_column, train_dir=train_dir)
+    yield from kfold_train_val(df, n_splits=n_splits)
+
+
+def iter_attribute_kfold(
+    attribute_columns: list[str] | None = None,
+    *,
+    train_dir: str | Path | None = None,
+    n_splits: int = DEFAULT_CV_FOLDS,
+) -> Iterator[tuple[str, int, pd.DataFrame, pd.DataFrame]]:
+    """Yield ``(attribute_column, fold_idx, train_df, val_df)`` for every attribute, K folds each."""
+    cols = attribute_columns or ATTRIBUTE_COLUMNS
+    for col in cols:
+        try:
+            df = load_per_attribute_file(col, train_dir=train_dir)
+        except FileNotFoundError as exc:
+            print(f"[skip] {col}: {exc}")
+            continue
+        for fold_idx, train_df, val_df in kfold_train_val(df, n_splits=n_splits):
+            yield col, fold_idx, train_df, val_df
+
+
 __all__ = [
     "ATTRIBUTE_COLUMNS",
     "BIN_COLUMNS",
+    "DEFAULT_CV_FOLDS",
     "DEFAULT_SPLIT_SEED",
     "DEFAULT_TEST_SIZE",
+    "iter_attribute_kfold",
     "iter_attribute_splits",
+    "kfold_train_val",
     "load_per_attribute_file",
+    "load_per_attribute_kfold",
     "load_per_attribute_train_val",
     "split_train_val",
 ]
