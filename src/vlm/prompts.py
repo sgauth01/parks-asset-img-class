@@ -83,6 +83,54 @@ PEDESTRIAN_RAILING_PROMPT_V1 = """
     "unable to determine" and confidence to 0.0.
     """
 
+#Dynamic prompts 
+#needed since bins have different ranges per asset type 
+
+def make_length_prompt(asset_type):
+    return f"""
+    You are an expert in park infrastructure analysis.
+
+    Using ALL provided images of this single {asset_type} asset, estimate its length.
+
+    Predict exactly ONE value from the listed options for this asset type:
+
+    Boardwalk < 1.2m High: short (<20m) | medium (20-100m) | long (>100m)
+    Boardwalk > 1.2m High: short (<10m) | medium (10-30m) | long (>30m)
+    Stairs: short (<5m) | medium (5-20m) | long (>20m)
+    Trail Bridge: short (<6m) | medium (6-20m) | long (>20m)
+    Viewing Platform: small (<10m) | medium (10-20m) | large (>20m)
+
+    Return ONLY a valid JSON object with this exact schema (no markdown, no prose):
+    {{
+        "length_bin": {{"value": "<bin label>", "confidence": 0.85}}
+    }}
+
+    If you cannot determine the length, set value to "unable to determine" and confidence to 0.0.
+    """
+
+
+def make_width_prompt(asset_type):
+    return f"""
+    You are an expert in park infrastructure analysis.
+
+    Using ALL provided images of this single {asset_type} asset, estimate its width.
+
+    Predict exactly ONE value from the listed options for this asset type:
+
+    Boardwalk < 1.2m High: narrow (<0.9m) | standard (0.9-1.5m) | wide (>1.5m)
+    Boardwalk > 1.2m High: narrow (<0.9m) | standard (0.9-1.5m) | wide (>1.5m)
+    Stairs: narrow (<0.8m) | standard (>=0.8m)
+    Trail Bridge: narrow (<0.9m) | standard (0.9-1.5m) | wide (>1.5m)
+    Viewing Platform: narrow (<3m) | medium (3-7m) | wide (>7m)
+
+    Return ONLY a valid JSON object with this exact schema (no markdown, no prose):
+    {{
+        "width_bin": {{"value": "<bin label>", "confidence": 0.85}}
+    }}
+
+    If you cannot determine the width, set value to "unable to determine" and confidence to 0.0.
+    """
+
 # Prompt registry
 #update after generating prompts for attribute/asset
 
@@ -90,4 +138,6 @@ PROMPT_REGISTRY = {
     "stairs_v1": STAIRS_PROMPT_V1,
     "structure_position_v1": STRUCTURE_POSITION_PROMPT_V1,
     "pedestrian_railing_v1": PEDESTRIAN_RAILING_PROMPT_V1,
+    "length_v1": make_length_prompt,
+    "width_v1": make_width_prompt,
 }
