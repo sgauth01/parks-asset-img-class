@@ -40,7 +40,9 @@ def evaluate(predictions_path, ground_truth_path, attribute, model_name, asset_t
     )
     
     # drop rows where prediction failed or ground truth missing
-    col = f"{attribute}_value"
+    attr_key = attribute.replace("attr_", "")
+    col = f"{attr_key}_value"
+
     merged = merged[merged[col].notna()]
     merged = merged[merged[attribute].notna()]
     
@@ -93,18 +95,34 @@ def evaluate(predictions_path, ground_truth_path, attribute, model_name, asset_t
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--predictions", required=True)
-    parser.add_argument("--ground_truth", required=True)
-    parser.add_argument("--attribute", required=True)
+    parser.add_argument("--ground_truth_dir", required=True, 
+                        help="Directory containing attribute-specific ground truth CSVs")
+    parser.add_argument("--attributes", required=True, nargs="+",
+                        help="One or more attributes to evaluate")
     parser.add_argument("--model", required=True)
     parser.add_argument("--asset_type", default="unknown")
     parser.add_argument("--prompt_version", default="v1")
     args = parser.parse_args()
     
-    evaluate(
-        predictions_path=args.predictions,
-        ground_truth_path=args.ground_truth,
-        attribute=args.attribute,
-        model_name=args.model,
-        asset_type=args.asset_type,
-        prompt_version=args.prompt_version
-    )
+    for attribute in args.attributes:
+        
+        filename = (attribute
+            .replace("attr_", "")
+            .replace(",", "")
+            .replace(" ", "_")
+            .replace("(", "")
+            .replace(")", "")
+            .replace("<", "lt")
+            .replace(">", "gt")
+            .replace("/", "_"))
+        
+        ground_truth_path = f"{args.ground_truth_dir}/attr_{filename}_train.csv"
+        
+        evaluate(
+            predictions_path=args.predictions,
+            ground_truth_path=ground_truth_path,
+            attribute=attribute,
+            model_name=args.model,
+            asset_type=args.asset_type,
+            prompt_version=args.prompt_version
+        )
