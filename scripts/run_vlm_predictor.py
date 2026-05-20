@@ -9,7 +9,8 @@ Usage:
         --model gemini-3-flash-preview \
         --prompt stairs_v1 \
         --limit 10 \
-        --offset 0
+        --offset 0 \
+        --delay 5
 """
 
 import argparse
@@ -19,6 +20,7 @@ import json
 import pandas as pd
 from datetime import datetime
 from tqdm import tqdm
+import time
 
 # ---------------------------------------------------------------------
 # Ensure project root is in import path
@@ -32,7 +34,7 @@ from src.vlm.prompts import PROMPT_REGISTRY
 # ---------------------------------------------------------------------
 # Main batch runner
 # ---------------------------------------------------------------------
-def run_batch(input_path, output_path, model_name, prompt_or_fn, limit=None, offset=0):
+def run_batch(input_path, output_path, model_name, prompt_or_fn, limit=None, offset=0, delay=5.0):
     print(f"Loading input from: {input_path}")
     df = pd.read_csv(input_path)
 
@@ -131,6 +133,8 @@ def run_batch(input_path, output_path, model_name, prompt_or_fn, limit=None, off
                     out[f"{col_name}_confidence"] = val.get("confidence")
             
         results.append(out)
+
+        time.sleep(delay)
     
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
 
@@ -153,6 +157,8 @@ if __name__ == "__main__":
     parser.add_argument("--limit", type=int, default=None, help="Optional limit for debugging")
     parser.add_argument("--offset", type=int, default=0, 
                         help="Skip first N assets (for resuming after rate limit)")
+    parser.add_argument("--delay", type=float, default=5.0,
+                    help="Seconds to wait between API calls (default 5s = safe for 15 req/min )")
 
     args = parser.parse_args()
 
@@ -166,5 +172,6 @@ if __name__ == "__main__":
         model_name=args.model,
         prompt_or_fn=prompt_or_fn,
         limit=args.limit,
-        offset=args.offset
+        offset=args.offset,
+        delay=args.delay
     )
