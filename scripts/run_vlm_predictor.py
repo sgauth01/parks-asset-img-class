@@ -43,7 +43,7 @@ PROMPT_TEMPLATE = """
     - material_frame_tank_body: PVC | Gravel | Natural Surface | Earth-filled |
                                 Aluminum | Metal | Steel | Rock/Stone | Concrete |
                                 Box Step | Timber/Wood
-    - number_of_steps: <integer>
+    - number_of_steps: few (<10) | medium (10-20) | many (>20)
     - structure_position: Elevated | At-Grade | Other
 
     Return ONLY a valid JSON object with this exact schema (no markdown, no prose):
@@ -122,9 +122,19 @@ def run_batch(input_path, output_path, model_name, limit=None):
                     continue
                     
             if isinstance(parsed, dict):
+            
+            # map numeric attribute keys to their binned column names
+                BIN_COL_MAPPING = {
+                    "fall_height": "fall_height_bin",
+                    "number_of_steps": "steps_bin",
+                    "length": "length_bin",
+                    "width": "width_bin",
+                }
+                
                 for attr, val in parsed.items():
-                    out[f"{attr}_value"] = val.get("value")
-                    out[f"{attr}_confidence"] = val.get("confidence")
+                    col_name = BIN_COL_MAPPING.get(attr, attr)
+                    out[f"{col_name}_value"] = val.get("value")
+                    out[f"{col_name}_confidence"] = val.get("confidence")
             
         results.append(out)
     

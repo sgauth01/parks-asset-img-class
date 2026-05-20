@@ -40,7 +40,7 @@ def evaluate(predictions_path, ground_truth_path, attribute, model_name, asset_t
     )
     
     # drop rows where prediction failed or ground truth missing
-    attr_key = attribute.replace("attr_", "")
+    attr_key = attribute.replace("attr_", "").replace(",", "")
     col = f"{attr_key}_value"
 
     merged = merged[merged[col].notna()]
