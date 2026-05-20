@@ -1,5 +1,8 @@
 import os
 import base64
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent.parent 
 
 def load_asset_images_base64(asset_id, df):
     """
@@ -14,12 +17,12 @@ def load_asset_images_base64(asset_id, df):
 
     images = []
     for p in paths:
-        fixed = p.replace("data/", "data/raw/", 1)
+        fixed = ROOT / p.replace("data/", "data/raw/", 1)
         if not os.path.exists(fixed):
             print(f"⚠️ Image not found: {fixed}")
             continue
 
-        mime = "image/png" if fixed.lower().endswith(".png") else "image/jpeg"
+        mime = "image/png" if str(fixed).lower().endswith(".png") else "image/jpeg"
 
         with open(fixed, "rb") as f:
             b64 = base64.b64encode(f.read()).decode("utf-8")
