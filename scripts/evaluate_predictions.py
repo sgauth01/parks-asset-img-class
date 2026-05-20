@@ -27,6 +27,9 @@ import mlflow
 from sklearn.metrics import f1_score, classification_report
 from src.mlflow_utils import setup_mlflow, make_run_name, make_standard_tags
 
+import dagshub
+dagshub.init(repo_owner='sgauth01', repo_name='parks-asset-img-class', mlflow=True)
+
 
 def evaluate(predictions_path, ground_truth_path, attribute, model_name, asset_type, prompt_version):
     
@@ -69,6 +72,8 @@ def evaluate(predictions_path, ground_truth_path, attribute, model_name, asset_t
     
     # log to MLflow using MLFlow helpers
     setup_mlflow()
+    
+    mlflow.autolog()
     
     with mlflow.start_run(
         run_name=make_run_name(attribute, model_name),
