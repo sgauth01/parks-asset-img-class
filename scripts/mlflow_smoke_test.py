@@ -26,9 +26,13 @@ from sklearn.metrics import accuracy_score, f1_score, mean_absolute_error  # noq
 
 from src.mlflow_utils import make_run_name, make_standard_tags, setup_mlflow  # noqa: E402
 
+import dagshub
+dagshub.init(repo_owner='sgauth01', repo_name='parks-asset-img-class', mlflow=True)
 
 def main() -> int:
     setup_mlflow()
+    mlflow.autolog()
+    
     rng = np.random.default_rng(42)
 
     # Classification: majority class on a 3-class imbalanced target.
@@ -75,8 +79,8 @@ def main() -> int:
 
     print("\nView the runs locally with:")
     print("    mlflow ui --backend-store-uri file:./mlruns")
+    
     return 0
-
 
 if __name__ == "__main__":
     raise SystemExit(main())
