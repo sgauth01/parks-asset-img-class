@@ -26,3 +26,5 @@ dependencies:
     - pytest>=8.0
     - openpyxl
     - tabulate
+    - google-genai
+    - openai
