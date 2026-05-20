@@ -95,8 +95,20 @@ def run_batch(input_path, output_path, model_name, prompt_or_fn, limit=None, off
         parsed = None
         if result is not None:
             parsed = result.get("response")
+    
+            if not parsed:  # catches None and empty string
+                out["parse_error"] = True
+                results.append(out)
+                continue
 
             if isinstance(parsed, str):
+                # strip markdown code blocks
+                parsed = parsed.strip()
+                if parsed.startswith("```"):
+                    parsed = parsed.split("```")[1]
+                    if parsed.startswith("json"):
+                        parsed = parsed[4:]
+                    parsed = parsed.strip()
                 try:
                     parsed = json.loads(parsed)
                 except json.JSONDecodeError:
@@ -105,7 +117,6 @@ def run_batch(input_path, output_path, model_name, prompt_or_fn, limit=None, off
                     continue
                     
             if isinstance(parsed, dict):
-            
             # map numeric attribute keys to their binned column names
                 BIN_COL_MAPPING = {
                     "fall_height": "fall_height_bin",
