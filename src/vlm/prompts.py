@@ -131,6 +131,28 @@ def make_width_prompt(asset_type):
     If you cannot determine the width, set value to "unable to determine" and confidence to 0.0.
     """
 
+STEPS_BIN_PROMPT_V1 = """
+    You are an expert in park infrastructure analysis.
+
+    Using ALL provided images of this single stair asset, estimate the number of steps.
+
+    Predict exactly ONE value from the listed options:
+    - few (<10)
+    - medium (10-20)
+    - many (>20)
+
+    Return ONLY a valid JSON object with this exact schema (no markdown, no prose):
+    {
+        "number_of_steps": {
+            "value": "<bin label>",
+            "confidence": <float 0.0-1.0>
+        }
+    }
+
+    If you cannot determine the number of steps from the images, set value to
+    "unable to determine" and confidence to 0.0.
+    """
+
 # Prompt registry
 #update after generating prompts for attribute/asset
 
@@ -138,6 +160,7 @@ PROMPT_REGISTRY = {
     "stairs_v1": STAIRS_PROMPT_V1,
     "structure_position_v1": STRUCTURE_POSITION_PROMPT_V1,
     "pedestrian_railing_v1": PEDESTRIAN_RAILING_PROMPT_V1,
+    "steps_bin_v1": STEPS_BIN_PROMPT_V1,
     "length_v1": make_length_prompt,
     "width_v1": make_width_prompt,
 }
