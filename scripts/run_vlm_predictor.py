@@ -9,7 +9,8 @@ Usage:
         --model gemini-3-flash-preview \
         --prompt stairs_v1 \
         --limit 10 \
-        --offset 0
+        --offset 0 \
+        --delay 5
 """
 
 import argparse
