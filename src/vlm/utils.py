@@ -2,6 +2,9 @@ import math
 import os
 import matplotlib.pyplot as plt
 from PIL import Image, ImageOps
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent.parent 
 
 def show_asset_images(df, asset_id, max_cols=4, figsize=(6, 6)):
     """
@@ -21,7 +24,7 @@ def show_asset_images(df, asset_id, max_cols=4, figsize=(6, 6)):
 
     # Fix paths if necessary
     # (Modify this if your image directory differs)
-    fixed_paths = [p.replace("data/", "../data/raw/", 1) for p in paths]
+    fixed_paths = [str(ROOT / p.replace("data/", "data/raw/", 1)) for p in paths]
 
     # Grid layout
     n = len(fixed_paths)

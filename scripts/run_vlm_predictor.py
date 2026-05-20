@@ -7,7 +7,9 @@ Usage:
         --input data/processed/train/attr_number_of_steps_train.csv \
         --output results/vlm_predictions_stairs_gemma.csv \
         --model gemini-3-flash-preview \
-        --limit 10
+        --prompt stairs_v1 \
+        --limit 10 \
+        --offset 0
 """
 
 import argparse
@@ -25,43 +27,12 @@ ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 sys.path.append(ROOT)
 
 from src.vlm.predictors import predict_asset_attributes
-
-# ---------------------------------------------------------------------
-# VLM prompt
-# ---------------------------------------------------------------------
-PROMPT_TEMPLATE = """
-    You are an expert in park infrastructure analysis.
-
-    Using ALL provided images of this single stair asset, identify the most likely
-    attribute values. For each of the following attributes, the possible values are
-    given below. Predict exactly ONE value from the listed options for each
-    attribute, and provide a confidence score (0.0-1.0) for each prediction.
-
-    Attributes to predict:
-    - fall_height: low (<0.5m) | medium (0.5m-1.2m) | high (>1.2m)
-    - has_pedestrian_railing: 2 railings | 1 railing | no railings
-    - material_frame_tank_body: PVC | Gravel | Natural Surface | Earth-filled |
-                                Aluminum | Metal | Steel | Rock/Stone | Concrete |
-                                Box Step | Timber/Wood
-    - number_of_steps: <integer>
-    - structure_position: Elevated | At-Grade | Other
-
-    Return ONLY a valid JSON object with this exact schema (no markdown, no prose):
-    {
-        "<attribute_key>": {
-        "value": "<predicted value or 'unable to determine'>",
-        "confidence": <float 0.0-1.0>
-        }
-    }
-
-    If you cannot determine an attribute from the images, set value to
-    "unable to determine" and confidence to 0.0.
-    """
+from src.vlm.prompts import PROMPT_REGISTRY
 
 # ---------------------------------------------------------------------
 # Main batch runner
 # ---------------------------------------------------------------------
-def run_batch(input_path, output_path, model_name, limit=None):
+def run_batch(input_path, output_path, model_name, prompt_or_fn, limit=None, offset=0):
     print(f"Loading input from: {input_path}")
     df = pd.read_csv(input_path)
 
@@ -70,6 +41,8 @@ def run_batch(input_path, output_path, model_name, limit=None):
     
     unique_asset_ids = df['asset_id'].unique()
 
+    unique_asset_ids = unique_asset_ids[offset:]
+
     if limit:
         unique_asset_ids = unique_asset_ids[:limit]
 
@@ -77,12 +50,22 @@ def run_batch(input_path, output_path, model_name, limit=None):
 
     print(f"Running model: {model_name}")
     print(f"Total assets to process: {len(unique_asset_ids)}")
+    print(f"Offset: {offset}")
     print(f"Writing results to: {output_path}")
 
     results = []
 
     for asset_id in tqdm(unique_asset_ids):
         asset_df = df[df["asset_id"] == asset_id]
+
+        # get asset type for dynamic prompts
+        asset_type = asset_df["profile_name"].iloc[0]
+
+        # resolve prompt — function or static string
+        if callable(prompt_or_fn):
+            prompt = prompt_or_fn(asset_type)
+        else:
+            prompt = prompt_or_fn
         
         result = None
 
@@ -91,7 +74,7 @@ def run_batch(input_path, output_path, model_name, limit=None):
                 asset_id=int(asset_id),
                 df=asset_df,
                 model_name=model_name,
-                prompt=PROMPT_TEMPLATE
+                prompt=prompt
             )
 
             out = {
@@ -112,8 +95,20 @@ def run_batch(input_path, output_path, model_name, limit=None):
         parsed = None
         if result is not None:
             parsed = result.get("response")
+    
+            if not parsed:  # catches None and empty string
+                out["parse_error"] = True
+                results.append(out)
+                continue
 
             if isinstance(parsed, str):
+                # strip markdown code blocks
+                parsed = parsed.strip()
+                if parsed.startswith("```"):
+                    parsed = parsed.split("```")[1]
+                    if parsed.startswith("json"):
+                        parsed = parsed[4:]
+                    parsed = parsed.strip()
                 try:
                     parsed = json.loads(parsed)
                 except json.JSONDecodeError:
@@ -122,9 +117,18 @@ def run_batch(input_path, output_path, model_name, limit=None):
                     continue
                     
             if isinstance(parsed, dict):
+            # map numeric attribute keys to their binned column names
+                BIN_COL_MAPPING = {
+                    "fall_height": "fall_height_bin",
+                    "number_of_steps": "steps_bin",
+                    "length": "length_bin",
+                    "width": "width_bin",
+                }
+                
                 for attr, val in parsed.items():
-                    out[f"{attr}_value"] = val.get("value")
-                    out[f"{attr}_confidence"] = val.get("confidence")
+                    col_name = BIN_COL_MAPPING.get(attr, attr)
+                    out[f"{col_name}_value"] = val.get("value")
+                    out[f"{col_name}_confidence"] = val.get("confidence")
             
         results.append(out)
     
@@ -134,6 +138,7 @@ def run_batch(input_path, output_path, model_name, limit=None):
     df_out.to_csv(output_path, index=False)
 
     print("✅ Done! Processed", len(unique_asset_ids), "assets.")
+    print(f"Next offset: {offset + len(unique_asset_ids)}")
 
 # ---------------------------------------------------------------------
 # CLI
@@ -143,13 +148,23 @@ if __name__ == "__main__":
     parser.add_argument("--input", required=True, help="Path to training data (CSV)")
     parser.add_argument("--output", required=True, help="Path to store JSONL results")
     parser.add_argument("--model", required=True, help="VLM model name")
+    parser.add_argument("--prompt", required=True, 
+                        help=f"Prompt key from registry. Available: {list(PROMPT_REGISTRY.keys())}")
     parser.add_argument("--limit", type=int, default=None, help="Optional limit for debugging")
+    parser.add_argument("--offset", type=int, default=0, 
+                        help="Skip first N assets (for resuming after rate limit)")
 
     args = parser.parse_args()
+
+    prompt_or_fn = PROMPT_REGISTRY.get(args.prompt)
+    if prompt_or_fn is None:
+        raise ValueError(f"Unknown prompt key: {args.prompt}. Available: {list(PROMPT_REGISTRY.keys())}")
 
     run_batch(
         input_path=args.input,
         output_path=args.output,
         model_name=args.model,
-        limit=args.limit
+        prompt_or_fn=prompt_or_fn,
+        limit=args.limit,
+        offset=args.offset
     )
