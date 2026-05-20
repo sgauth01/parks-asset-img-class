@@ -32,7 +32,7 @@ from src.vlm.prompts import PROMPT_REGISTRY
 # ---------------------------------------------------------------------
 # Main batch runner
 # ---------------------------------------------------------------------
-def run_batch(input_path, output_path, model_name, prompt, limit=None, offset=0):
+def run_batch(input_path, output_path, model_name, prompt_or_fn, limit=None, offset=0):
     print(f"Loading input from: {input_path}")
     df = pd.read_csv(input_path)
 

@@ -46,6 +46,8 @@ def evaluate(predictions_path, ground_truth_path, attribute, model_name, asset_t
 
     merged = merged[merged[col].notna()]
     merged = merged[merged[attribute].notna()]
+
+    merged = merged.drop_duplicates("asset_id")
     
     # filter out classes not seen in training
     #removing this, not applicable to VLM since there isn't training technically
