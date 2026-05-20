@@ -152,6 +152,32 @@ STEPS_BIN_PROMPT_V1 = """
     If you cannot determine the number of steps from the images, set value to
     "unable to determine" and confidence to 0.0.
     """
+def make_fall_height_prompt(asset_type):
+    
+    if asset_type == "Viewing Platform":
+        bins = "low (<1.2m) | medium (1.2-15m) | high (>15m)"
+    elif asset_type == "Trail Bridge":
+        bins = "low (<1.2m) | medium (1.2-5m) | high (>5m)"
+    else:  # Boardwalks and Stairs
+        bins = "low (<0.5m) | medium (0.5-1.2m) | high (>1.2m)"
+    
+    return f"""
+    You are an expert in park infrastructure analysis.
+
+    Using ALL provided images of this single {asset_type} asset, estimate the fall height.
+    Fall height is the vertical distance from the asset surface to the ground below.
+
+    Predict exactly ONE value from the listed options for this asset type:
+    {bins}
+
+    Return ONLY a valid JSON object with this exact schema (no markdown, no prose):
+    {{
+        "fall_height": {{"value": "<bin label>", "confidence": <float 0.0-1.0>}}
+    }}
+
+    If you cannot determine the fall height from the images, set value to
+    "unable to determine" and confidence to 0.0.
+    """
 
 # Prompt registry
 #update after generating prompts for attribute/asset
@@ -163,4 +189,5 @@ PROMPT_REGISTRY = {
     "steps_bin_v1": STEPS_BIN_PROMPT_V1,
     "length_v1": make_length_prompt,
     "width_v1": make_width_prompt,
+    "fall_height_v1": make_fall_height_prompt,
 }
