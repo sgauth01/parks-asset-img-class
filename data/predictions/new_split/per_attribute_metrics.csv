@@ -1,0 +1,45 @@
+pipeline_id,pipeline_display,attribute,attribute_display,kind,n_val,accuracy,macro_f1,weighted_f1,mae,rmse,r2
+baseline,Baseline (majority / median),attr_abutment_material,Abutment Material,categorical,172,0.5581395348837209,0.1432835820895522,0.3998611593196806,,,
+baseline,Baseline (majority / median),attr_bridge_type,Bridge Type,categorical,172,0.8023255813953488,0.2225806451612903,0.7143285821455364,,,
+baseline,Baseline (majority / median),attr_decking_material,Decking Material,categorical,448,0.9196428571428572,0.2395348837209302,0.8811461794019934,,,
+baseline,Baseline (majority / median),attr_fall_height,Fall Height (m),numeric,31,,,,0.8258064516129031,1.0323790251709417,-0.0066438652356808
+baseline,Baseline (majority / median),attr_has_edge_guard,Has Edge Guard,boolean,397,0.8942065491183879,0.4720744680851064,0.8442641620665631,,,
+baseline,Baseline (majority / median),attr_has_pedestrian_railing,Has Pedestrian Railing,categorical,558,0.8673835125448028,0.309660908509277,0.8057842995617747,,,
+baseline,Baseline (majority / median),attr_length,Length (m),numeric,401,,,,38.11826583541147,218.9893652396589,-0.0244697469983186
+baseline,Baseline (majority / median),"attr_material_frame,_tank,_body","Material (Frame, Tank, Body)",categorical,212,0.589622641509434,0.0927299703264094,0.4374055204075919,,,
+baseline,Baseline (majority / median),attr_number_of_steps,Number of Steps,count,17,,,,7.647058823529412,9.946917938265512,-0.0421313506815366
+baseline,Baseline (majority / median),attr_structure_material,Structure Material,categorical,396,0.8939393939393939,0.236,0.8438787878787879,,,
+baseline,Baseline (majority / median),attr_structure_position,Structure Position,categorical,150,0.4866666666666667,0.218236173393124,0.3186248131539611,,,
+baseline,Baseline (majority / median),attr_width,Width (m),numeric,432,,,,0.7243518518518519,2.831182598739864,-0.0371971952128054
+vlm_qwen2_5_vl_32b_instruct_awq,VLM Qwen2.5-VL-32B-Instruct-AWQ,attr_abutment_material,Abutment Material,categorical,153,0.4967320261437908,0.2649813047603103,0.4704292044775199,,,
+vlm_qwen2_5_vl_32b_instruct_awq,VLM Qwen2.5-VL-32B-Instruct-AWQ,attr_bridge_type,Bridge Type,categorical,157,0.8853503184713376,0.4734558823529411,0.8348763581865867,,,
+vlm_qwen2_5_vl_32b_instruct_awq,VLM Qwen2.5-VL-32B-Instruct-AWQ,attr_decking_material,Decking Material,categorical,427,0.9086651053864168,0.2718101733447002,0.9136091595107988,,,
+vlm_qwen2_5_vl_32b_instruct_awq,VLM Qwen2.5-VL-32B-Instruct-AWQ,attr_has_edge_guard,Has Edge Guard,boolean,239,0.8535564853556485,0.5870563262082243,0.8993612002091121,,,
+vlm_qwen2_5_vl_32b_instruct_awq,VLM Qwen2.5-VL-32B-Instruct-AWQ,attr_has_pedestrian_railing,Has Pedestrian Railing,categorical,521,0.7907869481765835,0.5819397293121233,0.8257468565652278,,,
+vlm_qwen2_5_vl_32b_instruct_awq,VLM Qwen2.5-VL-32B-Instruct-AWQ,attr_length,Length (m),numeric,5,,,,3.3199999999999994,4.040297018784633,-1.0934646557915255
+vlm_qwen2_5_vl_32b_instruct_awq,VLM Qwen2.5-VL-32B-Instruct-AWQ,"attr_material_frame,_tank,_body","Material (Frame, Tank, Body)",categorical,129,0.7209302325581395,0.3970294784580498,0.6460538944259875,,,
+vlm_qwen2_5_vl_32b_instruct_awq,VLM Qwen2.5-VL-32B-Instruct-AWQ,attr_number_of_steps,Number of Steps,count,12,,,,6.166666666666667,10.931605554537724,-0.0551876379690949
+vlm_qwen2_5_vl_32b_instruct_awq,VLM Qwen2.5-VL-32B-Instruct-AWQ,attr_structure_material,Structure Material,categorical,173,0.815028901734104,0.3739682539682539,0.7969171483622352,,,
+vlm_qwen2_5_vl_32b_instruct_awq,VLM Qwen2.5-VL-32B-Instruct-AWQ,attr_structure_position,Structure Position,categorical,124,0.5403225806451613,0.364602644914102,0.4885177078474291,,,
+vlm_qwen2_5_vl_32b_instruct_awq,VLM Qwen2.5-VL-32B-Instruct-AWQ,attr_width,Width (m),numeric,3,,,,0.5,0.5,0.0
+vlm_qwen2_5_vl_72b_instruct_awq,VLM Qwen2.5-VL-72B-Instruct-AWQ,attr_abutment_material,Abutment Material,categorical,162,0.5925925925925926,0.2502234598459846,0.5641915464694618,,,
+vlm_qwen2_5_vl_72b_instruct_awq,VLM Qwen2.5-VL-72B-Instruct-AWQ,attr_bridge_type,Bridge Type,categorical,160,0.9,0.4434790626200538,0.8746336918939684,,,
+vlm_qwen2_5_vl_72b_instruct_awq,VLM Qwen2.5-VL-72B-Instruct-AWQ,attr_decking_material,Decking Material,categorical,428,0.9042056074766356,0.3964570640626978,0.9135535058596792,,,
+vlm_qwen2_5_vl_72b_instruct_awq,VLM Qwen2.5-VL-72B-Instruct-AWQ,attr_fall_height,Fall Height (m),numeric,9,,,,0.6888888888888889,0.7817359599705717,0.5215542238546298
+vlm_qwen2_5_vl_72b_instruct_awq,VLM Qwen2.5-VL-72B-Instruct-AWQ,attr_has_edge_guard,Has Edge Guard,boolean,243,0.925925925925926,0.6589207735495946,0.9433123079411287,,,
+vlm_qwen2_5_vl_72b_instruct_awq,VLM Qwen2.5-VL-72B-Instruct-AWQ,attr_has_pedestrian_railing,Has Pedestrian Railing,categorical,527,0.855787476280835,0.6457335009480186,0.8779462773472588,,,
+vlm_qwen2_5_vl_72b_instruct_awq,VLM Qwen2.5-VL-72B-Instruct-AWQ,attr_length,Length (m),numeric,69,,,,3.894202898550725,6.599571791115462,0.0604711385266267
+vlm_qwen2_5_vl_72b_instruct_awq,VLM Qwen2.5-VL-72B-Instruct-AWQ,"attr_material_frame,_tank,_body","Material (Frame, Tank, Body)",categorical,129,0.7054263565891473,0.591971696895765,0.6032865512633062,,,
+vlm_qwen2_5_vl_72b_instruct_awq,VLM Qwen2.5-VL-72B-Instruct-AWQ,attr_number_of_steps,Number of Steps,count,12,,,,5.833333333333333,10.74709263010234,-0.0198675496688742
+vlm_qwen2_5_vl_72b_instruct_awq,VLM Qwen2.5-VL-72B-Instruct-AWQ,attr_structure_material,Structure Material,categorical,173,0.8092485549132948,0.3741541085241497,0.8121913436383749,,,
+vlm_qwen2_5_vl_72b_instruct_awq,VLM Qwen2.5-VL-72B-Instruct-AWQ,attr_structure_position,Structure Position,categorical,124,0.5967741935483871,0.411764705882353,0.5621442125237192,,,
+vlm_qwen2_5_vl_72b_instruct_awq,VLM Qwen2.5-VL-72B-Instruct-AWQ,attr_width,Width (m),numeric,110,,,,0.3498181818181818,0.4309735279784384,-0.1069405375416634
+vlm_qwen2_5_vl_7b_instruct,VLM Qwen2.5-VL-7B-Instruct,attr_abutment_material,Abutment Material,categorical,139,0.5107913669064749,0.2720225510923185,0.4777505691007447,,,
+vlm_qwen2_5_vl_7b_instruct,VLM Qwen2.5-VL-7B-Instruct,attr_bridge_type,Bridge Type,categorical,160,0.75,0.3976550264550264,0.7944417989417989,,,
+vlm_qwen2_5_vl_7b_instruct,VLM Qwen2.5-VL-7B-Instruct,attr_decking_material,Decking Material,categorical,425,0.8941176470588236,0.2011125374411639,0.8995544816129276,,,
+vlm_qwen2_5_vl_7b_instruct,VLM Qwen2.5-VL-7B-Instruct,attr_has_edge_guard,Has Edge Guard,boolean,96,0.65625,0.5210884353741496,0.7437074829931972,,,
+vlm_qwen2_5_vl_7b_instruct,VLM Qwen2.5-VL-7B-Instruct,attr_has_pedestrian_railing,Has Pedestrian Railing,categorical,518,0.8416988416988417,0.6089676248686849,0.8628053370914607,,,
+vlm_qwen2_5_vl_7b_instruct,VLM Qwen2.5-VL-7B-Instruct,"attr_material_frame,_tank,_body","Material (Frame, Tank, Body)",categorical,128,0.65625,0.3697041316526611,0.5979961320465687,,,
+vlm_qwen2_5_vl_7b_instruct,VLM Qwen2.5-VL-7B-Instruct,attr_number_of_steps,Number of Steps,count,2,,,,0.0,0.0,1.0
+vlm_qwen2_5_vl_7b_instruct,VLM Qwen2.5-VL-7B-Instruct,attr_structure_material,Structure Material,categorical,173,0.8265895953757225,0.5887605042016807,0.8179555059017827,,,
+vlm_qwen2_5_vl_7b_instruct,VLM Qwen2.5-VL-7B-Instruct,attr_structure_position,Structure Position,categorical,124,0.5161290322580645,0.3496732026143791,0.4641840607210626,,,
