@@ -1,0 +1,25 @@
+pipeline,model_name,display,attribute,attribute_display,kind,n,accuracy,macro_f1,weighted_f1,mae,rmse,r2
+baseline,majority_class_and_median,"Baseline
+(majority / median)",attr_abutment_material,Abutment Material,categorical,242,0.5330578512396694,0.1390835579514824,0.3706979127219265,,,
+baseline,majority_class_and_median,"Baseline
+(majority / median)",attr_bridge_type,Bridge Type,categorical,271,0.8044280442804428,0.178323108384458,0.7172405466385953,,,
+baseline,majority_class_and_median,"Baseline
+(majority / median)",attr_decking_material,Decking Material,categorical,680,0.9352941176470588,0.1933130699088145,0.9040228857500446,,,
+baseline,majority_class_and_median,"Baseline
+(majority / median)",attr_fall_height,Fall Height (m),numeric,62,,,,1.511290322580645,4.259723222873039,-0.0790737055891592
+baseline,majority_class_and_median,"Baseline
+(majority / median)",attr_has_edge_guard,Has Edge Guard,boolean,384,0.9609375,0.4900398406374502,0.9417953187250996,,,
+baseline,majority_class_and_median,"Baseline
+(majority / median)",attr_has_pedestrian_railing,Has Pedestrian Railing,categorical,832,0.8617788461538461,0.3085861846352485,0.7977991384019467,,,
+baseline,majority_class_and_median,"Baseline
+(majority / median)",attr_length,Length (m),numeric,619,,,,22.698707915993538,82.15066069149206,-0.0372676687260205
+baseline,majority_class_and_median,"Baseline
+(majority / median)","attr_material_frame,_tank,_body","Material (Frame, Tank, Body)",categorical,205,0.3414634146341463,0.0848484848484848,0.1738359201773835,,,
+baseline,majority_class_and_median,"Baseline
+(majority / median)",attr_number_of_steps,Number of Steps,count,10,,,,9.9,10.774970997640782,-2.487533793932112
+baseline,majority_class_and_median,"Baseline
+(majority / median)",attr_structure_material,Structure Material,categorical,295,0.7491525423728813,0.2141472868217054,0.641715937458941,,,
+baseline,majority_class_and_median,"Baseline
+(majority / median)",attr_structure_position,Structure Position,categorical,205,0.7170731707317073,0.2784090909090909,0.5989190687361419,,,
+baseline,majority_class_and_median,"Baseline
+(majority / median)",attr_width,Width (m),numeric,632,,,,0.5557278481012657,1.410881872527905,0.1531173812120365
