@@ -28,3 +28,4 @@ dependencies:
     - tabulate
     - google-genai
     - openai
+    - dagshub
