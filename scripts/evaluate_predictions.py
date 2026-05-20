@@ -47,8 +47,9 @@ def evaluate(predictions_path, ground_truth_path, attribute, model_name, asset_t
     merged = merged[merged[attribute].notna()]
     
     # filter out classes not seen in training
-    known_classes = merged[col].unique()
-    merged = merged[merged[attribute].isin(known_classes)]
+    #removing this, not applicable to VLM since there isn't training technically
+    #known_classes = merged[col].unique()
+    #merged = merged[merged[attribute].isin(known_classes)]
     
     y_true = merged[attribute].tolist()
     y_pred = merged[col].tolist()
@@ -89,7 +90,16 @@ def evaluate(predictions_path, ground_truth_path, attribute, model_name, asset_t
         mlflow.log_param("prompt_version", prompt_version)
         mlflow.log_artifact(predictions_path)
     
-    return {"macro_f1": macro_f1, "weighted_f1": weighted_f1, "n_samples": n_samples}
+    return {
+        "attribute": attribute,
+        "model": model_name,
+        "asset_type": asset_type,
+        "prompt_version": prompt_version,
+        "n_samples": n_samples,
+        "macro_f1": macro_f1,
+        "weighted_f1": weighted_f1,
+        "timestamp": datetime.now().isoformat()
+    }
 
 
 if __name__ == "__main__":
@@ -104,21 +114,28 @@ if __name__ == "__main__":
     parser.add_argument("--prompt_version", default="v1")
     args = parser.parse_args()
     
+    all_results = []
+
     for attribute in args.attributes:
         
         filename = (attribute
-            .replace("attr_", "")
-            .replace(",", "")
-            .replace(" ", "_")
-            .replace("(", "")
-            .replace(")", "")
-            .replace("<", "lt")
-            .replace(">", "gt")
-            .replace("/", "_"))
+                    .replace("attr_", "")
+                    .replace(",", "")
+                    .replace(" ", "_")
+                    .replace("(", "")
+                    .replace(")", "")
+                    .replace("<", "lt")
+                    .replace(">", "gt")
+                    .replace("/", "_")
+        )
+
+        # only add attr_ prefix for actual attr_ attributes
+        if attribute.startswith("attr_"):
+            ground_truth_path = f"{args.ground_truth_dir}/attr_{filename}_train.csv"
+        else:
+            ground_truth_path = f"{args.ground_truth_dir}/{filename}_train.csv"
         
-        ground_truth_path = f"{args.ground_truth_dir}/attr_{filename}_train.csv"
-        
-        evaluate(
+        result = evaluate(
             predictions_path=args.predictions,
             ground_truth_path=ground_truth_path,
             attribute=attribute,
@@ -126,3 +143,14 @@ if __name__ == "__main__":
             asset_type=args.asset_type,
             prompt_version=args.prompt_version
         )
+
+        if result is not None:
+            all_results.append(result)
+
+    # save all results to CSV
+    if all_results:
+        os.makedirs("vlm_results", exist_ok=True)
+        results_df = pd.DataFrame(all_results)
+        output_filename = f"vlm_results/{args.model}_{args.asset_type}_{args.prompt_version}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv"
+        results_df.to_csv(output_filename, index=False)
+        print(f"\nResults saved to: {output_filename}")
