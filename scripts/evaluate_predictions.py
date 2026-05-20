@@ -16,6 +16,7 @@ import argparse
 import os
 import sys
 from pathlib import Path
+from datetime import datetime
 
 ROOT = Path(__file__).resolve().parent.parent
 if str(ROOT) not in sys.path:
@@ -149,8 +150,8 @@ if __name__ == "__main__":
 
     # save all results to CSV
     if all_results:
-        os.makedirs("vlm_results", exist_ok=True)
+        os.makedirs("results/vlm_results", exist_ok=True)
         results_df = pd.DataFrame(all_results)
-        output_filename = f"vlm_results/{args.model}_{args.asset_type}_{args.prompt_version}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv"
+        output_filename = f"results/vlm_results/{args.model}_{args.asset_type}_{args.prompt_version}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv"
         results_df.to_csv(output_filename, index=False)
         print(f"\nResults saved to: {output_filename}")
