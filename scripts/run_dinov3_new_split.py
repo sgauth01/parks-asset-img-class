@@ -96,6 +96,11 @@ def parse_args() -> argparse.Namespace:
     p.add_argument("--attributes", nargs="*", default=list(ATTRIBUTE_KINDS), help="Subset of attribute file keys to run.")
     p.add_argument("--data-version", default="per-attribute-85-15")
     p.add_argument("--no-mlflow", action="store_true")
+    p.add_argument(
+        "--dagshub-repo",
+        default="sgauth01/parks-asset-img-class",
+        help="DagsHub repo (owner/name) for remote MLflow. Pass empty string to use local ./mlruns.",
+    )
     return p.parse_args()
 
 
@@ -281,12 +286,16 @@ def main() -> int:
     mlflow = None
     if not args.no_mlflow:
         try:
+            if args.dagshub_repo:
+                import dagshub
+                owner, name = args.dagshub_repo.split("/", 1)
+                dagshub.init(repo_owner=owner, repo_name=name, mlflow=True)
             import mlflow as _mlflow
             from src.mlflow_utils import make_run_name, make_standard_tags, setup_mlflow
             setup_mlflow()
             mlflow = _mlflow
-        except ModuleNotFoundError:
-            logger.warning("mlflow not installed; continuing without MLflow logging")
+        except ModuleNotFoundError as exc:
+            logger.warning("mlflow/dagshub not installed (%s); continuing without MLflow logging", exc.name)
             mlflow = None
 
     cache = load_features(model_id=args.model, out_dir=args.features_dir, suffix=args.feature_suffix)
