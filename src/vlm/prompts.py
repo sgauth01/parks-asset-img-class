@@ -178,6 +178,36 @@ def make_fall_height_prompt(asset_type):
     If you cannot determine the fall height from the images, set value to
     "unable to determine" and confidence to 0.0.
     """
+MATERIAL_PROMPT_V1 = """
+    You are an expert in park infrastructure analysis.
+
+    Using ALL provided images of this single stair asset, identify the material
+    of the frame, tank, or body of the structure.
+
+    Predict exactly ONE value from the listed options:
+    - Timber/Wood
+    - Concrete
+    - Box Step
+    - Rock/Stone
+    - Metal
+    - Steel
+    - Aluminum
+    - Earth-Filled
+    - Natural Surface
+    - Gravel
+    - PVC
+
+    Return ONLY a valid JSON object with this exact schema (no markdown, no prose):
+    {
+        "material_frame_tank_body": {
+            "value": "<predicted value or 'unable to determine'>",
+            "confidence": <float 0.0-1.0>
+        }
+    }
+
+    If you cannot determine the material from the images, set value to
+    "unable to determine" and confidence to 0.0.
+    """
 
 # Prompt registry
 #update after generating prompts for attribute/asset
@@ -187,6 +217,7 @@ PROMPT_REGISTRY = {
     "structure_position_v1": STRUCTURE_POSITION_PROMPT_V1,
     "pedestrian_railing_v1": PEDESTRIAN_RAILING_PROMPT_V1,
     "steps_bin_v1": STEPS_BIN_PROMPT_V1,
+    "material_prompt_v1": MATERIAL_PROMPT_V1,
     "length_v1": make_length_prompt,
     "width_v1": make_width_prompt,
     "fall_height_v1": make_fall_height_prompt,
