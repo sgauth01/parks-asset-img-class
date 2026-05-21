@@ -217,7 +217,7 @@ PROMPT_REGISTRY = {
     "structure_position_v1": STRUCTURE_POSITION_PROMPT_V1,
     "pedestrian_railing_v1": PEDESTRIAN_RAILING_PROMPT_V1,
     "steps_bin_v1": STEPS_BIN_PROMPT_V1,
-    "material_prompt_v1": MATERIAL_PROMPT_V1,
+    "material_v1": MATERIAL_PROMPT_V1,
     "length_v1": make_length_prompt,
     "width_v1": make_width_prompt,
     "fall_height_v1": make_fall_height_prompt,
