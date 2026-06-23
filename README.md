@@ -48,7 +48,22 @@ or the matching PDF in the same folder.
 conda env create -f environment.yml
 conda activate bcparks_capstone
 ```
-**2. Set up the VLM API keys**
+
+**2. Set up the DINOv3 model**
+
+This project uses the `dinov3_vitb16` model. To download the model locally, access must be requested by filling out [this form](https://ai.meta.com/resources/models-and-libraries/dinov3-downloads/).
+
+The full DINOv3 guide is available at [https://github.com/facebookresearch/dinov3](https://github.com/facebookresearch/dinov3) with all available DINOv3 models listed in the `Pretrained models` section.
+
+Once the form has been filled out, you will receive an email from Meta with the files to download. Download the `dinov3_vitb16_pretrain_lvd1689m-73cec8be.pth` model.
+
+Once downloaded, copy it to the following directory in the repository root:
+
+```text
+models/downloaded_model/dinov3_vitb16_pretrain_lvd1689m-73cec8be.pth
+```
+
+**3. (Optional) Set up the VLM API keys**
 
 Create an `.env` file in the project root with the required API keys for the models you want to use.
 
@@ -64,20 +79,6 @@ An example of how to set up API keys in an `.env` file is provided in `.env.exam
 
 - For **Google AI Studio** VLMs, get your key from [Google AI Studio](https://aistudio.google.com/app/apikey).
 - For **GitHub** VLMs, create a personal access token in [GitHub Settings](https://github.com/settings/tokens) with `read:packages` scope.
-
-**3. Set up the DINOv3 model**
-
-This project uses the `dinov3_vitb16` model. To download the model locally, access must be requested by filling out [this form](https://ai.meta.com/resources/models-and-libraries/dinov3-downloads/).
-
-The full DINOv3 guide is available at [https://github.com/facebookresearch/dinov3](https://github.com/facebookresearch/dinov3) with all available DINOv3 models listed in the `Pretrained models` section.
-
-Once the form has been filled out, you will receive an email from Meta with the files to download. Download the `dinov3_vitb16_pretrain_lvd1689m-73cec8be.pth` model.
-
-Once downloaded, copy it to the following directory in the repository root:
-
-```text
-models/downloaded_model/dinov3_vitb16_pretrain_lvd1689m-73cec8be.pth
-```
 
 ## Makefile pipeline
 
@@ -111,18 +112,6 @@ make all
 Run `make pii` once before the final pipeline on a fresh checkout. It creates
 the cleaned image set and the completion marker required by `make final-dinov3`
 and `make all`.
-
-Run a faster local validation pass:
-
-```bash
-make smoke
-```
-
-Run a small new-image demo from the cleaned training image folder:
-
-```bash
-make demo-new-images
-```
 
 Predict on a separate folder of already-cleaned new images:
 
@@ -167,7 +156,7 @@ The partner-facing prediction exports are written to:
 - `results/final/bcparks_asset_attribute_predictions_long.csv`
 - `results/final/bcparks_asset_attribute_predictions_wide.csv`
 
-## Optional CityWide download
+## (Optional) CityWide download
 
 The raw CityWide downloader is available as an upstream Makefile branch for BC Parks or graders who have API credentials. Required `.env` keys are:
 
@@ -202,7 +191,7 @@ The downloader writes `assets.csv`, `attributes.csv`, `files_manifest.csv`, `ima
 For the full CityWide API flow, including how linked attributes are downloaded,
 see [`docs/citywide_api_runbook.md`](docs/citywide_api_runbook.md).
 
-## To use Vision Language Models (VLMs)
+## (Optional) To use Vision Language Models (VLMs)
 
 This project uses Vision Language Models (VLMs) to directly predict BC Parks asset attributes from images.
 VLMs take asset images and return structured predictions (attribute values & confidence scores) in JSON format.
@@ -224,24 +213,17 @@ GEMINI_API_KEY="your-key-here"
 GITHUB_TOKEN="your-token-here"
 ```
 
-2. Run a Makefile smoke prediction:
+2. Get VLM predictions:
 
 ```bash
-make vlm-smoke VLM_PROVIDER=gemini VLM_MODEL=gemini-3-flash-preview
+make vlm-predict VLM_INPUT=path/to/image/folder NEW_IMAGE_ASSET_TYPE="Stairs" VLM_PROMPT=stairs_v1 VLM_LIMIT=5
 ```
 
-Or run batch predictions directly:
+- `NEW_IMAGE_ASSET_TYPE` is asset category of the asset images in `VLM_INPUT` — one of: `Stairs`, `Trail Bridge`, `Boardwalk < 1.2m High`, `Boardwalk > 1.2m High`, `Viewing Platform`.
+- `VLM_PROMPT` is the prompt used when generating predictions from the VLM and should correspond to the asset category of `VLM_INPUT` — one of: `stairs_v1`, `trail_bridge_v1`, `boardwalk_low_v1`, `boardwalk_high_v1`, `viewing_platform_v1`.
+- `VLM_LIMIT` corresponds to the number of assets to process by the VLM.
 
-```bash
-python scripts/run_vlm_predictor.py \
-  --input data/processed/train/train_only_stairs.csv \
-  --output results/vlm_stairs_gemini.csv \
-  --provider gemini \
-  --model gemini-3-flash-preview \
-  --prompt stairs_v1
-```
-
-`--input` also accepts a folder of images, not just a CSV. For a flat folder of one asset type, pass `--asset-type`:
+It is also possible to run batch predictions directly from the terminal:
 
 ```bash
 python scripts/run_vlm_predictor.py \
@@ -251,16 +233,6 @@ python scripts/run_vlm_predictor.py \
   --provider gemini \
   --model gemini-3-flash-preview \
   --prompt stairs_v1
-```
-
-3. Evaluate predictions against ground truth:
-
-```bash
-python scripts/evaluate_predictions.py \
-  --predictions results/vlm_stairs_gemini.csv \
-  --ground_truth_dir data/processed/train \
-  --attributes attr_number_of_steps \
-  --model gemini-3-flash-preview
 ```
 
 For comprehensive documentation on supported models, prompts, workflows, and extending the system with new models/prompts, see [`docs/vlm_walkthrough.md`](docs/vlm_walkthrough.md).
